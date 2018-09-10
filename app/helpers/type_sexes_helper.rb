@@ -1,0 +1,2 @@
+module TypeSexesHelper
+end
