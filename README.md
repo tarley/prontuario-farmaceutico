@@ -4,6 +4,6 @@ GesFar é um sistema para controle e gestão de atendimentos farmaêuticos. O so
 
 O sistema tem como objetivo atender a demanda da Escola e Clínica de Farmácia da mesma instituição dos desenvolvedores. e será utlizado por professores farmacêuticos e alunos estudantes e bolssistas na cliníca de farmácia.
 
-## Documentação
+## Índice
 
 Em breve...
