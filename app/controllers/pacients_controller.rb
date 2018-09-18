@@ -1,16 +1,25 @@
 class PacientsController < ApplicationController
+  attr_accessor :profession
   before_action :set_pacient, only: [:show, :edit, :update, :destroy]
 
   # GET /pacients
   # GET /pacients.json
   def index
-    @pacients = Pacient.all
+    if params[:pesquisa]
+      @pacients = Pacient.pesquisa(params[:pesquisa])
+    else
+      @pacients = Pacient.all
+    end
   end
 
   # GET /pacients/1
   # GET /pacients/1.json
   def show
   end
+  
+  #def getbusca
+  #  @pacients = Pacients.search(params[:search])
+  #end
 
   # GET /pacients/new
   def new

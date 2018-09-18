@@ -4,7 +4,11 @@ class ProfessionsController < ApplicationController
   # GET /professions
   # GET /professions.json
   def index
-    @professions = Profession.all
+    if params[:pesquisa]
+      @professions = Profession.pesquisa(params[:pesquisa])
+    else
+      @professions = Profession.all
+    end
   end
 
   # GET /professions/1

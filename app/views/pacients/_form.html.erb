@@ -55,11 +55,17 @@
     <%= f.label :cpf %><br>
     <%= f.text_field :cpf %>
   </div>
-  
+
   <div class="field">
     <%= f.label :profession %><br>
     <%= f.collection_select :profession_id, Profession.all, :id, :description %>
+    
+    <!-- %= form_tag(professions_path, :method => :get) do % -->
+      <!-- %= text_field_tag 'pesquisa', nil, placeholder: 'Buscar Profissão' % -->
+      <!-- %= submit_tag "Pesquisar"% -->
+    <!-- % end % -->
   </div>
+  
   <div class="field">
     <%= f.label :service_access %><br>
     <%= f.collection_select :service_access_id, ServiceAccess.all, :id, :description %>
@@ -72,4 +78,5 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+  
 <% end %>
