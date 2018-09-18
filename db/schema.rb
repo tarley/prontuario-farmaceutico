@@ -26,32 +26,6 @@ ActiveRecord::Schema.define(version: 20180918121426) do
     t.datetime "updated_at", null: false
   end
 
-
-  create_table "pharmacotherapies", force: :cascade do |t|
-    t.string   "medicine"
-    t.string   "dosageSchedule"
-    t.string   "safety"
-    t.string   "effectiveness"
-    t.string   "useDificulty"
-    t.integer  "timeUse"
-    t.text     "carePlan"
-    t.text     "descriptionDisease"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-  end
-
-  create_table "prm_causes", force: :cascade do |t|
-    t.string   "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "prms", force: :cascade do |t|
-    t.string   "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
   create_table "pacients", force: :cascade do |t|
     t.string   "name"
     t.string   "place_attendence"
