@@ -1,0 +1,82 @@
+<%= form_for(@pacient) do |f| %>
+  <% if @pacient.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pacient.errors.count, "error") %> prohibited this pacient from being saved:</h2>
+
+      <ul>
+      <% @pacient.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :place_attendence %><br>
+    <%= f.text_field :place_attendence %>
+  </div>
+  <div class="field">
+    <%= f.label :birth_date %><br>
+    <%= f.date_select :birth_date %>
+  </div>
+  <div class="field">
+    <%= f.label :years_study %><br>
+    <%= f.number_field :years_study %>
+  </div>
+  <div class="field">
+    <%= f.label :genre %><br>
+    <%= f.number_field :genre %>
+  </div>
+  <div class="field">
+    <%= f.label :marital_status %><br>
+    <%= f.number_field :marital_status %>
+  </div>
+  <div class="field">
+    <%= f.label :phone %><br>
+    <%= f.text_field :phone %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :services_professional %><br>
+    <%= f.text_field :services_professional %>
+  </div>
+  <div class="field">
+    <%= f.label :reason_meeting %><br>
+    <%= f.text_area :reason_meeting %>
+  </div>
+  <div class="field">
+    <%= f.label :cpf %><br>
+    <%= f.text_field :cpf %>
+  </div>
+
+  <div class="field">
+    <%= f.label :profession %><br>
+    <%= f.collection_select :profession_id, Profession.all, :id, :description %>
+    
+    <!-- %= form_tag(professions_path, :method => :get) do % -->
+      <!-- %= text_field_tag 'pesquisa', nil, placeholder: 'Buscar Profissão' % -->
+      <!-- %= submit_tag "Pesquisar"% -->
+    <!-- % end % -->
+  </div>
+  
+  <div class="field">
+    <%= f.label :service_access %><br>
+    <%= f.collection_select :service_access_id, ServiceAccess.all, :id, :description %>
+  </div>
+  <div class="field">
+    <%= f.label :ub %><br>
+    <%= f.collection_select :ub_id, Ub.all, :id, :description %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  
+<% end %>
