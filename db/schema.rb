@@ -12,6 +12,9 @@
 # It's strongly recommended that you check this file into your version control system.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ab29c9b68fbad6eded5e3a81517b8584d06ffc86
 ActiveRecord::Schema.define(version: 20180918121426) do
 
   create_table "attendances", force: :cascade do |t|
@@ -26,9 +29,37 @@ ActiveRecord::Schema.define(version: 20180918121426) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+<<<<<<< HEAD
 =======
 ActiveRecord::Schema.define(version: 20180917232923) do
 >>>>>>> 23ee98ffab22eea22a68e6768386e2e9e5198a86
+=======
+
+  create_table "pharmacotherapies", force: :cascade do |t|
+    t.string   "medicine"
+    t.string   "dosageSchedule"
+    t.string   "safety"
+    t.string   "effectiveness"
+    t.string   "useDificulty"
+    t.integer  "timeUse"
+    t.text     "carePlan"
+    t.text     "descriptionDisease"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  create_table "prm_causes", force: :cascade do |t|
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "prms", force: :cascade do |t|
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+>>>>>>> ab29c9b68fbad6eded5e3a81517b8584d06ffc86
 
   create_table "pacients", force: :cascade do |t|
     t.string   "name"
@@ -54,6 +85,7 @@ ActiveRecord::Schema.define(version: 20180917232923) do
   add_index "pacients", ["ub_id"], name: "index_pacients_on_ub_id"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   create_table "pharmacotherapies", force: :cascade do |t|
     t.string   "medicine"
     t.string   "dosageSchedule"
@@ -75,12 +107,16 @@ ActiveRecord::Schema.define(version: 20180917232923) do
   add_index "pharmacotherapies", ["prm_cause_id"], name: "index_pharmacotherapies_on_prm_cause_id"
 
   create_table "prm_causes", force: :cascade do |t|
+=======
+  create_table "professions", force: :cascade do |t|
+>>>>>>> ab29c9b68fbad6eded5e3a81517b8584d06ffc86
     t.string   "description"
     t.integer  "prm_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
+<<<<<<< HEAD
   add_index "prm_causes", ["prm_id"], name: "index_prm_causes_on_prm_id"
 
   create_table "prms", force: :cascade do |t|
@@ -97,6 +133,8 @@ ActiveRecord::Schema.define(version: 20180917232923) do
     t.datetime "updated_at",  null: false
   end
 
+=======
+>>>>>>> ab29c9b68fbad6eded5e3a81517b8584d06ffc86
   create_table "service_accesses", force: :cascade do |t|
     t.string   "description"
     t.datetime "created_at",  null: false

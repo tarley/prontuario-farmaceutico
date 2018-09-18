@@ -1,16 +1,31 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   resources :service_accesses
   resources :professions
   resources :ubs
   resources :pacients
 <<<<<<< HEAD
+=======
+>>>>>>> ab29c9b68fbad6eded5e3a81517b8584d06ffc86
   resources :attendances
   resources :prm_causes
+  resources :attendances
   resources :pharmacotherapies
   resources :prms
+<<<<<<< HEAD
   resources :diseases
 =======
 >>>>>>> 23ee98ffab22eea22a68e6768386e2e9e5198a86
+=======
+  resources :prm_causes
+  resources :diseases
+  resources :pharmacotherapies
+  resources :attendances
+  resources :service_accesses
+  resources :professions
+  resources :ubs
+  resources :pacients
+>>>>>>> ab29c9b68fbad6eded5e3a81517b8584d06ffc86
   resources :type_sexes
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

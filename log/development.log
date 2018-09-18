@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   [1m[36m (15.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
   [1m[35m (0.1ms)[0m  select sqlite_version(*)
   [1m[36m (12.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
@@ -13,10 +14,16 @@
   [1m[35m (0.1ms)[0m  select sqlite_version(*)
   [1m[36m (11.6ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
 >>>>>>> 23ee98ffab22eea22a68e6768386e2e9e5198a86
+=======
+  [1m[36m (15.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (12.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+>>>>>>> ab29c9b68fbad6eded5e3a81517b8584d06ffc86
   [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
 Migrating to CreateTypeSexes (20180910022103)
   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
   [1m[35m (0.3ms)[0m  CREATE TABLE "type_sexes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180910022103"]]
@@ -26,12 +33,18 @@ Migrating to CreateTypeSexes (20180910022103)
 =======
   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180910022103"]]
 >>>>>>> 23ee98ffab22eea22a68e6768386e2e9e5198a86
+=======
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180910022103"]]
+>>>>>>> ab29c9b68fbad6eded5e3a81517b8584d06ffc86
   [1m[35m (13.2ms)[0m  commit transaction
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
 
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ab29c9b68fbad6eded5e3a81517b8584d06ffc86
 Started GET "/" for 186.249.4.134 at 2018-09-11 00:22:50 +0000
 Cannot render console from 186.249.4.134! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
@@ -208,6 +221,7 @@ Started GET "/prm" for 200.187.179.73 at 2018-09-18 11:48:09 +0000
 Cannot render console from 200.187.179.73! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
 
 ActionController::RoutingError (No route matches [GET] "/prm"):
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 23ee98ffab22eea22a68e6768386e2e9e5198a86
@@ -365,6 +379,8 @@ ActionController::RoutingError (No route matches [GET] "/paciente"):
 >>>>>>> 23ee98ffab22eea22a68e6768386e2e9e5198a86
 =======
 >>>>>>> 23ee98ffab22eea22a68e6768386e2e9e5198a86
+=======
+>>>>>>> ab29c9b68fbad6eded5e3a81517b8584d06ffc86
   actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
   web-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
   web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
@@ -396,6 +412,9 @@ ActionController::RoutingError (No route matches [GET] "/paciente"):
   Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ab29c9b68fbad6eded5e3a81517b8584d06ffc86
   Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.6ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
@@ -406,6 +425,7 @@ Started GET "/PRM" for 200.187.179.73 at 2018-09-18 11:48:12 +0000
 Cannot render console from 200.187.179.73! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
 
 ActionController::RoutingError (No route matches [GET] "/PRM"):
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 23ee98ffab22eea22a68e6768386e2e9e5198a86
@@ -423,6 +443,8 @@ ActionController::RoutingError (No route matches [GET] "/pacient"):
 >>>>>>> 23ee98ffab22eea22a68e6768386e2e9e5198a86
 =======
 >>>>>>> 23ee98ffab22eea22a68e6768386e2e9e5198a86
+=======
+>>>>>>> ab29c9b68fbad6eded5e3a81517b8584d06ffc86
   actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
   web-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
   web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
@@ -454,6 +476,9 @@ ActionController::RoutingError (No route matches [GET] "/pacient"):
   Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ab29c9b68fbad6eded5e3a81517b8584d06ffc86
   Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.6ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
@@ -948,6 +973,7 @@ Processing by AttendancesController#index as HTML
   [1m[36mAttendance Load (0.2ms)[0m  [1mSELECT "attendances".* FROM "attendances"[0m
   Rendered attendances/index.html.erb within layouts/application (1.1ms)
 Completed 200 OK in 43ms (Views: 41.9ms | ActiveRecord: 0.2ms)
+<<<<<<< HEAD
 =======
   Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.1ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
@@ -2694,3 +2720,5 @@ Migrating to CreateAttendances (20180918121426)
 [0m
 =======
 >>>>>>> 23ee98ffab22eea22a68e6768386e2e9e5198a86
+=======
+>>>>>>> ab29c9b68fbad6eded5e3a81517b8584d06ffc86

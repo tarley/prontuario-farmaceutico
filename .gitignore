@@ -17,5 +17,6 @@
 !/log/.keep
 !/tmp/.keep
 /log
+/log/development.log
 # Ignore Byebug command history file.
 .byebug_history
