@@ -10,9 +10,9 @@ class CreatePharmacotherapies < ActiveRecord::Migration
       t.text :carePlan
       t.text :descriptionDisease
       
-      t.references :disease, foreign_key: true
-      t.references :attendance, foreign_key: true
-      t.references :prm_cause, foreign_key: true
+      t.references :disease, index: true, foreign_key: true
+      t.references :attendance, index: true, foreign_key: true
+      t.references :prm_cause, index: true, foreign_key: true
 
       t.timestamps null: false
     end

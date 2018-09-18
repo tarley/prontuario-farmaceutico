@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Ubs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ubs.each do |ub| %>
+      <tr>
+        <td><%= ub.description %></td>
+        <td><%= link_to 'Show', ub %></td>
+        <td><%= link_to 'Edit', edit_ub_path(ub) %></td>
+        <td><%= link_to 'Destroy', ub, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ub', new_ub_path %>
