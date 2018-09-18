@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Pacients</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Place attendence</th>
+      <th>Birth date</th>
+      <th>Years study</th>
+      <th>Genre</th>
+      <th>Marital status</th>
+      <th>Phone</th>
+      <th>Address</th>
+      <th>Services professional</th>
+      <th>Reason meeting</th>
+      <th>Cpf</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pacients.each do |pacient| %>
+      <tr>
+        <td><%= pacient.name %></td>
+        <td><%= pacient.place_attendence %></td>
+        <td><%= pacient.birth_date %></td>
+        <td><%= pacient.years_study %></td>
+        <td><%= pacient.genre %></td>
+        <td><%= pacient.marital_status %></td>
+        <td><%= pacient.phone %></td>
+        <td><%= pacient.address %></td>
+        <td><%= pacient.services_professional %></td>
+        <td><%= pacient.reason_meeting %></td>
+        <td><%= pacient.cpf %></td>
+        <td><%= link_to 'Show', pacient %></td>
+        <td><%= link_to 'Edit', edit_pacient_path(pacient) %></td>
+        <td><%= link_to 'Destroy', pacient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pacient', new_pacient_path %>

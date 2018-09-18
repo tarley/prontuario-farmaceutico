@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :service_accesses
+  resources :professions
+  resources :ubs
+  resources :pacients
   resources :type_sexes
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
