@@ -3,11 +3,14 @@ Rails.application.routes.draw do
   resources :professions
   resources :ubs
   resources :pacients
+<<<<<<< HEAD
   resources :attendances
   resources :prm_causes
   resources :pharmacotherapies
   resources :prms
   resources :diseases
+=======
+>>>>>>> 23ee98ffab22eea22a68e6768386e2e9e5198a86
   resources :type_sexes
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
