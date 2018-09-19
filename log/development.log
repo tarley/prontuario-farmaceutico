@@ -1314,3 +1314,358 @@ Processing by PacientsController#index as HTML
   [1m[35mPacient Load (1.2ms)[0m  SELECT "pacients".* FROM "pacients"
   Rendered pacients/index.html.erb within layouts/application (4.1ms)
 Completed 200 OK in 59ms (Views: 56.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 10.240.0.233 at 2018-09-19 17:17:39 +0000
+Cannot render console from 10.240.0.233! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/railties-4.2.5/lib/rails/templates/rails/welcome/index.html.erb (2.7ms)
+Completed 200 OK in 24ms (Views: 14.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pacients" for 10.240.0.118 at 2018-09-19 17:17:44 +0000
+Cannot render console from 10.240.0.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PacientsController#index as HTML
+  [1m[35mPacient Load (0.3ms)[0m  SELECT "pacients".* FROM "pacients"
+  Rendered pacients/index.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 362ms (Views: 353.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/professions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 10.240.0.233 at 2018-09-19 17:17:45 +0000
+Cannot render console from 10.240.0.233! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/scaffolds.self-d2e5ccad1506299feea3a35bfb7c525e101bb3b214303715deb675fdc539948b.css?body=1" for 10.240.0.233 at 2018-09-19 17:17:46 +0000
+Cannot render console from 10.240.0.233! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/type_sexes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 10.240.0.118 at 2018-09-19 17:17:46 +0000
+Cannot render console from 10.240.0.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/ubs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 10.240.0.233 at 2018-09-19 17:17:46 +0000
+Cannot render console from 10.240.0.233! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/service_accesses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 10.240.0.68 at 2018-09-19 17:17:46 +0000
+Cannot render console from 10.240.0.68! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-20e316b2d7c55b6f6cdf4bf0af6c25276f18fd1fb04496848123c4104b63cba5.css?body=1" for 10.240.0.118 at 2018-09-19 17:17:46 +0000
+Cannot render console from 10.240.0.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/pacients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 10.240.0.233 at 2018-09-19 17:17:46 +0000
+Cannot render console from 10.240.0.233! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 10.240.0.68 at 2018-09-19 17:17:46 +0000
+Cannot render console from 10.240.0.68! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 10.240.0.233 at 2018-09-19 17:17:46 +0000
+Cannot render console from 10.240.0.233! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 10.240.0.116 at 2018-09-19 17:17:46 +0000
+Cannot render console from 10.240.0.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/pacients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 10.240.1.21 at 2018-09-19 17:17:47 +0000
+Cannot render console from 10.240.1.21! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/professions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 10.240.1.21 at 2018-09-19 17:17:48 +0000
+Cannot render console from 10.240.1.21! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/service_accesses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 10.240.0.233 at 2018-09-19 17:17:48 +0000
+Cannot render console from 10.240.0.233! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/type_sexes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 10.240.0.68 at 2018-09-19 17:17:48 +0000
+Cannot render console from 10.240.0.68! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/ubs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 10.240.1.21 at 2018-09-19 17:17:49 +0000
+Cannot render console from 10.240.1.21! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 10.240.0.171 at 2018-09-19 17:17:49 +0000
+Cannot render console from 10.240.0.171! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/pacients/new" for 10.240.0.68 at 2018-09-19 17:19:15 +0000
+Cannot render console from 10.240.0.68! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PacientsController#new as HTML
+  [1m[36mProfession Load (0.4ms)[0m  [1mSELECT "professions".* FROM "professions"[0m
+  [1m[35mServiceAccess Load (0.1ms)[0m  SELECT "service_accesses".* FROM "service_accesses"
+  [1m[36mUb Load (0.1ms)[0m  [1mSELECT "ubs".* FROM "ubs"[0m
+  Rendered pacients/_form.html.erb (95.9ms)
+  Rendered pacients/new.html.erb within layouts/application (100.4ms)
+Completed 200 OK in 134ms (Views: 132.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/pacients" for 10.240.1.78 at 2018-09-19 17:19:40 +0000
+Cannot render console from 10.240.1.78! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PacientsController#index as HTML
+  [1m[35mPacient Load (0.3ms)[0m  SELECT "pacients".* FROM "pacients"
+  Rendered pacients/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 46ms (Views: 44.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pacients" for 10.240.1.21 at 2018-09-19 17:21:24 +0000
+Cannot render console from 10.240.1.21! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PacientsController#index as HTML
+  [1m[36mPacient Load (0.3ms)[0m  [1mSELECT "pacients".* FROM "pacients"[0m
+  Rendered pacients/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 29ms (Views: 27.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pacients/new" for 10.240.1.78 at 2018-09-19 17:21:28 +0000
+Cannot render console from 10.240.1.78! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PacientsController#new as HTML
+  [1m[35mProfession Load (0.2ms)[0m  SELECT "professions".* FROM "professions"
+  [1m[36mServiceAccess Load (0.1ms)[0m  [1mSELECT "service_accesses".* FROM "service_accesses"[0m
+  [1m[35mUb Load (0.1ms)[0m  SELECT "ubs".* FROM "ubs"
+  Rendered pacients/_form.html.erb (7.5ms)
+  Rendered pacients/new.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 34ms (Views: 33.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pacients/new" for 10.240.0.68 at 2018-09-19 17:22:46 +0000
+Cannot render console from 10.240.0.68! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PacientsController#new as HTML
+  [1m[36mProfession Load (0.2ms)[0m  [1mSELECT "professions".* FROM "professions"[0m
+  [1m[35mServiceAccess Load (0.1ms)[0m  SELECT "service_accesses".* FROM "service_accesses"
+  [1m[36mUb Load (0.1ms)[0m  [1mSELECT "ubs".* FROM "ubs"[0m
+  Rendered pacients/_form.html.erb (13.9ms)
+  Rendered pacients/new.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 57ms (Views: 45.1ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/pacients" for 10.240.0.116 at 2018-09-19 17:23:24 +0000
+Cannot render console from 10.240.0.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PacientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2sREjG2eJjYELe3HEN47Y/Mz/7ycLfzb9NM+qzEGa5WwaIfx5qis2o19+kn2ESNR+/TjUtBgebiER7RAh5uPNg==", "pacient"=>{"name"=>"gtrhtrhth", "place_attendence"=>"ghhghgjgj", "birth_date(1i)"=>"2014", "birth_date(2i)"=>"2", "birth_date(3i)"=>"4", "years_study"=>"10", "genre"=>"1", "marital_status"=>"2", "phone"=>"31988552211", "address"=>"grehhgjhg", "services_professional"=>"gfhgjghjhk", "reason_meeting"=>"grthjyujyujk", "cpf"=>"01845214520"}, "commit"=>"Create Pacient"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.2ms)
+
+NoMethodError (undefined method `nome' for #<Pacient:0x007f724d288978>
+Did you mean?  name):
+  app/controllers/pacients_controller.rb:39:in `block in create'
+  app/controllers/pacients_controller.rb:38:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (30.3ms)
+
+
+Started POST "/pacients" for 10.240.0.207 at 2018-09-19 17:26:15 +0000
+Cannot render console from 10.240.0.207! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PacientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2sREjG2eJjYELe3HEN47Y/Mz/7ycLfzb9NM+qzEGa5WwaIfx5qis2o19+kn2ESNR+/TjUtBgebiER7RAh5uPNg==", "pacient"=>{"name"=>"gtrhtrhth", "place_attendence"=>"ghhghgjgj", "birth_date(1i)"=>"2014", "birth_date(2i)"=>"2", "birth_date(3i)"=>"4", "years_study"=>"10", "genre"=>"1", "marital_status"=>"2", "phone"=>"31988552211", "address"=>"grehhgjhg", "services_professional"=>"gfhgjghjhk", "reason_meeting"=>"grthjyujyujk", "cpf"=>"01845214520"}, "commit"=>"Create Pacient"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mPacient Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pacients" WHERE "pacients"."cpf" = '01845214520' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mProfession Load (0.1ms)[0m  [1mSELECT "professions".* FROM "professions"[0m
+  [1m[35mServiceAccess Load (0.1ms)[0m  SELECT "service_accesses".* FROM "service_accesses"
+  [1m[36mUb Load (0.1ms)[0m  [1mSELECT "ubs".* FROM "ubs"[0m
+  Rendered pacients/_form.html.erb (12.7ms)
+  Rendered pacients/new.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 90ms (Views: 48.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/types_sexs" for 10.240.0.171 at 2018-09-19 17:29:32 +0000
+Cannot render console from 10.240.0.171! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [GET] "/types_sexs"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (45.7ms)
+
+
+Started GET "/type_sexes" for 10.240.1.60 at 2018-09-19 17:29:45 +0000
+Cannot render console from 10.240.1.60! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by TypeSexesController#index as HTML
+  [1m[35mTypeSex Load (0.2ms)[0m  SELECT "type_sexes".* FROM "type_sexes"
+  Rendered type_sexes/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 36ms (Views: 33.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/type_sexes/new" for 10.240.1.60 at 2018-09-19 17:29:48 +0000
+Cannot render console from 10.240.1.60! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by TypeSexesController#new as HTML
+  Rendered type_sexes/_form.html.erb (2.2ms)
+  Rendered type_sexes/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 35ms (Views: 31.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/type_sexes" for 10.240.0.231 at 2018-09-19 17:29:56 +0000
+Cannot render console from 10.240.0.231! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by TypeSexesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+3kgXi4H8m6fVy3WVBlyAyV5OafPc0gu7wzxfCl0JtKR1eMjpTF4ghYHOliy1moxLb4lSYM+zU2fmHuXn+nCcQ==", "type_sex"=>{"description"=>"Feminino"}, "commit"=>"Create Type sex"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTypeSex Exists (0.2ms)[0m  SELECT  1 AS one FROM "type_sexes" WHERE "type_sexes"."description" = 'Feminino' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "type_sexes" ("description", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["description", "Feminino"], ["created_at", "2018-09-19 17:29:56.478284"], ["updated_at", "2018-09-19 17:29:56.478284"]]
+  [1m[35m (13.6ms)[0m  commit transaction
+Redirected to http://prontuario-farmaceutico-gesleyevening.c9users.io:8080/type_sexes/1
+Completed 302 Found in 20ms (ActiveRecord: 14.3ms)
+
+
+Started GET "/type_sexes/1" for 10.240.1.78 at 2018-09-19 17:29:57 +0000
+Cannot render console from 10.240.1.78! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by TypeSexesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTypeSex Load (0.3ms)[0m  [1mSELECT  "type_sexes".* FROM "type_sexes" WHERE "type_sexes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered type_sexes/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 41ms (Views: 27.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/type_sexes" for 10.240.0.68 at 2018-09-19 17:29:59 +0000
+Cannot render console from 10.240.0.68! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by TypeSexesController#index as HTML
+  [1m[35mTypeSex Load (0.2ms)[0m  SELECT "type_sexes".* FROM "type_sexes"
+  Rendered type_sexes/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 33ms (Views: 31.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/type_sexes/new" for 10.240.1.21 at 2018-09-19 17:30:01 +0000
+Cannot render console from 10.240.1.21! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by TypeSexesController#new as HTML
+  Rendered type_sexes/_form.html.erb (1.4ms)
+  Rendered type_sexes/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 37ms (Views: 36.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/type_sexes" for 10.240.0.231 at 2018-09-19 17:30:08 +0000
+Cannot render console from 10.240.0.231! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by TypeSexesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"v1C6ykMCg4P/Pmu+Bg+9HvX8Qh5d6HQCc4d3/CXgze7V/Hm3yDQJb3ZufDDgwKUs/Tte8BGl8WEDE/0Xk30pTQ==", "type_sex"=>{"description"=>"Masculino"}, "commit"=>"Create Type sex"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTypeSex Exists (0.2ms)[0m  SELECT  1 AS one FROM "type_sexes" WHERE "type_sexes"."description" = 'Masculino' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "type_sexes" ("description", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["description", "Masculino"], ["created_at", "2018-09-19 17:30:08.760619"], ["updated_at", "2018-09-19 17:30:08.760619"]]
+  [1m[35m (13.4ms)[0m  commit transaction
+Redirected to http://prontuario-farmaceutico-gesleyevening.c9users.io:8080/type_sexes/2
+Completed 302 Found in 17ms (ActiveRecord: 13.9ms)
+
+
+Started GET "/type_sexes/2" for 10.240.0.68 at 2018-09-19 17:30:09 +0000
+Cannot render console from 10.240.0.68! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by TypeSexesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTypeSex Load (0.2ms)[0m  [1mSELECT  "type_sexes".* FROM "type_sexes" WHERE "type_sexes"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered type_sexes/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 30ms (Views: 28.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/type_sexes" for 10.240.1.60 at 2018-09-19 17:30:29 +0000
+Cannot render console from 10.240.1.60! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by TypeSexesController#index as HTML
+  [1m[35mTypeSex Load (0.2ms)[0m  SELECT "type_sexes".* FROM "type_sexes"
+  Rendered type_sexes/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 32ms (Views: 30.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/type_sexes/new" for 10.240.0.68 at 2018-09-19 17:31:29 +0000
+Cannot render console from 10.240.0.68! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by TypeSexesController#new as HTML
+  Rendered type_sexes/_form.html.erb (1.5ms)
+  Rendered type_sexes/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 31ms (Views: 30.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/type_sexes" for 10.240.0.207 at 2018-09-19 17:31:37 +0000
+Cannot render console from 10.240.0.207! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by TypeSexesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WveCf1mOl84SdedSiX6EYeBmrwYb9EQaDo8DN5NRA3owW0EC0rgdIpsl8NxvsZxT6KGz6Fe5wXl+G4ncJczn2Q==", "type_sex"=>{"description"=>"Outro"}, "commit"=>"Create Type sex"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mTypeSex Exists (0.2ms)[0m  SELECT  1 AS one FROM "type_sexes" WHERE "type_sexes"."description" = 'Outro' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "type_sexes" ("description", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["description", "Outro"], ["created_at", "2018-09-19 17:31:37.815379"], ["updated_at", "2018-09-19 17:31:37.815379"]]
+  [1m[35m (20.7ms)[0m  commit transaction
+Redirected to http://prontuario-farmaceutico-gesleyevening.c9users.io:8080/type_sexes/3
+Completed 302 Found in 25ms (ActiveRecord: 21.3ms)
+
+
+Started GET "/type_sexes/3" for 10.240.1.21 at 2018-09-19 17:31:55 +0000
+Cannot render console from 10.240.1.21! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by TypeSexesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTypeSex Load (0.2ms)[0m  [1mSELECT  "type_sexes".* FROM "type_sexes" WHERE "type_sexes"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered type_sexes/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 31ms (Views: 29.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/type_sexes" for 10.240.0.231 at 2018-09-19 17:32:07 +0000
+Cannot render console from 10.240.0.231! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by TypeSexesController#index as HTML
+  [1m[35mTypeSex Load (0.3ms)[0m  SELECT "type_sexes".* FROM "type_sexes"
+  Rendered type_sexes/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 34ms (Views: 32.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/professions" for 10.240.0.231 at 2018-09-19 17:32:35 +0000
+Cannot render console from 10.240.0.231! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfessionsController#index as HTML
+  [1m[36mProfession Load (0.2ms)[0m  [1mSELECT "professions".* FROM "professions"[0m
+  Rendered professions/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 39ms (Views: 38.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/professions/new" for 10.240.0.68 at 2018-09-19 17:33:25 +0000
+Cannot render console from 10.240.0.68! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfessionsController#new as HTML
+  Rendered professions/_form.html.erb (2.4ms)
+  Rendered professions/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 39ms (Views: 35.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/professions" for 10.240.0.231 at 2018-09-19 17:36:19 +0000
+Cannot render console from 10.240.0.231! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfessionsController#index as HTML
+  [1m[35mProfession Load (0.2ms)[0m  SELECT "professions".* FROM "professions"
+  Rendered professions/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 30ms (Views: 29.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/professions" for 10.240.2.147 at 2018-09-19 18:52:50 +0000
+Cannot render console from 10.240.2.147! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProfessionsController#index as HTML
+  [1m[35mProfession Load (0.2ms)[0m  SELECT "professions".* FROM "professions"
+  Rendered professions/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 273ms (Views: 261.7ms | ActiveRecord: 0.3ms)
