@@ -1,9 +1,11 @@
+<div class='container-fluid'>
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>Descrição:</strong>
   <%= @type_sex.description %>
 </p>
-
-<%= link_to 'Edit', edit_type_sex_path(@type_sex) %> |
-<%= link_to 'Back', type_sexes_path %>
+<br>
+<%= link_to 'Editar', edit_type_sex_path(@type_sex), :class => 'btn btn-primary' %> |
+<%= link_to 'Voltar', type_sexes_path, :class => 'btn btn-primary' %>
+</div>

@@ -13,4 +13,14 @@
  *= require_tree .
  *= require_self
  */
-@import 'bootstrap'
+@import "bootstrap-sprockets"; 
+@import "bootstrap"; 
+ 
+@import "gentelella";
+@import "gentelella-custom";
+
+
+
+body {
+    background: #ffffff;
+}
