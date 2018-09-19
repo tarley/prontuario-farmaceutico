@@ -15,6 +15,12 @@
     <%= f.label :description %><br>
     <%= f.text_field :description %>
   </div>
+  
+  <div class="field">
+    <%= f.label :prm_cause %><br>
+    <%= f.collection_select :prm_causes_id, PrmCause.all, :id, :description %>
+  </div>
+  
   <div class="actions">
     <%= f.submit %>
   </div>

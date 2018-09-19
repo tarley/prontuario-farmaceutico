@@ -1,4 +1,4 @@
-class PrMsController < ApplicationController
+class PrmsController < ApplicationController
   before_action :set_prm, only: [:show, :edit, :update, :destroy]
 
   # GET /prms
@@ -69,6 +69,7 @@ class PrMsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def prm_params
-      params.require(:prm).permit(:description)
+      params.require(:prm).permit(:description, :prm_causes)
     end
+    
 end
