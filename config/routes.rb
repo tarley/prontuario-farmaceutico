@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
 
+  #resources :prms
   resources :service_accesses
   resources :professions
   resources :ubs
   resources :pacients
 
+  
+    ###Rotas Atendimento
   resources :attendances
   resources :prm_causes
   resources :pharmacotherapies

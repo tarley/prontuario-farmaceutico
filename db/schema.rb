@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180918121426) do
+ActiveRecord::Schema.define(version: 20180919024248) do
 
   create_table "attendances", force: :cascade do |t|
     t.datetime "attendance_date"
@@ -80,9 +80,12 @@ ActiveRecord::Schema.define(version: 20180918121426) do
 
   create_table "prms", force: :cascade do |t|
     t.string   "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "prm_causes_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
+
+  add_index "prms", ["prm_causes_id"], name: "index_prms_on_prm_causes_id"
 
   create_table "professions", force: :cascade do |t|
     t.string   "description"
