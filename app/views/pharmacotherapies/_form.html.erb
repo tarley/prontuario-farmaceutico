@@ -1,0 +1,49 @@
+<%= form_for(@pharmacotherapy) do |f| %>
+  <% if @pharmacotherapy.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pharmacotherapy.errors.count, "error") %> prohibited this pharmacotherapy from being saved:</h2>
+
+      <ul>
+      <% @pharmacotherapy.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :medicine %><br>
+    <%= f.text_field :medicine %>
+  </div>
+  <div class="field">
+    <%= f.label :dosageSchedule %><br>
+    <%= f.text_field :dosageSchedule %>
+  </div>
+  <div class="field">
+    <%= f.label :safety %><br>
+    <%= f.text_field :safety %>
+  </div>
+  <div class="field">
+    <%= f.label :effectiveness %><br>
+    <%= f.text_field :effectiveness %>
+  </div>
+  <div class="field">
+    <%= f.label :useDificulty %><br>
+    <%= f.text_field :useDificulty %>
+  </div>
+  <div class="field">
+    <%= f.label :timeUse %><br>
+    <%= f.text_field :timeUse %>
+  </div>
+  <div class="field">
+    <%= f.label :carePlan %><br>
+    <%= f.text_area :carePlan %>
+  </div>
+  <div class="field">
+    <%= f.label :descriptionDisease %><br>
+    <%= f.text_field :descriptionDisease %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

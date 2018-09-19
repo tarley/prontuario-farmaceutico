@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Workspace</title>
+    <title>GesFar Newton</title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
@@ -26,15 +26,15 @@
                     <ul class="nav side-menu">
                       <li><a><i class="fa fa-home"></i>Menu</a>
                       </li>
-                      <li><a><i class="fa fa-user"></i>Paciente</a>
+                      <li><a href="/pacients"><i class="fa fa-user"></i>Paciente</a>
                       </li>
-                      <li><a><i class="fa fa-hospital-o"></i>Atendimento</a>
+                      <li><a href="/attendances"><i class="fa fa-hospital-o"></i>Atendimento</a>
                       </li>
-                      <li><a><i class="fa fa-heartbeat"></i>PRMs</a>
+                      <li><a href="/pr_ms"><i class="fa fa-heartbeat"></i>PRMs</a>
                       </li>
                       <li><a><i class="fa fa-user-md"></i>Usuário</a>
                       </li>
-                      <li><a><i class="fa fa-venus-mars"></i>Tipo sexo</a>
+                      <li><a href="/type_sexes"><i class="fa fa-venus-mars"></i>Tipo sexo</a>
                       </li>
                     </ul>
                 </div>

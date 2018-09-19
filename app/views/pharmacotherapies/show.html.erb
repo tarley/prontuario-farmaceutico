@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Medicine:</strong>
+  <%= @pharmacotherapy.medicine %>
+</p>
+
+<p>
+  <strong>Dosageschedule:</strong>
+  <%= @pharmacotherapy.dosageSchedule %>
+</p>
+
+<p>
+  <strong>Safety:</strong>
+  <%= @pharmacotherapy.safety %>
+</p>
+
+<p>
+  <strong>Effectiveness:</strong>
+  <%= @pharmacotherapy.effectiveness %>
+</p>
+
+<p>
+  <strong>Usedificulty:</strong>
+  <%= @pharmacotherapy.useDificulty %>
+</p>
+
+<p>
+  <strong>Timeuse:</strong>
+  <%= @pharmacotherapy.timeUse %>
+</p>
+
+<p>
+  <strong>Careplan:</strong>
+  <%= @pharmacotherapy.carePlan %>
+</p>
+
+<p>
+  <strong>Descriptiondisease:</strong>
+  <%= @pharmacotherapy.descriptionDisease %>
+</p>
+
+<%= link_to 'Edit', edit_pharmacotherapy_path(@pharmacotherapy) %> |
+<%= link_to 'Back', pharmacotherapies_path %>

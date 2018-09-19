@@ -1,0 +1,2 @@
+module PrMsHelper
+end
