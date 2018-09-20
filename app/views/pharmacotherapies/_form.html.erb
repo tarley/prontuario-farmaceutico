@@ -33,7 +33,7 @@
   </div>
   <div class="field">
     <%= f.label :timeUse %><br>
-    <%= f.text_field :timeUse %>
+    <%= f.number_field :timeUse %>
   </div>
   <div class="field">
     <%= f.label :carePlan %><br>
@@ -41,7 +41,11 @@
   </div>
   <div class="field">
     <%= f.label :descriptionDisease %><br>
-    <%= f.text_field :descriptionDisease %>
+    <%= f.text_area :descriptionDisease %>
+  </div>
+  <div class="field">
+    <%= f.label :treatment_id %><br>
+    <%= f.text_field :treatment_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

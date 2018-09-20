@@ -1,13 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>General screen:</strong>
+  <%= @attendance.general_screen %>
+</p>
+
+<p>
   <strong>Attendance date:</strong>
   <%= @attendance.attendance_date %>
 </p>
 
 <p>
-  <strong>General screen:</strong>
-  <%= @attendance.general_screen %>
+  <strong>Pacient:</strong>
+  <%= @attendance.pacient %>
 </p>
 
 <%= link_to 'Edit', edit_attendance_path(@attendance) %> |

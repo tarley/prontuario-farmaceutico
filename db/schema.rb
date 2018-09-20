@@ -11,19 +11,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180919024248) do
+ActiveRecord::Schema.define(version: 20180920141525) do
 
   create_table "attendances", force: :cascade do |t|
-    t.datetime "attendance_date"
     t.text     "general_screen"
+    t.datetime "attendance_date"
+    t.integer  "pacient_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
 
+  add_index "attendances", ["pacient_id"], name: "index_attendances_on_pacient_id"
+
+  create_table "care_plans", force: :cascade do |t|
+    t.string   "therapeutic_goal"
+    t.string   "conduct"
+    t.datetime "results_date"
+    t.text     "anothers_conduct"
+    t.integer  "pharmacotherapy_id"
+    t.integer  "prm_id"
+    t.integer  "sfc_id"
+    t.integer  "prmCause_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  add_index "care_plans", ["pharmacotherapy_id"], name: "index_care_plans_on_pharmacotherapy_id"
+  add_index "care_plans", ["prmCause_id"], name: "index_care_plans_on_prmCause_id"
+  add_index "care_plans", ["prm_id"], name: "index_care_plans_on_prm_id"
+  add_index "care_plans", ["sfc_id"], name: "index_care_plans_on_sfc_id"
+
   create_table "diseases", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "pacients", force: :cascade do |t|
@@ -58,16 +80,12 @@ ActiveRecord::Schema.define(version: 20180919024248) do
     t.integer  "timeUse"
     t.text     "carePlan"
     t.text     "descriptionDisease"
-    t.integer  "disease_id"
-    t.integer  "attendance_id"
-    t.integer  "prm_cause_id"
+    t.integer  "treatment_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
   end
 
-  add_index "pharmacotherapies", ["attendance_id"], name: "index_pharmacotherapies_on_attendance_id"
-  add_index "pharmacotherapies", ["disease_id"], name: "index_pharmacotherapies_on_disease_id"
-  add_index "pharmacotherapies", ["prm_cause_id"], name: "index_pharmacotherapies_on_prm_cause_id"
+  add_index "pharmacotherapies", ["treatment_id"], name: "index_pharmacotherapies_on_treatment_id"
 
   create_table "prm_causes", force: :cascade do |t|
     t.string   "description"
@@ -80,12 +98,9 @@ ActiveRecord::Schema.define(version: 20180919024248) do
 
   create_table "prms", force: :cascade do |t|
     t.string   "description"
-    t.integer  "prm_causes_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
-
-  add_index "prms", ["prm_causes_id"], name: "index_prms_on_prm_causes_id"
 
   create_table "professions", force: :cascade do |t|
     t.string   "description"
@@ -98,6 +113,22 @@ ActiveRecord::Schema.define(version: 20180919024248) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  create_table "sfcs", force: :cascade do |t|
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "treatments", force: :cascade do |t|
+    t.integer  "disease_id"
+    t.integer  "attendance_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "treatments", ["attendance_id"], name: "index_treatments_on_attendance_id"
+  add_index "treatments", ["disease_id"], name: "index_treatments_on_disease_id"
 
   create_table "type_sexes", force: :cascade do |t|
     t.string   "description"

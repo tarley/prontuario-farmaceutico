@@ -5,5 +5,10 @@
   <%= @disease.name %>
 </p>
 
+<p>
+  <strong>Description:</strong>
+  <%= @disease.description %>
+</p>
+
 <%= link_to 'Edit', edit_disease_path(@disease) %> |
 <%= link_to 'Back', diseases_path %>
