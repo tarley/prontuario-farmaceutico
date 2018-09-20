@@ -1,7 +1,7 @@
 <%= form_for(@attendance) do |f| %>
   <% if @attendance.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@attendance.errors.count, "error") %> prohibited this attendance from being saved:</h2>
+      <h2><%= pluralize(@attendance.errors.count, "error") %> Não foi possivel salvar esse registro:</h2>
 
       <ul>
       <% @attendance.errors.full_messages.each do |message| %>

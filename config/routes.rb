@@ -5,12 +5,6 @@ Rails.application.routes.draw do
   resources :professions
   resources :ubs
   resources :pacients
-<<<<<<< HEAD
-=======
-
-  
-    ###Rotas Atendimento
->>>>>>> 54ff9edea3d54451badb2a5bf1a8f7cde777015b
   resources :attendances
   resources :prm_causes
   resources :pharmacotherapies
@@ -21,7 +15,7 @@ Rails.application.routes.draw do
   get "/type_sexes" => redirect('https://gerfar-2-henriquebatista.c9users.io/type_sexes');
   get "/pacients" => redirect('https://gerfar-2-henriquebatista.c9users.io/pacients');
   get "/prm_causes" => redirect('https://gerfar-2-henriquebatista.c9users.io/prm_causes');
-  get "/pr_ms" => redirect('https://gerfar-2-henriquebatista.c9users.io/pr_ms');
+  get "/prms" => redirect('https://gerfar-2-henriquebatista.c9users.io/prms');
   get "/attendances" => redirect('https://gerfar-2-henriquebatista.c9users.io/attendances');
   
   

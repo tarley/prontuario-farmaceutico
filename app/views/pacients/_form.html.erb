@@ -1,7 +1,7 @@
 <%= form_for(@pacient) do |f| %>
   <% if @pacient.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@pacient.errors.count, "error") %> prohibited this pacient from being saved:</h2>
+      <h2><%= pluralize(@pacient.errors.count, "error") %> Não foi possivel salvar esse registro:</h2>
 
       <ul>
       <% @pacient.errors.full_messages.each do |message| %>
@@ -11,72 +11,111 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-2">
+      <div class="field">
+        <h4>Nome:</h4>
+        <%= f.text_field :name %>
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <div class="field">
+        <h4>Lugar de atendimento:</h4>
+        <%= f.text_field :place_attendence %>
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <div class="field">
+        <h4>Data de nascimento:</h4>
+        <%= f.date_select :birth_date %>
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <div class="field">
+        <h4>Anos de estudo:</h4>
+        <%= f.number_field :years_study %>
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <div class="field">
+        <h4>Sexo:</h4>
+        <%= f.number_field :genre %>
+      </div>
+    </div>
+    <div class="col-sm-2"></div>
   </div>
-  <div class="field">
-    <%= f.label :place_attendence %><br>
-    <%= f.text_field :place_attendence %>
+</div>
+  <br>
+<div class="container">
+  <div clas="row">
+    <div class="col-sm-2">
+      <div class="field">
+        <h4>Telefone:</h4>
+        <%= f.text_field :phone %>
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <div class="field">
+        <h4>Endereço:</h4>
+        <%= f.text_field :address %>
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <div class="field">
+        <h4>Estado civil:</h4>
+        <%= f.number_field :marital_status %>
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <div class="field">
+        <h4>Motivo da consulta:</h4>
+        <%= f.text_area :reason_meeting %>
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <div class="field">
+        <h4>CPF:</h4>
+        <%= f.text_field :cpf %>
+      </div>
+    </div>
+    <div class="col-sm-2"></div>
   </div>
-  <div class="field">
-    <%= f.label :birth_date %><br>
-    <%= f.date_select :birth_date %>
+</div>
+  <br>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-2">
+      <div class="field">
+        <h4>Profissional serviço:</h4>
+        <%= f.text_field :services_professional %>
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <div class="field">
+        <h4>Profissão:</h4>
+        <%= f.collection_select :profession_id, Profession.all, :id, :description %>
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <div class="field">
+        <h4>Acesso ao serviço:</h4>
+        <%= f.collection_select :service_access_id, ServiceAccess.all, :id, :description %>
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <div class="field">
+        <h4>UB:</h4>
+        <%= f.collection_select :ub_id, Ub.all, :id, :description %>
+      </div>
+    </div>
+    <div class="col-sm-2"></div>
+    <div class="col-sm-2"></div>
   </div>
-  <div class="field">
-    <%= f.label :years_study %><br>
-    <%= f.number_field :years_study %>
-  </div>
-  <div class="field">
-    <%= f.label :genre %><br>
-    <%= f.number_field :genre %>
-  </div>
-  <div class="field">
-    <%= f.label :marital_status %><br>
-    <%= f.number_field :marital_status %>
-  </div>
-  <div class="field">
-    <%= f.label :phone %><br>
-    <%= f.text_field :phone %>
-  </div>
-  <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_field :address %>
-  </div>
-  <div class="field">
-    <%= f.label :services_professional %><br>
-    <%= f.text_field :services_professional %>
-  </div>
-  <div class="field">
-    <%= f.label :reason_meeting %><br>
-    <%= f.text_area :reason_meeting %>
-  </div>
-  <div class="field">
-    <%= f.label :cpf %><br>
-    <%= f.text_field :cpf %>
-  </div>
+</div>
 
-  <div class="field">
-    <%= f.label :profession %><br>
-    <%= f.collection_select :profession_id, Profession.all, :id, :description %>
-    
-    <!-- %= form_tag(professions_path, :method => :get) do % -->
-      <!-- %= text_field_tag 'pesquisa', nil, placeholder: 'Buscar Profissão' % -->
-      <!-- %= submit_tag "Pesquisar"% -->
-    <!-- % end % -->
-  </div>
-  
-  <div class="field">
-    <%= f.label :service_access %><br>
-    <%= f.collection_select :service_access_id, ServiceAccess.all, :id, :description %>
-  </div>
-  <div class="field">
-    <%= f.label :ub %><br>
-    <%= f.collection_select :ub_id, Ub.all, :id, :description %>
-  </div>
-  
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Salvar', :class => 'btn btn-success' %>
   </div>
   
 <% end %>

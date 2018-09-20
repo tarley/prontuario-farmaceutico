@@ -1,9 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>Descrição:</strong>
   <%= @profession.description %>
 </p>
 
-<%= link_to 'Edit', edit_profession_path(@profession) %> |
-<%= link_to 'Back', professions_path %>
+<%= link_to 'Editar', edit_profession_path(@profession), :class => 'btn btn-primary' %> | <%= link_to 'Voltar', professions_path, :class => 'btn btn-primary' %>
