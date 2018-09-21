@@ -6,9 +6,10 @@ one:
   safety: MyString
   effectiveness: MyString
   useDificulty: MyString
-  timeUse: 
+  timeUse: 1
   carePlan: MyText
-  descriptionDisease: 
+  descriptionDisease: MyText
+  treatment_id: 
 
 two:
   medicine: MyString
@@ -16,6 +17,7 @@ two:
   safety: MyString
   effectiveness: MyString
   useDificulty: MyString
-  timeUse: 
+  timeUse: 1
   carePlan: MyText
-  descriptionDisease: 
+  descriptionDisease: MyText
+  treatment_id: 

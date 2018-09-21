@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Therapeutic goal:</strong>
+  <%= @care_plan.therapeutic_goal %>
+</p>
+
+<p>
+  <strong>Conduct:</strong>
+  <%= @care_plan.conduct %>
+</p>
+
+<p>
+  <strong>Results date:</strong>
+  <%= @care_plan.results_date %>
+</p>
+
+<p>
+  <strong>Anothers conduct:</strong>
+  <%= @care_plan.anothers_conduct %>
+</p>
+
+<p>
+  <strong>Pharmacotherapy:</strong>
+  <%= @care_plan.pharmacotherapy %>
+</p>
+
+<p>
+  <strong>Prm:</strong>
+  <%= @care_plan.prm %>
+</p>
+
+<p>
+  <strong>Sfc:</strong>
+  <%= @care_plan.sfc %>
+</p>
+
+<p>
+  <strong>Prmcause:</strong>
+  <%= @care_plan.prmCause %>
+</p>
+
+<%= link_to 'Edit', edit_care_plan_path(@care_plan) %> |
+<%= link_to 'Back', care_plans_path %>
