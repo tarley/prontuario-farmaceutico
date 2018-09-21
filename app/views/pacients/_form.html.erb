@@ -25,6 +25,7 @@
         <div class="panel-body">
           <form class="form-horizontal row-border" action="#">
             <div class="form-group">
+              
               <label class="col-md-2 control-label">Motivo da consulta:</label>
                 <div class="col-md-10">
                   <%= f.text_area :reason_meeting, :class => "form-control"%>
@@ -93,6 +94,7 @@
                   <%= f.collection_select :ub_id, Ub.all, :id, :description, :class => "form-control"%>
                 </div>
                 
+
             </div>
           </form>
         </div>
