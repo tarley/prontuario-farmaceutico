@@ -1,19 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>General screen:</strong>
-  <%= @attendance.general_screen %>
-</p>
-
-<p>
-  <strong>Attendance date:</strong>
+  <strong>Data do atendimento: </strong>
   <%= @attendance.attendance_date %>
 </p>
 
 <p>
-  <strong>Pacient:</strong>
-  <%= @attendance.pacient %>
+  <strong>Tela geral: </strong>
+  <%= @attendance.general_screen %>
 </p>
 
-<%= link_to 'Edit', edit_attendance_path(@attendance) %> |
-<%= link_to 'Back', attendances_path %>
+<%= link_to 'Editar', edit_attendance_path(@attendance), :class => 'btn btn-primary' %> | <%= link_to 'Voltar', attendances_path, :class => 'btn btn-primary' %>
+

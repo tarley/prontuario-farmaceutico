@@ -1,17 +1,17 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Medicine:</strong>
+  <strong>Medicamento:</strong>
   <%= @pharmacotherapy.medicine %>
 </p>
 
 <p>
-  <strong>Dosageschedule:</strong>
+  <strong>Dosagem:</strong>
   <%= @pharmacotherapy.dosageSchedule %>
 </p>
 
 <p>
-  <strong>Safety:</strong>
+  <strong>Segurança:</strong>
   <%= @pharmacotherapy.safety %>
 </p>
 
@@ -40,10 +40,5 @@
   <%= @pharmacotherapy.descriptionDisease %>
 </p>
 
-<p>
-  <strong>Treatment:</strong>
-  <%= @pharmacotherapy.treatment %>
-</p>
-
-<%= link_to 'Edit', edit_pharmacotherapy_path(@pharmacotherapy) %> |
-<%= link_to 'Back', pharmacotherapies_path %>
+<%= link_to 'Editar', edit_pharmacotherapy_path(@pharmacotherapy), :class => 'btn btn-primary' %> |
+<%= link_to 'Voltar', pharmacotherapies_path, :class => 'btn btn-primary' %>

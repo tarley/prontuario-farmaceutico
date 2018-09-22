@@ -1,14 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>Descrição:</strong>
   <%= @prm_cause.description %>
 </p>
 
-<p>
-  <strong>Prm:</strong>
-  <%= @prm_cause.prm %>
-</p>
-
-<%= link_to 'Edit', edit_prm_cause_path(@prm_cause) %> |
-<%= link_to 'Back', prm_causes_path %>
+<%= link_to 'Editar', edit_prm_cause_path(@prm_cause), :class => 'btn btn-primary' %> | <%= link_to 'Voltar', prm_causes_path, :class => 'btn btn-primary' %>
