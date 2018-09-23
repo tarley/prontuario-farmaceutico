@@ -16,6 +16,8 @@ Banco de dados
 
 Rodar servidor do Rails
 - rails server -b $IP -p $PORT
+<<<<<<< HEAD
+=======
 - 
 
 -----------------------------
@@ -43,6 +45,7 @@ rails generate scaffold PrmCause description:string prm:references
 
 -> PRM
 rails generate scaffold Prm description:string
+>>>>>>> a422148ef7cd99460b7aefcaad7df5a45b4c518e
 
 ---------------------------------------------------------------
 
@@ -79,4 +82,8 @@ https://www.google.com.br/search?ei=nDehW92kN4mSwgSk76vgDQ&q=criar+campo+autocom
 Usando chosen para campo Autocomplete
 
 - https://translate.google.com.br/translate?hl=pt-BR&sl=en&u=https://github.com/tsechingho/chosen-rails&prev=search
+<<<<<<< HEAD
 - https://github.com/tsechingho/chosen-rails
+=======
+- https://github.com/tsechingho/chosen-rails
+>>>>>>> a422148ef7cd99460b7aefcaad7df5a45b4c518e
