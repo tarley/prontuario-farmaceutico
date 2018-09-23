@@ -1,0 +1,8 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Descrição:</strong>
+  <%= @prm.description %>
+</p>
+
+<%= link_to 'Editar', edit_prm_path(@prm), :class => 'btn btn-primary' %> | <%= link_to 'Voltar', prms_path, :class => 'btn btn-primary' %>

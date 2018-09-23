@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Treatments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Disease</th>
+      <th>Attendance</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @treatments.each do |treatment| %>
+      <tr>
+        <td><%= treatment.disease %></td>
+        <td><%= treatment.attendance %></td>
+        <td><%= link_to 'Show', treatment %></td>
+        <td><%= link_to 'Edit', edit_treatment_path(treatment) %></td>
+        <td><%= link_to 'Destroy', treatment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Treatment', new_treatment_path %>

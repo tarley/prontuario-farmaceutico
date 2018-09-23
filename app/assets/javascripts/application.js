@@ -13,4 +13,16 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap
 //= require_tree .
+//= require gentelella
+//= require gentelella-custom
+
+/**
+ * Resize function without multiple trigger
+ *
+ * Usage:
+ * $(window).smartresize(function(){
+ *     // code here
+ * });
+ */

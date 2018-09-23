@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Prm Causes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Prm</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @prm_causes.each do |prm_cause| %>
+      <tr>
+        <td><%= prm_cause.description %></td>
+        <td><%= prm_cause.prm %></td>
+        <td><%= link_to 'Show', prm_cause %></td>
+        <td><%= link_to 'Edit', edit_prm_cause_path(prm_cause) %></td>
+        <td><%= link_to 'Destroy', prm_cause, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Prm cause', new_prm_cause_path %>

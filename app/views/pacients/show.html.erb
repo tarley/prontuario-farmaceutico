@@ -1,59 +1,58 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Nome:</strong>
   <%= @pacient.name %>
 </p>
 
 <p>
-  <strong>Place attendence:</strong>
+  <strong>Lugar de atendimento:</strong>
   <%= @pacient.place_attendence %>
 </p>
 
 <p>
-  <strong>Birth date:</strong>
+  <strong>Data de nascimento:</strong>
   <%= @pacient.birth_date %>
 </p>
 
 <p>
-  <strong>Years study:</strong>
+  <strong>Anos de estudo:</strong>
   <%= @pacient.years_study %>
 </p>
 
 <p>
-  <strong>Genre:</strong>
+  <strong>Sexo:</strong>
   <%= @pacient.genre %>
 </p>
 
 <p>
-  <strong>Marital status:</strong>
+  <strong>Estado civil:</strong>
   <%= @pacient.marital_status %>
 </p>
 
 <p>
-  <strong>Phone:</strong>
+  <strong>Telefone:</strong>
   <%= @pacient.phone %>
 </p>
 
 <p>
-  <strong>Address:</strong>
+  <strong>Endereço:</strong>
   <%= @pacient.address %>
 </p>
 
 <p>
-  <strong>Services professional:</strong>
+  <strong>Profissional serviço:</strong>
   <%= @pacient.services_professional %>
 </p>
 
 <p>
-  <strong>Reason meeting:</strong>
+  <strong>Motivo da consulta:</strong>
   <%= @pacient.reason_meeting %>
 </p>
 
 <p>
-  <strong>Cpf:</strong>
+  <strong>CPF:</strong>
   <%= @pacient.cpf %>
 </p>
 
-<%= link_to 'Edit', edit_pacient_path(@pacient) %> |
-<%= link_to 'Back', pacients_path %>
+<%= link_to 'Editar', edit_pacient_path(@pacient), :class => 'btn btn-primary' %> | <%= link_to 'Voltar', pacients_path, :class => 'btn btn-primary' %>
