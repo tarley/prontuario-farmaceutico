@@ -18,7 +18,7 @@ class PharmacotherapiesControllerTest < ActionController::TestCase
 
   test "should create pharmacotherapy" do
     assert_difference('Pharmacotherapy.count') do
-      post :create, pharmacotherapy: { carePlan: @pharmacotherapy.carePlan, descriptionDisease: @pharmacotherapy.descriptionDisease, dosageSchedule: @pharmacotherapy.dosageSchedule, effectiveness: @pharmacotherapy.effectiveness, medicine: @pharmacotherapy.medicine, safety: @pharmacotherapy.safety, timeUse: @pharmacotherapy.timeUse, useDificulty: @pharmacotherapy.useDificulty }
+      post :create, pharmacotherapy: { carePlan: @pharmacotherapy.carePlan, descriptionDisease: @pharmacotherapy.descriptionDisease, dosageSchedule: @pharmacotherapy.dosageSchedule, effectiveness: @pharmacotherapy.effectiveness, medicine: @pharmacotherapy.medicine, safety: @pharmacotherapy.safety, timeUse: @pharmacotherapy.timeUse, treatment_id: @pharmacotherapy.treatment_id, useDificulty: @pharmacotherapy.useDificulty }
     end
 
     assert_redirected_to pharmacotherapy_path(assigns(:pharmacotherapy))
@@ -35,7 +35,7 @@ class PharmacotherapiesControllerTest < ActionController::TestCase
   end
 
   test "should update pharmacotherapy" do
-    patch :update, id: @pharmacotherapy, pharmacotherapy: { carePlan: @pharmacotherapy.carePlan, descriptionDisease: @pharmacotherapy.descriptionDisease, dosageSchedule: @pharmacotherapy.dosageSchedule, effectiveness: @pharmacotherapy.effectiveness, medicine: @pharmacotherapy.medicine, safety: @pharmacotherapy.safety, timeUse: @pharmacotherapy.timeUse, useDificulty: @pharmacotherapy.useDificulty }
+    patch :update, id: @pharmacotherapy, pharmacotherapy: { carePlan: @pharmacotherapy.carePlan, descriptionDisease: @pharmacotherapy.descriptionDisease, dosageSchedule: @pharmacotherapy.dosageSchedule, effectiveness: @pharmacotherapy.effectiveness, medicine: @pharmacotherapy.medicine, safety: @pharmacotherapy.safety, timeUse: @pharmacotherapy.timeUse, treatment_id: @pharmacotherapy.treatment_id, useDificulty: @pharmacotherapy.useDificulty }
     assert_redirected_to pharmacotherapy_path(assigns(:pharmacotherapy))
   end
 

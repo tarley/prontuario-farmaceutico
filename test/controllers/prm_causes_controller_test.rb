@@ -18,7 +18,7 @@ class PrmCausesControllerTest < ActionController::TestCase
 
   test "should create prm_cause" do
     assert_difference('PrmCause.count') do
-      post :create, prm_cause: { description: @prm_cause.description }
+      post :create, prm_cause: { description: @prm_cause.description, prm_id: @prm_cause.prm_id }
     end
 
     assert_redirected_to prm_cause_path(assigns(:prm_cause))
@@ -35,7 +35,7 @@ class PrmCausesControllerTest < ActionController::TestCase
   end
 
   test "should update prm_cause" do
-    patch :update, id: @prm_cause, prm_cause: { description: @prm_cause.description }
+    patch :update, id: @prm_cause, prm_cause: { description: @prm_cause.description, prm_id: @prm_cause.prm_id }
     assert_redirected_to prm_cause_path(assigns(:prm_cause))
   end
 

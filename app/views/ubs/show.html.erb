@@ -1,9 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>Descrição:</strong>
   <%= @ub.description %>
 </p>
 
-<%= link_to 'Edit', edit_ub_path(@ub) %> |
-<%= link_to 'Back', ubs_path %>
+<%= link_to 'Editar', edit_ub_path(@ub), :class => 'btn btn-primary' %> | <%= link_to 'Voltar', ubs_path, :class => 'btn btn-primary' %>

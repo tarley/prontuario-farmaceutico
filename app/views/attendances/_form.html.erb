@@ -1,7 +1,7 @@
 <%= form_for(@attendance) do |f| %>
   <% if @attendance.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@attendance.errors.count, "error") %> prohibited this attendance from being saved:</h2>
+      <h2><%= pluralize(@attendance.errors.count, "error") %> Não foi possivel salvar esse registro:</h2>
 
       <ul>
       <% @attendance.errors.full_messages.each do |message| %>
@@ -11,24 +11,19 @@
     </div>
   <% end %>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="field">
-          <h4>Data do atendimento: </h4>
-          <%= f.datetime_select :attendance_date %>
-        </div><br>
-      </div>
-      <div class="col-sm-6">
-        <div class="field">
-          <h4>Tela geral: </h4>
-          <%= f.text_area :general_screen %>
-        </div><br>      
-      </div>
-    </div>
+  <div class="field">
+    <%= f.label :general_screen %><br>
+    <%= f.text_area :general_screen %>
   </div>
-  
+  <div class="field">
+    <%= f.label :attendance_date %><br>
+    <%= f.datetime_select :attendance_date %>
+  </div>
+  <div class="field">
+    <%= f.label :pacient_id %><br>
+    <%= f.text_field :pacient_id %>
+  </div>
   <div class="actions">
-     <%= f.submit 'Salvar', :class => 'btn btn-success'%>
+    <%= f.submit %>
   </div>
 <% end %>

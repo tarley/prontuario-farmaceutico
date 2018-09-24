@@ -69,6 +69,6 @@ class AttendancesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def attendance_params
-      params.require(:attendance).permit(:attendance_date, :general_screen)
+      params.require(:attendance).permit(:general_screen, :attendance_date, :pacient_id)
     end
 end

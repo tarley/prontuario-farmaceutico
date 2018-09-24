@@ -69,6 +69,6 @@ class PrmCausesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def prm_cause_params
-      params.require(:prm_cause).permit(:description)
+      params.require(:prm_cause).permit(:description, :prm_id)
     end
 end
