@@ -20,6 +20,9 @@ gem 'bootstrap-sass'
 #Utilizando gentelella
 gem 'gentelella-rails'
 
+#Trabalhando com formatação de data
+gem 'jquery-ui-rails'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
