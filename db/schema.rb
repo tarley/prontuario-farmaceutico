@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20180924005855) do
-=======
-ActiveRecord::Schema.define(version: 20180920141525) do
->>>>>>> 7da2fcf7455778f61a7ba398e2ee547804cea5ed
 
   create_table "attendances", force: :cascade do |t|
     t.text     "general_screen"
@@ -151,9 +147,18 @@ ActiveRecord::Schema.define(version: 20180920141525) do
     t.string   "name"
     t.string   "password"
     t.integer  "profile"
+    t.integer  "name_id"
+    t.integer  "password_id"
+    t.integer  "email_id"
+    t.integer  "profile_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "password_digest"
   end
+
+  add_index "users", ["email_id"], name: "index_users_on_email_id"
+  add_index "users", ["name_id"], name: "index_users_on_name_id"
+  add_index "users", ["password_id"], name: "index_users_on_password_id"
+  add_index "users", ["profile_id"], name: "index_users_on_profile_id"
 
 end
