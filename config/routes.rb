@@ -1,16 +1,15 @@
 Rails.application.routes.draw do
 
+  resources :users
   #resources :prms
   resources :service_accesses
   resources :professions
   resources :ubs
   resources :pacients
-<<<<<<< HEAD
-=======
+
 
   
     ###Rotas Atendimento
->>>>>>> 54ff9edea3d54451badb2a5bf1a8f7cde777015b
   resources :attendances
   resources :prm_causes
   resources :pharmacotherapies
