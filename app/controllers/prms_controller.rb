@@ -4,7 +4,11 @@ class PrmsController < ApplicationController
   # GET /prms
   # GET /prms.json
   def index
-    @prms = Prm.all
+    if params[:pesquisa]
+      @prms = Prm.pesquisa(params[:pesquisa])
+    else
+      @prms = Prm.all
+    end
   end
 
   # GET /prms/1
