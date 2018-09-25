@@ -16,6 +16,36 @@ Banco de dados
 
 Rodar servidor do Rails
 - rails server -b $IP -p $PORT
+<<<<<<< HEAD
+=======
+- 
+
+-----------------------------
+2. Gerando as tabelas
+-> atendimentos 
+rails generate scaffold Attendance general_screen:text attendance_date:datetime pacient:references
+
+-> Tratamento
+rails generate scaffold Treatment disease:references attendance:references
+
+-> Plano de Cuidados
+rails generate scaffold CarePlan therapeutic_goal:string conduct:string results_date:datetime anothers_conduct:text pharmacotherapy:references prm:references sfc:references prmCause:references 
+
+-> SFC
+rails generate scaffold Sfc description:text
+
+-> Doenças
+rails generate scaffold Disease name:string description:text
+
+-> Farmacoterapia
+rails generate scaffold Pharmacotherapy medicine:string dosageSchedule:string safety:string effectiveness:string useDificulty:string timeUse:integer carePlan:text descriptionDisease:text treatment:references
+
+-> Causas do PRM
+rails generate scaffold PrmCause description:string prm:references
+
+-> PRM
+rails generate scaffold Prm description:string
+>>>>>>> a422148ef7cd99460b7aefcaad7df5a45b4c518e
 
 ----------------------------------------
 
@@ -67,4 +97,8 @@ https://www.google.com.br/search?ei=nDehW92kN4mSwgSk76vgDQ&q=criar+campo+autocom
 Usando chosen para campo Autocomplete
 
 - https://translate.google.com.br/translate?hl=pt-BR&sl=en&u=https://github.com/tsechingho/chosen-rails&prev=search
+<<<<<<< HEAD
 - https://github.com/tsechingho/chosen-rails
+=======
+- https://github.com/tsechingho/chosen-rails
+>>>>>>> a422148ef7cd99460b7aefcaad7df5a45b4c518e

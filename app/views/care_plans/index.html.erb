@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Care Plans</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Therapeutic goal</th>
+      <th>Conduct</th>
+      <th>Results date</th>
+      <th>Anothers conduct</th>
+      <th>Pharmacotherapy</th>
+      <th>Prm</th>
+      <th>Sfc</th>
+      <th>Prmcause</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @care_plans.each do |care_plan| %>
+      <tr>
+        <td><%= care_plan.therapeutic_goal %></td>
+        <td><%= care_plan.conduct %></td>
+        <td><%= care_plan.results_date %></td>
+        <td><%= care_plan.anothers_conduct %></td>
+        <td><%= care_plan.pharmacotherapy %></td>
+        <td><%= care_plan.prm %></td>
+        <td><%= care_plan.sfc %></td>
+        <td><%= care_plan.prmCause %></td>
+        <td><%= link_to 'Show', care_plan %></td>
+        <td><%= link_to 'Edit', edit_care_plan_path(care_plan) %></td>
+        <td><%= link_to 'Destroy', care_plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Care plan', new_care_plan_path %>

@@ -1,0 +1,6 @@
+VALIDAÇÃO DE CAMPOS
+https://guides.rubyonrails.org/active_record_validations.html 
+
+
+MULT INPUTS PARA CADASTRO DO ATENDIMENTO
+https://medium.com/@dmccoy/how-to-build-html-inputs-to-submit-an-array-of-hashes-with-a-rails-form-tag-that-work-with-strong-f70a6c03d78e
