@@ -85,3 +85,5 @@ class PacientsController < ApplicationController
                                       :reason_meeting, :cpf, :profession, :service_access, :ub)
     end
 end
+
+
