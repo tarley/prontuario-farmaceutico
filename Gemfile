@@ -20,8 +20,12 @@ gem 'bootstrap-sass'
 #Utilizando gentelella
 gem 'gentelella-rails'
 
+<<<<<<< HEAD
 #Trabalhando com formatação de data
 gem 'jquery-ui-rails'
+=======
+gem 'bcrypt', '~> 3.1', '>= 3.1.11'
+>>>>>>> a23ab73239c5173a6c03210da0abf78218329f84
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
