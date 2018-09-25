@@ -11,19 +11,50 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :general_screen %><br>
-    <%= f.text_area :general_screen %>
+<div class="container">
+  
+  <!-- Row start -->
+  <div class="row">
+    <div class="col-md-12 col-sm-6 col-xs-12">
+      <div class="panel panel-default">
+        <div class="panel-heading clearfix">
+          <i class="icon-calendar"></i>
+          <h3 class="panel-title">Informações do paciente</h3>
+        </div>
+       
+        <div class="panel-body">
+          <form class="form-horizontal row-border" action="#">
+            <div class="form-group">
+              
+              <label class="col-md-2 control-label">Descricao:</label>
+                <div class="col-md-10">
+                  <%= f.text_area :general_screen, :class => "form-control"%>
+                </div>
+              
+              <label class="col-md-2 control-label">Data Atendimento:</label>
+                <div class="col-md-4">
+                  <%= f.datetime_select :attendance_date, :class => "form-control"%>
+                </div>
+              <label class="col-md-2 control-label">Paciente:</label>
+                <div class="col-md-4">
+                  <%= f.text_field :pacient_id, :class => "form-control"%>
+                </div>
+                
+              
+              
+                
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :attendance_date %><br>
-    <%= f.datetime_select :attendance_date %>
+  <!-- Row end -->
+</div>
+
+ <div class="actions" style="float:right">
+    <%= f.submit 'Salvar', :class => 'btn btn-sucess' %>
   </div>
-  <div class="field">
-    <%= f.label :pacient_id %><br>
-    <%= f.text_field :pacient_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  
 <% end %>
