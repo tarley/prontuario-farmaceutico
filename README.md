@@ -7,3 +7,17 @@ O sistema tem como objetivo atender a demanda da Escola e Clínica de Farmácia 
 ## Índice
 
 Em breve...
+
+#### Comandos GIT
+
+git checkout "branch"
+
+git add *
+
+git commit -am "first commit"
+
+git push
+
+git pull
+
+git status

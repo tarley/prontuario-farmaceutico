@@ -1,9 +1,9 @@
-## Comandos Rails
+## Comandos Rails Equipe Quasenada
 
 Instalar gems
 - bundle install
 
------------------
+--------------------------------
 
 Banco de dados
 1. Criar o BD:
@@ -12,12 +12,10 @@ Banco de dados
 2. Migrar as tabelas do BD:
 - rake db:migrate
 
-----------------------------
+-------------------------------
 
 Rodar servidor do Rails
 - rails server -b $IP -p $PORT
-<<<<<<< HEAD
-=======
 - 
 
 -----------------------------
@@ -40,14 +38,22 @@ rails generate scaffold Disease name:string description:text
 -> Farmacoterapia
 rails generate scaffold Pharmacotherapy medicine:string dosageSchedule:string safety:string effectiveness:string useDificulty:string timeUse:integer carePlan:text descriptionDisease:text treatment:references
 
+
 -> Causas do PRM
 rails generate scaffold PrmCause description:string prm:references
 
 -> PRM
 rails generate scaffold Prm description:string
->>>>>>> a422148ef7cd99460b7aefcaad7df5a45b4c518e
 
----------------------------------------------------------------
+
+-> Causas do PRM
+rails generate scaffold PrmCause description:string prm:references
+
+-> PRM
+rails generate scaffold Prm description:string
+
+
+----------------------------------------
 
 População do BD (Tasks)
 
@@ -56,18 +62,33 @@ População do BD (Tasks)
 1. Criação de Profissões
 - rake db:create_professions
 
-2. 
 
-----------------------------------
-Trocando de Branch e dando Merge
+----------------------------------------------
+
+Comandos Git / Trocar de Branch / Fazer Merge
 
 * Rodar no terminal os comandos abaixo:
 
-1. Trocando de Branch
+1. Enviar modificações para o GitHub
+- git status
+- git add *
+- git commit -m "Comentário"
+- git push origin quasenada
 
+2. Trocar de Branch
 - git checkout quasenada
+ou
+- git checkout master
 
----------------------------------------------------------------
+3. Fazer merge
+- git checkout master
+- git merge quasenada
+
+4. Puxar modificações para a maquina
+- git pull origin quasenada
+
+--------------------------------------------------------------
+
 Como fazer campo Autocomplete com Jquery, JavaScript no Rails
 
 - https://github.com/bigtunacan/rails-jquery-autocomplete
@@ -82,8 +103,5 @@ https://www.google.com.br/search?ei=nDehW92kN4mSwgSk76vgDQ&q=criar+campo+autocom
 Usando chosen para campo Autocomplete
 
 - https://translate.google.com.br/translate?hl=pt-BR&sl=en&u=https://github.com/tsechingho/chosen-rails&prev=search
-<<<<<<< HEAD
 - https://github.com/tsechingho/chosen-rails
-=======
 - https://github.com/tsechingho/chosen-rails
->>>>>>> a422148ef7cd99460b7aefcaad7df5a45b4c518e
