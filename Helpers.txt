@@ -8,3 +8,6 @@ http://jsfiddle.net/qBURS/1824/
 
 SELECT PRM
 http://jsfiddle.net/SivaCharan/pzzEw/1/
+
+Exemplo de select com rails
+<%= f.select :condominio_id, @condominio.collect { |condominio| [condominio.id, condominio.id] }, {}, { :class => 'form-control', :tabindex => '-1' }  %>
