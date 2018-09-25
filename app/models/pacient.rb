@@ -10,10 +10,11 @@ class Pacient < ActiveRecord::Base
     
     validates_presence_of :name, message: 'não pode ser deixado em branco'
     validates_presence_of :phone, message: 'não pode ser deixado em branco'
+    validates_presence_of :cpf, message: 'não pode ser deixado em branco'
     
-    validates_length_of :name, minimum: 2, message: 'deve ter pelo menos 2 caracteres'
-    validates_length_of :phone, maximum: 11, message: 'deve ter até 11 caracteres'
+    validates_length_of :name, minimum: 3, message: 'deve ter pelo menos 3 caracteres'
+    validates_length_of :phone, maximum: 11, message: 'deve ter no máximo 11 caracteres'
     
-    validates_uniqueness_of :cpf, message: 'Esse CPF já está cadastrado!'
+    validates_uniqueness_of :cpf, message: 'Este CPF já está cadastrado!'
     
 end
