@@ -1,6 +1,10 @@
 
 
-<p id="notice"><%= notice %></p>
+
+
+<div class="container-fluid">
+  
+  <p id="notice"><%= notice %></p>
 
 
 
@@ -12,9 +16,11 @@
   <%= text_field_tag 'pesquisa', nil, placeholder: 'Buscar por CPF' %>
   <%= submit_tag "Pesquisar" , :class => 'btn btn-primary'%>
 <% end %>
-
-<div class="container-fluid">
+  
+  
+  
   <div class="row">
+    
       <div class="col-sm-12">
    <div class="table-responsive">
   <table class="table">
