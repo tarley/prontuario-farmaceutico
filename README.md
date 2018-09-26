@@ -21,3 +21,12 @@ git push
 git pull
 
 git status
+
+#### Como iniciar o server Rails
+
+rails server -p $PORT -b $IP
+
+#### Como consultar o Banco de Dados SQLite
+
+rails dbconsole
+
