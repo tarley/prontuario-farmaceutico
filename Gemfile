@@ -14,6 +14,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+gem 'bcrypt'
 # Utilizando o bootstrap
 gem 'bootstrap-sass'
 
@@ -22,7 +23,11 @@ gem 'gentelella-rails'
 
 #Trabalhando com formatação de data
 gem 'jquery-ui-rails'
+<<<<<<< HEAD
 gem 'bcrypt', '~> 3.1', '>= 3.1.11'
+=======
+#gem 'bcrypt', '~> 3.1', '>= 3.1.11'
+>>>>>>> dcaa3311c2f51db57966d1b8936eed7d2b5da977
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
