@@ -1,10 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Novo paciente', new_pacient_path, :class => 'btn btn-primary' %>
-
-<br>
-
 <h1>Lista de pacientes</h1>
+
+<%= link_to 'Novo paciente', new_pacient_path, :class => 'btn btn-primary' %>
 
 <%= form_tag(pacients_path, :method => :get) do %>
   <%= text_field_tag 'pesquisa', nil, placeholder: 'Buscar por CPF' %>
@@ -14,8 +12,8 @@
 <div class="container-fluid">
   <div class="row">
       <div class="col-sm-12">
-   <div class="table-responsive">
-  <table class="table">
+       <div class="table-responsive">
+        <table class="table">
           <thead>
             <tr>
               <th>Nome</th>
@@ -45,8 +43,8 @@
               </tr>
             <% end %>
           </tbody>
-      </table>
+        </table>
+      </div>
     </div>
   </div>
-</div>
 </div>

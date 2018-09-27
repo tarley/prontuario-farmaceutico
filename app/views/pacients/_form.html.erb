@@ -43,7 +43,7 @@
               
               <label class="col-md-2 control-label">Data de nascimento:</label>
                 <div class="col-md-4">
-                  <%= f.text_field :birth_date, :class => "form-control"%>
+                  <%= f.date_select :birth_date, :class => "form-control"%>
                 </div>
               <label class="col-md-2 control-label">Anos de estudo:</label>
                 <div class="col-md-4">
@@ -101,11 +101,11 @@
       </div>
     </div>
   </div>
-  <!-- Row end -->
-</div>
-
+  
   <div class="actions">
     <%= f.submit 'Salvar', :class => 'btn btn-primary' %>
   </div>
+  <!-- Row end -->
+</div>
   
 <% end %>
