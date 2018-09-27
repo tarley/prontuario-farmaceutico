@@ -27,6 +27,6 @@ Rails.application.routes.draw do
   resources :treatments
   resources :sfcs
   resources :care_plans
-  
+  resources :home 
   
 end
