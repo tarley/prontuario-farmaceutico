@@ -37,7 +37,7 @@ class PacientsController < ApplicationController
 
     respond_to do |format|
       if @pacient.save
-        format.html { redirect_to @pacient, notice: 'Pacient was successfully created.' }
+        format.html { redirect_to @pacient, notice: 'Paciente criado com sucesso.' }
         format.json { render :show, status: :created, location: @pacient }
       else
         format.html { render :new }
@@ -51,7 +51,7 @@ class PacientsController < ApplicationController
   def update
     respond_to do |format|
       if @pacient.update(pacient_params)
-        format.html { redirect_to @pacient, notice: 'Pacient was successfully updated.' }
+        format.html { redirect_to @pacient, notice: 'Paciente alterado com sucesso.' }
         format.json { render :show, status: :ok, location: @pacient }
       else
         format.html { render :edit }
@@ -65,7 +65,7 @@ class PacientsController < ApplicationController
   def destroy
     @pacient.destroy
     respond_to do |format|
-      format.html { redirect_to pacients_url, notice: 'Pacient was successfully destroyed.' }
+      format.html { redirect_to pacients_url, notice: 'Paciente excluido com sucesso.' }
       format.json { head :no_content }
     end
   end
@@ -85,3 +85,5 @@ class PacientsController < ApplicationController
                                       :reason_meeting, :cpf, :profession, :service_access, :ub)
     end
 end
+
+
