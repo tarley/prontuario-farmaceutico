@@ -28,7 +28,7 @@ class AttendancesController < ApplicationController
 
     respond_to do |format|
       if @attendance.save
-        format.html { redirect_to @attendance, notice: 'Attendance was successfully created.' }
+        format.html { redirect_to @attendance, notice: 'Atendimento criado com sucesso.' }
         format.json { render :show, status: :created, location: @attendance }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class AttendancesController < ApplicationController
   def update
     respond_to do |format|
       if @attendance.update(attendance_params)
-        format.html { redirect_to @attendance, notice: 'Attendance was successfully updated.' }
+        format.html { redirect_to @attendance, notice: 'Atendimento alterado com sucesso.' }
         format.json { render :show, status: :ok, location: @attendance }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class AttendancesController < ApplicationController
   def destroy
     @attendance.destroy
     respond_to do |format|
-      format.html { redirect_to attendances_url, notice: 'Attendance was successfully destroyed.' }
+      format.html { redirect_to attendances_url, notice: 'Atendimento excluido com sucesso.' }
       format.json { head :no_content }
     end
   end
