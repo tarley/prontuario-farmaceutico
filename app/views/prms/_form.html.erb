@@ -1,7 +1,7 @@
 <%= form_for(@prm) do |f| %>
   <% if @prm.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@prm.errors.count, "error") %> prohibited this prm from being saved:</h2>
+      <h2><%= pluralize(@prm.errors.count, "error") %> Não foi possivel salvar esse registro:</h2>
 
       <ul>
       <% @prm.errors.full_messages.each do |message| %>
