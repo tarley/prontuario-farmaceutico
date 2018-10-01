@@ -12,4 +12,8 @@ namespace :db do
         Prm.create(description: "PRM 7 - Não adesão ")
     
         end
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
     end

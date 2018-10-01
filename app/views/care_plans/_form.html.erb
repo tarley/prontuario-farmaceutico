@@ -1,7 +1,7 @@
 <%= form_for(@care_plan) do |f| %>
   <% if @care_plan.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@care_plan.errors.count, "error") %> prohibited this care_plan from being saved:</h2>
+      <h2><%= pluralize(@care_plan.errors.count, "error") %> Não foi possivel salvar esse registro:</h2>
 
       <ul>
       <% @care_plan.errors.full_messages.each do |message| %>
@@ -11,39 +11,54 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :therapeutic_goal %><br>
-    <%= f.text_field :therapeutic_goal %>
-  </div>
-  <div class="field">
-    <%= f.label :conduct %><br>
-    <%= f.text_field :conduct %>
-  </div>
-  <div class="field">
-    <%= f.label :results_date %><br>
-    <%= f.datetime_select :results_date %>
-  </div>
-  <div class="field">
-    <%= f.label :anothers_conduct %><br>
-    <%= f.text_field :anothers_conduct %>
-  </div>
-  <div class="field">
-    <%= f.label :pharmacotherapy_id %><br>
-    <%= f.text_field :pharmacotherapy_id %>
-  </div>
-  <div class="field">
-    <%= f.label :prm_id %><br>
-    <%= f.text_field :prm_id %>
-  </div>
-  <div class="field">
-    <%= f.label :sfc_id %><br>
-    <%= f.text_field :sfc_id %>
-  </div>
-  <div class="field">
-    <%= f.label :prmCause_id %><br>
-    <%= f.text_field :prmCause_id %>
-  </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 col-sm-6 col-xs-12">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <form class="form-horizontal row-border">
+            <div class="form-group">
+              <label class="col-md-2 control-label">Objetivo terapêutico:</label>
+                <div class="col-md-4">
+                  <%= f.text_field :therapeutic_goal, :class => "form-control" %>
+                </div>
+              <label class="col-md-2 control-label">Conduta:</label>
+                <div class="col-md-4">
+                  <%= f.text_field :conduct, :class => "form-control" %>
+                </div>
+              <label class="col-md-2 control-label">Data dos resultados:</label>
+                <div class="col-md-4">
+                  <%= f.datetime_select :results_date, :class => "form-control" %>
+                </div>
+              <label class="col-md-2 control-label">Outra conduta:</label>
+                <div class="col-md-4">
+                  <%= f.text_field :anothers_conduct, :class => "form-control" %>
+                </div>
+              <label class="col-md-2 control-label">Farmacoterapia:</label>
+                <div class="col-md-4">
+                  <%= f.text_field :pharmacotherapy_id, :class => "form-control" %>
+                </div>
+              <label class="col-md-2 control-label">PRM:</label>
+                <div class="col-md-4">
+                  <%= f.text_field :prm_id, :class => "form-control" %>
+                </div>
+              <label class="col-md-2 control-label">SFC:</label>
+                <div class="col-md-4">
+                  <%= f.text_field :sfc_id, :class => "form-control" %>
+                </div>
+              <label class="col-md-2 control-label">Causa PRM:</label>
+                <div class="col-md-4">
+                  <%= f.text_field :prmCause_id, :class => "form-control" %>
+                </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>    
+  
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Salvar', :class => 'btn btn-success' %>
   </div>
+</div>
 <% end %>

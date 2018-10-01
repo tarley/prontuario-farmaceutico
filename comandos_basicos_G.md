@@ -51,7 +51,7 @@ rails generate scaffold PrmCause description:string prm:references
 
 -> PRM
 rails generate scaffold Prm description:string
->>>>>>> a422148ef7cd99460b7aefcaad7df5a45b4c518e
+
 
 ----------------------------------------
 

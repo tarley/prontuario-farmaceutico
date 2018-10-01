@@ -28,7 +28,7 @@ class TypeSexesController < ApplicationController
 
     respond_to do |format|
       if @type_sex.save
-        format.html { redirect_to @type_sex, notice: 'Type sex was successfully created.' }
+        format.html { redirect_to @type_sex, notice: 'Tipo de sexo criado com sucesso.' }
         format.json { render :show, status: :created, location: @type_sex }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class TypeSexesController < ApplicationController
   def update
     respond_to do |format|
       if @type_sex.update(type_sex_params)
-        format.html { redirect_to @type_sex, notice: 'Type sex was successfully updated.' }
+        format.html { redirect_to @type_sex, notice: 'Tipo de sexo alterado com sucesso.' }
         format.json { render :show, status: :ok, location: @type_sex }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class TypeSexesController < ApplicationController
   def destroy
     @type_sex.destroy
     respond_to do |format|
-      format.html { redirect_to type_sexes_url, notice: 'Type sex was successfully destroyed.' }
+      format.html { redirect_to type_sexes_url, notice: 'Tipo de sexo excluido com sucesso.' }
       format.json { head :no_content }
     end
   end

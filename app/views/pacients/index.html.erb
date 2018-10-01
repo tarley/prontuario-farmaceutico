@@ -1,10 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Novo paciente', new_pacient_path, :class => 'btn btn-primary' %>
-
-<br>
-
 <h1>Lista de pacientes</h1>
+
+<%= link_to 'Novo paciente', new_pacient_path, :class => 'btn btn-primary' %>
 
 <%= form_tag(pacients_path, :method => :get) do %>
   <%= text_field_tag 'pesquisa', nil, placeholder: 'Buscar por CPF' %>
@@ -14,8 +12,8 @@
 <div class="container-fluid">
   <div class="row">
       <div class="col-sm-12">
-   <div class="table-responsive">
-  <table class="table">
+       <div class="table-responsive">
+        <table class="table">
           <thead>
             <tr>
               <th>Nome</th>
@@ -25,7 +23,7 @@
               <th>Endereço</th>
               <th>Profissional serviço</th>
               <th>Motivo da consulta</th>
-              <th colspan="3"></th>
+              <th colspan="4"></th>
             </tr>
           </thead>
           <tbody>
@@ -39,14 +37,15 @@
                 <td><%= pacient.services_professional %></td>
                 <td><%= pacient.reason_meeting %></td>
                 
+                <td><%= link_to 'Atendimento', :class => 'btn btn-primary' %></td>
                 <td><%= link_to 'Vizualizar', pacient, :class => 'btn btn-primary' %></td>
                 <td><%= link_to 'Editar', edit_pacient_path(pacient), :class => 'btn btn-primary' %></td>
                 <td><%= link_to 'Excluir', pacient, :class => 'btn btn-primary', method: :delete, data: { confirm: 'Confirma a exclusão?' } %></td>
               </tr>
             <% end %>
           </tbody>
-      </table>
+        </table>
+      </div>
     </div>
   </div>
-</div>
 </div>

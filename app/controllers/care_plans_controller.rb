@@ -28,7 +28,7 @@ class CarePlansController < ApplicationController
 
     respond_to do |format|
       if @care_plan.save
-        format.html { redirect_to @care_plan, notice: 'Care plan was successfully created.' }
+        format.html { redirect_to @care_plan, notice: 'Plano de cuidado criado com sucesso.' }
         format.json { render :show, status: :created, location: @care_plan }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class CarePlansController < ApplicationController
   def update
     respond_to do |format|
       if @care_plan.update(care_plan_params)
-        format.html { redirect_to @care_plan, notice: 'Care plan was successfully updated.' }
+        format.html { redirect_to @care_plan, notice: 'Plano de cuidade alterado com sucesso.' }
         format.json { render :show, status: :ok, location: @care_plan }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class CarePlansController < ApplicationController
   def destroy
     @care_plan.destroy
     respond_to do |format|
-      format.html { redirect_to care_plans_url, notice: 'Care plan was successfully destroyed.' }
+      format.html { redirect_to care_plans_url, notice: 'Plano de cuidado deletado com sucesso.' }
       format.json { head :no_content }
     end
   end

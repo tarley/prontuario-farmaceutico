@@ -32,7 +32,7 @@ class PrmsController < ApplicationController
 
     respond_to do |format|
       if @prm.save
-        format.html { redirect_to @prm, notice: 'Prm was successfully created.' }
+        format.html { redirect_to @prm, notice: 'PRM criado com sucesso.' }
         format.json { render :show, status: :created, location: @prm }
       else
         format.html { render :new }
@@ -46,7 +46,7 @@ class PrmsController < ApplicationController
   def update
     respond_to do |format|
       if @prm.update(prm_params)
-        format.html { redirect_to @prm, notice: 'Prm was successfully updated.' }
+        format.html { redirect_to @prm, notice: 'PRM alterado com sucesso.' }
         format.json { render :show, status: :ok, location: @prm }
       else
         format.html { render :edit }
@@ -60,7 +60,7 @@ class PrmsController < ApplicationController
   def destroy
     @prm.destroy
     respond_to do |format|
-      format.html { redirect_to prms_url, notice: 'Prm was successfully destroyed.' }
+      format.html { redirect_to prms_url, notice: 'PRM deletado com sucesso.' }
       format.json { head :no_content }
     end
   end
