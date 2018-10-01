@@ -69,6 +69,8 @@ class PacientsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -83,3 +85,5 @@ class PacientsController < ApplicationController
                                       :reason_meeting, :cpf, :profession, :service_access, :ub)
     end
 end
+
+

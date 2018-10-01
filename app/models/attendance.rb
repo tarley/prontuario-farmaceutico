@@ -1,5 +1,3 @@
 class Attendance < ActiveRecord::Base
-    
-    has_many :pharmacotherapy
-    #belongs_to :paciente
+  belongs_to :pacient
 end

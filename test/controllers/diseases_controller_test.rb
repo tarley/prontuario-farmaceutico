@@ -18,7 +18,7 @@ class DiseasesControllerTest < ActionController::TestCase
 
   test "should create disease" do
     assert_difference('Disease.count') do
-      post :create, disease: { name: @disease.name }
+      post :create, disease: { description: @disease.description, name: @disease.name }
     end
 
     assert_redirected_to disease_path(assigns(:disease))
@@ -35,7 +35,7 @@ class DiseasesControllerTest < ActionController::TestCase
   end
 
   test "should update disease" do
-    patch :update, id: @disease, disease: { name: @disease.name }
+    patch :update, id: @disease, disease: { description: @disease.description, name: @disease.name }
     assert_redirected_to disease_path(assigns(:disease))
   end
 

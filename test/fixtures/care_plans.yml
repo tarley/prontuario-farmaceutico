@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  therapeutic_goal: MyString
+  conduct: MyString
+  results_date: 2018-09-20 14:15:25
+  anothers_conduct: 
+  pharmacotherapy_id: 
+  prm_id: 
+  sfc_id: 
+  prmCause_id: 
+
+two:
+  therapeutic_goal: MyString
+  conduct: MyString
+  results_date: 2018-09-20 14:15:25
+  anothers_conduct: 
+  pharmacotherapy_id: 
+  prm_id: 
+  sfc_id: 
+  prmCause_id: 
