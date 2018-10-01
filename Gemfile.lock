@@ -199,7 +199,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+<<<<<<< HEAD
   bcrypt
+=======
+  bcrypt (~> 3.1.7)
+>>>>>>> 45734e15c2044baa72e8c0599003d22f849a74db
   bootstrap-sass
   byebug
   coffee-rails (~> 4.1.0)
@@ -217,4 +221,8 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
+<<<<<<< HEAD
    1.16.5
+=======
+   1.16.4
+>>>>>>> 45734e15c2044baa72e8c0599003d22f849a74db

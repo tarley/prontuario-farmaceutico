@@ -21,7 +21,6 @@
   </div>
 </header>
 
-
 <%= form_for :session, url: sign_in_path do |f| %>
   <div class="field">
     <%= f.label :email %><br />
@@ -29,11 +28,11 @@
   </div>
   
   <div class="field">
-    <%= f.label :password %><br />
+    <%= f.label :senha %><br />
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Entrar" %>
   </div>
-<p>New user? <%= link_to "Sign up now!", new_user_path %></p>
+<p>Novo usuário? <%= link_to "Cadastre-se", new_user_path %></p>
 <% end %>
