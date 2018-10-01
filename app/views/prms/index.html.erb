@@ -4,6 +4,11 @@
 
 <%= link_to 'Novo PRM', new_prm_path, :class => 'btn btn-primary' %>
 
+<%= form_tag(prms_path, :method => :get) do %>
+  <%= text_field_tag 'pesquisa', nil, placeholder: 'Buscar por PRMS' %>
+  <%= submit_tag "Pesquisar" , :class => 'btn btn-primary'%>
+<% end %>
+
 <div class="container-fluid">
   <div class="row">
       <div class="col-sm-12">
