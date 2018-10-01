@@ -12,5 +12,8 @@ namespace :db do
         Sfc.create(description: "Falha")
         Sfc.create(description: "Morte")
         Sfc.create(description: "Sem Condições de Avaliar")
+       # Sfc.creare(description: "Teste")
+            
+        end
         end
     end
