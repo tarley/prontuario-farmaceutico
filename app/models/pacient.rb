@@ -3,9 +3,9 @@ class Pacient < ActiveRecord::Base
     #Pesquisa
     scope :pesquisa, ->(query) {where("cpf like ?", "%#{query}%")}
     
-    belongs_to :profession
-    belongs_to :service_access
-    belongs_to :ub
+    has_many :professions
+    has_many :service_access
+    has_many :ubs
     
     
     validates_presence_of :name, message: 'não pode ser deixado em branco'
