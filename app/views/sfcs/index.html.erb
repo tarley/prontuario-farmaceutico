@@ -6,6 +6,10 @@
   <%= text_field_tag 'pesquisa', nil, placeholder: 'Buscar por SFC' %>
   <%= submit_tag "Pesquisar" , :class => 'btn btn-primary'%>
 <% end %>
+<%= form_tag(prms_path, :method => :get) do %>
+  <%= text_field_tag 'pesquisa', nil, placeholder: 'Buscar por PRM' %>
+  <%= submit_tag "Pesquisar" , :class => 'btn btn-primary'%>
+<% end %>
 
 <table>
   <thead>
