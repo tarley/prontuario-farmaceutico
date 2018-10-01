@@ -2,6 +2,10 @@
 
 <h1>Listing Sfcs</h1>
 
+<%= form_tag(sfcs_path, :method => :get) do %>
+  <%= text_field_tag 'pesquisa', nil, placeholder: 'Buscar por SFC' %>
+  <%= submit_tag "Pesquisar" , :class => 'btn btn-primary'%>
+<% end %>
 
 <table>
   <thead>
