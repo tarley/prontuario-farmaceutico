@@ -15,7 +15,17 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 
 # Utilizando o bootstrap
-gem 'bootstrap'
+gem 'bootstrap-sass'
+
+#campo autocomplete
+gem 'ransack', '~> 1.8', '>= 1.8.2'
+
+#Utilizando gentelella
+gem 'gentelella-rails'
+
+#Trabalhando com formatação de data
+gem 'jquery-ui-rails'
+gem 'bcrypt', '~> 3.1', '>= 3.1.11'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

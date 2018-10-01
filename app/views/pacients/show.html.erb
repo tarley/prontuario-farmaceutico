@@ -1,0 +1,63 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @pacient.name %>
+</p>
+
+<p>
+  <strong>Lugar de atendimento:</strong>
+  <%= @pacient.place_attendence %>
+</p>
+
+<p>
+  <strong>Data de nascimento:</strong>
+  <%= @pacient.birth_date %>
+</p>
+
+<p>
+  <strong>Anos de estudo:</strong>
+  <%= @pacient.years_study %>
+</p>
+
+<p>
+  <strong>Sexo:</strong>
+  <%= @pacient.genre %>
+</p>
+
+<p>
+  <strong>Estado civil:</strong>
+  <%= @pacient.marital_status %>
+</p>
+
+<p>
+  <strong>Telefone:</strong>
+  <%= @pacient.phone %>
+</p>
+
+<p>
+  <strong>Endereço:</strong>
+  <%= @pacient.address %>
+</p>
+
+<p>
+  <strong>Profissional serviço:</strong>
+  <%= @pacient.services_professional %>
+</p>
+
+<p>
+  <strong>Motivo da consulta:</strong>
+  <%= @pacient.reason_meeting %>
+</p>
+
+<p>
+  <strong>CPF:</strong>
+  <%= @pacient.cpf %>
+</p>
+
+<p>
+  <strong>Profissão:</strong>
+  <%= @pacient.professions %>
+</p>
+
+<%= link_to 'Editar', edit_pacient_path(@pacient), :class => 'btn btn-primary' %> | <%= link_to 'Voltar', pacients_path, :class => 'btn btn-primary' %>

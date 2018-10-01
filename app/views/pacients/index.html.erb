@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Lista de pacientes</h1>
+
+<%= link_to 'Novo paciente', new_pacient_path, :class => 'btn btn-primary' %>
+
+<%= form_tag(pacients_path, :method => :get) do %>
+  <%= text_field_tag 'pesquisa', nil, placeholder: 'Buscar por CPF' %>
+  <%= submit_tag "Pesquisar" , :class => 'btn btn-primary'%>
+<% end %>
+
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-sm-12">
+       <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>CPF</th>
+              <th>Lugar de atendimento</th>
+              <th>Telefone</th>
+              <th>Endereço</th>
+              <th>Profissional serviço</th>
+              <th>Motivo da consulta</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @pacients.each do |pacient| %>
+              <tr>
+                <td><%= pacient.name %></td>
+                <td><%= pacient.cpf %></td>
+                <td><%= pacient.place_attendence %></td>
+                <td><%= pacient.phone %></td>
+                <td><%= pacient.address %></td>
+                <td><%= pacient.services_professional %></td>
+                <td><%= pacient.reason_meeting %></td>
+                
+                <td><%= link_to 'Novo Atendimento', new_attendance_path, :class => 'btn btn-primary' %></td>
+                <td><%= link_to 'Vizualizar', pacient, :class => 'btn btn-primary' %></td>
+                <td><%= link_to 'Editar', edit_pacient_path(pacient), :class => 'btn btn-primary' %></td>
+                <td><%= link_to 'Excluir', pacient, :class => 'btn btn-primary', method: :delete, data: { confirm: 'Confirma a exclusão?' } %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

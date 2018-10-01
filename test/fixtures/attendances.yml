@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  general_screen: MyText
+  attendance_date: 2018-09-20 14:08:40
+  pacient_id: 
+
+two:
+  general_screen: MyText
+  attendance_date: 2018-09-20 14:08:40
+  pacient_id: 

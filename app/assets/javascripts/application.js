@@ -13,4 +13,38 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery.easy-autocomplete
+//= require bootstrap
 //= require_tree .
+//= require gentelella
+//= require gentelella-custom
+
+/**
+ * Resize function without multiple trigger
+ *
+ * Usage:
+ * $(window).smartresize(function(){
+ *     // code here
+ * });
+ */
+
+$(document).ready(function() {
+    $("#add").click(function() {
+    		var lastField = $("#buildyourform div:last");
+            var intId = (lastField && lastField.length && lastField.data("idx") + 1) || 1;
+            var fieldWrapper = $("<div class=\"fieldwrapper\" id=\"field" + intId + "\"/>");
+                fieldWrapper.data("idx", intId);
+            var fName = $("<input type=\"text\" class=\"fieldname\" />");
+            var fType = $("<select class=\"fieldtype\"><option value=\"checkbox\">Checked</option><option value=\"textbox\">Text</option><option value=\"textarea\">Paragraph</option></select>");
+        
+        var removeButton = $("<input type=\"button\" class=\"remove\" value=\"-\" />");
+        removeButton.click(function() {
+        $(this).parent().remove();
+         });
+        fieldWrapper.append(fName);
+        fieldWrapper.append(fType);
+        fieldWrapper.append(removeButton);
+        $("#buildyourform").append(fieldWrapper);
+    });
+});
+

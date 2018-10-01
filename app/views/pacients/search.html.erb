@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col">
+    <h1>Professions</h1>
+    <% @professions.each do |profession| %>
+      <p><%= link_to profession.description, profession %></p>
+    <% end %>
+  </div>
+
+  <div class="col">
+    <h1>Ubs</h1>
+    <% @ubs.each do |ub| %>
+      <p><%= link_to ub.description, ub %></p>
+    <% end %>
+  </div>
+</div>
+

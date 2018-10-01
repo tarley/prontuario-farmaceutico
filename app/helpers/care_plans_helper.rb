@@ -1,0 +1,2 @@
+module CarePlansHelper
+end
