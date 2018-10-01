@@ -130,12 +130,6 @@ ActiveRecord::Schema.define(version: 20180924005855) do
   add_index "treatments", ["attendance_id"], name: "index_treatments_on_attendance_id"
   add_index "treatments", ["disease_id"], name: "index_treatments_on_disease_id"
 
-  create_table "type_sexes", force: :cascade do |t|
-    t.string   "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
   create_table "ubs", force: :cascade do |t|
     t.string   "description"
     t.datetime "created_at",  null: false
