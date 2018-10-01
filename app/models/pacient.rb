@@ -18,6 +18,10 @@ class Pacient < ActiveRecord::Base
     
     validates :years_study,     numericality: {:greater_than_or_equal_to  => 0, message: 'deve ser maior ou igual a zero'}
     
+    validates :genre,     numericality: {:greater_than  => 0, message: 'deve ser selecionado'}
+    
+    validates :marital_status,     numericality: {:greater_than  => 0, message: 'deve ser selecionado'}
+    
 
     validates :cpf, presence: {message: 'não pode ser deixado em branco'},
                         numericality: {message: 'deve conter somente número!'},

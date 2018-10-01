@@ -53,8 +53,10 @@
               
               <label class="col-md-2 control-label">Sexo:</label>
                 <div class="col-md-4">
-                  <%= f.number_field :genre, :class => "form-control"%>
+                  <%= f.select(:genre, [['Selecione o Sexo', 0], ['Feminino', 1], ['Masculino', 2],['Outro',3]], :class => "form-control") %>
                 </div>
+                
+                
               <label class="col-md-2 control-label">Telefone:</label>
                 <div class="col-md-4">
                   <%= f.text_field :phone, :class => "form-control"%>
@@ -65,16 +67,18 @@
                 <div class="col-md-4">
                   <%= f.text_field :address, :class => "form-control"%>
                 </div>
+                
               <label class="col-md-2 control-label">Estado civil:</label>
                 <div class="col-md-4">
-                  <%= f.number_field :marital_status, :class => "form-control"%>
+                  <%= f.select(:marital_status, [['Selecione o Estado Civil', 0], ['Solteiro', 1], ['Casado', 2],['Separado',3], ['Divorciado', 4], ['Viúvo',5]], :class => "form-control") %>
                 </div>
                 
               
               <label class="col-md-2 control-label">CPF:</label>
-                <div class="col-md-4">z
+                <div class="col-md-4">
                   <%= f.text_field :cpf, :class => "form-control"%>
                 </div>
+                
               <label class="col-md-2 control-label">Profissional serviço:</label>
                 <div class="col-md-4">
                   <%= f.text_field :services_professional, :class => "form-control"%>
@@ -82,15 +86,19 @@
               
               
               <label class="col-md-2 control-label">Profissão:</label>
-                <div class="col-md-2">
+                <div class="col-md-4">
                   <%= f.collection_select :profession_id, Profession.all, :id, :description, :class => "form-control"%>
                 </div>
+              <div class="col-md-6">  
+                <%= link_to 'Adicionar Profissão', new_profession_path, :class => 'btn btn-primary' %></td>  
+              </div>
+                
               <label class="col-md-2 control-label">Acesso ao serviço:</label>
-                <div class="col-md-2">
+                <div class="col-md-4">
                   <%= f.collection_select :service_access_id, ServiceAccess.all, :id, :description, :class => "form-control"%>
                 </div>
               <label class="col-md-2 control-label">UB:</label>
-                <div class="col-md-2">
+                <div class="col-md-4">
                   <%= f.collection_select :ub_id, Ub.all, :id, :description, :class => "form-control"%>
                 </div>
                 

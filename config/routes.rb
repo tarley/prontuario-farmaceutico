@@ -23,7 +23,6 @@ Rails.application.routes.draw do
   resources :pharmacotherapies
   resources :prms
   resources :diseases
-  resources :type_sexes
   resources :treatments
   resources :sfcs
   resources :care_plans
