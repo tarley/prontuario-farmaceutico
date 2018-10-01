@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   root 'sessions#new'
+  
+  get :search, controller: :pacients
+  #root to: "pacients#new"
 
   get 'sessions/new'
 
@@ -14,8 +17,6 @@ Rails.application.routes.draw do
   resources :professions
   resources :ubs
   resources :pacients
-
-
   
     ###Rotas Atendimento
   resources :attendances

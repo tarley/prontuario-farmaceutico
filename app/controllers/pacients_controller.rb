@@ -17,9 +17,18 @@ class PacientsController < ApplicationController
   def show
   end
   
-  #def getbusca
-  #  @pacients = Pacients.search(params[:search])
-  #end
+  def search
+    @professions = Profession.ransack(description_cont: params[:q]).result(distinct: true)
+    @ubs = Ub.ransack(description_cont: params[:q]).result(distinct: true)
+
+    respond_to do |format|
+      format.html {}
+      format.json {
+        @professions = @professions.limit(10)
+        @professions = @professions.limit(10)
+      }
+    end
+  end
 
   # GET /pacients/new
   def new

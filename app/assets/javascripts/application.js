@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery.easy-autocomplete
 //= require bootstrap
 //= require_tree .
 //= require gentelella

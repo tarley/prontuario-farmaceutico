@@ -17,6 +17,9 @@ gem 'coffee-rails', '~> 4.1.0'
 # Utilizando o bootstrap
 gem 'bootstrap-sass'
 
+#campo autocomplete
+gem 'ransack', '~> 1.8', '>= 1.8.2'
+
 #Utilizando gentelella
 gem 'gentelella-rails'
 
