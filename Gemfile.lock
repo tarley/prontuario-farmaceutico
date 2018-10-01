@@ -200,10 +200,14 @@ PLATFORMS
 
 DEPENDENCIES
 <<<<<<< HEAD
+<<<<<<< HEAD
   bcrypt
 =======
   bcrypt (~> 3.1.7)
 >>>>>>> 45734e15c2044baa72e8c0599003d22f849a74db
+=======
+  bcrypt (~> 3.1.7)
+>>>>>>> ac1490d03e8208936d24ba775df1fa4ced381e38
   bootstrap-sass
   byebug
   coffee-rails (~> 4.1.0)

@@ -8,6 +8,11 @@ class Pharmacotherapy < ActiveRecord::Base
   validates_presence_of :timeUse, message: 'não pode ser deixado em branco'
   validates_presence_of :carePlan, message: 'não pode ser deixado em branco'
   validates_presence_of :descriptionDisease, message: 'não pode ser deixado em branco'
+<<<<<<< HEAD
+=======
+  
+  
+>>>>>>> ac1490d03e8208936d24ba775df1fa4ced381e38
   
   
 end
