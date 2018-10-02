@@ -13,110 +13,165 @@
 
 <div class="container">
   
-  <!-- Row start -->
-  <div class="row">
-    <div class="col-md-12 col-sm-6 col-xs-12">
-      <div class="panel panel-default">
-        <div class="panel-heading clearfix">
-          <i class="icon-calendar"></i>
-          <h3 class="panel-title">Informações do paciente</h3>
-        </div>
-       
-        <div class="panel-body">
-          <form class="form-horizontal row-border" action="#">
-            <div class="form-group">
-              
-              <label class="col-md-2 control-label">Motivo da consulta:</label>
-                <div class="col-md-10">
-                  <%= f.text_area :reason_meeting, :class => "form-control"%>
-                </div>
-              
-              <label class="col-md-2 control-label">Nome:</label>
-                <div class="col-md-4">
-                  <%= f.text_field :name, :class => "form-control"%>
-                </div>
-              <label class="col-md-2 control-label">Lugar de atendimento:</label>
-                <div class="col-md-4">
-                  <%= f.text_field :place_attendence, :class => "form-control"%>
-                </div>
-                
-              
-              <label class="col-md-2 control-label">Data de nascimento:</label>
-                <div class="col-md-4">
-                  <%= f.date_select :birth_date, :class => "form-control"%>
-                </div>
-              <label class="col-md-2 control-label">Anos de estudo:</label>
-                <div class="col-md-4">
-                  <%= f.number_field :years_study, :class => "form-control"%>
-                </div>
-                
-              
-              <label class="col-md-2 control-label">Sexo:</label>
-                <div class="col-md-4">
-                  <%= f.select(:genre, [['Selecione o Sexo', 0], ['Feminino', 1], ['Masculino', 2],['Outro',3]], :class => "form-control") %>
-                </div>
-                
-                
-              <label class="col-md-2 control-label">Telefone:</label>
-                <div class="col-md-4">
-                  <%= f.text_field :phone, :class => "form-control"%>
-                </div>
-                
-              <label class="col-md-2 control-label">UB:</label>
-                <div class="col-md-4">
-                  <%= f.collection_select :ub_id, Ub.all, :id, :description, :class => "form-control"%>
+  <div class="x_panel">
+    <div class="x_title">
+      <h2>Dados do Paciente</h2>
+      <ul class="nav navbar-right panel_toolbox">
+        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Settings 1</a>
+            </li>
+            <li><a href="#">Settings 2</a>
+            </li>
+          </ul>
+        </li>
+        <li><a class="close-link"><i class="fa fa-close"></i></a>
+        </li>
+      </ul>
+      <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+      <div class="row">
+        <form id="demo-form" data-parsley-validate>
+          
+          <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+            <label for="fullname">Nome:</label>
+              <input type="text" id="fullname" class="form-control" name="fullname" required <%= :name %> />
+          </div>
+          
+          <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+            <label for="fullname">CPF:</label>
+              <input type="text" class="form-control" name="cpf" data-inputmask="'mask': '999.999.999-99'" required <%= :cpf%>>  
+          </div>
+          
+          <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+            <label for="heard">Sexo:</label>
+              <select id="heard" class="form-control" required <%=:genre%>>
+                <option value="0">Selecione o Sexo</option>
+                <option value="1">Feminino</option>
+                <option value="2">Masculino</option>
+                <option value="3">Outro</option>
+              </select>
+          </div>
+          
+          <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+            <label for="heard">Data de nascimento:</label>
+              <div class="row calendar-exibit">
+                <div class="col-md-3">
+                  <div class="daterangepicker dropdown-menu single opensright show-calendar picker_4 xdisplay">
+                    <fieldset>
+                      <div class="control-group">
+                        <div class="controls">
+                          <div class="col-md-11 xdisplay_inputx form-group has-feedback">
+                            <input type="text" class="form-control has-feedback-left" id="single_cal1" placeholder="First Name" aria-describedby="inputSuccess2Status">
+                            <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+                            <span id="inputSuccess2Status" class="sr-only">(success)</span>
+                          </div>
+                        </div>
+                      </div>  
+                    </fieldset>
+                  </div>
                 </div>              
-
-              <label class="col-md-2 control-label">Estado civil:</label>
-                <div class="col-md-4">
-                  <%= f.select(:marital_status, [['Selecione o Estado Civil', 0], ['Solteiro', 1], ['Casado', 2],['Separado',3], ['Divorciado', 4], ['Viúvo',5]], :class => "form-control") %>
-                </div>
-                       </div>
-          </form>
-        </div>     
-           <div class="panel-body">
-          <form class="form-horizontal row-border" action="#">
-            <div class="form-group">   
-              <label class="col-md-2 control-label">CPF:</label>
-                <div class="col-md-4">
-                  <%= f.text_field :cpf, :class => "form-control"%>
-                </div>
-                
-              <label class="col-md-2 control-label">Profissional serviço:</label>
-                <div class="col-md-4">
-                  <%= f.text_field :services_professional, :class => "form-control"%>
-                </div>
-              
-              <label class="col-md-2 control-label">Endereço:</label>
-                <div class="col-md-10">
-                  <%= f.text_field :address, :class => "form-control"%>
-                </div>              
-              
-              <label class="col-md-2 control-label">Profissão:</label>
-                <div class="col-md-4">
-                  <!--%= form_with url: search_path, local: true, method: :get, html: { class: "form-inline my-2 my-lg-0" } do |form| %-->
-                    <%= f.text_field :profession_id, placeholder: "Buscar", data: { behavior: "autocomplete" }, class: "form-control mr-sm-2" %>
-                    <!--%= f.button "Escolher", class: "btn btn-outline-success my-2 my-sm-0" %-->
-                  <!--% end %-->
-                  <!--%= f.collection_select :profession_id, Profession.all, :id, :description, :class => "form-control"%-->
-                </div>
-              <div class="col-md-2 control-label">  
-                <%= link_to 'Adicionar Profissão', new_profession_path, :class => 'btn btn-primary' %></td>  
-              </div>
-              <div>  
-              <label class="col-md-2 control-label">Acesso ao serviço:</label>
-              
-                  <%= f.collection_select :service_access_id, ServiceAccess.all, :id, :description, :class => "form-control"%>
-              </div>
-              
-                
-
-            </div>
-          </form>
-        </div>
+              </div> 
+          </div>
+          
+          <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+            <label for="heard">Anos de estudo:</label>
+            <input type="fullname" id="fullname" class="form-control" name="fullname" required <%= :years_study %>>
+          </div>
+          
+          <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+            <label for="heard">Telefone:</label>
+              <input type="text" class="form-control" data-inputmask="'mask' : '(999) 999-9999'"<%= :phone %>>
+          </div>
+          
+          <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+            <label for="heard">Estado civil:</label>
+              <select id="heard" class="form-control" required <%=:marital_status%>>
+                <option value="0">Selecione o Estado Civil</option>
+                <option value="1">Solteiro</option>
+                <option value="2">Casado</option>
+                <option value="3">Separado</option>
+                <option value="4">Divorciado</option>
+                <option value="5">Viúvo</option>
+              </select>
+          </div>
+          
+          <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+         
+          </div>
+          
+        </form>
       </div>
+
     </div>
   </div>
+
+ <div class="x_panel">
+    <div class="x_title">
+      <h2>Dados Complementares</h2>
+      <ul class="nav navbar-right panel_toolbox">
+        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Settings 1</a>
+            </li>
+            <li><a href="#">Settings 2</a>
+            </li>
+          </ul>
+        </li>
+        <li><a class="close-link"><i class="fa fa-close"></i></a>
+        </li>
+      </ul>
+      <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+      <div class="row">
+        <form id="demo-form" data-parsley-validate>
+          <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+            <label for="fullname">Lugar de atendimento:</label>
+              <input type="fullname" id="fullname" class="form-control" name="fullname" required <%= :place_attendence %> />               
+          </div>
+          
+          <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+            <label for="heard">UB:</label>
+            <select id="heard" class="form-control" required <%=f.collection_select :ub_id, Ub.all, :id, :description%>
+            </select>
+          </div>          
+          
+          <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+            <label for="fullname">Profissional do serviço:</label>
+            <input type="fullname" id="fullname" class="form-control" name="fullname" required <%=:services_professional%>>
+          </div>
+        
+          <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+            <label for="message">Acesso ao serviço:</label>
+              <select id="heard" class="form-control" required <%=f.collection_select :service_access_id, ServiceAccess.all, :id, :description%>
+              </select>
+          </div>
+          
+          
+          
+          <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+            <label for="message">Endereço:</label>
+            <%= f.text_field :address, :class => "form-control"%>
+          </div> 
+
+          <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+            <label for="message">Profissão:</label>
+            <%= f.text_field :profession_id, placeholder: "Buscar", data: { behavior: "autocomplete" }, class: "form-control mr-sm-2" %>
+            <%= link_to 'Adicionar Profissão', new_profession_path, :class => 'btn btn-primary' %>
+          </div>   
+
+        </form>
+      </div>
+    </div>
+  </div>  
   
   <div class="actions">
     <%= f.submit 'Salvar', :class => 'btn btn-success' %>
