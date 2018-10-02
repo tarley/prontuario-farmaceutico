@@ -19,7 +19,7 @@
       <div class="panel panel-default">
         <div class="panel-heading clearfix">
           <i class="icon-calendar"></i>
-          <h3 class="panel-title">Quadro Geral</h3>
+          <h3 class="panel-title">Paciente: <%= :pacient_id %></h3>
         </div>
        
         <div class="panel-body">
@@ -38,7 +38,9 @@
               <div class="col-md-4">
                 <%= f.text_field :pacient_id, :class => "form-control" %>
               </div>
-              <input type="button" value="Adicionar doença" class="add" id="add" />
+              <div class="actions">
+                <%= link_to 'Adicionar doença', new_disease_path, :class => 'btn btn-success' %>
+              </div>
             </div>
           </form>
         </div>
