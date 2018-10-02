@@ -17,6 +17,7 @@
 //= require_tree .
 //= require gentelella
 //= require gentelella-custom
+//= require chosen
 
 /**
  * Resize function without multiple trigger
@@ -26,6 +27,19 @@
  *     // code here
  * });
  */
+
+function chosen_init() {
+  $(".chosen-select").chosen().change(
+    function(){
+      var profession = $('option:selected',this);
+      var profession_url = profession.attr('data-url');
+      $.getScript(profession_url)
+    }
+  );
+}
+
+$(document).on('turbolinks:load', function(){chosen_init()});
+
 
 $(document).ready(function() {
     $("#add").click(function() {

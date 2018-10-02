@@ -3,6 +3,8 @@ class Pacient < ActiveRecord::Base
     #Pesquisa
     scope :pesquisa, ->(query) {where("cpf like ?", "%#{query}%")}
     
+    has_many :profession, as: :description #tem que pegar o id e não a description da profissão
+    
     belongs_to :profession
     belongs_to :service_access
     belongs_to :ub

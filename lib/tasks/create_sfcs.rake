@@ -14,6 +14,5 @@ namespace :db do
         Sfc.create(description: "Sem Condições de Avaliar")
        # Sfc.creare(description: "Teste")
             
-        end
-        end
     end
+end

@@ -82,7 +82,7 @@ class PacientsController < ApplicationController
     def pacient_params
       params.require(:pacient).permit(:name, :place_attendence, :birth_date, :years_study, :genre, 
                                       :marital_status, :phone, :address, :services_professional, 
-                                      :reason_meeting, :cpf, :profession, :service_access, :ub)
+                                      :reason_meeting, :cpf, :profession_id, :service_access, :ub_id)
     end
 end
 

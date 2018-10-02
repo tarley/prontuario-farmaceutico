@@ -22,11 +22,7 @@ gem 'gentelella-rails'
 
 #Trabalhando com formatação de data
 gem 'jquery-ui-rails'
-<<<<<<< HEAD
-gem 'bcrypt', '~> 3.1', '>= 3.1.11'
-=======
 gem 'bcrypt', '~> 3.1.7', '>= 3.1.11'
->>>>>>> master
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -38,7 +34,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
-gem 'bcrypt', '~> 3.1.7'
+#gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -59,3 +55,9 @@ group :development do
   gem 'spring'
 end
 
+source 'https://rails-assets.org' do
+  gem 'rails-assets-chosen'
+  #gem 'rails-assets-chosen-bootstrap' # if using bootstrap comentado pois está dando erro (Gesley)
+end
+
+gem 'bootstrap-chosen-rails'

@@ -89,6 +89,13 @@ ou
 
 --------------------------------------------------------------
 
+Como fazer o campo autocomplete com chosen
+
+- https://www.youtube.com/watch?v=KfJyHbZFyFg
+- https://github.com/bfcoder/bootstrap-chosen-rails
+
+------------------------------------------------
+
 Como fazer campo Autocomplete com Jquery, JavaScript no Rails
 
 - https://github.com/bigtunacan/rails-jquery-autocomplete

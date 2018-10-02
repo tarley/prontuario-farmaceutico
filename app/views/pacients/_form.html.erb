@@ -83,7 +83,11 @@
               
               <label class="col-md-2 control-label">Profissão:</label>
                 <div class="col-md-2">
-                  <%= f.collection_select :profession_id, Profession.all, :id, :description, :class => "form-control"%>
+                  <%= f.select :profession_id,
+                    Profession.all.map { |u| [u.description, u.id] },
+                    { include_blank: "Buscar Profissão" },
+                    { class: 'chosen-select' }
+                  %>
                 </div>
               <label class="col-md-2 control-label">Acesso ao serviço:</label>
                 <div class="col-md-2">
