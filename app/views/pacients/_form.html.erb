@@ -13,6 +13,7 @@
 
 <div class="container">
   
+
   <div class="x_panel">
     <div class="x_title">
       <h2>Dados do Paciente</h2>
@@ -74,10 +75,19 @@
                       </div>  
                     </fieldset>
                   </div>
-                </div>              
-              </div> 
-          </div>
-          
+
+  <!-- Row start -->
+  <div class="row">
+    <div class="col-md-12 col-sm-6 col-xs-12">
+      <div class="panel panel-default">
+        <div class="panel-heading clearfix">
+          <i class="icon-calendar"></i>
+          <h3 class="panel-title">Informações do paciente</h3>
+        </div>
+       
+        <div class="panel-body">
+          <form class="form-horizontal row-border" action="#">
+
           <div class="col-md-3 col-sm-12 col-xs-12 form-group">
             <label for="heard">Anos de estudo:</label>
             <input type="fullname" id="fullname" class="form-control" name="fullname" required <%= :years_study %>>
@@ -98,7 +108,7 @@
                 <option value="4">Divorciado</option>
                 <option value="5">Viúvo</option>
               </select>
-          </div>
+          </div>git
           
           <div class="col-md-3 col-sm-12 col-xs-12 form-group">
          
@@ -107,8 +117,6 @@
         </form>
       </div>
 
-    </div>
-  </div>
 
  <div class="x_panel">
     <div class="x_title">
@@ -139,9 +147,14 @@
           </div>
           
           <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-            <label for="heard">UB:</label>
-            <select id="heard" class="form-control" required <%=f.collection_select :ub_id, Ub.all, :id, :description%>
-            </select>
+              <label class="col-md-2 control-label">UBS:</label>
+                <div class="col-md-4">
+                  <%= f.select :ub_id,
+                    Ub.all.map { |u| [u.description, u.id] },
+                    { include_blank: "Buscar UBS" },
+                    { class: 'chosen-select' }
+                  %> 
+                </div>
           </div>          
           
           <div class="col-md-3 col-sm-12 col-xs-12 form-group">
@@ -163,8 +176,14 @@
           </div> 
 
           <div class="col-md-6 col-sm-12 col-xs-12 form-group">
-            <label for="message">Profissão:</label>
-            <%= f.text_field :profession_id, placeholder: "Buscar", data: { behavior: "autocomplete" }, class: "form-control mr-sm-2" %>
+              <label class="col-md-2 control-label">Profissão:</label>
+                <div class="col-md-4">
+                  <%= f.select :profession_id,
+                    Profession.all.map { |u| [u.description, u.id] },
+                    { include_blank: "Buscar Profissão" },
+                    { class: 'chosen-select' }
+                  %>  
+                </div>
             <%= link_to 'Adicionar Profissão', new_profession_path, :class => 'btn btn-primary' %>
           </div>   
 
