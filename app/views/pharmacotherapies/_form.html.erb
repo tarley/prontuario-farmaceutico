@@ -1,7 +1,7 @@
 <%= form_for(@pharmacotherapy) do |f| %>
   <% if @pharmacotherapy.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@pharmacotherapy.errors.count, "error") %> prohibited this pharmacotherapy from being saved:</h2>
+      <h2><%= pluralize(@pharmacotherapy.errors.count, "error") %> Não foi possivel salvar esse registro:</h2>
 
       <ul>
       <% @pharmacotherapy.errors.full_messages.each do |message| %>
@@ -11,43 +11,65 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :medicine %><br>
-    <%= f.text_field :medicine %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 col-sm-6 col-xs-12">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <form class="form-horizontal row-border">
+            <div class="form-group">
+              <label class="col-md-2 control-label">Remedio:</label>
+                <div class="field">
+                  <%= f.text_field :medicine %>
+                </div>
+              <label class="col-md-2 control-label">Dosagem:</label>
+                <div class="field">
+                  <%= f.label :dosageSchedule %><br>
+                  <%= f.text_field :dosageSchedule %>
+                </div>
+              <label class="col-md-2 control-label">Segurança:</label>
+                <div class="field">
+                  <%= f.label :safety %><br>
+                  <%= f.text_field :safety %>
+                </div>
+              <label class="col-md-2 control-label">Eficácia</label>
+                <div class="field">
+                  <%= f.label :effectiveness %><br>
+                  <%= f.text_field :effectiveness %>
+                </div>
+              <label class="col-md-2 control-label">Dificuldade no uso:</label>
+                <div class="field">
+                  <%= f.label :useDificulty %><br>
+                  <%= f.text_field :useDificulty %>
+                </div>
+              <label class="col-md-2 control-label">Tempo de uso:</label>
+                <div class="field">
+                  <%= f.label :timeUse %><br>
+                  <%= f.number_field :timeUse %>
+                </div>
+              <label class="col-md-2 control-label">Plano de tratamento:</label>
+                <div class="field">
+                  <%= f.label :carePlan %><br>
+                  <%= f.text_area :carePlan %>
+                </div>
+              <label class="col-md-2 control-label">Descrição da doença</label>
+                <div class="field">
+                  <%= f.label :descriptionDisease %><br>
+                  <%= f.text_area :descriptionDisease %>
+                </div>
+              <label class="col-md-2 control-label">ID tratamento:</label>
+                <div class="field">
+                  <%= f.text_field :treatment_id %>
+                </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :dosageSchedule %><br>
-    <%= f.text_field :dosageSchedule %>
-  </div>
-  <div class="field">
-    <%= f.label :safety %><br>
-    <%= f.text_field :safety %>
-  </div>
-  <div class="field">
-    <%= f.label :effectiveness %><br>
-    <%= f.text_field :effectiveness %>
-  </div>
-  <div class="field">
-    <%= f.label :useDificulty %><br>
-    <%= f.text_field :useDificulty %>
-  </div>
-  <div class="field">
-    <%= f.label :timeUse %><br>
-    <%= f.number_field :timeUse %>
-  </div>
-  <div class="field">
-    <%= f.label :carePlan %><br>
-    <%= f.text_area :carePlan %>
-  </div>
-  <div class="field">
-    <%= f.label :descriptionDisease %><br>
-    <%= f.text_area :descriptionDisease %>
-  </div>
-  <div class="field">
-    <%= f.label :treatment_id %><br>
-    <%= f.text_field :treatment_id %>
-  </div>
+  
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Salvar', :class => 'btn btn-success'%>
   </div>
+</div>
 <% end %>

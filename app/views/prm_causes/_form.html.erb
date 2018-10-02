@@ -11,15 +11,30 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
-  </div>
-  <div class="field">
-    <%= f.label :prm_id %><br>
-    <%= f.text_field :prm_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 col-sm-6 col-xs-12">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <form class="form-horizontal row-border">
+            <div class="form-group">
+              <label class="col-md-2 control-label">Descrição:</label>  
+                <div class="col-md-4">
+                  <%= f.text_field :description %>
+                </div>
+              <label class="col-md-2 control-label">PRM ID:</label>  
+                <div class="col-md-4">
+                  <%= f.text_field :prm_id %>
+                </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>                
+    <div class="actions">
+      <%= f.submit 'Salvar', :class => 'btn btn-success'%>
+    </div>
+</div>
 <% end %>

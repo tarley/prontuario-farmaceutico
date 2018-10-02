@@ -23,7 +23,7 @@
               <th>Endereço</th>
               <th>Profissional serviço</th>
               <th>Motivo da consulta</th>
-              <th colspan="3"></th>
+              <th colspan="4"></th>
             </tr>
           </thead>
           <tbody>
@@ -37,7 +37,11 @@
                 <td><%= pacient.services_professional %></td>
                 <td><%= pacient.reason_meeting %></td>
                 
+<<<<<<< HEAD
                 <td><%= link_to 'Novo Atendimento', new_attendance_path, :class => 'btn btn-primary' %></td>
+=======
+                <td><%= link_to 'Atendimento', :class => 'btn btn-primary' %></td>
+>>>>>>> 4dd13a38760b68692343615dcffea0a39024fe35
                 <td><%= link_to 'Vizualizar', pacient, :class => 'btn btn-primary' %></td>
                 <td><%= link_to 'Editar', edit_pacient_path(pacient), :class => 'btn btn-primary' %></td>
                 <td><%= link_to 'Excluir', pacient, :class => 'btn btn-primary', method: :delete, data: { confirm: 'Confirma a exclusão?' } %></td>

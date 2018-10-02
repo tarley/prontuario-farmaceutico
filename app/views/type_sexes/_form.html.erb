@@ -1,16 +1,15 @@
-<%= form_for(@prm) do |f| %>
-  <% if @prm.errors.any? %>
+<%= form_for(@type_sex) do |f| %>
+  <% if @type_sex.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@prm.errors.count, "error") %> Não foi possivel salvar esse registro:</h2>
+      <h2><%= pluralize(@type_sex.errors.count, "error") %> Não foi possivel salvar esse registro:</h2>
 
       <ul>
-      <% @prm.errors.full_messages.each do |message| %>
+      <% @type_sex.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
-  
 <div class="container">
   <div class="row">
     <div class="col-md-12 col-sm-6 col-xs-12">
@@ -19,8 +18,8 @@
           <form class="form-horizontal row-border">
             <div class="form-group">
               <label class="col-md-2 control-label">Descrição:</label>
-                <div class="col-md-10">
-                  <%= f.text_field :description %>
+                <div class="col-md-10">  
+                  <%= f.text_field :description, :class => "form-control" %>
                 </div>
             </div>
           </form>
@@ -28,9 +27,9 @@
       </div>
     </div>
   </div>
-
+  
   <div class="actions">
-    <%= f.submit 'Salvar', :class => 'btn btn-success' %>
+    <%= f.submit 'Salvar', :class => 'btn btn-success'%>
   </div>
 </div>
 <% end %>
