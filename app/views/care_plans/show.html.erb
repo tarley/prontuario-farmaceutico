@@ -1,44 +1,43 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Therapeutic goal:</strong>
+  <strong>Objetivo terapêutico:</strong>
   <%= @care_plan.therapeutic_goal %>
 </p>
 
 <p>
-  <strong>Conduct:</strong>
+  <strong>Conduta:</strong>
   <%= @care_plan.conduct %>
 </p>
 
 <p>
-  <strong>Results date:</strong>
+  <strong>Data dos resultados:</strong>
   <%= @care_plan.results_date %>
 </p>
 
 <p>
-  <strong>Anothers conduct:</strong>
+  <strong>Outra conduta:</strong>
   <%= @care_plan.anothers_conduct %>
 </p>
 
 <p>
-  <strong>Pharmacotherapy:</strong>
+  <strong>Farmacoterapia:</strong>
   <%= @care_plan.pharmacotherapy %>
 </p>
 
 <p>
-  <strong>Prm:</strong>
+  <strong>PRM:</strong>
   <%= @care_plan.prm %>
 </p>
 
 <p>
-  <strong>Sfc:</strong>
+  <strong>SFC:</strong>
   <%= @care_plan.sfc %>
 </p>
 
 <p>
-  <strong>Prmcause:</strong>
+  <strong>Causa PRM:</strong>
   <%= @care_plan.prmCause %>
 </p>
 
-<%= link_to 'Edit', edit_care_plan_path(@care_plan) %> |
-<%= link_to 'Back', care_plans_path %>
+<%= link_to 'Editar', edit_care_plan_path(@care_plan), :class => 'btn btn-primary' %> | <%= link_to 'Voltar', care_plans_path, :class => 'btn btn-primary' %>
