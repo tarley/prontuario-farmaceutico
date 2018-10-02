@@ -28,7 +28,7 @@ class SfcsController < ApplicationController
 
     respond_to do |format|
       if @sfc.save
-        format.html { redirect_to @sfc, notice: 'Sfc was successfully created.' }
+        format.html { redirect_to @sfc, notice: 'SFC criado com sucesso.' }
         format.json { render :show, status: :created, location: @sfc }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class SfcsController < ApplicationController
   def update
     respond_to do |format|
       if @sfc.update(sfc_params)
-        format.html { redirect_to @sfc, notice: 'Sfc was successfully updated.' }
+        format.html { redirect_to @sfc, notice: 'SFC alterado com sucesso.' }
         format.json { render :show, status: :ok, location: @sfc }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class SfcsController < ApplicationController
   def destroy
     @sfc.destroy
     respond_to do |format|
-      format.html { redirect_to sfcs_url, notice: 'Sfc was successfully destroyed.' }
+      format.html { redirect_to sfcs_url, notice: 'SFC deletado com sucesso.' }
       format.json { head :no_content }
     end
   end
