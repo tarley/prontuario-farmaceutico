@@ -98,17 +98,20 @@
                     <%= f.text_field :phone, :type => "text", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
                 </div>                
                 
-                
                 <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-               
-                </div>
-                
-
-
-
-
-
-
+                  <label class="heard">Profissão:</label>
+                  <div class="input-group">
+                    <%= f.select :profession_id,
+                      Profession.all.map { |u| [u.description, u.id] },
+                      { include_blank: "Buscar Profissão" },
+                      { class: 'chosen-select' }
+                    %>
+                    <span class="input-grou-btn">
+                     <%= link_to 'ADD', new_profession_path, {class: "btn fa fa-plus btn-primary"}%>  
+                    </span>
+                  </div>
+                </div>  
+ 
             </div>
           </div>
         </div>
@@ -142,30 +145,22 @@
                   <%= f.text_field :address, :type => "text", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
                 </div> 
                 
-                <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+                <div class="col-md-3 col-sm-12 col-xs-12 form-group">
                     <label class="heard">UBS:</label>
+                    <div class="form-group">
                         <%= f.select :ub_id,
                           Ub.all.map { |u| [u.description, u.id] },
                           { include_blank: "Buscar UBS" },
                           { class: 'chosen-select' }
                         %> 
+                    </div>
                 </div>                 
                 
+                <div class="col-md-9 col-sm-12 col-xs-12 form-group">
+                  <label class="heard">Motivo da consulta:</label>
+                  <%= f.text_area :reason_meeting, :class => "form-control col-md-7 col-xs-12"%>
+                </div>
 
-      
-                <div class="col-md-6 col-sm-12 col-xs-12 form-group">
-                  <label class="heard">Profissão:</label>
-                  <div class="input-group">
-                    <%= f.select :profession_id,
-                      Profession.all.map { |u| [u.description, u.id] },
-                      { include_blank: "Buscar Profissão" },
-                      { class: 'chosen-select' }
-                    %>
-                    <span class="input-grou-btn">
-                      <%= link_to 'Nova Profissão', new_profession_path, {class: "btn btn-primary"}%>  
-                    </span>
-                  </div>
-                </div>   
             </div>
           </div>
         </div>  

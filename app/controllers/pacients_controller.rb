@@ -34,7 +34,7 @@ class PacientsController < ApplicationController
     respond_to do |format|
       if @pacient.save
         format.html { redirect_to @pacient, notice: 'Paciente criado com sucesso.' }
-        format.json { render :index, status: :created, location: @pacient }
+        format.json { render :show, status: :created, location: @pacient }
       else
         format.html { render :new }
         format.json { render json: @pacient.errors, status: :unprocessable_entity }
