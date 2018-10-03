@@ -41,6 +41,5 @@ function chosen_init() {
     }
   );
 }
-
-$(document).on('turbolinks:load', function(){chosen_init()});
+ $(document).on('turbolinks:load', function(){chosen_init()}); 
 
