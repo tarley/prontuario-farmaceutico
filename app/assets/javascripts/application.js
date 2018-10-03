@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
+//= require bootstrap-datepicker
 //= require_tree .
 //= require gentelella
 //= require gentelella-custom
@@ -31,20 +32,20 @@
 
 function chosen_init() {
   $(".chosen-select").chosen().change(
-    function(){
-      var profession = $('option:selected',this);
+    function() {
+      var profession = $('option:selected', this);
       var profession_url = profession.attr('data-url');
       $.getScript(profession_url);
-      
-      var ub = $('option:selected',this);
+
+      var ub = $('option:selected', this);
       var ub_url = ub.attr('data-url');
       $.getScript(ub_url)
     }
   );
 }
- $(document).on('turbolinks:load', function(){chosen_init()}); 
- 
 
-jQuery(function($){
-  $("‪#cpf‬").mask("000.000.000-00");
+$(document).on('turbolinks:load', function() { chosen_init() });
+
+$(function () {
+    $('#birth_date').datetimepicker();
 });

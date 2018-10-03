@@ -49,10 +49,9 @@
                     <!--  <option value="3">Outro</option>-->
                     <!--</select>-->
                 </div>
-                
                 <div class="col-md-3 col-sm-12 col-xs-12 form-group">
                   <label for="heard">Data de nascimento:</label>
-                    <%= f.date_select :birth_date, {}, {class: "form-control col-md-7 col-xs-12"}%>
+                    <%= f.text_field :birth_date, {class: "form-control col-md-7 col-xs-12"}%>
                     <!--<div class="row calendar-exibit">-->
                     <!--  <div class="col-md-3">-->
                     <!--    <div class="daterangepicker dropdown-menu single opensright show-calendar picker_4 xdisplay">-->
@@ -100,7 +99,7 @@
                 
                 <div class="col-md-3 col-sm-12 col-xs-12 form-group">
                   <label class="heard">Profissão:</label>
-                  <div class="input-group">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12 form-group">
                     <%= f.select :profession_id,
                       Profession.all.map { |u| [u.description, u.id] },
                       { include_blank: "Buscar Profissão" },
@@ -147,7 +146,7 @@
                 
                 <div class="col-md-3 col-sm-12 col-xs-12 form-group">
                     <label class="heard">UBS:</label>
-                      <div>
+                      <div class="col-md-12 col-sm-12 col-xs-12 form-group">
                         <%= f.select :ub_id,
                           Ub.all.map { |u| [u.description, u.id] },
                           { include_blank: "Buscar UBS" },
@@ -165,9 +164,12 @@
           </div>
         </div>  
   </form>
-   <div class="actions">
+
+
+  <div class="actions">
     <%= f.submit 'Salvar', :class => 'btn btn-success' %>
   </div>
+
 </div>
 
 <% end %>

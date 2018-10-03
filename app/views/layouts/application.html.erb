@@ -6,15 +6,16 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'maskedinput', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
+
     
   </head>
-    <body class="nav-md">
+    <body class="nav-md footer_fixed">
       <div class="container body">
         <div class="main_container">
           <div class="col-md-3 left_col">
             <div class="left_col scroll-view">
               <div class="navbar nav_title" style="border: 0;">
-                <a href="index.html" class="site_title"><span>GesFar Newton</span></a>
+                <a href="#" class="site_title"><span>GesFar Newton</span></a>
               </div>
             
               <div class="clearfix"></div>
@@ -43,7 +44,7 @@
             <div class="nav_menu">
               <nav>
                 <div class="nav toggle">
-                  <a href="javascript:;"><i class="fa fa-bars"></i></a>
+                  <a id="menu_toggle"><i class="fa fa-bars"></i></a>
                 </div>
                 <% if logged_in? %>
                 <ul class="nav navbar-nav navbar-right">
@@ -72,16 +73,14 @@
               <!-- top tiles -->
               <%= yield %>
             </div>
-          </div>
-        </div>
+        </div> 
         
-        <footer>
-          <div class="pull-right">
-            GesFar - Desenvolvido pelo Curso de Sistemas de Informação da Newton Paiva - 8º Periodo <a href="https://www.newtonpaiva.br/graduacao/sistemas-de-informacao">Newton Paiva</a>
-          </div>
+          <footer>
+            <div class="pull-right">
+              GesFar - Desenvolvido pelo Curso de Sistemas de Informação da Newton Paiva - 7º e 8º Periodo <a href="https://www.newtonpaiva.br/graduacao/sistemas-de-informacao"> Newton Paiva </a>
+            </div>
             <div class="clearfix"></div>
-        </footer>
-        
+          </footer>        
       </div>
     </body>
 </html>

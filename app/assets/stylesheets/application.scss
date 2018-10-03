@@ -13,6 +13,7 @@
  *= require chosen
  *= require_tree .
  *= require_self
+ *= require bootstrap-datepicker
  */
 @import "bootstrap-sprockets"; 
 @import "bootstrap"; 
@@ -28,3 +29,6 @@ body {
     background: #ffffff;
 }
 
+footer {
+  padding: 1px 20px;
+}

@@ -63,5 +63,4 @@ end
   gem 'bootstrap-chosen-rails'
   
   
-#Campos marcarados no rails
-gem 'maskedinput-rails', '~> 1.4'
+
