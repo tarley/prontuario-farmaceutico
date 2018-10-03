@@ -18,6 +18,7 @@
 //= require gentelella
 //= require gentelella-custom
 //= require chosen
+//= require maskedinput
 
 /**
  * Resize function without multiple trigger
@@ -42,4 +43,8 @@ function chosen_init() {
   );
 }
  $(document).on('turbolinks:load', function(){chosen_init()}); 
+ 
 
+jQuery(function($){
+  $("‪#cpf‬").mask("000.000.000-00");
+});

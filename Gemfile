@@ -61,3 +61,7 @@ source 'https://rails-assets.org' do
 end
   # if using bootstrap
   gem 'bootstrap-chosen-rails'
+  
+  
+#Campos marcarados no rails
+gem 'maskedinput-rails', '~> 1.4'
