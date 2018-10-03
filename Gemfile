@@ -17,15 +17,16 @@ gem 'coffee-rails', '~> 4.1.0'
 # Utilizando o bootstrap
 gem 'bootstrap-sass'
 
-#campo autocomplete
-gem 'ransack', '~> 1.8', '>= 1.8.2'
-
 #Utilizando gentelella
 gem 'gentelella-rails'
 
 #Trabalhando com formatação de data
 gem 'jquery-ui-rails'
+<<<<<<< HEAD
 gem 'bcrypt', '~> 3.1.7'
+=======
+#gem 'bcrypt', '~> 3.1', '>= 3.1.11'
+>>>>>>> a4545ccac63545b4db3d5745c1b03cb61d66cc65
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -57,4 +58,13 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
+
+#fazer campo autocomplete com chosen
+source 'https://rails-assets.org' do
+  gem 'rails-assets-chosen'
+end
+  # if using bootstrap
+  gem 'bootstrap-chosen-rails'
+  
+  
 

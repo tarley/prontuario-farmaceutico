@@ -17,19 +17,6 @@ class PacientsController < ApplicationController
   def show
   end
   
-  def search
-    @professions = Profession.ransack(description_cont: params[:q]).result(distinct: true)
-    @ubs = Ub.ransack(description_cont: params[:q]).result(distinct: true)
-
-    respond_to do |format|
-      format.html {}
-      format.json {
-        @professions = @professions.limit(10)
-        @professions = @professions.limit(10)
-      }
-    end
-  end
-
   # GET /pacients/new
   def new
     @pacient = Pacient.new
@@ -79,7 +66,6 @@ class PacientsController < ApplicationController
     end
   end
   
-  
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -91,8 +77,6 @@ class PacientsController < ApplicationController
     def pacient_params
       params.require(:pacient).permit(:name, :place_attendence, :birth_date, :years_study, :genre, 
                                       :marital_status, :phone, :address, :services_professional, 
-                                      :reason_meeting, :cpf, :profession, :service_access, :ub)
+                                      :reason_meeting, :cpf, :profession_id, :service_access_id, :ub_id)
     end
 end
-
-

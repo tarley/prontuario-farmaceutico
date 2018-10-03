@@ -87,6 +87,7 @@ ou
 4. Puxar modificações para a maquina
 - git pull origin quasenada
 
+
 ----------------------------------------------------------------------------------
 
 Como relacionar tabelas
@@ -94,6 +95,13 @@ Como relacionar tabelas
 - https://www.devmedia.com.br/introducao-a-relacionamentos-no-ruby-on-rails/33860
 
 -----------------------------------------------------------------------------------
+
+Como fazer o campo autocomplete com chosen
+
+- https://www.youtube.com/watch?v=KfJyHbZFyFg
+- https://github.com/bfcoder/bootstrap-chosen-rails
+
+--------------------------------------------------------------
 
 Como fazer campo Autocomplete com Jquery, JavaScript no Rails
 
