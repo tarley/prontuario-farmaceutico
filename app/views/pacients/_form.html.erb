@@ -99,6 +99,7 @@
                 
                 <div class="col-md-3 col-sm-12 col-xs-12 form-group">
                   <label class="heard">Profissão:</label>
+                  
                   <div class="input-group col-md-12 col-sm-12 col-xs-12 form-group">
                     <%= f.select :profession_id,
                       Profession.all.map { |u| [u.description, u.id] },
@@ -109,6 +110,8 @@
                      <%= link_to '  Doença', new_profession_path, {class: "btn fa fa-plus btn-primary"}%>  
                     </span>
                   </div>
+                  
+                  
                 </div>  
  
             </div>
