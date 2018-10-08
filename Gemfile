@@ -22,7 +22,10 @@ gem 'gentelella-rails'
 
 #Trabalhando com formatação de data
 gem 'jquery-ui-rails'
+<<<<<<< HEAD
+=======
 # gem bcrypt
+>>>>>>> e36bd1a84e23ae3a74d306603a3e215e9894f6cb
 gem 'bcrypt', '~> 3.1.7'
 
 # Use jquery as the JavaScript library

@@ -14,12 +14,12 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
-//= require bootstrap-datepicker
+
 //= require_tree .
 //= require gentelella
 //= require gentelella-custom
 //= require chosen
-//= require maskedinput
+
 
 /**
  * Resize function without multiple trigger
