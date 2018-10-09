@@ -28,7 +28,7 @@ class PrmCausesController < ApplicationController
 
     respond_to do |format|
       if @prm_cause.save
-        format.html { redirect_to @prm_cause, notice: 'Prm cause was successfully created.' }
+        format.html { redirect_to @prm_cause, notice: 'Causa de PRM criada com sucesso.' }
         format.json { render :show, status: :created, location: @prm_cause }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class PrmCausesController < ApplicationController
   def update
     respond_to do |format|
       if @prm_cause.update(prm_cause_params)
-        format.html { redirect_to @prm_cause, notice: 'Prm cause was successfully updated.' }
+        format.html { redirect_to @prm_cause, notice: 'Causa de PRM alterada com sucesso.' }
         format.json { render :show, status: :ok, location: @prm_cause }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class PrmCausesController < ApplicationController
   def destroy
     @prm_cause.destroy
     respond_to do |format|
-      format.html { redirect_to prm_causes_url, notice: 'Prm cause was successfully destroyed.' }
+      format.html { redirect_to prm_causes_url, notice: 'Causa de PRM deletada com sucesso.' }
       format.json { head :no_content }
     end
   end

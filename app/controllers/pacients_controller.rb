@@ -17,10 +17,6 @@ class PacientsController < ApplicationController
   def show
   end
   
-  #def getbusca
-  #  @pacients = Pacients.search(params[:search])
-  #end
-
   # GET /pacients/new
   def new
     @pacient = Pacient.new
@@ -37,7 +33,7 @@ class PacientsController < ApplicationController
 
     respond_to do |format|
       if @pacient.save
-        format.html { redirect_to @pacient, notice: 'Pacient was successfully created.' }
+        format.html { redirect_to @pacient, notice: 'Paciente criado com sucesso.' }
         format.json { render :show, status: :created, location: @pacient }
       else
         format.html { render :new }
@@ -51,7 +47,7 @@ class PacientsController < ApplicationController
   def update
     respond_to do |format|
       if @pacient.update(pacient_params)
-        format.html { redirect_to @pacient, notice: 'Pacient was successfully updated.' }
+        format.html { redirect_to @pacient, notice: 'Paciente alterado com sucesso.' }
         format.json { render :show, status: :ok, location: @pacient }
       else
         format.html { render :edit }
@@ -65,11 +61,10 @@ class PacientsController < ApplicationController
   def destroy
     @pacient.destroy
     respond_to do |format|
-      format.html { redirect_to pacients_url, notice: 'Pacient was successfully destroyed.' }
+      format.html { redirect_to pacients_url, notice: 'Paciente excluido com sucesso.' }
       format.json { head :no_content }
     end
   end
-  
   
 
   private
@@ -82,8 +77,6 @@ class PacientsController < ApplicationController
     def pacient_params
       params.require(:pacient).permit(:name, :place_attendence, :birth_date, :years_study, :genre, 
                                       :marital_status, :phone, :address, :services_professional, 
-                                      :reason_meeting, :cpf, :profession, :service_access, :ub)
+                                      :reason_meeting, :cpf, :profession_id, :service_access_id, :ub_id)
     end
 end
-
-

@@ -51,7 +51,7 @@ rails generate scaffold PrmCause description:string prm:references
 
 -> PRM
 rails generate scaffold Prm description:string
->>>>>>> a422148ef7cd99460b7aefcaad7df5a45b4c518e
+
 
 ----------------------------------------
 
@@ -87,9 +87,27 @@ ou
 4. Puxar modificações para a maquina
 - git pull origin quasenada
 
+
+----------------------------------------------------------------------------------
+
+Como relacionar tabelas
+
+- https://www.devmedia.com.br/introducao-a-relacionamentos-no-ruby-on-rails/33860
+
+-----------------------------------------------------------------------------------
+
+Como fazer o campo autocomplete com chosen
+
+- https://www.youtube.com/watch?v=KfJyHbZFyFg
+- https://github.com/bfcoder/bootstrap-chosen-rails
+
 --------------------------------------------------------------
 
 Como fazer campo Autocomplete com Jquery, JavaScript no Rails
+
+- https://github.com/gorails-screencasts/gorails-episode-192
+- https://gorails.com/episodes/global-autocomplete-search?autoplay=1
+- https://translate.google.com.br/translate?hl=pt-BR&sl=en&u=https://api.rubyonrails.org/v5.1/classes/ActiveRecord/Associations/CollectionProxy.html&prev=search
 
 - https://github.com/bigtunacan/rails-jquery-autocomplete
 - https://github.com/rails/jquery-ujs

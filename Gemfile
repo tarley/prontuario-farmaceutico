@@ -22,7 +22,7 @@ gem 'gentelella-rails'
 
 #Trabalhando com formatação de data
 gem 'jquery-ui-rails'
-# gem 'bcrypt', '~> 3.1', '>= 3.1.11'
+
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -54,4 +54,13 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
+
+#fazer campo autocomplete com chosen
+source 'https://rails-assets.org' do
+  gem 'rails-assets-chosen'
+end
+  # if using bootstrap
+  gem 'bootstrap-chosen-rails'
+  
+  
 

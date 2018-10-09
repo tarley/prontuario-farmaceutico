@@ -6,7 +6,7 @@ before_action :block_access, except: [:destroy]
        sign_in(@user)
        redirect_to root_url
     else
-       render action: :new
+      render action: :new
     end
   end
   def destroy

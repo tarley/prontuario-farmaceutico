@@ -7,3 +7,26 @@ O sistema tem como objetivo atender a demanda da Escola e Clínica de Farmácia 
 ## Índice
 
 Em breve...
+
+#### Comandos GIT
+
+git checkout "branch"
+
+git add *
+
+git commit -am "first commit"
+
+git push
+
+git pull
+
+git status
+
+#### Como iniciar o server Rails
+
+rails server -p $PORT -b $IP
+
+#### Como consultar o Banco de Dados SQLite
+
+rails dbconsole
+
