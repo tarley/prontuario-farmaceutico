@@ -1,38 +1,7 @@
-<header>
-  <div>
-    <nav>
-      <ul>
-        <% if logged_in? %>
-          <li><%= link_to "Users", users_path %></li>
-          <li>
-            <ul>
-              <li><%= link_to "Profile", current_user %></li>
-              <li><%= link_to "Settings", '#' %></li>
-              <li>
-                <%= link_to "Log out", sign_out_path, method: "delete" %>
-              </li>
-            </ul>
-          </li>
-        <% else %>
-          <li><%= link_to "Log in", root_path %></li>
-        <% end %>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<%= form_for :session, url: sign_in_path do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+<head>
+  INDEX
+</head>
+<body>
+  <h1>HOME INDEX</h1>
   
-  <div class="field">
-    <%= f.label :senha %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Entrar" %>
-  </div>
-Novo usuário? <%= link_to "Cadastre-se", new_user_path %></p>
-<% end %>
+</body>
