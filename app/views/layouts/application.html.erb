@@ -10,6 +10,9 @@
     
   </head>
     <body class="nav-md footer_fixed">
+      
+      <% if logged_in? %>
+      
       <div class="container body">
         <div class="main_container">
           <div class="col-md-3 left_col">
@@ -33,6 +36,8 @@
                       </li>
                       <li><a href="/attendances"><i class="fa fa-hospital-o"></i>Atendimento</a>
                       </li>
+                      <li><a href="/users"><i class="fa fa-lock"></i>Usuários</a>
+                      </li>
                     </ul>
                 </div>
               </div>
@@ -46,7 +51,7 @@
                 <div class="nav toggle">
                   <a id="menu_toggle"><i class="fa fa-bars"></i></a>
                 </div>
-                <% if logged_in? %>
+                
                 <ul class="nav navbar-nav navbar-right">
                   <li class="">
                     <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -62,11 +67,13 @@
                     </ul>
                   </li>
                 </ul>
-                <% end %>
+                
               </nav>
             </div>
           </div>
           <!-- /top navigation -->
+          
+          <% end %>
           
           <!-- page content -->
             <div class="right_col" role="main">
