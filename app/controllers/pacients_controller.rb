@@ -1,4 +1,6 @@
 class PacientsController < ApplicationController
+  before_action :authorize
+  
   attr_accessor :profession
   before_action :set_pacient, only: [:show, :edit, :update, :destroy]
 
