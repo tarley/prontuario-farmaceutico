@@ -21,4 +21,5 @@ module SessionsHelper
     def getCurrentUserName()
         @current_user.name
     end
+    
 end
