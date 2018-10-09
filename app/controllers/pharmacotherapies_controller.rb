@@ -1,4 +1,6 @@
 class PharmacotherapiesController < ApplicationController
+  before_action :authorize
+  
   before_action :set_pharmacotherapy, only: [:show, :edit, :update, :destroy]
 
   # GET /pharmacotherapies
