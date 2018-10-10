@@ -13,14 +13,13 @@
  *= require chosen
  *= require_tree .
  *= require_self
- *= require bootstrap-datepicker
  */
+ 
 @import "bootstrap-sprockets"; 
 @import "bootstrap"; 
  
 @import "gentelella";
 @import "gentelella-custom";
-
 
 @import "chosen";
 @import "bootstrap-chosen";

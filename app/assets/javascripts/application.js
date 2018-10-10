@@ -14,12 +14,10 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
-//= require bootstrap-datepicker
 //= require_tree .
 //= require gentelella
 //= require gentelella-custom
 //= require chosen
-//= require maskedinput
 
 /**
  * Resize function without multiple trigger
@@ -39,7 +37,11 @@ function chosen_init() {
 
       var ub = $('option:selected', this);
       var ub_url = ub.attr('data-url');
-      $.getScript(ub_url)
+      $.getScript(ub_url);
+      
+      var service_access = $('option:selected',this);
+      var service_access_url = service_access.attr('data-url');
+      $.getScript(service_access_url)
     }
   );
 }
