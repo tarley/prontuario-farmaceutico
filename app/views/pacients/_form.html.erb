@@ -153,7 +153,18 @@
                           { class: 'chosen-select' }
                         %> 
                       </div>
-                </div>                 
+                </div>
+                
+                <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                    <label class="heard">Acesso ao Serviço:</label>
+                      <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                        <%= f.select :service_access_id,
+                          ServiceAccess.all.map { |u| [u.description, u.id] },
+                          { include_blank: "Buscar Acesso ao Serviço" },
+                          { class: 'chosen-select' }
+                        %>
+                      </div>
+                </div>   
                 
                 <div class="col-md-9 col-sm-12 col-xs-12 form-group">
                   <label class="heard">Motivo da consulta:</label>
