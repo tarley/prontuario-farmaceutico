@@ -39,7 +39,11 @@ function chosen_init() {
 
       var ub = $('option:selected', this);
       var ub_url = ub.attr('data-url');
-      $.getScript(ub_url)
+      $.getScript(ub_url);
+      
+      var prm = $('option:selected', this);
+      var prm_url = prm.attr('data-url');
+      $.getScript(prm_url);
     }
   );
 }

@@ -17,11 +17,23 @@ ActiveRecord::Schema.define(version: 20180924005855) do
     t.text     "general_screen"
     t.datetime "attendance_date"
     t.integer  "pacient_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.integer  "prm_id"
+    t.integer  "prm_cause_id"
+    t.integer  "disease_id"
+    t.integer  "pharmacotherapy_id"
+    t.integer  "sfc_id"
+    t.integer  "care_plan_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
+  add_index "attendances", ["care_plan_id"], name: "index_attendances_on_care_plan_id"
+  add_index "attendances", ["disease_id"], name: "index_attendances_on_disease_id"
   add_index "attendances", ["pacient_id"], name: "index_attendances_on_pacient_id"
+  add_index "attendances", ["pharmacotherapy_id"], name: "index_attendances_on_pharmacotherapy_id"
+  add_index "attendances", ["prm_cause_id"], name: "index_attendances_on_prm_cause_id"
+  add_index "attendances", ["prm_id"], name: "index_attendances_on_prm_id"
+  add_index "attendances", ["sfc_id"], name: "index_attendances_on_sfc_id"
 
   create_table "care_plans", force: :cascade do |t|
     t.string   "therapeutic_goal"
@@ -81,10 +93,12 @@ ActiveRecord::Schema.define(version: 20180924005855) do
     t.text     "carePlan"
     t.text     "descriptionDisease"
     t.integer  "treatment_id"
+    t.integer  "prm_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
   end
 
+  add_index "pharmacotherapies", ["prm_id"], name: "index_pharmacotherapies_on_prm_id"
   add_index "pharmacotherapies", ["treatment_id"], name: "index_pharmacotherapies_on_treatment_id"
 
   create_table "prm_causes", force: :cascade do |t|
