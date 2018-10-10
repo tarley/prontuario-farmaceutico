@@ -69,7 +69,7 @@
                       <li><a href="javascript:;"> Profile</a></li>
                       <li><a href="javascript:;">Help</a></li>
                         <li>
-                          <%= link_to "Log Out", sign_out_path, method: "delete" %>
+                          <%= link_to "Log Out", sign_out_path, method: "delete", data: { confirm: 'Deseja sair do sistema ?' } %>
                         </li>
                     </ul>
                   </li>
