@@ -10,6 +10,7 @@ class Pacient < ActiveRecord::Base
     
     has_many :professions
     has_many :ubs
+    has_many :service_access
     
     belongs_to :profession
     belongs_to :service_access
