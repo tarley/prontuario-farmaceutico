@@ -22,4 +22,6 @@ module SessionsHelper
         @current_user.name
     end
     
+    
+    
 end
