@@ -2,6 +2,11 @@
 
 <%= link_to 'Nova Causa PRM', new_prm_cause_path, :class => 'btn btn-primary' %>
 
+<%= form_tag(pacients_path, :method => :get) do %>
+  <%= text_field_tag 'pesquisa', nil, placeholder: 'Buscar por Causas do prm' %>
+  <%= submit_tag "Pesquisar" , :class => 'btn btn-primary'%>
+<% end %>
+
 <h1>Lista Causa PRM</h1>
 
 <div class="container-fluid">

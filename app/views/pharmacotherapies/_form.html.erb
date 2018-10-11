@@ -54,6 +54,18 @@
                 <div class="col-md-11">
                   <%= f.text_field :useDificulty, :class => "form-control" %>
                 </div>
+              
+              <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                  <label class="heard">Selecione PRM:</label>
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12 form-group">
+                    <%= f.select :prm_ids,
+                      Prm.all.map { |u| [u.description, u.id] },
+                      { include_blank: "Buscar PRM" },
+                      { class: 'chosen-select' }
+                    %>
+                  </div>
+              </div>
+              
             </div>
           </form>
         </div>
