@@ -3,18 +3,18 @@
   
   <head>
     <title>GesFar Newton</title>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'maskedinput', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
-    <body class="nav-md">
+  
+    <body class="nav-md footer_fixed">
       <div class="container body">
         <div class="main_container">
           <div class="col-md-3 left_col">
             <div class="left_col scroll-view">
               <div class="navbar nav_title" style="border: 0;">
-                <a href="index.html" class="site_title"><span>GesFar Newton</span></a>
+                <a href="/users" class="site_title"><span>GesFar Newton</span></a>
               </div>
             
               <div class="clearfix"></div>
@@ -26,48 +26,15 @@
                 <div class="menu_section">
                   <h3>Painel Inicial</h3>
                     <ul class="nav side-menu">
-                      <li><a href="/home"><i class="fa fa-home"></i>Menu</a>
+                      <li><a href="/home"><i class="fa fa-home"></i>Menu</a>  
                       </li>
                       <li><a href="/pacients"><i class="fa fa-user"></i>Paciente</a>
                       </li>
                       <li><a href="/attendances"><i class="fa fa-hospital-o"></i>Atendimento</a>
                       </li>
-                      <li><a href="/diseases"><i class="fa fa-thermometer-quarter"></i>Doença</a>
-                      </li>
-                      <li><a href="/care_plans"><i class="fa fa-plus-square"></i>Plano de cuidado</a>
-                      </li>
-                      <li><a href="/prms"><i class="fa fa-heartbeat"></i>PRMs</a>
-                      </li>
-                      <li><a href="/service_accesses"><i class="fa fa-user-md"></i>Usuário</a>
-                      <li><a href="/prm_causes"><i class="fa fa-heart-o"></i>Causas de PRM</a>
-                      </li>
-                      <li><a href="/pharmacotherapies"><i class="fa fa-medkit"></i>Farmacoterapia</a>
-                      </li>
-                      <li><a href="/users"><i class="fa fa-user-md"></i>Usuário</a>
-                      </li>
-                      <li><a href="/type_sexes"><i class="fa fa-venus-mars"></i>Tipo sexo</a>
-                      </li>
                     </ul>
                 </div>
               </div>
-            <!-- /sidebar menu -->
-            
-            <!-- /menu footer buttons -->
-              <div class="sidebar-footer hidden-small">
-                <a data-toggle="tooltip" data-placement="top" title="Settings">
-                  <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-                </a>
-                <a data-toggle="tooltip" data-placement="top" title="FullScreen">
-                  <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
-                </a>
-                <a data-toggle="tooltip" data-placement="top" title="Lock">
-                  <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-                </a>
-                <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
-                  <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-                </a>
-              </div>
-            <!-- /menu footer buttons -->
             </div>
           </div>
           
@@ -76,7 +43,7 @@
             <div class="nav_menu">
               <nav>
                 <div class="nav toggle">
-                  <a href="javascript:;"><i class="fa fa-bars"></i></a>
+                  <a id="menu_toggle"><i class="fa fa-bars"></i></a>
                 </div>
                 <% if logged_in? %>
                 <ul class="nav navbar-nav navbar-right">
@@ -105,16 +72,14 @@
               <!-- top tiles -->
               <%= yield %>
             </div>
-          </div>
-        </div>
+        </div> 
         
-        <footer>
-          <div class="pull-right">
-            GesFar - Desenvolvido pelo Curso de Sistemas de Informação da Newton Paiva - 8º Periodo <a href="https://www.newtonpaiva.br/graduacao/sistemas-de-informacao">Newton Paiva</a>
-          </div>
+          <footer>
+            <div class="pull-right">
+              GesFar - Desenvolvido pelo Curso de Sistemas de Informação da Newton Paiva - 7º e 8º Periodo <a href="https://www.newtonpaiva.br/graduacao/sistemas-de-informacao"> Newton Paiva </a>
+            </div>
             <div class="clearfix"></div>
-        </footer>
-        
+          </footer>        
       </div>
     </body>
 </html>

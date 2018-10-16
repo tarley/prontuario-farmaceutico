@@ -10,51 +10,24 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require easy-autocomplete
- *= require easy-autocomplete.themes
+ *= require chosen
  *= require_tree .
  *= require_self
  */
+ 
 @import "bootstrap-sprockets"; 
 @import "bootstrap"; 
  
 @import "gentelella";
 @import "gentelella-custom";
 
+@import "chosen";
+@import "bootstrap-chosen";
 
 body {
     background: #ffffff;
 }
 
-.form-control {
-    display: block;
-    width: 100%;
-    padding: 6px 12px;
-    font-size: 18px;
-    line-height: 1.42857143;
-    background-color: #fff;
-    background-image: none;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
-    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-    color: #444;
-    font-weight: 500;
-    height: 48px;
-    margin: 5px;
-}
-
-input.remove
-{
-    float:left;
-    display:block;
-    margin:15px;
-}
-
-input.add
-{
-    float:right;
+footer {
+  padding: 1px 20px;
 }

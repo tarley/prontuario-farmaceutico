@@ -40,5 +40,10 @@
   <%= @pharmacotherapy.descriptionDisease %>
 </p>
 
+<p>
+  <strong>PRM:</strong>
+  <%= @pharmacotherapy.prm %>
+</p>
+
 <%= link_to 'Editar', edit_pharmacotherapy_path(@pharmacotherapy), :class => 'btn btn-primary' %> |
 <%= link_to 'Voltar', pharmacotherapies_path, :class => 'btn btn-primary' %>
