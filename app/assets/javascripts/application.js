@@ -18,6 +18,8 @@
 //= require_tree .
 //= require gentelella
 //= require gentelella-custom
+//= require chosen-jquery
+//= require sfcs
 
 /**
  * Resize function without multiple trigger
