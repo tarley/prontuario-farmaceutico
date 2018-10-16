@@ -29,9 +29,14 @@
           <form class="form-horizontal row-border" action="#">
             <div class="form-group">
               
+              
+              
               <div class="col-md-3 col-sm-12 col-xs-12 form-group">
                 <label class="heard">PRM:</label>
                 <div class="input-group col-md-12 col-sm-12 col-xs-12 form-group">
+                  
+                  
+                  
                   <%= f.select :prm_id,
                     Prm.all.map { |u| [u.description, u.id] },
                     { include_blank: "Buscar PRM" },
@@ -40,13 +45,18 @@
                 </div>
               </div>
            
-             <label class="col-md-2 control-label">Quadro geral:</label> 
-              <div class="col-md-10">
-                <%= f.text_area :general_screen, :class => "form-control" %>
-              </div>
+             
+              
+              <div class="col-md-9 col-sm-12 col-xs-12 form-group">
+                  <label class="heard">Quadro geral:</label>
+                  <%= f.text_area :general_screen, :class => "form-control col-md-7 col-xs-12"%>
+                </div>
+              
+              
+              
              <label class="col-md-2 control-label">Data do atendimento:</label> 
               <div class="col-md-4">
-                <%= f.datetime_select :attendance_date, :class => "form-control" %>
+                <%= f.date_select :attendance_date, :class => "form-control" %>
               </div>
              
 
@@ -72,6 +82,9 @@
  <div class="actions" style="float:right">
     <%= f.submit 'Salvar', :class => 'btn btn-primary' %>
   </div>
+  
+  
+  
   
 <% end %>
 
