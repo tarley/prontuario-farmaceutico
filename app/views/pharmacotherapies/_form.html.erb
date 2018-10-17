@@ -12,57 +12,121 @@
   <% end %>
 
 <div class="container">
-  <div class="row">
-    <div class="col-md-12 col-sm-6 col-xs-12">
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <form class="form-horizontal row-border">
-            <div class="form-group">
-              <label class="col-md-1 control-label">ID tratamento:</label>
-                <div class="col-md-2">
-                  <%= f.text_field :treatment_id, :class => "form-control" %>
-                </div>               
-              <label class="col-md-1 control-label">Plano de tratamento:</label>
-                <div class="col-md-8">
-                  <%= f.text_area :carePlan, :class => "form-control" %>
-                </div>              
-              <label class="col-md-1 control-label">Remedio:</label>
-                <div class="col-md-2">
-                  <%= f.text_field :medicine, :class => "form-control" %>
+      <form id="demo-form" data-parsley-validate>
+        <div class="x_panel">
+          <div class="x_title">
+            <h2>Dados Farmacoterapia</h2>
+            <ul class="nav navbar-right panel_toolbox">
+              <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+              </li>
+            </ul>
+            <div class="clearfix"></div>
+          </div>
+        
+          <div class="x_content">
+            <div class="row">
+              
+                <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                  <label for="heard">ID tratamento:</label>
+                    <%= f.text_field :treatment_id, :required => "required", :class => "form-control col-md-7 col-xs-12"%>
                 </div>
-              <label class="col-md-1 control-label">Descrição da doença:</label>
-                <div class="col-md-8">
-                  <%= f.text_area :descriptionDisease, :class => "form-control" %>
-                </div>                
-              <label class="col-md-1 control-label">Dosagem:</label>
-                <div class="col-md-2">
-                  <%= f.text_field :dosageSchedule, :class => "form-control" %>
+                
+                <div class="col-md-9 col-sm-12 col-xs-12 form-group">
+                  <label class="heard">Plano de tratamento:</label>
+                  <%= f.text_area :carePlan, :class => "form-control col-md-7 col-xs-12"%>
                 </div>
-              <label class="col-md-1 control-label">Segurança:</label>
-                <div class="col-md-2">
-                  <%= f.text_field :safety, :class => "form-control" %>
+                
+              
+                
+                 <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                  <label for="heard">Medicamento:</label>
+                   <%= f.select(:medicine, [['Selecione Medicamento', 0], 
+                                ['Insulina', 1], 
+                                ['Paracetamol', 2],
+                                ['Vitamina Complexo B',3], 
+                                ['Lacday', 4], 
+                                ['Anador',5],
+                                ['Dorflex', 6],
+                                ['Aspirina', 7]], {}, 
+                                {class: "form-control col-md-7 col-xs-12"}) %>
+
                 </div>
-              <label class="col-md-1 control-label">Eficácia:</label>
-                <div class="col-md-2">
-                  <%= f.text_field :effectiveness, :class => "form-control" %>
+                
+                <div class="col-md-9 col-sm-12 col-xs-12 form-group">
+                  <label class="heard">Descrição da doença:</label>
+                  <%= f.text_area :descriptionDisease, :class => "form-control col-md-7 col-xs-12"%>
                 </div>
-              <label class="col-md-1 control-label">Tempo de uso:</label>
-                <div class="col-md-2">
-                  <%= f.number_field :timeUse, :class => "form-control" %>
-                </div>              
-              <label class="col-md-1 control-label">Dificuldade no uso:</label>
-                <div class="col-md-11">
-                  <%= f.text_field :useDificulty, :class => "form-control" %>
+                
+                  <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                  <label for="heard">Dosagem:</label>
+                    <%= f.text_field :dosageSchedule, :required => "required", :class => "form-control col-md-7 col-xs-12"%>
                 </div>
-            </div>
-          </form>
+                
+                  <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                  <label for="heard">Segurança:</label>
+                    <%= f.text_field :safety, :required => "required", :class => "form-control col-md-7 col-xs-12"%>
+                </div>
+                
+                <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                  <label for="heard">Eficácia:</label>
+                    <%= f.text_field :effectiveness, :required => "required", :class => "form-control col-md-7 col-xs-12"%>
+                </div>
+                
+                  <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                  <label for="heard">Tempo de uso:</label>
+                  <%= f.number_field :timeUse, :required => "required", :class => "form-control col-md-7 col-xs-12"%>
+                </div>        
+                
+            
+                
+                <div class="col-md-9 col-sm-12 col-xs-12 form-group">
+                  <label class="heard">Dificuldade no uso:</label>
+                  <%= f.text_area :useDificulty, :class => "form-control col-md-7 col-xs-12"%>
+                </div>
+                
+                </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-  
-  <div class="actions">
+                
+                <div class="container">
+      <form id="demo-form" data-parsley-validate>
+        <div class="x_panel">
+          <div class="x_title">
+            <h2>PRM</h2>
+            <ul class="nav navbar-right panel_toolbox">
+              <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+              </li>
+            </ul>
+            <div class="clearfix"></div>
+          </div>
+        
+          <div class="x_content">
+            <div class="row">
+                
+              
+              <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                  <label class="heard">Selecione PRM:</label>
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12 form-group">
+                    <%= f.select :prm_ids,
+                      Prm.all.map { |u| [u.description, u.id] },
+                      { include_blank: "Buscar PRM" },
+                      { class: 'chosen-select' }
+                    %>
+                  </div>
+              </div>
+              
+              
+              
+             
+              <div class="actions">
     <%= f.submit 'Salvar', :class => 'btn btn-success'%>
   </div>
+                 </div>
+          </div>
+           
+        </div>
+         
+  
+ 
 </div>
 <% end %>

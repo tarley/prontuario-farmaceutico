@@ -38,17 +38,12 @@
                 <div class="col-md-4">
                   <%= f.text_field :pharmacotherapy_id, :class => "form-control" %>
                 </div>
-              <label class="col-md-2 control-label">PRM:</label>
-                <div class="col-md-4">
-                  <%= f.text_field :prm_id, :class => "form-control" %>
-                </div>
               <label class="col-md-2 control-label">SFC:</label>
                 <div class="col-md-4">
-                  <%= f.text_field :sfc_id, :class => "form-control" %>
-                </div>
-              <label class="col-md-2 control-label">Causa PRM:</label>
-                <div class="col-md-4">
-                  <%= f.text_field :prmCause_id, :class => "form-control" %>
+                <%= f.select(:sfc_id, [['Selecione SFC', 0], ['Inicial', 1], ['Resolvido', 2],['Estável',3],
+                  ['Melhora', 4], ['Parcial', 5],['Parcial',6],['Sem Melhora', 7], ['Piora', 8],['Falha',9],
+                  ['Sem Condições de Avaliar', 10]], :class => "form-control") %> 
+                </div> 
                 </div>
             </div>
           </form>

@@ -1,3 +1,4 @@
 class PrmCause < ActiveRecord::Base
-  belongs_to :prm
+    scope :pesquisa, ->(query) {where("description like ?", "%#{query}%")}
+    belongs_to :prm
 end
