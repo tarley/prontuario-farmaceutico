@@ -14,7 +14,4 @@ class CreateUsers < ActiveRecord::Migration
       t.timestamps null: false
     end
   end
-  def self.up
-    User.create(:email => "administrador@email.com", :name => "Administrador", :password => Password.new("123456"), :profile => 0)
-  end
 end
