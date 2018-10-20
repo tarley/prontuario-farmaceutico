@@ -22,6 +22,9 @@ class Attendance < ActiveRecord::Base
   
   #belongs_to :care_plan
   
+  has_many :attendances
+  
+  
   validates_presence_of :general_screen, message: 'não pode deixar em branco'
   
 end
