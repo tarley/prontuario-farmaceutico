@@ -5,6 +5,7 @@ class Prm < ActiveRecord::Base
     
     belongs_to :attendances
     belongs_to :care_plans
+    belongs_to :pharmacotherapies
     
     
     #Relacionamentos
