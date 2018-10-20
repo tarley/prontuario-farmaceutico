@@ -1,4 +1,6 @@
 class PrmsController < ApplicationController
+  before_action :authorize
+  
   before_action :set_prm, only: [:show, :edit, :update, :destroy]
 
   # GET /prms

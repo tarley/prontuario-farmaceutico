@@ -1,5 +1,10 @@
 class PharmacotherapiesController < ApplicationController
+<<<<<<< HEAD
+  before_action :authorize
+  
+=======
   attr_accessor :prm
+>>>>>>> releases/0.1.0
   before_action :set_pharmacotherapy, only: [:show, :edit, :update, :destroy]
 
   # GET /pharmacotherapies

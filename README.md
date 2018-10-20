@@ -30,3 +30,8 @@ rails server -p $PORT -b $IP
 
 rails dbconsole
 
+#### 4. Criação do primeiro usuário
+
+#### Entrar no rails console
+
+#### Copiar e colar o código do lado -> User.create(email: "administrador@email.com", name: "Administrador", password: "123456", profile: 0)

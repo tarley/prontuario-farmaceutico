@@ -34,6 +34,7 @@
                 <div class="col-md-4">
                   <%= f.text_field :anothers_conduct, :class => "form-control" %>
                 </div>
+<<<<<<< HEAD
               
               
                 
@@ -45,6 +46,18 @@
                     { include_blank: "Buscar SFC" },
                     { class: 'chosen-select' }
                   %>
+=======
+              <label class="col-md-2 control-label">Farmacoterapia:</label>
+                <div class="col-md-4">
+                  <%= f.text_field :pharmacotherapy_id, :class => "form-control" %>
+                </div>
+              <label class="col-md-2 control-label">SFC:</label>
+                <div class="col-md-4">
+                <%= f.select(:sfc_id, [['Selecione SFC', 0], ['Inicial', 1], ['Resolvido', 2],['Estável',3],
+                  ['Melhora', 4], ['Parcial', 5],['Parcial',6],['Sem Melhora', 7], ['Piora', 8],['Falha',9],
+                  ['Sem Condições de Avaliar', 10]], :class => "form-control") %> 
+                </div> 
+>>>>>>> 068583b64cd8c04d3fa0d16a16b23babbe124add
                 </div>
               </div>
                 
