@@ -1,11 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Professions</h1>
 
-<%= form_tag(professions_path, :method => :get) do %>
-  <%= text_field_tag 'pesquisa', nil, placeholder: 'Buscar Profissão' %>
-  <%= submit_tag "Pesquisar"%>
-<% end %>
 
 <table>
   <thead>

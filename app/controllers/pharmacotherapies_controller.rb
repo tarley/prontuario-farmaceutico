@@ -72,6 +72,6 @@ class PharmacotherapiesController < ApplicationController
     def pharmacotherapy_params
       params.require(:pharmacotherapy).permit(:medicine, :dosageSchedule, :safety, :effectiveness, 
                                               :useDificulty, :timeUse, :carePlan, :descriptionDisease, 
-                                              :treatment_id, :prm_id)
+                                              :treatment_id, :prm_id, :prmCause_id)
     end
 end

@@ -10,8 +10,12 @@
       </ul>
     </div>
   <% end %>
+  
+  
 
 <div class="container">
+  
+  
   
   <!-- Row start -->
   <div class="row">
@@ -21,7 +25,21 @@
           <i class="icon-calendar"></i>
           <h3 class="panel-title">Informações da Doença</h3>
         </div>
-       
+        
+        <!-- <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                  <label class="heard">Doenças:</label>
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12 form-group">
+                    <%= f.select :disease,
+                      Disease.all.map { |u| [u.name, u.id] },
+                      { include_blank: "Buscar Doença" },
+                      { class: 'chosen-select' }
+                    %>
+                    <span class="input-grou-btn">
+                     <%= link_to '  Doença', new_disease_path, {class: "btn fa fa-plus btn-primary"}%>  
+                    </span>
+                  </div>
+                </div> -->
+        
         <div class="panel-body">
           <form class="form-horizontal row-border" action="#">
             <div class="form-group">
@@ -33,6 +51,7 @@
                 <div class="col-md-5">
                   <%= f.text_area :description, :class => "form-control" %>
                 </div>
+                
             </div>
           </form>
         </div>
@@ -45,4 +64,8 @@
     </div>
 </div>    
 
+<%= link_to 'Adicionar Farmacoterapia', new_pharmacotherapy_path, :class => 'btn btn-primary' %>
+
 <% end %>
+
+

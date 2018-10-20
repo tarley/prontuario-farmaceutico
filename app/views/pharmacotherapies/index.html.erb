@@ -35,10 +35,11 @@
                 <td><%= pharmacotherapy.timeUse %></td>
                 <td><%= pharmacotherapy.carePlan %></td>
                 <td><%= pharmacotherapy.descriptionDisease %></td>
-                <td><%= pharmacotherapy.treatment %></td>
+                <td><%= pharmacotherapy.treatments %></td>
                 <td><%= link_to 'Visualizar', pharmacotherapy, :class => 'btn btn-primary' %></td>
                 <td><%= link_to 'Editar', edit_pharmacotherapy_path(pharmacotherapy), :class => 'btn btn-primary' %></td>
                 <td><%= link_to 'Excluir', pharmacotherapy, :class => 'btn btn-primary', method: :delete, data: { confirm: 'Deseja realmente excluir?' } %></td>
+                
               </tr>
             <% end %>
           </tbody>

@@ -14,6 +14,11 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+  #Gerando arquivos em PDF
+gem 'wkhtmltopdf-binary'
+gem 'wicked_pdf'
+
+
 # Utilizando o bootstrap
 gem 'bootstrap-sass'
 
@@ -22,13 +27,10 @@ gem 'gentelella-rails'
 
 #Trabalhando com formatação de data
 gem 'jquery-ui-rails'
-<<<<<<< HEAD
 # gem bcrypt
 
 gem 'bcrypt', '~> 3.1.7'
-=======
 #gem 'bcrypt', '~> 3.1', '>= 3.1.11'
->>>>>>> afd4bb026828b839bdc9fc36405a0249d283fcac
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

@@ -4,6 +4,7 @@ class CreateAttendances < ActiveRecord::Migration
       t.text :general_screen
       t.datetime :attendance_date
       
+      
       t.references :pacient, index: true, foreign_key: true
       t.references :prm, index: true, foreign_key: true
       t.references :prm_cause, index: true, foreign_key: true

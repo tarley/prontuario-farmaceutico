@@ -10,6 +10,21 @@
       </ul>
     </div>
   <% end %>
+  
+  <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                  <label class="heard">Paciente:</label>
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12 form-group">
+                    <%= f.select :pacients,
+                      Pacient.all.map { |u| [u.name, u.id] },
+                      { include_blank: "Buscar Paciente" },
+                      { class: 'chosen-select' }
+                    %>
+                    <!--<span class="input-grou-btn">-->
+                    <!-- <%= link_to '  Doença', new_profession_path, {class: "btn fa fa-plus btn-primary"}%>  -->
+                    <!--</span>-->
+                  </div>
+                </div>
+  
 
 <div class="container">
   <div class="row">
@@ -18,16 +33,20 @@
         <div class="panel-body">
           <form class="form-horizontal row-border">
             <div class="form-group">
-              <label class="col-md-1 control-label">ID tratamento:</label>
+              <!--<label class="col-md-1 control-label">ID tratamento:</label>
                 <div class="col-md-2">
                   <%= f.text_field :treatment_id, :class => "form-control" %>
-                </div>               
+                </div> -->               
               <label class="col-md-1 control-label">Plano de tratamento:</label>
                 <div class="col-md-8">
                   <%= f.text_area :carePlan, :class => "form-control" %>
                 </div>              
               <label class="col-md-1 control-label">Remedio:</label>
                 <div class="col-md-2">
+                  <!--<%= form_tag(professions_path, :method => :get) do %>
+                  <%= text_field_tag 'pesquisa', nil, placeholder: 'Buscar Profissão' %>
+                  <%= submit_tag "Pesquisar"%>
+                  <% end %> -->
                   <%= f.text_field :medicine, :class => "form-control" %>
                 </div>
               <label class="col-md-1 control-label">Descrição da doença:</label>
@@ -58,13 +77,27 @@
               <div class="col-md-3 col-sm-12 col-xs-12 form-group">
                   <label class="heard">Selecione PRM:</label>
                   <div class="input-group col-md-12 col-sm-12 col-xs-12 form-group">
-                    <%= f.select :prm_ids,
+                    <%= f.select :prm_id,
                       Prm.all.map { |u| [u.description, u.id] },
                       { include_blank: "Buscar PRM" },
                       { class: 'chosen-select' }
                     %>
                   </div>
               </div>
+              
+              <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                  <label class="heard">Causas do PRM:</label>
+                <div class="input-group col-md-12 col-sm-12 col-xs-12 form-group">
+                  
+                  <%= f.select :prmCause_id,
+                    PrmCause.all.map { |u| [u.description, u.id] },
+                    { include_blank: "Causas do PRM" },
+                    { class: 'chosen-select' }
+                  %>
+                  
+                </div>
+              </div>
+              
               
             </div>
           </form>
@@ -77,4 +110,7 @@
     <%= f.submit 'Salvar', :class => 'btn btn-success'%>
   </div>
 </div>
+
+<%= link_to 'Adicionar Plano de Cuidados', new_care_plan_path, :class => 'btn btn-primary' %>
+
 <% end %>

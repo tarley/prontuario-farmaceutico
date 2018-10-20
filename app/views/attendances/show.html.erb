@@ -10,5 +10,6 @@
   <%= @attendance.general_screen %>
 </p>
 
+<%= link_to 'Adicionar Doença', new_disease_path, :class => 'btn btn-primary' %>
 <%= link_to 'Editar', edit_attendance_path(@attendance), :class => 'btn btn-primary' %> | <%= link_to 'Voltar', attendances_path, :class => 'btn btn-primary' %>
 

@@ -14,40 +14,59 @@
     </div>
   <% end %>
   
+  
+  
          
                 
 
 <div class="container">
   
-  <!-- Row start -->
+<!-- Row start -->
   <div class="row">
     <div class="col-md-12 col-sm-6 col-xs-12">
-      <div class="panel panel-default">
-        
+      <div class="x_panel">
+        <div class="x_title">
+                    <h2>Atendimento</h2>
+                    <div class="clearfix"></div>
+                  </div>
        
-        <div class="panel-body">
+        <div class="x_content">
           <form class="form-horizontal row-border" action="#">
             <div class="form-group">
               
+              
               <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-                <label class="heard">PRM:</label>
-                <div class="input-group col-md-12 col-sm-12 col-xs-12 form-group">
-                  <%= f.select :prm_id,
-                    Prm.all.map { |u| [u.description, u.id] },
-                    { include_blank: "Buscar PRM" },
-                    { class: 'chosen-select' }
-                  %>
-                </div>
+                  <label class="heard">Paciente:</label>
+                  
+                    <%= f.select :pacient_id,
+                      Pacient.all.map { |u| [u.name, u.id] },
+                      { include_blank: "Buscar Paciente" },
+                      { class: 'select2_single form-control' }
+                    %>
+                   
               </div>
-           
-             <label class="col-md-2 control-label">Quadro geral:</label> 
-              <div class="col-md-10">
+              <div class="col-md-9 col-sm-12 col-xs-12 form-group">
+                       <label class="heard">Data do atendimento:</label>
+                      <%= f.datetime_select :attendance_date, :class => "form-control" %>
+                    </div>
+              <div class="col-md-12 col-sm-12 col-xs-12 form-group">  
+                <label for="heard">Quadro geral:</label>
                 <%= f.text_area :general_screen, :class => "form-control" %>
               </div>
-             <label class="col-md-2 control-label">Data do atendimento:</label> 
-              <div class="col-md-4">
-                <%= f.datetime_select :attendance_date, :class => "form-control" %>
-              </div>
+            </div>    
+         </form>
+        </div>
+      </div>
+    </div>  
+  </div>        
+</div>
+  
+  
+        
+        
+        
+  
+  
              
 
 
@@ -75,8 +94,11 @@
   
 <% end %>
 
- 
 </div>
+
+</form>
+<%= link_to 'Adicionar Doença', new_disease_path, :class => 'btn btn-primary' %>
+
 <% end %>
 
 

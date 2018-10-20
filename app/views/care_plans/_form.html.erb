@@ -34,22 +34,21 @@
                 <div class="col-md-4">
                   <%= f.text_field :anothers_conduct, :class => "form-control" %>
                 </div>
-              <label class="col-md-2 control-label">Farmacoterapia:</label>
-                <div class="col-md-4">
-                  <%= f.text_field :pharmacotherapy_id, :class => "form-control" %>
+              
+              
+                
+                <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                  <label class="heard">SFC:</label>
+                <div class="input-group col-md-12 col-sm-12 col-xs-12 form-group">
+                  <%= f.select :sfc_id,
+                    Sfc.all.map { |u| [u.description, u.id] },
+                    { include_blank: "Buscar SFC" },
+                    { class: 'chosen-select' }
+                  %>
                 </div>
-              <label class="col-md-2 control-label">PRM:</label>
-                <div class="col-md-4">
-                  <%= f.text_field :prm_id, :class => "form-control" %>
-                </div>
-              <label class="col-md-2 control-label">SFC:</label>
-                <div class="col-md-4">
-                  <%= f.text_field :sfc_id, :class => "form-control" %>
-                </div>
-              <label class="col-md-2 control-label">Causa PRM:</label>
-                <div class="col-md-4">
-                  <%= f.text_field :prmCause_id, :class => "form-control" %>
-                </div>
+              </div>
+                
+                
             </div>
           </form>
         </div>
@@ -61,4 +60,5 @@
     <%= f.submit 'Salvar', :class => 'btn btn-success' %>
   </div>
 </div>
+
 <% end %>
