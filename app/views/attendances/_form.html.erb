@@ -35,7 +35,6 @@
             <div class="form-group">
               
               
-<<<<<<< HEAD
               <div class="col-md-3 col-sm-12 col-xs-12 form-group">
                   <label class="heard">Paciente:</label>
                   
@@ -68,36 +67,6 @@
         
   
   
-=======
-              
-              <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-                <label class="heard">PRM:</label>
-                <div class="input-group col-md-12 col-sm-12 col-xs-12 form-group">
-                  
-                  
-                  
-                  <%= f.select :prm_id,
-                    Prm.all.map { |u| [u.description, u.id] },
-                    { include_blank: "Buscar PRM" },
-                    { class: 'chosen-select' }
-                  %>
-                </div>
-              </div>
-           
-             
-              
-              <div class="col-md-9 col-sm-12 col-xs-12 form-group">
-                  <label class="heard">Quadro geral:</label>
-                  <%= f.text_area :general_screen, :class => "form-control col-md-7 col-xs-12"%>
-                </div>
-              
-              
-              
-             <label class="col-md-2 control-label">Data do atendimento:</label> 
-              <div class="col-md-4">
-                <%= f.date_select :attendance_date, :class => "form-control" %>
-              </div>
->>>>>>> 068583b64cd8c04d3fa0d16a16b23babbe124add
              
 
 
@@ -122,9 +91,6 @@
  <div class="actions" style="float:right">
     <%= f.submit 'Salvar', :class => 'btn btn-primary' %>
   </div>
-  
-  
-  
   
 <% end %>
 
