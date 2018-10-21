@@ -3,6 +3,15 @@ class CreateAttendances < ActiveRecord::Migration
     create_table :attendances do |t|
       t.text :general_screen
       t.datetime :attendance_date
+      t.integer :treatment_id
+     # t.integer :treatment_id
+      #t.integer :pharmacotherapy_id
+     # t.integer :prm_id
+     # t.integer :prm_cause_id
+      #t.integer :care_plan_id
+     # t.integer :sfc_id
+      t.integer :pacient_id
+      
       
       
       t.references :pacient, index: true, foreign_key: true
