@@ -1,6 +1,7 @@
 class AttendancesController < ApplicationController
   before_action :authorize
   
+  attr_accessor :pacient
   before_action :set_attendance, only: [:show, :edit, :update, :destroy]
 
   # GET /attendances
