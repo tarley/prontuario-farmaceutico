@@ -1,32 +1,51 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Professions</h1>
+<h1>Lista de Profissões</h1>
 
-<%= form_tag(professions_path, :method => :get) do %>
-  <%= text_field_tag 'pesquisa', nil, placeholder: 'Buscar Profissão' %>
-  <%= submit_tag "Pesquisar"%>
+
+<form class="form-horizontal">
+  <div class="input-group col-md-4">
+  <%= form_tag(professions_path, :method => :get) do %>
+  <%= text_field_tag 'pesquisa', nil, placeholder: 'Buscar Profissão', :class => 'form-control' %>
+  <span class="input-group-btn">
+  <%= submit_tag "Pesquisar" , :class => 'btn btn-primary form-control' %>
+  </span>
 <% end %>
+</div>
+<div>
+  <%= link_to 'Nova Profissão', new_profession_path, :class => 'btn btn-primary' %>
+</div>
+  
+</form>
 
-<table>
-  <thead>
-    <tr>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @professions.each do |profession| %>
-      <tr>
-        <td><%= profession.description %></td>
-        <td><%= link_to 'Show', profession %></td>
-        <td><%= link_to 'Edit', edit_profession_path(profession) %></td>
-        <td><%= link_to 'Destroy', profession, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-sm-12">
+       <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Descrição</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
+        
+          <tbody>
+            <% @professions.each do |profession| %>
+              <tr>
+                <td><%= profession.description %></td>
+                <td><%= link_to 'Visualizar', profession, :class => 'btn btn-primary' %></td>
+                <td><%= link_to 'Editar', edit_profession_path(profession), :class => 'btn btn-primary' %></td>
+                <td><%= link_to 'Excluir', profession, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-primary' %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>  
 
 <br>
 
-<%= link_to 'New Profession', new_profession_path %>
+

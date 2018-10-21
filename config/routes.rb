@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'sessions#new'
+  root 'sessions#new' #rota pradrão
   
   get :search, controller: :pacients
   #root to: "pacients#new"
