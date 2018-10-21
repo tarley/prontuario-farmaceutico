@@ -1,8 +1,21 @@
 <p id="notice"><%= notice %></p>
 
+
+<p>
+  <strong>Paciente:</strong>
+  <%= @disease.attendance.pacient.name %>
+</p>
+<p>
+  <strong>Data do Atendimento:</strong>
+  <%= @disease.attendance.attendance_date %>
+</p>
 <p>
   <strong>Nome:</strong>
   <%= @disease.name %>
 </p>
+<p>
+  <strong>Descrição:</strong>
+  <%= @disease.description %>
+</p>
 
-<%= link_to 'Editar', edit_disease_path(@disease), :class => 'btn btn-primary' %> | <%= link_to 'Voltar', diseases_path, :class => 'btn btn-primary' %>
+<%= link_to 'Adicionar Farmacoterapia', new_pharmacotherapy_path, :class => 'btn btn-primary' %> | <%= link_to 'Editar', edit_disease_path(@disease), :class => 'btn btn-primary' %> | <%= link_to 'Voltar', diseases_path, :class => 'btn btn-primary' %>

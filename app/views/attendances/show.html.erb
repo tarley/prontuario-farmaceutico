@@ -1,5 +1,11 @@
 <p id="notice"><%= notice %></p>
 
+
+<p>
+  <strong>Paciente:</strong>
+  <%= @attendance.pacient.name %>
+</p>
+
 <p>
   <strong>Data do atendimento: </strong>
   <%= @attendance.attendance_date %>
@@ -10,5 +16,6 @@
   <%= @attendance.general_screen %>
 </p>
 
+<%= link_to 'Adicionar Doença', new_disease_path, :class => 'btn btn-primary' %>
 <%= link_to 'Editar', edit_attendance_path(@attendance), :class => 'btn btn-primary' %> | <%= link_to 'Voltar', attendances_path, :class => 'btn btn-primary' %>
 

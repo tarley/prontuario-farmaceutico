@@ -50,7 +50,7 @@
                     <!--</select>-->
                 </div>
                 <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-                  <label for="heard">Data de nascimento:</label>
+                  <label for="heard">Data de nascimento: </label>
                     <%= f.text_field :birth_date, {class: "form-control col-md-7 col-xs-12"}%>
                     <!--<div class="row calendar-exibit">-->
                     <!--  <div class="col-md-3">-->
@@ -106,7 +106,7 @@
                       { class: 'chosen-select' }
                     %>
                     <span class="input-grou-btn">
-                     <%= link_to '  Doença', new_profession_path, {class: "btn fa fa-plus btn-primary"}%>  
+                     <%= link_to '  Profissão', new_profession_path, {class: "btn fa fa-plus btn-primary"}%>  
                     </span>
                   </div>
                 </div>  
@@ -134,14 +134,6 @@
                   <%= f.text_field :services_professional, :type => "text", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
                 </div>              
               
-              <label class="col-md-2 control-label">Profissão:</label>
-                <div class="col-md-4">
-                  <!--%= form_with url: search_path, local: true, method: :get, html: { class: "form-inline my-2 my-lg-0" } do |form| %-->
-                  <!--%= f.text_field :profession_id, placeholder: "Buscar", data: { behavior: "autocomplete" }, class: "form-control mr-sm-2" %-->
-                    <!--%= f.button "Escolher", class: "btn btn-outline-success my-2 my-sm-0" %-->
-                  <!--% end %-->
-                  <!--%= f.collection_select :profession_id, Profession.all, :id, :description, :class => "form-control"%-->
-                  <%= f.select :profession_id, Profession.all.map { |p| [p.description, p.id] }, { include_blank: true }, { class: 'chosen-select' }%>
                   
                 <div class="col-md-3 col-sm-12 col-xs-12 form-group">
                   <label for="heard">Lugar de atendimento:</label>
@@ -163,6 +155,7 @@
                         %> 
                       </div>
                 </div>
+                
                 
                 <div class="col-md-3 col-sm-12 col-xs-12 form-group">
                     <label class="heard">Acesso ao Serviço:</label>

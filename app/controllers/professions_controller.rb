@@ -1,4 +1,6 @@
 class ProfessionsController < ApplicationController
+  before_action :authorize
+  
   before_action :set_profession, only: [:show, :edit, :update, :destroy]
 
   # GET /professions

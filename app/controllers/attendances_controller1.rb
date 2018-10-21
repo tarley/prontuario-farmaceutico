@@ -6,11 +6,7 @@ class AttendancesController < ApplicationController
   # GET /attendances
   # GET /attendances.json
   def index
-    if params[:pesquisa]
-      @attendances = Attendance.pesquisa(params[:pesquisa])
-    else
-      @attendances = Attendance.all
-    end
+    @attendances = Attendance.all
   end
 
   # GET /attendances/1
@@ -75,17 +71,9 @@ class AttendancesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def attendance_params
-      
-      params.require(:attendance).permit(:general_screen, :attendance_date, :pacient_id)
+      params.require(:attendance).permit(:general_screen, :attendance_date)
+                                          
                                           
       
-      
-      #params.permit(:general_screen, :attendance_date, :pacient_id, :prm_id, :prm_cause_id, :disease_id, 
-      #               :pharmacotherapy_id, :sfc_id, :care_plan_id)
-            
-
-                                          
     end
-    
-    
 end

@@ -1,4 +1,6 @@
 class PrmCausesController < ApplicationController
+  before_action :authorize
+  
   before_action :set_prm_cause, only: [:show, :edit, :update, :destroy]
 
   # GET /prm_causes
