@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :diseases
+  resources :names
   root 'sessions#new'
 
   get 'sessions/new'
@@ -22,7 +24,6 @@ Rails.application.routes.draw do
   resources :prm_causes
   resources :pharmacotherapies
   resources :prms
-  resources :diseases
   resources :type_sexes
   resources :treatments
   resources :sfcs

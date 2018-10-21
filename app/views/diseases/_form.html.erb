@@ -27,7 +27,11 @@
             <div class="form-group">
               <label class="col-md-1 control-label">Nome:</label>
                 <div class="col-md-5">
-                  <%= f.text_field :name, :class => "form-control" %>
+                  <%= f.select :name_id,
+                    Name.all.map { |u| [u.description, u.id] },
+                    { include_blank: "Buscar Doença" },
+                    { class: 'chosen-select' }
+                  %>
                 </div>
               <label class="col-md-1 control-label">Descrição:</label>
                 <div class="col-md-5">
@@ -44,5 +48,7 @@
       <%= f.submit 'Salvar', :class => 'btn btn-success' %>
     </div>
 </div>    
+
+<%= link_to 'Adicionar Farmacoterapia', new_pharmacotherapy_path, :class => 'btn btn-primary' %>
 
 <% end %>

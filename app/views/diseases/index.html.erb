@@ -20,7 +20,7 @@
           <tbody>
             <% @diseases.each do |disease| %>
               <tr>
-                <td><%= disease.name %></td>
+                <td><%= disease.name.description %></td>
                 <td><%= disease.description %></td>
                 <td><%= link_to 'Visualizar', disease, :class => 'btn btn-primary' %></td>
                 <td><%= link_to 'Editar', edit_disease_path(disease), :class => 'btn btn-primary' %></td>
