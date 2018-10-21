@@ -11,6 +11,6 @@ namespace :db do
         Prm.create(description: "PRM 6 - Dose alta ")
         Prm.create(description: "PRM 7 - Não adesão ")
     
-        end
+    end
 
 end

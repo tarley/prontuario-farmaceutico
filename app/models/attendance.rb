@@ -27,6 +27,7 @@ class Attendance < ActiveRecord::Base
   
   
   
+  
   #validates_presence_of :general_screen, message: 'não pode deixar em branco'
   
 end

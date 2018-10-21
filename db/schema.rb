@@ -17,23 +17,11 @@ ActiveRecord::Schema.define(version: 20181011171846) do
     t.text     "general_screen"
     t.datetime "attendance_date"
     t.integer  "pacient_id"
-    t.integer  "prm_id"
-    t.integer  "prm_cause_id"
-    t.integer  "disease_id"
-    t.integer  "pharmacotherapy_id"
-    t.integer  "sfc_id"
-    t.integer  "care_plan_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
-  add_index "attendances", ["care_plan_id"], name: "index_attendances_on_care_plan_id"
-  add_index "attendances", ["disease_id"], name: "index_attendances_on_disease_id"
   add_index "attendances", ["pacient_id"], name: "index_attendances_on_pacient_id"
-  add_index "attendances", ["pharmacotherapy_id"], name: "index_attendances_on_pharmacotherapy_id"
-  add_index "attendances", ["prm_cause_id"], name: "index_attendances_on_prm_cause_id"
-  add_index "attendances", ["prm_id"], name: "index_attendances_on_prm_id"
-  add_index "attendances", ["sfc_id"], name: "index_attendances_on_sfc_id"
 
   create_table "attendancesteste", force: :cascade do |t|
     t.text     "general_screen"
@@ -78,20 +66,12 @@ ActiveRecord::Schema.define(version: 20181011171846) do
   create_table "diseases", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
-    t.integer  "treatment_id"
     t.integer  "attendance_id"
-    t.integer  "pharmacotherapy_id"
-    t.integer  "prm_id"
-    t.integer  "prm_cause_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   add_index "diseases", ["attendance_id"], name: "index_diseases_on_attendance_id"
-  add_index "diseases", ["pharmacotherapy_id"], name: "index_diseases_on_pharmacotherapy_id"
-  add_index "diseases", ["prm_cause_id"], name: "index_diseases_on_prm_cause_id"
-  add_index "diseases", ["prm_id"], name: "index_diseases_on_prm_id"
-  add_index "diseases", ["treatment_id"], name: "index_diseases_on_treatment_id"
 
   create_table "pacients", force: :cascade do |t|
     t.string   "name"

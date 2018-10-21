@@ -16,55 +16,46 @@
 <div class="container">
   
   
-  
-  <!-- Row start -->
-  <div class="row">
-    <div class="col-md-12 col-sm-6 col-xs-12">
-      <div class="panel panel-default">
-        <div class="panel-heading clearfix">
-          <i class="icon-calendar"></i>
-          <h3 class="panel-title">Informações da Doença</h3>
-        </div>
-        
-        <!-- <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-                  <label class="heard">Doenças:</label>
-                  <div class="input-group col-md-12 col-sm-12 col-xs-12 form-group">
-                    <%= f.select :disease,
-                      Disease.all.map { |u| [u.name, u.id] },
-                      { include_blank: "Buscar Doença" },
-                      { class: 'chosen-select' }
-                    %>
-                    <span class="input-grou-btn">
-                     <%= link_to '  Doença', new_disease_path, {class: "btn fa fa-plus btn-primary"}%>  
-                    </span>
-                  </div>
-                </div> -->
-        
-        <div class="panel-body">
-          <form class="form-horizontal row-border" action="#">
-            <div class="form-group">
-              <label class="col-md-1 control-label">Nome:</label>
-                <div class="col-md-5">
-                  <%= f.text_field :name, :class => "form-control" %>
-                </div>
-              <label class="col-md-1 control-label">Descrição:</label>
-                <div class="col-md-5">
-                  <%= f.text_area :description, :class => "form-control" %>
+  <form id="demo-form" data-parsley-validate>
+        <div class="x_panel">
+          <div class="x_title">
+            <h2>Doenças do Atendimento</h2>
+            <ul class="nav navbar-right panel_toolbox">
+              <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+              </li>
+            </ul>
+            <div class="clearfix"></div>
+          </div>
+          <div class="x_content">
+              <div class="row">  
+                <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                  <label class="heard">Atendimento:</label>
+                  <%= f.select :attendance_id,
+                      Attendance.all.map { |u| ["#{u.pacient.name} - #{u.attendance_date}", u.id] },
+                      { include_blank: "Buscar Atendimento" },
+                      { class: 'select2_single form-control' }
+                  %>
+                </div>  
+                
+                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                  <label for="heard">Nome da Doença:</label>
+                    <%= f.text_field :name, :type => "text", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
                 </div>
                 
+                <div class="col-md-9 col-sm-12 col-xs-12 form-group">
+                  <label class="heard">Descrição da doença:</label>
+                  <%= f.text_area :description, :class => "form-control col-md-7 col-xs-12"%>
+                </div>
+
+              </div>
             </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Row end -->
+    </form>
+  
     <div class="actions">
       <%= f.submit 'Salvar', :class => 'btn btn-success' %>
     </div>
+    
 </div>    
-
-<%= link_to 'Adicionar Farmacoterapia', new_pharmacotherapy_path, :class => 'btn btn-primary' %>
 
 <% end %>
 
