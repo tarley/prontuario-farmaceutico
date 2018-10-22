@@ -28,7 +28,7 @@ class PharmacotherapiesController < ApplicationController
 
     respond_to do |format|
       if @pharmacotherapy.save
-        format.html { redirect_to @pharmacotherapy, notice: 'Pharmacotherapy was successfully created.' }
+        format.html { redirect_to @pharmacotherapy, notice: 'Farmacoterapia criada com sucesso.' }
         format.json { render :show, status: :created, location: @pharmacotherapy }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class PharmacotherapiesController < ApplicationController
   def update
     respond_to do |format|
       if @pharmacotherapy.update(pharmacotherapy_params)
-        format.html { redirect_to @pharmacotherapy, notice: 'Pharmacotherapy was successfully updated.' }
+        format.html { redirect_to @pharmacotherapy, notice: 'Farmacoterapia alterada com sucesso.' }
         format.json { render :show, status: :ok, location: @pharmacotherapy }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class PharmacotherapiesController < ApplicationController
   def destroy
     @pharmacotherapy.destroy
     respond_to do |format|
-      format.html { redirect_to pharmacotherapies_url, notice: 'Pharmacotherapy was successfully destroyed.' }
+      format.html { redirect_to pharmacotherapies_url, notice: 'Farmacoterapia deletada com sucesso.' }
       format.json { head :no_content }
     end
   end

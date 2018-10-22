@@ -46,7 +46,7 @@
 </p>
 
 <p>
-  <strong>Motivo da consulta:</strong>
+  <strong>Motivo do encontro:</strong>
   <%= @pacient.reason_meeting %>
 </p>
 
@@ -56,8 +56,18 @@
 </p>
 
 <p>
-  <strong>Profissão:</strong>
-  <%= @pacient.professions %>
+  <strong>Profession:</strong>
+  <%= @pacient.profession.description %>
+</p>
+
+<p>
+  <strong>UBS:</strong>
+  <!-- %= @pacient.ub.description % -->
+</p>
+
+<p>
+  <strong>Acesso ao Serviço:</strong>
+  <!-- %= @pacient.service_access.description % -->
 </p>
 
 <%= link_to 'Editar', edit_pacient_path(@pacient), :class => 'btn btn-primary' %> | <%= link_to 'Voltar', pacients_path, :class => 'btn btn-primary' %>

@@ -13,11 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require jquery.easy-autocomplete
 //= require bootstrap
+
 //= require_tree .
 //= require gentelella
 //= require gentelella-custom
+//= require chosen
 
 /**
  * Resize function without multiple trigger
@@ -28,23 +29,26 @@
  * });
  */
 
-$(document).ready(function() {
-    $("#add").click(function() {
-    		var lastField = $("#buildyourform div:last");
-            var intId = (lastField && lastField.length && lastField.data("idx") + 1) || 1;
-            var fieldWrapper = $("<div class=\"fieldwrapper\" id=\"field" + intId + "\"/>");
-                fieldWrapper.data("idx", intId);
-            var fName = $("<input type=\"text\" class=\"fieldname\" />");
-            var fType = $("<select class=\"fieldtype\"><option value=\"checkbox\">Checked</option><option value=\"textbox\">Text</option><option value=\"textarea\">Paragraph</option></select>");
-        
-        var removeButton = $("<input type=\"button\" class=\"remove\" value=\"-\" />");
-        removeButton.click(function() {
-        $(this).parent().remove();
-         });
-        fieldWrapper.append(fName);
-        fieldWrapper.append(fType);
-        fieldWrapper.append(removeButton);
-        $("#buildyourform").append(fieldWrapper);
-    });
-});
+function chosen_init() {
+  $(".chosen-select").chosen().change(
+    function() {
+      var profession = $('option:selected', this);
+      var profession_url = profession.attr('data-url');
+      $.getScript(profession_url);
 
+      var ub = $('option:selected', this);
+      var ub_url = ub.attr('data-url');
+      $.getScript(ub_url);
+      
+      var service_access = $('option:selected',this);
+      var service_access_url = service_access.attr('data-url');
+      $.getScript(service_access_url)
+    }
+  );
+}
+
+$(document).on('turbolinks:load', function() { chosen_init() });
+
+$(function () {
+    $('#birth_date').datetimepicker();
+});
