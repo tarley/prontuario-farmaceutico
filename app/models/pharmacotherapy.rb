@@ -7,12 +7,16 @@ class Pharmacotherapy < ActiveRecord::Base
   has_many :prm, as: :description  #tem que pegar o id e não a description
   has_many :pacient
   has_many :prmCause, as: :description  #tem que pegar o id e não a description
+  has_many :attendances
+  
   
 
- 
+  
+  belongs_to :attendance
   belongs_to :prms
   belongs_to :carePlans
   belongs_to :pacients
+  
   
   #Relacionamentos
   #has_many :pacients
@@ -28,6 +32,11 @@ class Pharmacotherapy < ActiveRecord::Base
   #belongs_to :disease
   #belongs_to :sfc
   #belongs_to :care_plan
+  
+  #Relacionamentos
+  
+    
+  
   
   
  

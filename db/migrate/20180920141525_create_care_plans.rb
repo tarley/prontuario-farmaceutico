@@ -10,7 +10,7 @@ class CreateCarePlans < ActiveRecord::Migration
       t.references :prm, index: true, foreign_key: true
       t.references :sfc, index: true, foreign_key: true
       t.references :prmCause, index: true, foreign_key: true
-      
+      t.references :attendance, index: true, foreign_key: true
 
       t.timestamps null: false
     end

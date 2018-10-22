@@ -3,7 +3,6 @@ class CreateAttendances < ActiveRecord::Migration
     create_table :attendances do |t|
       t.text :general_screen
       t.datetime :attendance_date
-<<<<<<< HEAD
       
      # t.integer :treatment_id
       #t.integer :pharmacotherapy_id
@@ -14,9 +13,7 @@ class CreateAttendances < ActiveRecord::Migration
       #t.integer :pacient_id
       
       
-=======
->>>>>>> 546dcc03057188696cff55d849333ced8af98305
-      
+      t.references :pharmacotherapy, index: true, foreign_key: true
       t.references :pacient, index: true, foreign_key: true
       #t.references :prm, index: true, foreign_key: true
       #t.references :prm_cause, index: true, foreign_key: true

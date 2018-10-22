@@ -13,6 +13,8 @@ class CreatePharmacotherapies < ActiveRecord::Migration
       #t.text :prm_cause_id
       
       t.references :prmCause, index: true, foreign_key: true
+      t.references :attendance, index: true, foreign_key: true
+      
       t.references :treatment, index: true, foreign_key: true
       t.references :prm, index: true, foreign_key: true
 

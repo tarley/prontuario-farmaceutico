@@ -4,7 +4,7 @@ class CarePlan < ActiveRecord::Base
   belongs_to :prm
   belongs_to :sfc
   belongs_to :prmCause
-  
+  belongs_to :attendance
 
   
   has_many :pharmacotherapy
