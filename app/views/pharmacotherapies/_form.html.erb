@@ -12,7 +12,6 @@
   <% end %>
   
   <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-<<<<<<< HEAD
    
       <label class="heard">Atendimento:</label>
          <div class="input-group col-md-12 col-sm-12 col-xs-12 form-group">
@@ -21,15 +20,6 @@
                    { include_blank: "Buscar Paciente" },
                       { class: 'select2_single form-control' }
               %>
-=======
-                  <label class="heard">Paciente:</label>
-                  <div class="input-group col-md-12 col-sm-12 col-xs-12 form-group">
-                    <%= f.select :pacients,
-                      Pacient.all.map { |u| [u.name, u.id] },
-                      { include_blank: "Buscar Paciente" },
-                      { class: 'select2_single form-control' }
-                    %>
->>>>>>> bf093b008adc4b296ef395930a20674ff9f832c9
                     <!--<span class="input-grou-btn">-->
                     <!-- <%= link_to '  Doença', new_profession_path, {class: "btn fa fa-plus btn-primary"}%>  -->
                     <!--</span>-->
@@ -45,18 +35,9 @@
         <div class="panel-body">
           <form class="form-horizontal row-border">
             <div class="form-group">
-<<<<<<< HEAD
                             
               <label class="col-md-1 control-label">Plano de tratamento:</label>
                 <div class="col-md-8">
-=======
-              <!--<label class="col-md-1 control-label">ID tratamento:</label>
-                <div class="col-md-2">
-                  <%= f.text_field :treatment_id, :class => "form-control" %>
-                </div> -->  
-                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-                  <label class="header">Plano de tratamento:</label>
->>>>>>> bf093b008adc4b296ef395930a20674ff9f832c9
                   <%= f.text_area :carePlan, :class => "form-control" %>
                 </div>              
                   <div class="col-md-3 col-sm-12 col-xs-12 form-group">
@@ -147,14 +128,15 @@
     </div>
   </div>
   
+  
  
  
 </div>
+      <div class="actions">
+          <%= f.submit 'Salvar', :class => 'btn btn-success'%>
+        </div>
 
-<div class="actions">
-    <%= f.submit 'Salvar', :class => 'btn btn-success'%>
-  </div>
 
-<%= link_to 'Adicionar Plano de Cuidados', new_care_plan_path, :class => 'btn btn-primary' %>
+      <%= link_to 'Adicionar Plano de Cuidados', new_care_plan_path, :class => 'btn btn-primary' %>
 
-<% end %>
+      <% end %>
