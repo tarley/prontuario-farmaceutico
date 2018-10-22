@@ -23,28 +23,6 @@ ActiveRecord::Schema.define(version: 20181011171846) do
 
   add_index "attendances", ["pacient_id"], name: "index_attendances_on_pacient_id"
 
-  create_table "attendancesteste", force: :cascade do |t|
-    t.text     "general_screen"
-    t.datetime "attendance_date"
-    t.integer  "pacient_id"
-    t.integer  "prm_id"
-    t.integer  "prm_cause_id"
-    t.integer  "disease_id"
-    t.integer  "pharmacotherapy_id"
-    t.integer  "sfc_id"
-    t.integer  "care_plan_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-  end
-
-  add_index "attendancesteste", ["care_plan_id"], name: "index_attendancesteste_on_care_plan_id"
-  add_index "attendancesteste", ["disease_id"], name: "index_attendancesteste_on_disease_id"
-  add_index "attendancesteste", ["pacient_id"], name: "index_attendancesteste_on_pacient_id"
-  add_index "attendancesteste", ["pharmacotherapy_id"], name: "index_attendancesteste_on_pharmacotherapy_id"
-  add_index "attendancesteste", ["prm_cause_id"], name: "index_attendancesteste_on_prm_cause_id"
-  add_index "attendancesteste", ["prm_id"], name: "index_attendancesteste_on_prm_id"
-  add_index "attendancesteste", ["sfc_id"], name: "index_attendancesteste_on_sfc_id"
-
   create_table "care_plans", force: :cascade do |t|
     t.string   "therapeutic_goal"
     t.string   "conduct"
