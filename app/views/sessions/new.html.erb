@@ -6,8 +6,10 @@
 <div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form">
-					<%= form_for :session, url: sign_in_path do |f| %>
+			  
+			 
+
+					<%= form_for :session, :html => {:class => 'login100-form validate-form'}, url: sign_in_path do |f| %>
 
 					<span class="login100-form-title p-b-43" style="padding-bottom:70px">
 						GESFAR
@@ -48,25 +50,15 @@
 			
 
 					<div class="container-login100-form-btn">
-					<%= f.submit "log_in", :class => "login100-form-btn btn-block" %>
-							
+					  
+					  
+					  <%= f.submit "log_in", :class => "login100-form-btn btn-block" %>
+					  
+					
 						
 					</div>
 					
-				
-
-				
-				
-
-        
-
- 
-  
-          
-    
-
  <% end %>
-				</form>
 
 			
 			</div>
