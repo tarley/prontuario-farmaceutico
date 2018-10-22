@@ -13,14 +13,13 @@
  *= require chosen
  *= require_tree .
  *= require_self
-
  */
+ 
 @import "bootstrap-sprockets"; 
 @import "bootstrap"; 
  
 @import "gentelella";
 @import "gentelella-custom";
-
 
 @import "chosen";
 @import "bootstrap-chosen";

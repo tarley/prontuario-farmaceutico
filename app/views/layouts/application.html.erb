@@ -3,19 +3,28 @@
   
   <head>
     <title>GesFar Newton</title>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'maskedinput', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
-
-    
   </head>
+  
     <body class="nav-md footer_fixed">
+      
+      <% flash.each do |name, msg| %>
+        <div class='alert alert-<%= name %>' role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">Fechar</button>
+          <%= msg %>
+        </div>
+      <% end %>
+      
+      <% if logged_in? %>
+      
       <div class="container body">
         <div class="main_container">
           <div class="col-md-3 left_col">
             <div class="left_col scroll-view">
               <div class="navbar nav_title" style="border: 0;">
-                <a href="#" class="site_title"><span>GesFar Newton</span></a>
+                <a href="/users" class="site_title"><span>GesFar Newton</span></a>
               </div>
             
               <div class="clearfix"></div>
@@ -33,6 +42,8 @@
                       </li>
                       <li><a href="/attendances"><i class="fa fa-hospital-o"></i>Atendimento</a>
                       </li>
+                      <li><a href="/users"><i class="fa fa-lock"></i>Usuários</a>
+                      </li>
                     </ul>
                 </div>
               </div>
@@ -46,7 +57,7 @@
                 <div class="nav toggle">
                   <a id="menu_toggle"><i class="fa fa-bars"></i></a>
                 </div>
-                <% if logged_in? %>
+                
                 <ul class="nav navbar-nav navbar-right">
                   <li class="">
                     <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -57,16 +68,18 @@
                       <li><a href="javascript:;"> Profile</a></li>
                       <li><a href="javascript:;">Help</a></li>
                         <li>
-                          <%= link_to "Log Out", sign_out_path, method: "delete" %>
+                          <%= link_to "Log Out", sign_out_path, method: "delete", data: { confirm: 'Deseja sair do sistema ?' } %>
                         </li>
                     </ul>
                   </li>
                 </ul>
-                <% end %>
+                
               </nav>
             </div>
           </div>
           <!-- /top navigation -->
+          
+          <% end %>
           
           <!-- page content -->
             <div class="right_col" role="main">

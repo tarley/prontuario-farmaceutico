@@ -1,4 +1,6 @@
 class PharmacotherapiesController < ApplicationController
+  before_action :authorize
+  
   before_action :set_pharmacotherapy, only: [:show, :edit, :update, :destroy]
 
   # GET /pharmacotherapies
@@ -69,6 +71,8 @@ class PharmacotherapiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pharmacotherapy_params
-      params.require(:pharmacotherapy).permit(:medicine, :dosageSchedule, :safety, :effectiveness, :useDificulty, :timeUse, :carePlan, :descriptionDisease, :treatment_id)
+      params.require(:pharmacotherapy).permit(:medicine, :dosageSchedule, :safety, :effectiveness, 
+                                              :useDificulty, :timeUse, :carePlan, :descriptionDisease, 
+                                              :treatment_id, :prm_id, :prmCause_id, :attendance_id)
     end
 end

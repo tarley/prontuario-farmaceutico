@@ -1,8 +1,7 @@
-
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <h2><%= pluralize(@user.errors.count, "error") %> Não foi possivel salvar esse registro:</h2>
 
       <ul>
       <% @user.errors.full_messages.each do |message| %>
@@ -11,33 +10,53 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :nome %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-<<<<<<< HEAD
-    <%= f.label :password %><br>
-    <%= f.password_field :password %>
-=======
-    <%= f.label :senha %><br>
-    <%= f.text_field :password %>
->>>>>>> 4dd13a38760b68692343615dcffea0a39024fe35
-  </div>
-  <div class="field">
-    <%= f.label :confirmação_Senha %><br>
-    <%= f.password_field :password_confirmation %>
-  </div>
-  <div class="field">
-    <%= f.label :perfil %><br>
-    <%= f.number_field :profile %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  
+  <div class="container">
+    <form id="demo-form" data-parsley-validate>
+      <div class="x_panel">
+        <div class="x_title">
+          <h2>Dados do Usuário</h2>
+          <ul class="nav navbar-right panel_toolbox">
+            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+          </ul>
+          <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+          <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+            <label for="fullname"><%= f.label :nome %>:</label>
+            <%= f.text_field :name, :type => "text", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
+          </div>      
+        </div>
+        <div class="x_content">
+          <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+            <label for="fullname"><%= f.label :email %>:</label>
+            <%= f.text_field :email, :type => "text", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
+          </div>      
+        </div>
+        <div class="x_content">
+          <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+            <label for="fullname"><%= f.label :senha %>:</label>
+            <%= f.password_field :password, :type => "password", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
+          </div>      
+        </div>
+        <div class="x_content">
+          <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+            <label for="fullname"><%= f.label :confirmação_Senha %>:</label>
+            <%= f.password_field :password_confirmation, :type => "password", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
+          </div>      
+        </div>
+        <div class="x_content">
+          <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+            <label for="fullname"><%= f.label :perfil %>:</label>
+            <%= f.text_field :profile, :type => "text", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
+          </div>      
+        </div>
+      </div>
+    </form>
+    
+    <div class="actions">
+      <%= f.submit 'Salvar', :class => 'btn btn-success' %>
+    </div>
+    
   </div>
 <% end %>

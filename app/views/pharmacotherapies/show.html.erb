@@ -1,6 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Paciente:</strong>
+  
+  <%= @pharmacotherapy.pacient.name %>
+  
+  
+</p>
+
+<p>
   <strong>Medicamento:</strong>
   <%= @pharmacotherapy.medicine %>
 </p>
@@ -35,10 +43,18 @@
   <%= @pharmacotherapy.carePlan %>
 </p>
 
+
 <p>
-  <strong>Descrição da doença:</strong>
-  <%= @pharmacotherapy.descriptionDisease %>
+  <strong>PRM:</strong>
+  <%= @pharmacotherapy.prm %>
 </p>
 
+<p>
+  <strong>Causas do PRM:</strong>
+  <%= @pharmacotherapy.prmCause %>
+</p>
+
+<%= link_to 'Adicionar Plano de Cuidados', new_care_plan_path, :class => 'btn btn-primary' %> |
 <%= link_to 'Editar', edit_pharmacotherapy_path(@pharmacotherapy), :class => 'btn btn-primary' %> |
 <%= link_to 'Voltar', pharmacotherapies_path, :class => 'btn btn-primary' %>
+

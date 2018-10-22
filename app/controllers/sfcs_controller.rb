@@ -1,4 +1,6 @@
 class SfcsController < ApplicationController
+  before_action :authorize
+  
   before_action :set_sfc, only: [:show, :edit, :update, :destroy]
 
   # GET /sfcs

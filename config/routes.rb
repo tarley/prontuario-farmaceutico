@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
-  root 'sessions#new'
+  root 'sessions#new' #rota pradrão
   
   get :search, controller: :pacients
   #root to: "pacients#new"
 
   get 'sessions/new'
+  
+  #Gerando rotas para PDF
+  get "/articles", to: "articles#index", as: :articles
+  
 
   resources :users
   

@@ -15,5 +15,4 @@ namespace :db do
        # Sfc.creare(description: "Teste")
             
         end
-        end
-    
+end

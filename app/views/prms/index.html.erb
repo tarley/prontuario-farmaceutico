@@ -3,6 +3,13 @@
 <h1>Lista de PRM(s)</h1>
 
 <<<<<<< HEAD
+<%= link_to 'Novo PRM', new_prm_path, :class => 'btn btn-primary' %>
+
+<%= form_tag(prms_path, :method => :get) do %>
+  <%= text_field_tag 'pesquisa', nil, placeholder: 'Buscar por PRM' %>
+  <%= submit_tag "Pesquisar" , :class => 'btn btn-primary'%>
+=======
+
 <%= form_tag(prms_path, :method => :get) do %>
   <%= text_field_tag 'pesquisa', nil, placeholder: 'Buscar por PRM' %>
   <%= submit_tag "Pesquisar" , :class => 'btn btn-primary'%>
@@ -10,18 +17,15 @@
 
 <table>
   <thead>
-    <tr>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
+   
   </thead>
-=======
+
 <%= link_to 'Novo PRM', new_prm_path, :class => 'btn btn-primary' %>
->>>>>>> master
+
 
 <%= form_tag(prms_path, :method => :get) do %>
-  <%= text_field_tag 'pesquisa', nil, placeholder: 'Buscar por PRMS' %>
-  <%= submit_tag "Pesquisar" , :class => 'btn btn-primary'%>
+ 
+>>>>>>> 068583b64cd8c04d3fa0d16a16b23babbe124add
 <% end %>
 
 <div class="container-fluid">

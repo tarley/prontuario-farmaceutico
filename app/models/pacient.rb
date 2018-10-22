@@ -1,5 +1,27 @@
 class Pacient < ActiveRecord::Base
     
+    #Relacionamentos
+  has_many :pacients
+  has_many :prms
+  has_many :prm_causes
+  has_many :diseases
+  has_many :pharmacotherapies
+  has_many :sfcs
+  has_many :care_plans
+    
+  belongs_to :pacient
+  belongs_to :prm
+  belongs_to :prm_cause
+  belongs_to :disease
+  belongs_to :pharmacotherapy
+  belongs_to :sfc
+  belongs_to :care_plan
+  
+  
+ 
+    
+    
+    
     #Pesquisa
     scope :pesquisa, ->(query) {where("cpf like ?", "%#{query}%")}
     
@@ -8,8 +30,10 @@ class Pacient < ActiveRecord::Base
     has_many :ub, as: :description   #tem que pegar o id e não a description
     has_many :service_access, as: :description   #tem que pegar o id e não a description
     
+    
     has_many :professions
     has_many :ubs
+    has_many :service_access
     
     belongs_to :profession
     belongs_to :service_access

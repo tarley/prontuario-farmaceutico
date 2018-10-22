@@ -1,4 +1,6 @@
 class ServiceAccessesController < ApplicationController
+  before_action :authorize
+  
   before_action :set_service_access, only: [:show, :edit, :update, :destroy]
 
   # GET /service_accesses

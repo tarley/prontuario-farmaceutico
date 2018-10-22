@@ -1,4 +1,4 @@
-<%= form_for(@attendance) do |f| %>
+  <%= form_for(@attendance) do |f| %>
   <% if @attendance.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@attendance.errors.count, "error") %> Não foi possivel salvar esse registro:</h2>
@@ -12,46 +12,50 @@
   <% end %>
 
 <div class="container">
-  
-  <!-- Row start -->
-  <div class="row">
-    <div class="col-md-12 col-sm-6 col-xs-12">
-      <div class="panel panel-default">
-        <div class="panel-heading clearfix">
-          <i class="icon-calendar"></i>
-          <h3 class="panel-title">Paciente: <%= :pacient_id %></h3>
-        </div>
-       
-        <div class="panel-body">
-          <form class="form-horizontal row-border" action="#">
-            <div class="form-group">
-           
-             <label class="col-md-2 control-label">Quadro geral:</label> 
-              <div class="col-md-10">
+      <form id="demo-form" data-parsley-validate>
+        <div class="x_panel">
+          <div class="x_title">
+            <h2>Dados do Atendimento</h2>
+            <ul class="nav navbar-right panel_toolbox">
+              <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+              </li>
+            </ul>
+            <div class="clearfix"></div>
+          </div>
+        
+          <div class="x_content">
+            <div class="row">  
+              <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                  <label class="heard">Paciente:</label>
+                  <%= f.select :pacient_id,
+                      Pacient.all.map { |u| [u.name, u.id] },
+                      { include_blank: "Buscar Paciente" },
+                      { class: 'select2_single form-control' }
+                  %>
+              </div>
+              
+              <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                  <label for="heard">Data do Atendimento:</label>
+                  <%= f.text_field :attendance_date, {class: "form-control col-md-7 col-xs-12"}%>
+              </div>
+              
+              <div class="col-md-12 col-sm-12 col-xs-12 form-group">  
+                <label for="heard">Quadro geral:</label>
                 <%= f.text_area :general_screen, :class => "form-control" %>
               </div>
-             <label class="col-md-2 control-label">Data do atendimento:</label> 
-              <div class="col-md-4">
-                <%= f.datetime_select :attendance_date, :class => "form-control" %>
-              </div>
-             <label class="col-md-2 control-label">Paciente:</label> 
-              <div class="col-md-4">
-                <%= f.text_field :pacient_id, :class => "form-control" %>
-              </div>
-              <div class="actions">
-                <%= link_to 'Adicionar doença', new_disease_path, :class => 'btn btn-success' %>
-                
-                
-              </div>
-            </div>
-          </form>
+            </div>    
+          </div>
         </div>
+      </form>
+  
+
+     <div class="actions" style="float:right">
+        <%= f.submit 'Salvar', :class => 'btn btn-primary' %>
       </div>
-    </div>
-  </div>
-  <!-- Row end -->
-  <div class="actions">
-    <%= f.submit 'Salvar', :class => 'btn btn-success' %>
-  </div>
+
 </div>
+
 <% end %>
+
+
+
