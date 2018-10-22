@@ -1,6 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Paciente:</strong>
+  <%= @care_plan.attendance.pacient.name %>
+</p>
+<p>
+  <strong>Data do Atendimento:</strong>
+  <%= @care_plan.attendance.attendance_date %>
+</p>
+
+<p>
   <strong>Objetivo terapêutico:</strong>
   <%= @care_plan.therapeutic_goal %>
 </p>
@@ -20,24 +29,13 @@
   <%= @care_plan.anothers_conduct %>
 </p>
 
-<p>
-  <strong>Farmacoterapia:</strong>
-  <%= @care_plan.pharmacotherapy %>
-</p>
 
-<p>
-  <strong>PRM:</strong>
-  <%= @care_plan.prm %>
-</p>
 
 <p>
   <strong>SFC:</strong>
   <%= @care_plan.sfc %>
 </p>
 
-<p>
-  <strong>Causa PRM:</strong>
-  <%= @care_plan.prmCause %>
-</p>
+
 
 <%= link_to 'Editar', edit_care_plan_path(@care_plan), :class => 'btn btn-primary' %> | <%= link_to 'Voltar', care_plans_path, :class => 'btn btn-primary' %>

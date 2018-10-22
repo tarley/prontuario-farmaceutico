@@ -50,7 +50,7 @@
                     <!--</select>-->
                 </div>
                 <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-                  <label for="heard">Data de nascimento:</label>
+                  <label for="heard">Data de nascimento: </label>
                     <%= f.text_field :birth_date, {class: "form-control col-md-7 col-xs-12"}%>
                     <!--<div class="row calendar-exibit">-->
                     <!--  <div class="col-md-3">-->
@@ -99,7 +99,6 @@
                 
                 <div class="col-md-3 col-sm-12 col-xs-12 form-group">
                   <label class="heard">Profissão:</label>
-                  
                   <div class="input-group col-md-12 col-sm-12 col-xs-12 form-group">
                     <%= f.select :profession_id,
                       Profession.all.map { |u| [u.description, u.id] },
@@ -107,11 +106,9 @@
                       { class: 'chosen-select' }
                     %>
                     <span class="input-grou-btn">
-                     <%= link_to '  Doença', new_profession_path, {class: "btn fa fa-plus btn-primary"}%>  
+                     <%= link_to '  Profissão', new_profession_path, {class: "btn fa fa-plus btn-primary"}%>  
                     </span>
                   </div>
-                  
-                  
                 </div>  
  
             </div>
@@ -137,6 +134,7 @@
                   <%= f.text_field :services_professional, :type => "text", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
                 </div>              
               
+                  
                 <div class="col-md-3 col-sm-12 col-xs-12 form-group">
                   <label for="heard">Lugar de atendimento:</label>
                     <%= f.text_field :place_attendence, :type => "text", :required => "required", :class => "form-control col-md-7 col-xs-12"%>               
@@ -157,6 +155,7 @@
                         %> 
                       </div>
                 </div>
+                
                 
                 <div class="col-md-3 col-sm-12 col-xs-12 form-group">
                     <label class="heard">Acesso ao Serviço:</label>

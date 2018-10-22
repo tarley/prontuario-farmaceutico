@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   #root to: "pacients#new"
 
   get 'sessions/new'
+  
+  #Gerando rotas para PDF
+  get "/articles", to: "articles#index", as: :articles
+  
 
   resources :users
   

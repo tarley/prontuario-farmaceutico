@@ -1,4 +1,6 @@
 class DiseasesController < ApplicationController
+  before_action :authorize
+  
   before_action :set_disease, only: [:show, :edit, :update, :destroy]
 
   # GET /diseases
@@ -69,6 +71,6 @@ class DiseasesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def disease_params
-      params.require(:disease).permit(:name, :description)
+      params.require(:disease).permit(:name, :description, :attendance_id)
     end
 end

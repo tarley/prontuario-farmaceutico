@@ -37,7 +37,11 @@
                 <td><%= pacient.services_professional %></td>
                 <td><%= pacient.reason_meeting %></td>
                 
+<<<<<<< HEAD
                 <td><%= link_to 'Novo Atendimento', new_attendance_path, :class => 'btn btn-primary' %></td>
+=======
+                <td><%= link_to 'Atendimento', new_attendance_path, :class => 'btn btn-primary' %></td>
+>>>>>>> 32b20a014d1118737486ba5b7b49972e394ec9a7
                 <td><%= link_to 'Vizualizar', pacient, :class => 'btn btn-primary' %></td>
                 <td><%= link_to 'Editar', edit_pacient_path(pacient), :class => 'btn btn-primary' %></td>
                 <td><%= link_to 'Excluir', pacient, :class => 'btn btn-primary', method: :delete, data: { confirm: 'Confirma a exclusão?' } %></td>
