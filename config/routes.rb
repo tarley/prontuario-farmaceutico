@@ -28,5 +28,6 @@ Rails.application.routes.draw do
   resources :sfcs
   resources :care_plans
   resources :home 
+  resources :type_sexes 
   
 end
