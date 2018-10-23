@@ -1,21 +1,16 @@
 class Pharmacotherapy < ActiveRecord::Base
   belongs_to :treatments
   belongs_to :carePlans
-  belongs_to :prmCause
+  belongs_to :prmCauses
+  belongs_to :attendances
+  belongs_to :prms
+  belongs_to :pacients
   
   #Relacionamentos
-  has_many :prm, as: :description  #tem que pegar o id e não a description
-  has_many :pacient
-  has_many :prmCause, as: :description  #tem que pegar o id e não a description
-  has_many :attendances
-  
-  
-
-  
-  belongs_to :attendance
-  belongs_to :prms
-  belongs_to :carePlans
-  belongs_to :pacients
+  #has_many :prm, as: :description  #tem que pegar o id e não a description
+  #has_many :pacient,  as: :name
+  #has_many :prmCause, as: :description  #tem que pegar o id e não a description
+  #has_many :attendance
   
   
   #Relacionamentos
@@ -23,8 +18,8 @@ class Pharmacotherapy < ActiveRecord::Base
   #has_many :prms
   #has_many :prm_causes
   #has_many :diseases
-  #has_many :sfcs
   #has_many :care_plans
+  #has_many :sfcs
     
   #belongs_to :pacient
   #belongs_to :prm
