@@ -68,6 +68,13 @@ População do BD (Tasks)
 3. Criação de Acessos ao Serviço
 - rake db:create_service_access
 
+4. Criação do primeiro usuário
+
+- Entrar no rails console
+
+- Copiar e colar o código do lado -> User.create(email: "administrador@email.com", name: "Administrador", password: "123456", profile: 0)
+
+
 ----------------------------------------------
 
 Comandos Git / Trocar de Branch / Fazer Merge

@@ -1,7 +1,7 @@
 namespace :db do
   desc 'Criação de Acesso ao Serviço'
 
-  task create_service_access: :environment do
+  task create_service_accesses: :environment do
     ServiceAccess.create(description: "Encaminhamento pela Clínica de Odontologia da Newton")
     ServiceAccess.create(description: "Encaminhamento pela Clínica de Fisioterapia da Newton")
     ServiceAccess.create(description: "Encaminhamento pela Clínica de Psicologia da Newton")

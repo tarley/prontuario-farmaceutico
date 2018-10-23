@@ -1,4 +1,6 @@
 class UbsController < ApplicationController
+  before_action :authorize
+  
   before_action :set_ub, only: [:show, :edit, :update, :destroy]
 
   # GET /ubs
