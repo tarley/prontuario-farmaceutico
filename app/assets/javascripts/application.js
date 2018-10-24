@@ -20,6 +20,7 @@
 //= require gentelella-custom
 //= require chosen
 
+
 /**
  * Resize function without multiple trigger
  *
@@ -40,15 +41,12 @@ function chosen_init() {
       var ub_url = ub.attr('data-url');
       $.getScript(ub_url);
       
-<<<<<<< HEAD
       var prm = $('option:selected', this);
       var prm_url = prm.attr('data-url');
       $.getScript(prm_url);
-=======
       var service_access = $('option:selected',this);
       var service_access_url = service_access.attr('data-url');
       $.getScript(service_access_url)
->>>>>>> afd4bb026828b839bdc9fc36405a0249d283fcac
     }
   );
 }
@@ -57,4 +55,8 @@ $(document).on('turbolinks:load', function() { chosen_init() });
 
 $(function () {
     $('#birth_date').datetimepicker();
+});
+
+$(document).on('turbolinks:load', function() {
+  $("chosen-select").chosen();
 });

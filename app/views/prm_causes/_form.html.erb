@@ -23,10 +23,25 @@
                 <div class="col-md-4">
                   <%= f.text_field :description %>
                 </div>
-              <label class="col-md-2 control-label">PRM ID:</label>  
-                <div class="col-md-4">
-                  <%= f.text_field :prm_id %>
-                </div>
+                
+                <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                  <label for="heard">PRM:</label>
+                    <%= f.select(:prm_id, [['Selecione a PRM', 0], 
+                    ['PRM 1 - Medicamento desnecessario ', 1], 
+                    ['PRM 2 - Necessidade de medicamento ', 2],
+                    ['PRM 3 - Medicamento não é efetivo para a condição ',3],
+                    ['PRM 4 - Dose',4],
+                    ['PRM 5 - Reação adversa ao medicamento ',5],
+                    ['PRM 6 - Dose alta ',6],
+                    ['PRM 7 - Não adesão',7],
+                    ], {}, {class: "form-control col-md-7 col-xs-12"}) %>
+
+                  </div>
+                
+              <!--<label class="col-md-2 control-label">PRM ID:</label>  -->
+              <!--  <div class="col-md-4">-->
+              <!--    <%= f.text_field :prm_id %>-->
+              <!--  </div>-->
             </div>
           </form>
         </div>

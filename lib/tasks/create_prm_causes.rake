@@ -5,7 +5,7 @@ namespace :db do
         
         PrmCause.create(description: "Ausência de indicação clínica no momento")
         PrmCause.create(description: "Uso de múltiplos med quando apenas um (ns) resolveria (m)")
-        PrmCause.create(description: "PRM 3 - Medicamento não é efetivo para a condição ")
+        PrmCause.create(description: "Medicamento não é efetivo para a condição ")
         PrmCause.create(description: "Terapia não medicamentosa mais apropriada")
         PrmCause.create(description: "Tratamento de reação que poderia ter sido prevenida")
         PrmCause.create(description: "Uso recreacional")
