@@ -40,9 +40,8 @@ class Pacient < ActiveRecord::Base
     belongs_to :ub
     
     
-    validates_presence_of :name, message: 'não pode ser deixado em branco'
-    
-    validates_length_of :name, minimum: 3, message: 'deve ter pelo menos 3 caracteres'
+    validates :name, presence: {message: 'não pode ser deixado em branco'},
+                     length: {in: 3..100, message: 'deve conter de 3 a 100 caracteres'}
     
     validates :phone, presence: {message: 'não pode ser deixado em branco'},
                       numericality: {:greater_than_or_equal_to => 0, message: 'deve conter somente números positivos'},
@@ -50,7 +49,10 @@ class Pacient < ActiveRecord::Base
                       #numericality: {message: 'deve conter somente número'},
                       #length: {minimum: 10, message: 'deve conter no mínimo 10 números'}
     
-    validates :years_study, numericality: {:greater_than_or_equal_to => 0, message: 'deve ser maior ou igual a zero'}
+    #validates :years_study, length: {in: 0..50, message: 'deve conter de 10 à 11 números'}
+                            
+    validates_length_of :years_study, minimum: 0, message: 'o número deve ser maior ou igual a 0.'
+    validates_length_of :years_study, maximum: 50, message: 'pode conter até 50 números'
     
     validates :genre, numericality: {:greater_than => 0, message: 'deve ser selecionado'}
     
