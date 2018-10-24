@@ -16,14 +16,12 @@ ActiveRecord::Schema.define(version: 20181011171846) do
   create_table "attendances", force: :cascade do |t|
     t.text     "general_screen"
     t.datetime "attendance_date"
-    t.integer  "pharmacotherapy_id"
     t.integer  "pacient_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   add_index "attendances", ["pacient_id"], name: "index_attendances_on_pacient_id"
-  add_index "attendances", ["pharmacotherapy_id"], name: "index_attendances_on_pharmacotherapy_id"
 
   create_table "care_plans", force: :cascade do |t|
     t.string   "therapeutic_goal"
@@ -34,12 +32,10 @@ ActiveRecord::Schema.define(version: 20181011171846) do
     t.integer  "prm_id"
     t.integer  "sfc_id"
     t.integer  "prmCause_id"
-    t.integer  "attendance_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
   end
 
-  add_index "care_plans", ["attendance_id"], name: "index_care_plans_on_attendance_id"
   add_index "care_plans", ["pharmacotherapy_id"], name: "index_care_plans_on_pharmacotherapy_id"
   add_index "care_plans", ["prmCause_id"], name: "index_care_plans_on_prmCause_id"
   add_index "care_plans", ["prm_id"], name: "index_care_plans_on_prm_id"
@@ -48,12 +44,9 @@ ActiveRecord::Schema.define(version: 20181011171846) do
   create_table "diseases", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
-    t.integer  "attendance_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
-
-  add_index "diseases", ["attendance_id"], name: "index_diseases_on_attendance_id"
 
   create_table "pacients", force: :cascade do |t|
     t.string   "name"
@@ -87,17 +80,11 @@ ActiveRecord::Schema.define(version: 20181011171846) do
     t.integer  "timeUse"
     t.text     "carePlan"
     t.text     "descriptionDisease"
-    t.integer  "prmCause_id"
-    t.integer  "attendance_id"
     t.integer  "treatment_id"
-    t.integer  "prm_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
   end
 
-  add_index "pharmacotherapies", ["attendance_id"], name: "index_pharmacotherapies_on_attendance_id"
-  add_index "pharmacotherapies", ["prmCause_id"], name: "index_pharmacotherapies_on_prmCause_id"
-  add_index "pharmacotherapies", ["prm_id"], name: "index_pharmacotherapies_on_prm_id"
   add_index "pharmacotherapies", ["treatment_id"], name: "index_pharmacotherapies_on_treatment_id"
 
   create_table "prm_causes", force: :cascade do |t|
@@ -111,12 +98,9 @@ ActiveRecord::Schema.define(version: 20181011171846) do
 
   create_table "prms", force: :cascade do |t|
     t.string   "description"
-    t.integer  "pharmacotherapy_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
-
-  add_index "prms", ["pharmacotherapy_id"], name: "index_prms_on_pharmacotherapy_id"
 
   create_table "professions", force: :cascade do |t|
     t.string   "description"
@@ -137,16 +121,14 @@ ActiveRecord::Schema.define(version: 20181011171846) do
   end
 
   create_table "treatments", force: :cascade do |t|
-    t.integer  "pharmacotherapy_id"
     t.integer  "disease_id"
     t.integer  "attendance_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   add_index "treatments", ["attendance_id"], name: "index_treatments_on_attendance_id"
   add_index "treatments", ["disease_id"], name: "index_treatments_on_disease_id"
-  add_index "treatments", ["pharmacotherapy_id"], name: "index_treatments_on_pharmacotherapy_id"
 
   create_table "ubs", force: :cascade do |t|
     t.string   "description"
