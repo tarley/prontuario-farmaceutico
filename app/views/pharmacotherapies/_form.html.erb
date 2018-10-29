@@ -14,16 +14,27 @@
   <div class="col-md-3 col-sm-12 col-xs-12 form-group">
    
       <label class="heard">Atendimento:</label>
+                  <%= f.select :attendance_id,
+                      Attendance.all.map { |u| ["#{u.pacient.name} - #{u.attendance_date}", u.id] },
+                      { include_blank: "Buscar Atendimento" },
+                      { class: 'select2_single form-control' }
+                  %>
+                </div>
+            
+            
+            <label class="heard">Doença:</label>
          <div class="input-group col-md-12 col-sm-12 col-xs-12 form-group">
-              <%= f.select :attendances,
-                 Attendance.all.map { |u| ["#{u.pacient.name} - #{u.attendance_date}", u.id] },
-                   { include_blank: "Buscar Paciente" },
+              <%= f.select :diseases, 
+                 Disease.all.map { |u| ["#{u.diseases.name}"] },
+                  { include_blank: "Buscar Doença" },
                       { class: 'select2_single form-control' }
               %>
-                    <!--<span class="input-grou-btn">-->
-                    <!-- <%= link_to '  Doença', new_profession_path, {class: "btn fa fa-plus btn-primary"}%>  -->
-                    <!--</span>-->
-            </div>
+              
+              
+              
+          </div>
+            
+            
       </div>
     
   
@@ -35,12 +46,8 @@
         <div class="panel-body">
           <form class="form-horizontal row-border">
             <div class="form-group">
-                            
-              <label class="col-md-1 control-label">Plano de tratamento:</label>
-                <div class="col-md-8">
-                  <%= f.text_area :carePlan, :class => "form-control" %>
-                </div>              
-                  <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+              
+              <div class="col-md-3 col-sm-12 col-xs-12 form-group">
                   <label class="heard">Remedio:</label>
                   <!--<%= form_tag(professions_path, :method => :get) do %>
                   <%= text_field_tag 'pesquisa', nil, placeholder: 'Buscar Profissão' %>
@@ -53,6 +60,12 @@
                   <label for="heard">Dosagem:</label>
                     <%= f.text_field :dosageSchedule, :required => "required", :class => "form-control col-md-7 col-xs-12"%>
                   </div>
+                            
+              <label class="col-md-1 control-label">Plano de tratamento:</label>
+                <div class="col-md-8">
+                  <%= f.text_area :carePlan, :class => "form-control" %>
+                </div>              
+                  
                 
                   <div class="col-md-3 col-sm-12 col-xs-12 form-group">
                   <label for="heard">Segurança:</label>

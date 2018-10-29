@@ -1,5 +1,6 @@
 class PrmCause < ActiveRecord::Base
     scope :pesquisa, ->(query) {where("description like ?", "%#{query}%")}
+    
     belongs_to :prm
     belongs_to :pharmacotherapy
     belongs_to :care_plan
