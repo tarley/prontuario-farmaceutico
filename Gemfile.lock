@@ -214,10 +214,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   jquery-ui-rails
-<<<<<<< HEAD
-=======
   pg
->>>>>>> 9cf0e00b754cd28b1f7983313414b4b577a6dc97
   rails (= 4.2.5)
   rails-assets-chosen!
   sass-rails (= 5.0.7)
