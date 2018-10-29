@@ -11,6 +11,8 @@
         <table class="table">
           <thead>
             <tr>
+              <th>Paciente</th>
+              <th>Data de Atendimento</th>
               <th>Medicamento</th>
               <th>Dosagem</th>
               <th>Segurança</th>
@@ -19,7 +21,8 @@
               <th>Tempo de uso</th>
               <th>Plano de cuidado</th>
               <th>Descrição da doença</th>
-              <th>Tratamento</th>
+              <th>PRM</th>
+              <th>Causas do PRM</th>
               <th colspan="3"></th>
             </tr>
           </thead>
@@ -29,7 +32,7 @@
               <tr>
                   
                 
-                
+                <td><%= pharmacotherapy.pacient.name %></td>
                 <td><%= pharmacotherapy.medicine %></td>
                 <td><%= pharmacotherapy.dosageSchedule %></td>
                 <td><%= pharmacotherapy.safety %></td>
@@ -37,6 +40,9 @@
                 <td><%= pharmacotherapy.useDificulty %></td>
                 <td><%= pharmacotherapy.timeUse %></td>
                 <td><%= pharmacotherapy.carePlan %></td>
+                
+                <td><%= pharmacotherapy.prm.description %></td>
+                <td><%= pharmacotherapy.prmCause.description %></td>
                 
                 <td><%= link_to 'Visualizar', pharmacotherapy, :class => 'btn btn-primary' %></td>
                 <td><%= link_to 'Editar', edit_pharmacotherapy_path(pharmacotherapy), :class => 'btn btn-primary' %></td>
