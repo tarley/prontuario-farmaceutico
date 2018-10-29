@@ -16,12 +16,14 @@ ActiveRecord::Schema.define(version: 20181011171846) do
   create_table "attendances", force: :cascade do |t|
     t.text     "general_screen"
     t.datetime "attendance_date"
+    t.integer  "pharmacotherapy_id"
     t.integer  "pacient_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   add_index "attendances", ["pacient_id"], name: "index_attendances_on_pacient_id"
+  add_index "attendances", ["pharmacotherapy_id"], name: "index_attendances_on_pharmacotherapy_id"
 
   create_table "care_plans", force: :cascade do |t|
     t.string   "therapeutic_goal"
@@ -32,10 +34,12 @@ ActiveRecord::Schema.define(version: 20181011171846) do
     t.integer  "prm_id"
     t.integer  "sfc_id"
     t.integer  "prmCause_id"
+    t.integer  "attendance_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
   end
 
+  add_index "care_plans", ["attendance_id"], name: "index_care_plans_on_attendance_id"
   add_index "care_plans", ["pharmacotherapy_id"], name: "index_care_plans_on_pharmacotherapy_id"
   add_index "care_plans", ["prmCause_id"], name: "index_care_plans_on_prmCause_id"
   add_index "care_plans", ["prm_id"], name: "index_care_plans_on_prm_id"
@@ -84,12 +88,14 @@ ActiveRecord::Schema.define(version: 20181011171846) do
     t.text     "carePlan"
     t.text     "descriptionDisease"
     t.integer  "prmCause_id"
+    t.integer  "attendance_id"
     t.integer  "treatment_id"
     t.integer  "prm_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
   end
 
+  add_index "pharmacotherapies", ["attendance_id"], name: "index_pharmacotherapies_on_attendance_id"
   add_index "pharmacotherapies", ["prmCause_id"], name: "index_pharmacotherapies_on_prmCause_id"
   add_index "pharmacotherapies", ["prm_id"], name: "index_pharmacotherapies_on_prm_id"
   add_index "pharmacotherapies", ["treatment_id"], name: "index_pharmacotherapies_on_treatment_id"
@@ -105,9 +111,12 @@ ActiveRecord::Schema.define(version: 20181011171846) do
 
   create_table "prms", force: :cascade do |t|
     t.string   "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "pharmacotherapy_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
+
+  add_index "prms", ["pharmacotherapy_id"], name: "index_prms_on_pharmacotherapy_id"
 
   create_table "professions", force: :cascade do |t|
     t.string   "description"
@@ -148,10 +157,8 @@ ActiveRecord::Schema.define(version: 20181011171846) do
   create_table "users", force: :cascade do |t|
     t.string   "email"
     t.string   "name"
-    t.string   "password"
     t.integer  "profile"
     t.integer  "name_id"
-    t.integer  "password_id"
     t.integer  "email_id"
     t.integer  "profile_id"
     t.datetime "created_at",      null: false
@@ -161,7 +168,6 @@ ActiveRecord::Schema.define(version: 20181011171846) do
 
   add_index "users", ["email_id"], name: "index_users_on_email_id"
   add_index "users", ["name_id"], name: "index_users_on_name_id"
-  add_index "users", ["password_id"], name: "index_users_on_password_id"
   add_index "users", ["profile_id"], name: "index_users_on_profile_id"
 
 end

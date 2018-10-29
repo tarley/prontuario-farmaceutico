@@ -12,18 +12,20 @@
   <% end %>
   
   <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-                  <label class="heard">Paciente:</label>
-                  <div class="input-group col-md-12 col-sm-12 col-xs-12 form-group">
-                    <%= f.select :pacients,
-                      Pacient.all.map { |u| [u.name, u.id] },
-                      { include_blank: "Buscar Paciente" },
-                      { class: 'chosen-select' }
-                    %>
+   
+      <label class="heard">Atendimento:</label>
+         <div class="input-group col-md-12 col-sm-12 col-xs-12 form-group">
+              <%= f.select :attendances,
+                 Attendance.all.map { |u| ["#{u.pacient.name} - #{u.attendance_date}", u.id] },
+                   { include_blank: "Buscar Paciente" },
+                      { class: 'select2_single form-control' }
+              %>
                     <!--<span class="input-grou-btn">-->
                     <!-- <%= link_to '  Doença', new_profession_path, {class: "btn fa fa-plus btn-primary"}%>  -->
                     <!--</span>-->
-                  </div>
-                </div>
+            </div>
+      </div>
+    
   
 
 <div class="container">
@@ -33,16 +35,13 @@
         <div class="panel-body">
           <form class="form-horizontal row-border">
             <div class="form-group">
-              <!--<label class="col-md-1 control-label">ID tratamento:</label>
-                <div class="col-md-2">
-                  <%= f.text_field :treatment_id, :class => "form-control" %>
-                </div> -->               
+                            
               <label class="col-md-1 control-label">Plano de tratamento:</label>
                 <div class="col-md-8">
                   <%= f.text_area :carePlan, :class => "form-control" %>
                 </div>              
-              <label class="col-md-1 control-label">Remedio:</label>
-                <div class="col-md-2">
+                  <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                  <label class="heard">Remedio:</label>
                   <!--<%= form_tag(professions_path, :method => :get) do %>
                   <%= text_field_tag 'pesquisa', nil, placeholder: 'Buscar Profissão' %>
                   <%= submit_tag "Pesquisar"%>
@@ -53,7 +52,7 @@
                   <div class="col-md-3 col-sm-12 col-xs-12 form-group">
                   <label for="heard">Dosagem:</label>
                     <%= f.text_field :dosageSchedule, :required => "required", :class => "form-control col-md-7 col-xs-12"%>
-                </div>
+                  </div>
                 
                   <div class="col-md-3 col-sm-12 col-xs-12 form-group">
                   <label for="heard">Segurança:</label>
@@ -97,25 +96,25 @@
             <div class="row">
                 
               
-              <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+              <div class="col-md-6 col-sm-12 col-xs-12 form-group">
                   <label class="heard">Selecione PRM:</label>
                   <div class="input-group col-md-12 col-sm-12 col-xs-12 form-group">
                     <%= f.select :prm_id,
                       Prm.all.map { |u| [u.description, u.id] },
                       { include_blank: "Buscar PRM" },
-                      { class: 'chosen-select' }
+                      { class: 'select2_single form-control' }
                     %>
                   </div>
               </div>
               
-              <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+              <div class="col-md-6 col-sm-12 col-xs-12 form-group">
                   <label class="heard">Causas do PRM:</label>
                 <div class="input-group col-md-12 col-sm-12 col-xs-12 form-group">
                   
                   <%= f.select :prmCause_id,
                     PrmCause.all.map { |u| [u.description, u.id] },
                     { include_blank: "Causas do PRM" },
-                    { class: 'chosen-select' }
+                    { class: 'select2_single form-control' }
                   %>
                   
                 </div>
@@ -129,14 +128,15 @@
     </div>
   </div>
   
+  
  
  
 </div>
+      <div class="actions">
+          <%= f.submit 'Salvar', :class => 'btn btn-success'%>
+        </div>
 
-<div class="actions">
-    <%= f.submit 'Salvar', :class => 'btn btn-success'%>
-  </div>
 
-<%= link_to 'Adicionar Plano de Cuidados', new_care_plan_path, :class => 'btn btn-primary' %>
+      <%= link_to 'Adicionar Plano de Cuidados', new_care_plan_path, :class => 'btn btn-primary' %>
 
-<% end %>
+      <% end %>

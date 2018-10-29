@@ -29,7 +29,7 @@ gem 'gentelella-rails'
 gem 'jquery-ui-rails'
 # gem bcrypt
 
-gem 'bcrypt', '~> 3.1.7'
+#gem 'bcrypt', '~> 3.1.7'
 
 #gem 'bcrypt', '~> 3.1', '>= 3.1.11'
 

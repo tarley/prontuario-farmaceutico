@@ -1,6 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Paciente:</strong>
+  <!--%= @care_plan.attendance.pacient.name %-->
+</p>
+<p>
+  <strong>Data do Atendimento:</strong>
+  <!--%= @care_plan.attendance.attendance_date %-->
+</p>
+
+<p>
   <strong>Objetivo terapêutico:</strong>
   <%= @care_plan.therapeutic_goal %>
 </p>
@@ -24,7 +33,7 @@
 
 <p>
   <strong>SFC:</strong>
-  <%= @care_plan.sfc %>
+  <%= @care_plan.sfc.description %>
 </p>
 
 

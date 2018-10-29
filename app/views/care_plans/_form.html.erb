@@ -18,6 +18,15 @@
         <div class="panel-body">
           <form class="form-horizontal row-border">
             <div class="form-group">
+              
+              <label class="heard">Paciente:</label>
+                  <%= f.select :attendance,
+                      Attendance.all.map { |u| ["#{u.pacient.name} - #{u.attendance_date}", u.id] },
+                      { include_blank: "Buscar Atendimento" },
+                      { class: 'select2_single form-control' }
+                  %>
+                </div> 
+              
               <label class="col-md-2 control-label">Objetivo terapêutico:</label>
                 <div class="col-md-4">
                   <%= f.text_field :therapeutic_goal, :class => "form-control" %>
@@ -54,11 +63,13 @@
         </div>
       </div>
     </div>
-  </div>    
-  
-  <div class="actions">
+    
+      <div class="actions">
     <%= f.submit 'Salvar', :class => 'btn btn-success' %>
   </div>
-</div>
+  </div>    
+  
+
+
 
 <% end %>
