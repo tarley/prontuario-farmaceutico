@@ -43,7 +43,8 @@
                 </div>
                 <div class="col-md-3 col-sm-12 col-xs-12 form-group">
                   <label for="heard">Data de nascimento: </label>
-                    <%= f.text_field :birth_date, {class: "form-control col-md-7 col-xs-12"}%>
+                    
+                    <%= f.text_field :birth_date, {name: "outra_data", id: "outra_data", maxlength: "10", onkeypress: "mascaraData(this)", class: "form-control col-md-7 col-xs-12", placeholder: "DD/MM/AAAA"}%>
                 </div>
                         
 
