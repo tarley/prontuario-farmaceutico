@@ -18,6 +18,9 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+#Formatando data
+#gem 'maskedinput-rails'
+
   #Gerando arquivos em PDF
 gem 'wkhtmltopdf-binary'
 gem 'wicked_pdf'
@@ -33,7 +36,7 @@ gem 'gentelella-rails'
 gem 'jquery-ui-rails'
 # gem bcrypt
 
-gem 'bcrypt', '~> 3.1.7'
+#gem 'bcrypt', '~> 3.1.7'
 
 #gem 'bcrypt', '~> 3.1', '>= 3.1.11'
 
