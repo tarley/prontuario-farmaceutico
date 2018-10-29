@@ -71,6 +71,6 @@ class CarePlansController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def care_plan_params
-      params.require(:care_plan).permit(:therapeutic_goal, :conduct, :results_date, :anothers_conduct, :pharmacotherapy_id, :prm_id, :sfc_id, :prmCause_id)
+      params.require(:care_plan).permit(:therapeutic_goal, :conduct, :results_date, :anothers_conduct, :pharmacotherapy_id, :prm_id, :sfc_id, :prmCause_id, :pacient_id)
     end
 end
