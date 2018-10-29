@@ -112,3 +112,11 @@ Como relacionar tabelas
 
 - http://www.natanaelfonseca.com.br/2013/06/git-revertendo-para-um-commit-especifico.html
 
+Executar tasks
+rake db:create_prm_causes
+rake db:create_prms
+rake db:create_professions
+rake db:create_service_access
+rake db:create_sfcs
+rake db:create_ubs
+rake db:create_usuario
