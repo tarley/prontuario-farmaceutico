@@ -41,8 +41,8 @@
                 <td><%= pharmacotherapy.timeUse %></td>
                 <td><%= pharmacotherapy.carePlan %></td>
                 
-                <td><%= pharmacotherapy.prm.description %></td>
-                <td><%= pharmacotherapy.prmCause.description %></td>
+                <td><%= pharmacotherapy.prms %></td>
+                <td><%= pharmacotherapy.prmCauses %></td>
                 
                 <td><%= link_to 'Visualizar', pharmacotherapy, :class => 'btn btn-primary' %></td>
                 <td><%= link_to 'Editar', edit_pharmacotherapy_path(pharmacotherapy), :class => 'btn btn-primary' %></td>
