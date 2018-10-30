@@ -97,7 +97,7 @@
          <div class="x_content">  
          
            <div class="container-fluid">
-             <%= link_to 'Novo atendimento', new_attendance_path(@pacient), :class => 'btn btn-primary' %>
+             <td><a href="/attendances/new?idPaciente=<%=@pacient.id%>" class="btn btn-primary">Novo Atendimento</a></td>
               <div class="row">
                 <div class="col-sm-12">
                   <div class="table-responsive">
