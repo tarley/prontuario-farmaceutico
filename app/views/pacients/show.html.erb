@@ -1,73 +1,129 @@
-<p id="notice"><%= notice %></p>
+<div class="x_panel">
+          <div class="x_title">
+            <h2>Dados do Paciente</h2>
+            <ul class="nav navbar-right panel_toolbox">
+              <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+              </li>
+            </ul>
+            <div class="clearfix"></div>
+          </div>
+          
+         <div class="x_content">  
+          
+            <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Nome:</strong>
-  <%= @pacient.name %>
-</p>
+            <p>
+              <strong>Nome:</strong>
+              <%= @pacient.name %>
+            </p>
 
-<p>
-  <strong>Lugar de atendimento:</strong>
-  <%= @pacient.place_attendence %>
-</p>
+            <p>
+              <strong>Lugar de atendimento:</strong>
+              <%= @pacient.place_attendence %>
+            </p>
 
-<p>
-  <strong>Data de nascimento:</strong>
-  <%= @pacient.birth_date %>
-</p>
+            <p>
+              <strong>Data de nascimento:</strong>
+              <%= @pacient.birth_date %>
+            </p>
 
-<p>
-  <strong>Anos de estudo:</strong>
-  <%= @pacient.years_study %>
-</p>
+            <p>
+              <strong>Anos de estudo:</strong>
+              <%= @pacient.years_study %>
+            </p>
 
-<p>
-  <strong>Sexo:</strong>
-  <%= @pacient.genre %>
-</p>
+            <p>
+              <strong>Sexo:</strong>
+              <%= @pacient.genre %>
+            </p>
 
-<p>
-  <strong>Estado civil:</strong>
-  <%= @pacient.marital_status %>
-</p>
+            <p>
+              <strong>Estado civil:</strong>
+              <%= @pacient.marital_status %>
+            </p>
 
-<p>
-  <strong>Telefone:</strong>
-  <%= @pacient.phone %>
-</p>
+            <p>
+              <strong>Telefone:</strong>
+              <%= @pacient.phone %>
+            </p>
 
-<p>
-  <strong>Endereço:</strong>
-  <%= @pacient.address %>
-</p>
+            <p>
+              <strong>Endereço:</strong>
+              <%= @pacient.address %>
+            </p>
+            
+            <p>
+              <strong>Profissional serviço:</strong>
+              <%= @pacient.services_professional %>
+            </p>
 
-<p>
-  <strong>Profissional serviço:</strong>
-  <%= @pacient.services_professional %>
-</p>
+            <p>
+              <strong>Motivo do encontro:</strong>
+              <%= @pacient.reason_meeting %>
+            </p>
 
-<p>
-  <strong>Motivo do encontro:</strong>
-  <%= @pacient.reason_meeting %>
-</p>
+            <p>
+              <strong>CPF:</strong>
+              <%= @pacient.cpf %>
+            </p>
+            
+            <p>
+              <strong>Profissão:</strong>
+              <%= @pacient.profession.description %>
+            </p>
 
-<p>
-  <strong>CPF:</strong>
-  <%= @pacient.cpf %>
-</p>
+            <p>
+              <strong>UBS:</strong>
+              <%= @pacient.ub.description %>
+            </p>
 
-<p>
-  <strong>Profissão:</strong>
-  <%= @pacient.profession.description %>
-</p>
+            <p>
+              <strong>Acesso ao Serviço:</strong>
+              <%= @pacient.service_access.description %>
+            </p>
 
-<p>
-  <strong>UBS:</strong>
-  <%= @pacient.ub.description %>
-</p>
-
-<p>
-  <strong>Acesso ao Serviço:</strong>
-  <%= @pacient.service_access.description %>
-</p>
-
-<%= link_to 'Editar', edit_pacient_path(@pacient), :class => 'btn btn-primary' %> | <%= link_to 'Voltar', pacients_path, :class => 'btn btn-primary' %>
+            <%= link_to 'Editar', edit_pacient_path(@pacient), :class => 'btn btn-primary' %> | <%= link_to 'Voltar', pacients_path, :class => 'btn btn-primary' %>
+          </div>
+          
+           <div class="x_title">
+            <h2>Atendimento(s) do Paciente</h2>
+            <ul class="nav navbar-right panel_toolbox">
+              <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+              </li>
+            </ul>
+            <div class="clearfix"></div>
+          </div>
+          
+         <div class="x_content">  
+         
+           <div class="container-fluid">
+             <td><a href="/attendances/new?idPaciente=<%=@pacient.id%>" class="btn btn-primary">Novo Atendimento</a></td>
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th>Data do atendimento</th>
+                          <th>Quadro geral</th>
+                          <th colspan="2"></th>
+                        </tr>
+                      </thead>
+          
+                    <tbody>
+                      <% @attendances.each do |attendance| %>
+                        <tr>
+                          <td><%= attendance.attendance_date %></td>
+                          <td><%= attendance.general_screen %></td>
+                        </tr>
+                      <% end %>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+         
+         
+        </div>
+</div>

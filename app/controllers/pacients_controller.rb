@@ -17,6 +17,7 @@ class PacientsController < ApplicationController
   # GET /pacients/1
   # GET /pacients/1.json
   def show
+    @attendances = Attendance.where(pacient_id: @pacient.id).order(attendance_date: :desc)
   end
   
   # GET /pacients/new

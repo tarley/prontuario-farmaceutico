@@ -16,6 +16,8 @@ class CreatePacients < ActiveRecord::Migration
       t.text :cigarette
       t.text :alcoholic_beverages
 
+
+      
       t.references :profession, index: true, foreign_key: true
       t.references :service_access, index: true, foreign_key: true
       t.references :ub, index: true, foreign_key: true

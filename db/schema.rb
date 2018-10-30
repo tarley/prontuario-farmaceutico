@@ -157,8 +157,10 @@ ActiveRecord::Schema.define(version: 20181011171846) do
   create_table "users", force: :cascade do |t|
     t.string   "email"
     t.string   "name"
+    t.string   "password"
     t.integer  "profile"
     t.integer  "name_id"
+    t.integer  "password_id"
     t.integer  "email_id"
     t.integer  "profile_id"
     t.datetime "created_at",      null: false

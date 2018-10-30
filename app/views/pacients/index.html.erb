@@ -20,6 +20,7 @@
             <thead>
               <tr>
                 <th>Nome</th>
+
                 <th>Cpf</th>
                 <th>Lugar de Atendimento</th>
                 <th>Telefone</th>
@@ -29,6 +30,12 @@
                 <th>Atividade Fisica</th>
                 <th>Cigarro</th>
                 <th>Bebidas Alcoolicas</th>
+
+                <th>CPF</th>
+                <th>Telefone</th>
+                <th>Endereço</th>
+                <th colspan="4"></th>
+
               </tr>
             </thead>
             <tbody>
@@ -36,14 +43,15 @@
                 <tr>
                   <td><%= pacient.name %></td>
                   <td><%= pacient.cpf %></td>
-                  <td><%= pacient.place_attendence %></td>
                   <td><%= pacient.phone %></td>
                   <td><%= pacient.address %></td>
-                  <td><%= pacient.services_professional %></td>
-                  <td><%= pacient.reason_meeting %></td>
                   
+
                   
                   <td><%= link_to 'Novo Atendimento', new_attendance_path, :class => 'btn btn-primary' %></td>
+
+                  <td><a href="/attendances/new?idPaciente=<%=pacient.id%>" class="btn btn-primary">Novo Atendimento</a></td>
+
                   <td><%= link_to 'Vizualizar', pacient, :class => 'btn btn-primary' %></td>
                   <td><%= link_to 'Editar', edit_pacient_path(pacient), :class => 'btn btn-primary' %></td>
                   <td><%= link_to 'Excluir', pacient, :class => 'btn btn-primary', method: :delete, data: { confirm: 'Confirma a exclusão?' } %></td>
