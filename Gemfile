@@ -23,7 +23,8 @@ gem 'bootstrap-datepicker-rails', :require => 'bootstrap-datepicker-rails',
                                   :git => 'git://github.com/Nerian/bootstrap-datepicker-rails.git'
 
 #tradução
-gem 'rails-i18n'
+gem 'translation'
+
 
 
   #Gerando arquivos em PDF

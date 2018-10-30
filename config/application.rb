@@ -8,6 +8,7 @@ Bundler.require(*Rails.groups)
 
 Date::DATE_FORMATS[:default] = "%d/%m/%Y"
 
+
 module Workspace
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
