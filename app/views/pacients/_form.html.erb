@@ -16,6 +16,7 @@
         <div class="x_panel">
           <div class="x_title">
             <h2>Dados do Paciente</h2>
+            
             <ul class="nav navbar-right panel_toolbox">
               <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
               </li>
@@ -33,6 +34,15 @@
                 
                 <div class="col-md-3 col-sm-12 col-xs-12 form-group">
                   <label for="heard">CPF:</label>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-3">Custom Mask</label>
+                      <div class="col-md-9 col-sm-9 col-xs-9">
+                          <input type="text" class="form-control" data-inputmask="'mask': '99-999999'">
+                        <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+                      </div>
+                    </div>
+                  
+                  
                     <%= f.text_field :cpf, :type => "text", :class => "form-control", id: 'cpf'%> 
                 </div>
                 

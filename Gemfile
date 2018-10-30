@@ -22,6 +22,11 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'bootstrap-datepicker-rails', :require => 'bootstrap-datepicker-rails',
                                   :git => 'git://github.com/Nerian/bootstrap-datepicker-rails.git'
 
+#Formatando CPF
+
+gem 'jquery-inputmask-rails', github: 'knapo/jquery-inputmask-rails'
+
+
 #tradução
 gem 'translation'
 
