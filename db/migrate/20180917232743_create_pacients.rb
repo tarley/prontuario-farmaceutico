@@ -12,6 +12,9 @@ class CreatePacients < ActiveRecord::Migration
       t.string :services_professional
       t.text :reason_meeting
       t.string :cpf
+      t.text :physical_activity
+      t.text :cigarette
+      t.text :alcoholic_beverages
 
       t.references :profession, index: true, foreign_key: true
       t.references :service_access, index: true, foreign_key: true

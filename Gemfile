@@ -14,6 +14,9 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+#Formatando data
+#gem 'maskedinput-rails'
+
   #Gerando arquivos em PDF
 gem 'wkhtmltopdf-binary'
 gem 'wicked_pdf'

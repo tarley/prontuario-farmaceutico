@@ -40,35 +40,11 @@
                 <div class="col-md-3 col-sm-12 col-xs-12 form-group">
                   <label for="heard">Sexo:</label>
                     <%= f.select(:genre, [['Selecione o Sexo', 0], ['Feminino', 1], ['Masculino', 2],['Outro',3]], {}, {class: "form-control col-md-7 col-xs-12"}) %>
-
-                  
-                    <!--<select id="heard" class="form-control" name="genre" required >-->
-                    <!--  <option value="0">Selecione o Sexo</option>-->
-                    <!--  <option value="1">Feminino</option>-->
-                    <!--  <option value="2">Masculino</option>-->
-                    <!--  <option value="3">Outro</option>-->
-                    <!--</select>-->
                 </div>
                 <div class="col-md-3 col-sm-12 col-xs-12 form-group">
                   <label for="heard">Data de nascimento: </label>
-                    <%= f.text_field :birth_date, {class: "form-control col-md-7 col-xs-12"}%>
-                    <!--<div class="row calendar-exibit">-->
-                    <!--  <div class="col-md-3">-->
-                    <!--    <div class="daterangepicker dropdown-menu single opensright show-calendar picker_4 xdisplay">-->
-                    <!--      <fieldset>-->
-                    <!--        <div class="control-group">-->
-                    <!--          <div class="controls">-->
-                    <!--            <div class="col-md-11 xdisplay_inputx form-group has-feedback">-->
-                    <!--              <input type="text" name="birth_date" class="form-control has-feedback-left" id="single_cal1" placeholder="First Name" aria-describedby="inputSuccess2Status">-->
-                    <!--              <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>-->
-                    <!--              <span id="inputSuccess2Status" class="sr-only">(success)</span>-->
-                    <!--            </div>-->
-                    <!--          </div>-->
-                    <!--        </div>  -->
-                    <!--      </fieldset>-->
-                    <!--    </div>-->
-                    <!--  </div>-->
-                    <!--</div>-->
+                    
+                    <%= f.text_field :birth_date, {name: "outra_data", id: "outra_data", maxlength: "10", onkeypress: "mascaraData(this)", class: "form-control col-md-7 col-xs-12", placeholder: "DD/MM/AAAA"}%>
                 </div>
                         
 
@@ -76,15 +52,6 @@
                 <div class="col-md-3 col-sm-12 col-xs-12 form-group">
                   <label for="heard">Estado civil:</label>
                     <%= f.select(:marital_status, [['Selecione o Estado Civil', 0], ['Solteiro', 1], ['Casado', 2],['Separado',3], ['Divorciado', 4], ['Viúvo',5]], {}, {class: "form-control col-md-7 col-xs-12"}) %>
-                  
-                    <!--<select id="heard" class="form-control" name="marital_status" required >-->
-                    <!--  <option value="0">Selecione o Estado Civil</option>-->
-                    <!--  <option value="1">Solteiro</option>-->
-                    <!--  <option value="2">Casado</option>-->
-                    <!--  <option value="3">Separado</option>-->
-                    <!--  <option value="4">Divorciado</option>-->
-                    <!--  <option value="5">Viúvo</option>-->
-                    <!--</select>-->
                 </div>
                 
                 <div class="col-md-3 col-sm-12 col-xs-12 form-group">
@@ -176,6 +143,16 @@
             </div>
           </div>
         </div>  
+        
+           <div class="x_panel">
+          <div class="x_title">
+            <h2>Habitos de Vida</h2>
+            <ul class="nav navbar-right panel_toolbox">
+              <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+              </li>
+            </ul>
+            <div class="clearfix"></div>
+          </div>
   </form>
 
 
