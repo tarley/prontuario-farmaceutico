@@ -16,7 +16,13 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 
 #Formatando data
-#gem 'maskedinput-rails'
+gem 'bootstrap-datepicker-rails', :require => 'bootstrap-datepicker-rails',
+                                  :git => 'git://github.com/Nerian/bootstrap-datepicker-rails.git'
+
+#tradução
+gem 'translation'
+
+
 
   #Gerando arquivos em PDF
 gem 'wkhtmltopdf-binary'
