@@ -11,23 +11,21 @@ class Attendance < ActiveRecord::Base
   #has_many :care_plans
     
   belongs_to :pacient
-  
   #belongs_to :prm
   #belongs_to :prm_cause
   belongs_to :disease
-  
   #belongs_to :pharmacotherapy
   #belongs_to :sfc
   belongs_to :treatment
-  
   #belongs_to :care_plan
   
+  
+  
   has_many :attendances
+  has_many :pacients
   
   
   
-  
-  
-  #validates_presence_of :general_screen, message: 'não pode deixar em branco'
+  validates_presence_of :general_screen, message: 'não pode deixar em branco'
   
 end
