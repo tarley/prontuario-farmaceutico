@@ -8,6 +8,7 @@ class Pacient < ActiveRecord::Base
   has_many :pharmacotherapies
   has_many :sfcs
   has_many :care_plans
+  
     
   belongs_to :pacient
   belongs_to :prm
