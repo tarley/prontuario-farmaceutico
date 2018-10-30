@@ -12,7 +12,7 @@ Banco de dados
 2. Migrar as tabelas do BD:
 - rake db:migrate
 
------------------------------gi--
+-------------------------------
 
 Rodar servidor do Rails
 - rails server -b $IP -p $PORT
@@ -69,9 +69,11 @@ População do BD (Tasks)
 - rake db:create_service_access
 
 4. Criação do primeiro usuário
+- rake db:create_usuario
+
+ou
 
 - Entrar no rails console
-
 - Copiar e colar o código do lado -> User.create(email: "administrador@email.com", name: "Administrador", password: "123456", profile: 0)
 
 

@@ -4,6 +4,8 @@ class PharmacotherapiesController < ApplicationController
   attr_accessor :prm
   attr_accessor :prmCause
   attr_accessor :pacient
+  attr_accessor :disease
+  
   before_action :set_pharmacotherapy, only: [:show, :edit, :update, :destroy]
 
   # GET /pharmacotherapies
@@ -76,6 +78,6 @@ class PharmacotherapiesController < ApplicationController
     def pharmacotherapy_params
       params.require(:pharmacotherapy).permit(:medicine, :dosageSchedule, :safety, :effectiveness, 
                                               :useDificulty, :timeUse, :carePlan, :descriptionDisease, 
-                                              :treatment_id, :prm_id, :prmCause_id, :attendance_id, :pacient_id)
+                                              :treatment_id, :prm_id, :prmCause_id, :attendance_id, :pacient_id, :disease_id)
     end
 end

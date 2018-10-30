@@ -1,3 +1,10 @@
+<div class="col-md-12 col-sm-12 col-xs-12">
+  <div class="x_panel">
+    <div class="x_title">
+      <ul class="nav navbar-right panel_toolbox">
+        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+        </li>
+      </ul>
 <p id="notice"><%= notice %></p>
 
 <h1>Lista de pacientes</h1>
@@ -8,44 +15,40 @@
   <%= text_field_tag 'pesquisa', nil, placeholder: 'Buscar por CPF' %>
   <%= submit_tag "Pesquisar" , :class => 'btn btn-primary'%>
 <% end %>
-
-<div class="container-fluid">
-  <div class="row">
-      <div class="col-sm-12">
-       <div class="table-responsive">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Nome</th>
-              <th>CPF</th>
-              <th>Lugar de atendimento</th>
-              <th>Telefone</th>
-              <th>Endereço</th>
-              <th>Profissional serviço</th>
-              <th>Motivo do encontro</th>
-              <th colspan="4"></th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @pacients.each do |pacient| %>
+        <div class="x_content">
+          <table class="table table-striped">
+            <thead>
               <tr>
-                <td><%= pacient.name %></td>
-                <td><%= pacient.cpf %></td>
-                <td><%= pacient.place_attendence %></td>
-                <td><%= pacient.phone %></td>
-                <td><%= pacient.address %></td>
-                <td><%= pacient.services_professional %></td>
-                <td><%= pacient.reason_meeting %></td>
-                
-                <td><%= link_to 'Atendimento', new_attendance_path, :class => 'btn btn-primary' %></td>
-                <td><%= link_to 'Vizualizar', pacient, :class => 'btn btn-primary' %></td>
-                <td><%= link_to 'Editar', edit_pacient_path(pacient), :class => 'btn btn-primary' %></td>
-                <td><%= link_to 'Excluir', pacient, :class => 'btn btn-primary', method: :delete, data: { confirm: 'Confirma a exclusão?' } %></td>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th>Lugar de atendimento</th>
+                <th>Telefone</th>
+                <th>Endereço</th>
+                <th>Profissional serviço</th>
+                <th>Motivo do encontro</th>
+                <th colspan="4"></th>
               </tr>
-            <% end %>
-          </tbody>
-        </table>
-      </div>
+            </thead>
+            <tbody>
+              <% @pacients.each do |pacient| %>
+                <tr>
+                  <td><%= pacient.name %></td>
+                  <td><%= pacient.cpf %></td>
+                  <td><%= pacient.place_attendence %></td>
+                  <td><%= pacient.phone %></td>
+                  <td><%= pacient.address %></td>
+                  <td><%= pacient.services_professional %></td>
+                  <td><%= pacient.reason_meeting %></td>
+                  
+                  <td><%= link_to 'Novo Atendimento', new_attendance_path, :class => 'btn btn-primary' %></td>
+                  <td><%= link_to 'Vizualizar', pacient, :class => 'btn btn-primary' %></td>
+                  <td><%= link_to 'Editar', edit_pacient_path(pacient), :class => 'btn btn-primary' %></td>
+                  <td><%= link_to 'Excluir', pacient, :class => 'btn btn-primary', method: :delete, data: { confirm: 'Confirma a exclusão?' } %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
     </div>
   </div>
 </div>
