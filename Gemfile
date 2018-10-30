@@ -1,10 +1,14 @@
 source 'https://rubygems.org'
 
+gem 'pg'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# Use sqlite3 as the database for Active Recor
+
+#
+
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '5.0.7'
 # Use Uglifier as compressor for JavaScript assets
@@ -65,6 +69,8 @@ group :development, :test do
 end
 
 group :development do
+  
+  gem 'sqlite3'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 
@@ -78,6 +84,16 @@ source 'https://rails-assets.org' do
 end
   # if using bootstrap
   gem 'bootstrap-chosen-rails'
+  
+  group :production do
+  
+  gem 'pg'
+  # Access an IRB console on exception pages or by using <%= console %> in views
+  gem 'web-console', '~> 2.0'
+
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'spring'
+end
   
   
 

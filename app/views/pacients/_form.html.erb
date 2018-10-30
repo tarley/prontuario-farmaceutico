@@ -44,6 +44,7 @@
                   <label for="heard">Sexo:</label>
                     <%= f.select(:genre, [['Selecione o Sexo', 0], ['Feminino', 1], ['Masculino', 2],['Outro',3]], {}, {class: "form-control col-md-7 col-xs-12"}) %>
                 </div>
+                
                 <div class="col-md-3 col-sm-12 col-xs-12 form-group xdisplay_inputx form-group has-feedback">
                   <label for="heard">Data de nascimento: </label>
                   
@@ -69,8 +70,8 @@
                 
                 <div class="col-md-3 col-sm-12 col-xs-12 form-group">
                   <label for="heard">Telefone:</label>
-                    <%= f.text_field :phone, :type => "text", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
-                </div>                
+                    <%= f.text_field :phone, :type => "text", :required => "required", :class => "form-control col-md-7 col-xs-12", :maxlength => 11, 'data-mask': '(00)00000-0000', required: true %>
+                </div>               
                 
                 <div class="col-md-3 col-sm-12 col-xs-12 form-group">
                   <label class="heard">Profissão:</label>

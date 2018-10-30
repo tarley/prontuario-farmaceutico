@@ -21,6 +21,7 @@ Rodar servidor do Rails
 -----------------------------
 2. Gerando as tabelas
 -> atendimentos 
+
 rails generate scaffold Attendance general_screen:text attendance_date:datetime pacient:references
 
 -> Tratamento
