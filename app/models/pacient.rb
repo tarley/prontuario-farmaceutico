@@ -64,6 +64,8 @@ class Pacient < ActiveRecord::Base
                     numericality: {message: 'deve conter somente número!'},
                     length: {is: 11, message: 'deve conter 11 números!'}    
                                 
-    validates_uniqueness_of :cpf, message: 'Este CPF já está cadastrado!'                    
+    validates_uniqueness_of :cpf, message: 'Este CPF já está cadastrado!'   
+
+    
     
 end
