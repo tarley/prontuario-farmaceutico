@@ -21,6 +21,7 @@ Rodar servidor do Rails
 -----------------------------
 2. Gerando as tabelas
 -> atendimentos 
+
 rails generate scaffold Attendance general_screen:text attendance_date:datetime pacient:references
 
 -> Tratamento
@@ -69,11 +70,9 @@ População do BD (Tasks)
 - rake db:create_service_access
 
 4. Criação do primeiro usuário
-- rake db:create_usuario
-
-ou
 
 - Entrar no rails console
+
 - Copiar e colar o código do lado -> User.create(email: "administrador@email.com", name: "Administrador", password: "123456", profile: 0)
 
 
@@ -114,11 +113,3 @@ Como relacionar tabelas
 
 - http://www.natanaelfonseca.com.br/2013/06/git-revertendo-para-um-commit-especifico.html
 
-Executar tasks
-rake db:create_prm_causes
-rake db:create_prms
-rake db:create_professions
-rake db:create_service_access
-rake db:create_sfcs
-rake db:create_ubs
-rake db:create_usuario

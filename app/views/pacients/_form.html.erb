@@ -22,10 +22,9 @@
             </ul>
             <div class="clearfix"></div>
           </div>
-        
+          
           <div class="x_content">
             <div class="row">
-  
                 
                 <div class="col-md-3 col-sm-12 col-xs-12 form-group">
                   <label for="heard">Nome:</label>
@@ -41,9 +40,16 @@
                   <label for="heard">Sexo:</label>
                     <%= f.select(:genre, [['Selecione o Sexo', 0], ['Feminino', 1], ['Masculino', 2],['Outro',3]], {}, {class: "form-control col-md-7 col-xs-12"}) %>
                 </div>
-                <div class="col-md-2 col-sm-12 col-xs-12 form-group">
+                
+                <div class="col-md-3 col-sm-12 col-xs-12 form-group xdisplay_inputx form-group has-feedback">
                   <label for="heard">Data de nascimento: </label>
-                    <%= f.date_field :birth_date, :type => "date", :required => "required", :class => "form-control col-md-7 col-xs-12", min:"1900-01-01", max: Date.today %>
+                  
+                  <div id="calendario" class="input-group date" data-provide="datepicker">
+                    <%= f.text_field :birth_date, {class: "form-control col-md-7 col-xs-12"}%>
+                    <div class="input-group-addon">
+                        <span class="glyphicon glyphicon-th"></span>
+                    </div>
+                  </div>
                 </div>
                         
 

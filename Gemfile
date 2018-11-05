@@ -1,13 +1,11 @@
 source 'https://rubygems.org'
 
-gem 'pg'
+ #gem 'pg'
+ gem 'sqlite3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Use sqlite3 as the database for Active Recor
-
-#
-
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '5.0.7'
@@ -19,7 +17,13 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 
 #Formatando data
-#gem 'maskedinput-rails'
+gem 'bootstrap-datepicker-rails', :require => 'bootstrap-datepicker-rails',
+                                  :git => 'git://github.com/Nerian/bootstrap-datepicker-rails.git'
+
+#tradução
+gem 'translation'
+
+
 
   #Gerando arquivos em PDF
 gem 'wkhtmltopdf-binary'
@@ -63,15 +67,6 @@ group :development, :test do
   gem 'byebug'
 end
 
-group :development do
-  
-  gem 'sqlite3'
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
-
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
-end
 
 #fazer campo autocomplete com chosen
 source 'https://rails-assets.org' do
@@ -80,15 +75,15 @@ end
   # if using bootstrap
   gem 'bootstrap-chosen-rails'
   
-  group :production do
-  
-  gem 'pg'
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
+#  group :development do 
+#   gem 'sqlite3'    #gem to use in development environment
+#end
 
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
-end
+#group :production do 
+#  gem 'pg'         #gem to use in production environment
+#end
+
+
   
   
 
