@@ -125,16 +125,9 @@ GEM
     loofah (2.2.3)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
-    mail (2.6.6)
-      mime-types (>= 1.16, < 4)
-    maskedinput-rails (1.4.1.0)
-    mime-types (3.1)
-      mime-types-data (~> 3.2015)
-    mime-types-data (3.2016.0521)
-    mini_portile2 (2.2.0)
-    minitest (5.10.3)
     mail (2.7.1)
       mini_mime (>= 0.1.1)
+    maskedinput-rails (1.4.1.0)
     mini_mime (1.0.1)
     mini_portile2 (2.3.0)
     minitest (5.11.3)
@@ -240,7 +233,6 @@ DEPENDENCIES
   jquery-ui-rails
   jquery_mask_rails
   maskedinput-rails
-  pg
   rails (= 4.2.5)
   rails-assets-chosen!
   sass-rails (= 5.0.7)
@@ -253,5 +245,4 @@ DEPENDENCIES
   wkhtmltopdf-binary
 
 BUNDLED WITH
-   1.15.4
    1.16.2

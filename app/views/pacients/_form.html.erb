@@ -34,8 +34,7 @@
                 
                 <div class="col-md-3 col-sm-12 col-xs-12 form-group">
                   <label for="heard">CPF:</label>
-                  <input type="text" class="form-control" data-inputmask="'mask' : '999.999.999-99'">
-                  <%= f.text_field :cpf, :type => "text", :class => "form-control", 'data-mask': '999.999.999-99'%> 
+                  <%= f.text_field :cpf, :class => "form-control", 'data-mask'=>'999.999.999-99'%> 
                     
                 </div>
                 
@@ -69,8 +68,7 @@
                 
                 <div class="col-md-3 col-sm-12 col-xs-12 form-group">
                   <label for="heard">Telefone:</label>
-                 <input type="text" class="form-control" data-inputmask="'mask' : '(99) 9999-9999'">
-                    <%= f.text_field :phone, :type => "text", :required => "required", :class => "form-control col-md-7 col-xs-12", :maxlength => 11, required: true, input_html: { data: { mask: '(99) 9999-9999'} } %>
+                    <%= f.text_field :phone, :required => "required", :class => "form-control col-md-7 col-xs-12", :maxlength => 11, required: true, 'data-mask'=>'(99) 9999-9999' %>
                 </div>               
                 
                 <div class="col-md-3 col-sm-12 col-xs-12 form-group">

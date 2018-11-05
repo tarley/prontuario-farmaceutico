@@ -24,7 +24,7 @@
 //= require inputmask
 //= require jquery.inputmask
 //= require maskedinput
-//= require jquery-mask-plugin
+
 
 /**
  * Resize function without multiple trigger
