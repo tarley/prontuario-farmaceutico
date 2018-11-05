@@ -1,10 +1,12 @@
 class Attendance < ActiveRecord::Base
   #Relacionamentos
   has_many :pacients
-  
+  has_many :attendances
   #has_many :prms
   #has_many :prm_causes
   has_many :diseases
+  
+  
   
   #has_many :pharmacotherapies
   #has_many :sfcs
@@ -15,14 +17,16 @@ class Attendance < ActiveRecord::Base
   #belongs_to :prm_cause
   belongs_to :disease
   #belongs_to :pharmacotherapy
-  #belongs_to :sfc
+  belongs_to :attendace
   belongs_to :treatment
   #belongs_to :care_plan
   
   
   
-  has_many :attendances
-  has_many :pacients
+ 
+
+  
+
   
   
   
