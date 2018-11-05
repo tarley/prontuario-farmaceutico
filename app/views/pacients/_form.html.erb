@@ -43,17 +43,10 @@
                     <%= f.select(:genre, [['Selecione o Sexo', 0], ['Feminino', 1], ['Masculino', 2],['Outro',3]], {}, {class: "form-control col-md-7 col-xs-12"}) %>
                 </div>
                 
-                <div class="col-md-3 col-sm-12 col-xs-12 form-group xdisplay_inputx form-group has-feedback">
+                <div class="col-md-2 col-sm-12 col-xs-12 form-group">
                   <label for="heard">Data de nascimento: </label>
-                  
-                  <div id="calendario" class="input-group date" data-provide="datepicker">
-                    <%= f.text_field :birth_date, {class: "form-control col-md-7 col-xs-12"}%>
-                    <div class="input-group-addon">
-                        <span class="glyphicon glyphicon-th"></span>
-                    </div>
-                  </div>
+                    <%= f.date_field :birth_date, :type => "date", :required => "required", :class => "form-control col-md-7 col-xs-12", min:"1900-01-01", max: Date.today %>
                 </div>
-                        
 
                 
                 <div class="col-md-3 col-sm-12 col-xs-12 form-group">
