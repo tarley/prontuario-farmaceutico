@@ -20,9 +20,9 @@ gem 'bootstrap-datepicker-rails', :require => 'bootstrap-datepicker-rails',
                                   :git => 'git://github.com/Nerian/bootstrap-datepicker-rails.git'
 
 #Formatando CPF
-
+gem 'maskedinput-rails'
 gem 'jquery-inputmask-rails', github: 'knapo/jquery-inputmask-rails'
-
+gem 'jquery_mask_rails'
 
 #tradução
 gem 'translation'

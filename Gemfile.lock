@@ -117,12 +117,14 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-ui-rails (6.0.1)
       railties (>= 3.2.16)
+    jquery_mask_rails (0.1.0)
     json (1.8.6)
     locale (2.1.2)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.6)
       mime-types (>= 1.16, < 4)
+    maskedinput-rails (1.4.1.0)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
@@ -229,6 +231,8 @@ DEPENDENCIES
   jquery-inputmask-rails!
   jquery-rails
   jquery-ui-rails
+  jquery_mask_rails
+  maskedinput-rails
   pg
   rails (= 4.2.5)
   rails-assets-chosen!
