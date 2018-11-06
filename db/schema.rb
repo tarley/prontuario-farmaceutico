@@ -49,12 +49,14 @@ ActiveRecord::Schema.define(version: 20181011171846) do
     t.string   "name"
     t.text     "description"
     t.integer  "attendance_id"
+    t.integer  "pacient_id"
     t.integer  "pharmacotherapy_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
   end
 
   add_index "diseases", ["attendance_id"], name: "index_diseases_on_attendance_id"
+  add_index "diseases", ["pacient_id"], name: "index_diseases_on_pacient_id"
   add_index "diseases", ["pharmacotherapy_id"], name: "index_diseases_on_pharmacotherapy_id"
 
   create_table "pacients", force: :cascade do |t|

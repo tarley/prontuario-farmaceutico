@@ -30,7 +30,7 @@
               <div class="row">  
                 <div class="col-md-3 col-sm-12 col-xs-12 form-group">
                   <label class="heard">Atendimento:</label>
-                  <%= f.select :attendance_ids,
+                  <%= f.select :attendance_id,
                       Attendance.all.map { |u| ["#{u.pacient.name} - #{u.attendance_date}", u.id] },
                       { include_blank: "Buscar Atendimento" },
                       { class: 'select2_single form-control' }

@@ -4,6 +4,7 @@ class CreateDiseases < ActiveRecord::Migration
       
       t.string :name
       t.text :description
+      
 
       #t.references :treatment, index: true, foreign_key: true
       t.references :attendance, index: true, foreign_key: true

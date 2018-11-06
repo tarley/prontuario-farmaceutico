@@ -5,6 +5,7 @@ class PharmacotherapiesController < ApplicationController
   attr_accessor :prmCause
   attr_accessor :pacient
   attr_accessor :disease
+  attr_accessor :attendance
   
   before_action :set_pharmacotherapy, only: [:show, :edit, :update, :destroy]
 

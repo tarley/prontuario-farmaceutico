@@ -16,6 +16,7 @@ class Pharmacotherapy < ActiveRecord::Base
   
   #Relacionamentos
   has_many :pacient
+  
   #has_many :prms
   #has_many :prm_causes
   #has_many :diseases

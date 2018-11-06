@@ -24,8 +24,8 @@
             
             <label class="heard">Doença:</label>
          <div class="input-group col-md-12 col-sm-12 col-xs-12 form-group">
-              <%= f.select :diseases, 
-                 Disease.all.map { |u| ["#{u.diseases.name}"] },
+              <%= f.select :disease_id, 
+                 Disease.all.map { |g| ["#{g.diseases.name} ", g.id] },
                   { include_blank: "Buscar Doença" },
                       { class: 'select2_single form-control' }
               %>

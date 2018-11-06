@@ -1,6 +1,11 @@
 class DiseasesController < ApplicationController
   before_action :authorize
   
+  
+  attr_accessor :pacient
+  attr_accessor :attendance
+  
+  
   before_action :set_disease, only: [:show, :edit, :update, :destroy]
 
   # GET /diseases
