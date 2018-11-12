@@ -44,11 +44,10 @@ gem 'gentelella-rails'
 
 #Trabalhando com formatação de data
 gem 'jquery-ui-rails'
-# gem bcrypt
 
-#gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
-#gem 'bcrypt', '~> 3.1', '>= 3.1.11'
+
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -59,8 +58,7 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-# Use ActiveModel has_secure_password
-gem 'bcrypt', '~> 3.1.7'
+
 
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -81,6 +79,15 @@ end
   # if using bootstrap
   gem 'bootstrap-chosen-rails'
   
+
+  group :development do 
+  gem 'sqlite3'    #gem to use in development environment
+end
+
+group :production do 
+ gem 'pg'         #gem to use in production environment
+end
+
 #  group :development do 
 #   gem 'sqlite3'    #gem to use in development environment
 #end
@@ -88,6 +95,7 @@ end
 #group :production do 
 #  gem 'pg'         #gem to use in production environment
 #end
+
 
 
   

@@ -1,6 +1,7 @@
 class PacientsController < ApplicationController
   before_action :authorize
   
+ 
   attr_accessor :profession
   before_action :set_pacient, only: [:show, :edit, :update, :destroy]
 
@@ -80,6 +81,7 @@ class PacientsController < ApplicationController
     def pacient_params
       params.require(:pacient).permit(:name, :place_attendence, :birth_date, :years_study, :genre, 
                                       :marital_status, :phone, :address, :services_professional, 
-                                      :reason_meeting, :cpf, :profession_id, :service_access_id, :ub_id)
+                                      :reason_meeting, :cpf, :profession_id, :service_access_id, :ub_id, 
+                                      :physical_activity, :alcoholic_beverages, :cigarette)
     end
 end

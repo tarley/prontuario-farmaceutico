@@ -2,7 +2,7 @@
 
 <p>
   <strong>Paciente:</strong>
-  <%= @pharmacotherapy.attendance.pacient.name %>
+  <%= @pharmacotherapy.pacient.name %>
 </p>
 
 
@@ -44,12 +44,12 @@
 
 <p>
   <strong>PRM:</strong>
-  <%= @pharmacotherapy.prm.description %>
+  <%= @pharmacotherapy.prms %>
 </p>
 
 <p>
   <strong>Causas do PRM:</strong>
-  <%= @pharmacotherapy.prmCause.description %>
+  <%= @pharmacotherapy.prmCauses %>
 </p>
 
 <%= link_to 'Adicionar Plano de Cuidados', new_care_plan_path, :class => 'btn btn-primary' %> |

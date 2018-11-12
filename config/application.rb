@@ -6,7 +6,7 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-Date::DATE_FORMATS[:default] = "%d/%m/%Y"
+
 
 
 module Workspace
