@@ -23,7 +23,8 @@
 //= require bootstrap-datepicker/locales/bootstrap-datepicker.fr.js
 //= require inputmask
 //= require jquery.inputmask
-//= require maskedinput
+//= require jquery.mask
+
 
 
 /**
