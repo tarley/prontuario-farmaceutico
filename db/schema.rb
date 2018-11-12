@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181011171846) do
+ActiveRecord::Schema.define(version: 20181105221608) do
 
   create_table "attendances", force: :cascade do |t|
     t.text     "general_screen"
@@ -49,11 +49,13 @@ ActiveRecord::Schema.define(version: 20181011171846) do
     t.string   "name"
     t.text     "description"
     t.integer  "attendance_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.integer  "pharmacotherapy_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   add_index "diseases", ["attendance_id"], name: "index_diseases_on_attendance_id"
+  add_index "diseases", ["pharmacotherapy_id"], name: "index_diseases_on_pharmacotherapy_id"
 
   create_table "pacients", force: :cascade do |t|
     t.string   "name"
@@ -72,6 +74,9 @@ ActiveRecord::Schema.define(version: 20181011171846) do
     t.integer  "ub_id"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
+    t.text     "physical_activity"
+    t.text     "alcoholic_beverages"
+    t.text     "cigarette"
   end
 
   add_index "pacients", ["profession_id"], name: "index_pacients_on_profession_id"
@@ -87,8 +92,11 @@ ActiveRecord::Schema.define(version: 20181011171846) do
     t.integer  "timeUse"
     t.text     "carePlan"
     t.text     "descriptionDisease"
+    t.text     "diseases_name"
     t.integer  "prmCause_id"
     t.integer  "attendance_id"
+    t.integer  "disease_id"
+    t.integer  "pacient_id"
     t.integer  "treatment_id"
     t.integer  "prm_id"
     t.datetime "created_at",         null: false
@@ -96,6 +104,8 @@ ActiveRecord::Schema.define(version: 20181011171846) do
   end
 
   add_index "pharmacotherapies", ["attendance_id"], name: "index_pharmacotherapies_on_attendance_id"
+  add_index "pharmacotherapies", ["disease_id"], name: "index_pharmacotherapies_on_disease_id"
+  add_index "pharmacotherapies", ["pacient_id"], name: "index_pharmacotherapies_on_pacient_id"
   add_index "pharmacotherapies", ["prmCause_id"], name: "index_pharmacotherapies_on_prmCause_id"
   add_index "pharmacotherapies", ["prm_id"], name: "index_pharmacotherapies_on_prm_id"
   add_index "pharmacotherapies", ["treatment_id"], name: "index_pharmacotherapies_on_treatment_id"
@@ -103,20 +113,38 @@ ActiveRecord::Schema.define(version: 20181011171846) do
   create_table "prm_causes", force: :cascade do |t|
     t.string   "description"
     t.integer  "prm_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "prmCause_id"
+    t.integer  "attendance_id"
+    t.integer  "disease_id"
+    t.integer  "pacient_id"
+    t.integer  "treatment_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
+  add_index "prm_causes", ["attendance_id"], name: "index_prm_causes_on_attendance_id"
+  add_index "prm_causes", ["disease_id"], name: "index_prm_causes_on_disease_id"
+  add_index "prm_causes", ["pacient_id"], name: "index_prm_causes_on_pacient_id"
+  add_index "prm_causes", ["prmCause_id"], name: "index_prm_causes_on_prmCause_id"
   add_index "prm_causes", ["prm_id"], name: "index_prm_causes_on_prm_id"
+  add_index "prm_causes", ["treatment_id"], name: "index_prm_causes_on_treatment_id"
 
   create_table "prms", force: :cascade do |t|
     t.string   "description"
     t.integer  "pharmacotherapy_id"
+    t.integer  "prmCause_id"
+    t.integer  "attendance_id"
+    t.integer  "disease_id"
+    t.integer  "pacient_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
   end
 
+  add_index "prms", ["attendance_id"], name: "index_prms_on_attendance_id"
+  add_index "prms", ["disease_id"], name: "index_prms_on_disease_id"
+  add_index "prms", ["pacient_id"], name: "index_prms_on_pacient_id"
   add_index "prms", ["pharmacotherapy_id"], name: "index_prms_on_pharmacotherapy_id"
+  add_index "prms", ["prmCause_id"], name: "index_prms_on_prmCause_id"
 
   create_table "professions", force: :cascade do |t|
     t.string   "description"
@@ -157,10 +185,8 @@ ActiveRecord::Schema.define(version: 20181011171846) do
   create_table "users", force: :cascade do |t|
     t.string   "email"
     t.string   "name"
-    t.string   "password"
     t.integer  "profile"
     t.integer  "name_id"
-    t.integer  "password_id"
     t.integer  "email_id"
     t.integer  "profile_id"
     t.datetime "created_at",      null: false

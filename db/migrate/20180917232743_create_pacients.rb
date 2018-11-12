@@ -12,9 +12,7 @@ class CreatePacients < ActiveRecord::Migration
       t.string :services_professional
       t.text :reason_meeting
       t.string :cpf
-      t.text :physical_activity
-      t.text :cigarette
-      t.text :alcoholic_beverages
+    
 
 
       
