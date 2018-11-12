@@ -19,13 +19,13 @@
                       { include_blank: "Buscar Atendimento" },
                       { class: 'select2_single form-control' }
                   %>
-                </div>
+  </div>
             
             
             <label class="heard">Doença:</label>
          <div class="input-group col-md-12 col-sm-12 col-xs-12 form-group">
-              <%= f.select :diseases, 
-                 Disease.all.map { |u| ["#{u.diseases.name}"] },
+              <%= f.select :disease_id, 
+                 Disease.all.map { |g| ["#{g.diseases.name} ", g.id] },
                   { include_blank: "Buscar Doença" },
                       { class: 'select2_single form-control' }
               %>
@@ -35,10 +35,6 @@
           </div>
             
             
-      </div>
-    
-  
-
 <div class="container">
   <div class="row">
     <div class="col-md-12 col-sm-6 col-xs-12">
@@ -140,16 +136,12 @@
       </div>
     </div>
   </div>
-  
-  
- 
- 
 </div>
       <div class="actions">
           <%= f.submit 'Salvar', :class => 'btn btn-success'%>
-        </div>
-
+      </div>
 
       <%= link_to 'Adicionar Plano de Cuidados', new_care_plan_path, :class => 'btn btn-primary' %>
+</div>
 
-      <% end %>
+<% end %>

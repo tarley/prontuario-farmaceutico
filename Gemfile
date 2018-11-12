@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'pg'
+ #gem 'pg'
+ gem 'sqlite3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
@@ -72,6 +73,7 @@ end
   # if using bootstrap
   gem 'bootstrap-chosen-rails'
   
+
   group :development do 
   gem 'sqlite3'    #gem to use in development environment
 end
@@ -79,6 +81,15 @@ end
 group :production do 
  gem 'pg'         #gem to use in production environment
 end
+
+#  group :development do 
+#   gem 'sqlite3'    #gem to use in development environment
+#end
+
+#group :production do 
+#  gem 'pg'         #gem to use in production environment
+#end
+
 
 
   

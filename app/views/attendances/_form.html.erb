@@ -35,7 +35,13 @@
               
               <div class="col-md-3 col-sm-12 col-xs-12 form-group">
                   <label for="heard">Data do Atendimento:</label>
-                  <%= f.text_field :attendance_date, {class: "form-control col-md-7 col-xs-12"}%>
+                  <div id="calendario" class="input-group date" data-provide="datepicker">
+                    <%= f.text_field :attendance_date, {class: "form-control col-md-7 col-xs-12"}%>
+                   
+                    <div class="input-group-addon">
+                        <span class="glyphicon glyphicon-th"></span>
+                    </div>
+                  </div>
               </div>
               
               <div class="col-md-12 col-sm-12 col-xs-12 form-group">  

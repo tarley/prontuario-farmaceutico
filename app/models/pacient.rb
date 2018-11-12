@@ -8,6 +8,7 @@ class Pacient < ActiveRecord::Base
   has_many :pharmacotherapies
   has_many :sfcs
   has_many :care_plans
+  has_many :attendances
   
     
   belongs_to :pacient
@@ -17,7 +18,7 @@ class Pacient < ActiveRecord::Base
   belongs_to :pharmacotherapy
   belongs_to :sfc
   belongs_to :care_plan
-  
+  belongs_to :attendance
   
  
     
@@ -63,6 +64,8 @@ class Pacient < ActiveRecord::Base
                     numericality: {message: 'deve conter somente número!'},
                     length: {is: 11, message: 'deve conter 11 números!'}    
                                 
-    validates_uniqueness_of :cpf, message: 'Este CPF já está cadastrado!'                    
+    validates_uniqueness_of :cpf, message: 'Este CPF já está cadastrado!'   
+
+    
     
 end
