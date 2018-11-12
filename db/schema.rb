@@ -49,20 +49,12 @@ ActiveRecord::Schema.define(version: 20181105221608) do
     t.string   "name"
     t.text     "description"
     t.integer  "attendance_id"
-<<<<<<< HEAD
-=======
-    t.integer  "pacient_id"
->>>>>>> 9947e6caa21042a3cd29a1a43920e9182294f02a
     t.integer  "pharmacotherapy_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
   end
 
   add_index "diseases", ["attendance_id"], name: "index_diseases_on_attendance_id"
-<<<<<<< HEAD
-=======
-  add_index "diseases", ["pacient_id"], name: "index_diseases_on_pacient_id"
->>>>>>> 9947e6caa21042a3cd29a1a43920e9182294f02a
   add_index "diseases", ["pharmacotherapy_id"], name: "index_diseases_on_pharmacotherapy_id"
 
   create_table "pacients", force: :cascade do |t|
