@@ -21,6 +21,10 @@ class ProfessionsController < ApplicationController
   # GET /professions/new
   def new
     @profession = Profession.new
+    
+    respond_to do |f|
+      f.js
+    end
   end
 
   # GET /professions/1/edit
@@ -34,7 +38,7 @@ class ProfessionsController < ApplicationController
 
     respond_to do |format|
       if @profession.save
-        format.html { redirect_to @profession, notice: 'Profissão criada com sucesso.' }
+        format.html
         format.json { render :show, status: :created, location: @profession }
       else
         format.html { render :new }

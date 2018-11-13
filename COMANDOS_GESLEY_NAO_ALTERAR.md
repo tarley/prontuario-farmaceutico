@@ -100,3 +100,12 @@ Usando chosen para campo Autocomplete
 - https://translate.google.com.br/translate?hl=pt-BR&sl=en&u=https://github.com/tsechingho/chosen-rails&prev=search
 - https://github.com/tsechingho/chosen-rails
 - https://github.com/tsechingho/chosen-rails
+
+-----------------------------------------------------
+
+* Criar modal para salvar ser atualizar a página
+- https://www.youtube.com/watch?v=PGzkcUkoICg
+- https://nandovieira.com.br/usando-responders-no-rails
+- 
+* Colocar dicas nos campos
+- https://getbootstrap.com/docs/4.1/components/tooltips/

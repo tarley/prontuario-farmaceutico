@@ -1,7 +1,5 @@
 class PacientsController < ApplicationController
   before_action :authorize
-  
- 
   attr_accessor :profession
   before_action :set_pacient, only: [:show, :edit, :update, :destroy]
 
@@ -24,6 +22,7 @@ class PacientsController < ApplicationController
   # GET /pacients/new
   def new
     @pacient = Pacient.new
+    @profession = Profession.new
   end
 
   # GET /pacients/1/edit
@@ -34,6 +33,7 @@ class PacientsController < ApplicationController
   # POST /pacients.json
   def create
     @pacient = Pacient.new(pacient_params)
+    @profession = Profession.new
 
     respond_to do |format|
       if @pacient.save
@@ -82,6 +82,8 @@ class PacientsController < ApplicationController
       params.require(:pacient).permit(:name, :place_attendence, :birth_date, :years_study, :genre, 
                                       :marital_status, :phone, :address, :services_professional, 
                                       :reason_meeting, :cpf, :profession_id, :service_access_id, :ub_id, 
-                                      :physical_activity, :alcoholic_beverages, :cigarette)
+                                      :physical_activity, :alcoholic_beverages, :cigarette, :daily_routine,
+                                      :alternative_therapy, :alerts, :subjective_medications, :weight, 
+                                      :height, :IMC)
     end
 end
