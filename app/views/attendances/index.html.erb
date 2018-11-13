@@ -22,13 +22,14 @@
           <tbody>
             <% @attendances.each do |attendance| %>
               <tr>
-                
+                <td> <%= Pacient.all.map { |u| u.name } %> </td>
+                <td> <%= Pacient.all.map { |u| u.cpf } %> </td>
+                <td><%= attendance.attendance_date %></td>
                 <td><%= attendance.general_screen %></td>
                 <td><%= link_to 'Nova Doença', new_disease_path, :class => 'btn btn-primary' %></td>
                 <td><%= link_to 'Visualizar', attendance, :class => 'btn btn-primary' %></td>
                 <td><%= link_to 'Editar', edit_attendance_path(attendance), :class => 'btn btn-primary' %></td>
                 <td><%= link_to 'Excluir', attendance, :class => 'btn btn-primary', method: :delete, data: { confirm: 'Confirma a exclusão?' } %></td>
-                
               </tr>
             <% end %>
           </tbody>

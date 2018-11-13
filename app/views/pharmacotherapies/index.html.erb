@@ -30,9 +30,9 @@
           <tbody>
             <% @pharmacotherapies.each do |pharmacotherapy| %>
               <tr>
-                  
-                
-                <td><%= pharmacotherapy.pacient.name %></td>
+
+                <td> <%= Pacient.all.map { |u| u.name } %> </td>
+                <td></td>
                 <td><%= pharmacotherapy.medicine %></td>
                 <td><%= pharmacotherapy.dosageSchedule %></td>
                 <td><%= pharmacotherapy.safety %></td>
@@ -40,9 +40,8 @@
                 <td><%= pharmacotherapy.useDificulty %></td>
                 <td><%= pharmacotherapy.timeUse %></td>
                 <td><%= pharmacotherapy.carePlan %></td>
-                
-                <td><%= pharmacotherapy.prms %></td>
-                <td><%= pharmacotherapy.prmCauses %></td>
+                <td><%=  %></td>
+                <td><%=  %></td>
                 
                 <td><%= link_to 'Visualizar', pharmacotherapy, :class => 'btn btn-primary' %></td>
                 <td><%= link_to 'Editar', edit_pharmacotherapy_path(pharmacotherapy), :class => 'btn btn-primary' %></td>
