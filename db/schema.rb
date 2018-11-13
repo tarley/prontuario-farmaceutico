@@ -49,20 +49,14 @@ ActiveRecord::Schema.define(version: 20181105221608) do
     t.string   "name"
     t.text     "description"
     t.integer  "attendance_id"
-<<<<<<< HEAD
-=======
     t.integer  "pacient_id"
->>>>>>> 9947e6caa21042a3cd29a1a43920e9182294f02a
     t.integer  "pharmacotherapy_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
   end
 
   add_index "diseases", ["attendance_id"], name: "index_diseases_on_attendance_id"
-<<<<<<< HEAD
-=======
   add_index "diseases", ["pacient_id"], name: "index_diseases_on_pacient_id"
->>>>>>> 9947e6caa21042a3cd29a1a43920e9182294f02a
   add_index "diseases", ["pharmacotherapy_id"], name: "index_diseases_on_pharmacotherapy_id"
 
   create_table "pacients", force: :cascade do |t|
@@ -100,22 +94,25 @@ ActiveRecord::Schema.define(version: 20181105221608) do
     t.integer  "timeUse"
     t.text     "carePlan"
     t.text     "descriptionDisease"
-    t.text     "diseases_name"
+    t.integer  "carePlan_id"
     t.integer  "prmCause_id"
     t.integer  "attendance_id"
     t.integer  "disease_id"
     t.integer  "pacient_id"
     t.integer  "treatment_id"
     t.integer  "prm_id"
+    t.integer  "sfc_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
   end
 
   add_index "pharmacotherapies", ["attendance_id"], name: "index_pharmacotherapies_on_attendance_id"
+  add_index "pharmacotherapies", ["carePlan_id"], name: "index_pharmacotherapies_on_carePlan_id"
   add_index "pharmacotherapies", ["disease_id"], name: "index_pharmacotherapies_on_disease_id"
   add_index "pharmacotherapies", ["pacient_id"], name: "index_pharmacotherapies_on_pacient_id"
   add_index "pharmacotherapies", ["prmCause_id"], name: "index_pharmacotherapies_on_prmCause_id"
   add_index "pharmacotherapies", ["prm_id"], name: "index_pharmacotherapies_on_prm_id"
+  add_index "pharmacotherapies", ["sfc_id"], name: "index_pharmacotherapies_on_sfc_id"
   add_index "pharmacotherapies", ["treatment_id"], name: "index_pharmacotherapies_on_treatment_id"
 
   create_table "prm_causes", force: :cascade do |t|
