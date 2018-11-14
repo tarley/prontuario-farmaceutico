@@ -13,30 +13,31 @@
                     <% if @profession.errors.any? %>
                         <div id="error_explanation">
                             <h2><%= pluralize(@profession.errors.count, "error") %> prohibited this profession from being saved:</h2>
-                    
+                
                             <ul>
-                            <% @profession.errors.full_messages.each do |message| %>
-                                <li><%= message %></li>
-                            <% end %>
+                                <% @profession.errors.full_messages.each do |message| %>
+                                    <li><%= message %></li>
+                                <% end %>
                             </ul>
                         </div>
                     <% end %>
-                    
+                  
                     <div class="field">
                         <%= f.label :Descrição %>
                         <%= f.text_field :description %>
                     </div>
                     
                     <div class="actions">
-                        <!--%= f.submit :Salvar, :remote => true, :class => 'btn btn-success' %-->
-                        <button id="save" type="button" remote="true" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Ao clicar em salvar, a profissão será criada" >
-                            Salvar
-                        </button>
+                        <!--%= f.submit :Salvar, data: { confirm: 'Profissão criada com sucesso' }, :remote => true, :class => 'btn btn-success' %-->
+                        <input type="submit" name="commit" value="Salvar" data-confirm="Profissão criada com sucesso" remote="true" class="btn btn-success">
+                        <!--<button id="save" type="button" remote="true" data-confirm="Profissão criada com sucesso" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Ao clicar em salvar, a profissão será criada" >-->
+                        <!--    Salvar-->
+                        <!--</button>-->
                     </div>
                 <% end %>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                <button id="fecha-atualiza" type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
             </div>
         </div>
     </div>

@@ -109,3 +109,5 @@ Usando chosen para campo Autocomplete
 - 
 * Colocar dicas nos campos
 - https://getbootstrap.com/docs/4.1/components/tooltips/
+- 
+https://www.w3schools.com/jsref/event_onfocus.asp

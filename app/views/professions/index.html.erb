@@ -12,6 +12,11 @@
       </span>
     <% end %>
   </div>
+  <div>
+    <%= link_to new_profession_path, :remote => true do %>
+      <i class="fa fa-plus-square fa-3x" aria-hidden="true"></i>
+    <% end %>
+  </div>
 </form>
 
 <div class="container-fluid">
@@ -43,3 +48,5 @@
 </div>  
 
 <br>
+
+<div id="new-profession" style="display:none;"></div>

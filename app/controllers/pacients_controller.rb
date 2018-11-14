@@ -23,10 +23,15 @@ class PacientsController < ApplicationController
   def new
     @pacient = Pacient.new
     @profession = Profession.new
+    @professionAtualiza = Profession.all.map { |u| [u.description, u.id] }
   end
 
   # GET /pacients/1/edit
   def edit
+  end
+  
+  def updateProfessionAtualiza
+    @professionAtualiza = Profession.all.map { |u| [u.description, u.id] }
   end
 
   # POST /pacients

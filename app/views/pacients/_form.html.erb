@@ -63,51 +63,39 @@
                 <div class="col-md-3 col-sm-12 col-xs-12 form-group">
                   <label for="heard">Telefone:</label>
                     <%= f.text_field :phone, :required => "required", :class => "form-control col-md-7 col-xs-12", :maxlength => 16, required: true, 'data-mask'=>'(99) 9999-9999' %>
-                </div>               
+                </div>
                 
-                <!--<form id="exemplo">-->
-                  <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-                    <label class="heard">Profissão:</label>
-                    <div class="input-group col-md-12 col-sm-12 col-xs-12 form-group">
-                      <%= f.select :profession_id,
-                        Profession.all.map { |u| [u.description, u.id] },
-                        { include_blank: "Buscar Profissão" },
-                        { class: 'chosen-select' }
-                      %>
-                      <span class="input-grou-btn">
-                        <div>
-                          <!--%= link_to 'Nova Profissão', new_profession_path, :remote => true, :class => 'btn btn-primary' %-->
-                          <a "button" class="btn btn-default btn-sm" data-remote="true" href="/professions/new">Nova Profissão
-                            <span class="glyphicon glyphicon-plus-sign"></span>
-                            <script>
-                              $('#myModal').modal('show');
-                              $('#new-profession').slideDown(350);
-                            </script>
-                          </a>
-                        </div>
-                      </span>
-                    </div>
-                  </div>  
-                <!--</form>-->
+                <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                  <label class="heard">Profissão:</label>
+                  <div id="result" class="input-group col-md-12 col-sm-12 col-xs-12 form-group" onfocus="myFunction(this)">
+                    <%= f.select :profession_id,
+                      @professionAtualiza,
+                      { include_blank: "Buscar Profissão" },
+                      { class: 'chosen-select' }
+                    %>
+                  </div>
+                  <div class="modal-profession">
+                    <!--<span class="input-grou-btn">-->
+                      <%= link_to new_profession_path, :remote => true do %>
+                        <i class="fa fa-plus-square fa-3x" aria-hidden="true"></i>
+                      <% end %>
+                    <!--</span>-->
+                  </div>
+                </div>
                 
-
-                <!--//   $(document).ready(function() {-->
-                <!--//     $("form#new").submit(function() {-->
-                <!--//       event.preventDefault();-->
-                <!--//       $("#save").find("button").click( function() {-->
-                <!--//         window.dynaform.flashMessage( {-->
-                <!--//           emphasisMessage: "Saving ",-->
-                <!--//           message: "data in form.",-->
-                <!--//           duration:  5000,-->
-                <!--//           type: 'info',-->
-                <!--//           appendTo: $('#save'),-->
-                <!--//           absoluteTop : true-->
-                <!--//         }).done(function(e){   -->
-                <!--//           $('#profession').append(e);-->
-                <!--//         });-->
-                <!--//       });-->
-                <!--//     });-->
-                <!--//   });-->
+                <!--script type="text/javascript"-->
+                  <!-- function myFunction(x) {-->
+                  <!--   x.onfocus = professionAtualiza_path;-->
+                  <!--   //tenho que chamar o professionAtualiza_path no onfocus-->
+                  <!--}-->
+                <!--/script-->
+                
+                <!--<div>-->
+                  <!--script-->
+                  <!-- $('#myModal').modal('show');-->
+                  <!-- $('#new-profession').slideDown(350);-->
+                  <!--</script>-->
+                <!--</div>  -->
             
             </div>
           </div>
