@@ -168,7 +168,6 @@ ActiveRecord::Schema.define(version: 20181011171846) do
 
   add_index "users", ["email_id"], name: "index_users_on_email_id"
   add_index "users", ["name_id"], name: "index_users_on_name_id"
-  add_index "users", ["password_id"], name: "index_users_on_password_id"
   add_index "users", ["profile_id"], name: "index_users_on_profile_id"
 
 end
