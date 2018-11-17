@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181105221608) do
+ActiveRecord::Schema.define(version: 20181113235212) do
 
   create_table "attendances", force: :cascade do |t|
     t.text     "general_screen"
@@ -49,18 +49,26 @@ ActiveRecord::Schema.define(version: 20181105221608) do
     t.string   "name"
     t.text     "description"
     t.integer  "attendance_id"
+<<<<<<< HEAD
 
     t.integer  "pacient_id"
 
+=======
+    t.integer  "pacient_id"
+>>>>>>> 7fb5e15cc04efc36fab07e84cdf58d6bfb137940
     t.integer  "pharmacotherapy_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
   end
 
   add_index "diseases", ["attendance_id"], name: "index_diseases_on_attendance_id"
+<<<<<<< HEAD
 
   add_index "diseases", ["pacient_id"], name: "index_diseases_on_pacient_id"
 
+=======
+  add_index "diseases", ["pacient_id"], name: "index_diseases_on_pacient_id"
+>>>>>>> 7fb5e15cc04efc36fab07e84cdf58d6bfb137940
   add_index "diseases", ["pharmacotherapy_id"], name: "index_diseases_on_pharmacotherapy_id"
 
   create_table "pacients", force: :cascade do |t|
@@ -78,11 +86,18 @@ ActiveRecord::Schema.define(version: 20181105221608) do
     t.integer  "profession_id"
     t.integer  "service_access_id"
     t.integer  "ub_id"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.text     "physical_activity"
     t.text     "alcoholic_beverages"
     t.text     "cigarette"
+    t.text     "daily_routine"
+    t.text     "alternative_therapy"
+    t.text     "alerts"
+    t.text     "subjective_medications"
+    t.decimal  "height"
+    t.decimal  "IMC"
+    t.decimal  "weight"
   end
 
   add_index "pacients", ["profession_id"], name: "index_pacients_on_profession_id"

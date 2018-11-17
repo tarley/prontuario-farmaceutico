@@ -1,4 +1,11 @@
 <h1>Novo paciente</h1>
 
+<!--div-->
+  <!--%= link_to 'Nova Profissão', new_profession_path, :remote => true, :class => 'btn btn-primary' %-->
+<!--/div-->
+
 <%= render 'form' %>
 
+<div id="new-profession" style="display:none;">
+    <%= render 'professions/new'%>    
+</div>

@@ -81,7 +81,53 @@
               <strong>Acesso ao Serviço:</strong>
               <%= @pacient.service_access.description %>
             </p>
+            
+            <p>
+              <strong>Atividade Fisica:</strong>
+              <%= @pacient.physical_activity %>
+            </p>
+            
+            <p>
+              <strong>Cigarro:</strong>
+              <%= @pacient.cigarette %>
+            </p>
 
+            <p>
+              <strong>Bebidas Alcoólicas:</strong>
+              <%= @pacient.alcoholic_beverages %>
+            </p>
+
+            <p>
+              <strong>Rotina Diária:</strong>
+              <%= @pacient.daily_routine %>
+            </p>
+            
+            <p>
+              <strong>Alertas:</strong>
+              <%= @pacient.alerts %>
+            </p>
+
+            <p>
+              <strong>Terapia Alternativa:</strong>
+              <%= @pacient.alternative_therapy %>
+            </p>
+            
+            <p>
+              <strong>Experiência subjetiva com o uso de medicamento:</strong>
+              <%= @pacient.subjective_medications %>
+            </p>
+            <p>
+              <strong>Peso:</strong>
+              <%= @pacient.weight %>
+            </p>
+            <p>
+              <strong>Altura:</strong>
+              <%= @pacient.height %>
+            </p>
+            <p>
+              <strong>IMC:</strong>
+              <%= @pacient.IMC %>
+            </p>
             <%= link_to 'Editar', edit_pacient_path(@pacient), :class => 'btn btn-primary' %> | <%= link_to 'Voltar', pacients_path, :class => 'btn btn-primary' %>
           </div>
           
