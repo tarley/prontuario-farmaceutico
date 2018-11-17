@@ -5,6 +5,7 @@ class Pharmacotherapy < ActiveRecord::Base
   belongs_to :attendances
   belongs_to :prms
   belongs_to :pacients
+  belongs_to :diseases
   
   #Relacionamentos
   #has_many :prm, as: :description  #tem que pegar o id e não a description
@@ -14,7 +15,8 @@ class Pharmacotherapy < ActiveRecord::Base
   
   
   #Relacionamentos
-  #has_many :pacients
+  has_many :pacient
+  
   #has_many :prms
   #has_many :prm_causes
   #has_many :diseases

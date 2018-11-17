@@ -12,76 +12,85 @@
   <% end %>
   
   <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-   
       <label class="heard">Atendimento:</label>
-         <div class="input-group col-md-12 col-sm-12 col-xs-12 form-group">
-              <%= f.select :attendances,
-                 Attendance.all.map { |u| ["#{u.pacient.name} - #{u.attendance_date}", u.id] },
-                   { include_blank: "Buscar Paciente" },
+                  <%= f.select :attendance_id,
+                      Attendance.all.map { |u| ["#{u.pacient.name} - #{u.attendance_date}", u.id] },
+                      { include_blank: "Buscar Atendimento" },
                       { class: 'select2_single form-control' }
-              %>
-                    <!--<span class="input-grou-btn">-->
-                    <!-- <%= link_to '  Doença', new_profession_path, {class: "btn fa fa-plus btn-primary"}%>  -->
-                    <!--</span>-->
-            </div>
-      </div>
-    
-  
-
+                  %>
+  </div>
+            
+  <div class="input-group col-md-9 col-sm-12 col-xs-12 form-group">  
+      <label class="heard">Doença:</label>
+          <%= f.select :disease_id, 
+             Disease.all.map { |g| ["#{g.diseases.name} ", g.id] },
+              { include_blank: "Buscar Doença" },
+                  { class: 'select2_single form-control' }
+          %>
+  </div>
+            
+            
 <div class="container">
-  <div class="row">
-    <div class="col-md-12 col-sm-6 col-xs-12">
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <form class="form-horizontal row-border">
-            <div class="form-group">
-                            
-              <label class="col-md-1 control-label">Plano de tratamento:</label>
-                <div class="col-md-8">
-                  <%= f.text_area :carePlan, :class => "form-control" %>
-                </div>              
-                  <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+      <form id="demo-form" data-parsley-validate>
+        <div class="x_panel">
+          <div class="x_title">
+            <h2>Farmacoterapia</h2>
+            
+            <ul class="nav navbar-right panel_toolbox">
+              <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+              </li>
+            </ul>
+            <div class="clearfix"></div>
+          </div>
+          
+          <div class="x_content">
+            <div class="row">
+              
+              <div class="col-md-3 col-sm-12 col-xs-12 form-group">
                   <label class="heard">Remedio:</label>
                   <!--<%= form_tag(professions_path, :method => :get) do %>
                   <%= text_field_tag 'pesquisa', nil, placeholder: 'Buscar Profissão' %>
                   <%= submit_tag "Pesquisar"%>
                   <% end %> -->
                   <%= f.text_field :medicine, :class => "form-control" %>
-                </div>
+              </div>
                 
-                  <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+              <div class="col-md-3 col-sm-12 col-xs-12 form-group">
                   <label for="heard">Dosagem:</label>
                     <%= f.text_field :dosageSchedule, :required => "required", :class => "form-control col-md-7 col-xs-12"%>
-                  </div>
+              </div>
+                            
+              
+              <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+                <label class="heard">Plano de tratamento:</label>
+                  <%= f.text_area :carePlan, :class => "form-control" %>
+              </div>              
+                  
                 
-                  <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-                  <label for="heard">Segurança:</label>
-                    <%= f.text_field :safety, :required => "required", :class => "form-control col-md-7 col-xs-12"%>
-                </div>
+              <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                <label for="heard">Segurança:</label>
+                  <%= f.text_field :safety, :required => "required", :class => "form-control col-md-7 col-xs-12"%>
+              </div>
                 
-                <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-                  <label for="heard">Eficácia:</label>
-                    <%= f.text_field :effectiveness, :required => "required", :class => "form-control col-md-7 col-xs-12"%>
-                </div>
+              <div class="col-md-2 col-sm-12 col-xs-12 form-group">
+                <label for="heard">Eficácia:</label>
+                  <%= f.text_field :effectiveness, :required => "required", :class => "form-control col-md-7 col-xs-12"%>
+              </div>
                 
-                  <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-                  <label for="heard">Tempo de uso:</label>
+              <div class="col-md-2 col-sm-12 col-xs-12 form-group">
+                <label for="heard">Tempo de uso:</label>
                   <%= f.number_field :timeUse, :required => "required", :class => "form-control col-md-7 col-xs-12"%>
-                </div>        
-                
-            
-                
-                <div class="col-md-9 col-sm-12 col-xs-12 form-group">
-                  <label class="heard">Dificuldade no uso:</label>
+              </div>        
+
+              <div class="col-md-5 col-sm-12 col-xs-12 form-group">
+                <label class="heard">Dificuldade no uso:</label>
                   <%= f.text_area :useDificulty, :class => "form-control col-md-7 col-xs-12"%>
-                </div>
-                
-                </div>
+              </div>
+              
+           </div>
           </div>
         </div>
-                
-                <div class="container">
-      <form id="demo-form" data-parsley-validate>
+        
         <div class="x_panel">
           <div class="x_title">
             <h2>PRM</h2>
@@ -95,7 +104,6 @@
           <div class="x_content">
             <div class="row">
                 
-              
               <div class="col-md-6 col-sm-12 col-xs-12 form-group">
                   <label class="heard">Selecione PRM:</label>
                   <div class="input-group col-md-12 col-sm-12 col-xs-12 form-group">
@@ -110,33 +118,24 @@
               <div class="col-md-6 col-sm-12 col-xs-12 form-group">
                   <label class="heard">Causas do PRM:</label>
                 <div class="input-group col-md-12 col-sm-12 col-xs-12 form-group">
-                  
                   <%= f.select :prmCause_id,
                     PrmCause.all.map { |u| [u.description, u.id] },
                     { include_blank: "Causas do PRM" },
                     { class: 'select2_single form-control' }
                   %>
-                  
                 </div>
               </div>
-              
-              
+
             </div>
-          </form>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-  
-  
- 
- 
-</div>
+      </form>
+
       <div class="actions">
           <%= f.submit 'Salvar', :class => 'btn btn-success'%>
-        </div>
-
+      </div>
 
       <%= link_to 'Adicionar Plano de Cuidados', new_care_plan_path, :class => 'btn btn-primary' %>
+</div>
 
-      <% end %>
+<% end %>

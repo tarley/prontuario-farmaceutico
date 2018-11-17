@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   
   get :search, controller: :pacients
   #root to: "pacients#new"
+  get :professionAtualiza, controller: :pacients
 
   get 'sessions/new'
   
@@ -32,5 +33,6 @@ Rails.application.routes.draw do
   resources :sfcs
   resources :care_plans
   resources :home 
+  resources :type_sexes 
   
 end

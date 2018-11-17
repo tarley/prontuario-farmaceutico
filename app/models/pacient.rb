@@ -8,6 +8,8 @@ class Pacient < ActiveRecord::Base
   has_many :pharmacotherapies
   has_many :sfcs
   has_many :care_plans
+  has_many :attendances
+  
     
   belongs_to :pacient
   belongs_to :prm
@@ -16,12 +18,8 @@ class Pacient < ActiveRecord::Base
   belongs_to :pharmacotherapy
   belongs_to :sfc
   belongs_to :care_plan
+  belongs_to :attendance
   
-  
- 
-    
-    
-    
     #Pesquisa
     scope :pesquisa, ->(query) {where("cpf like ?", "%#{query}%")}
     
@@ -44,8 +42,8 @@ class Pacient < ActiveRecord::Base
                      length: {in: 3..100, message: 'deve conter de 3 a 100 caracteres'}
     
     validates :phone, presence: {message: 'não pode ser deixado em branco'},
-                      numericality: {:greater_than_or_equal_to => 0, message: 'deve conter somente números positivos'},
-                      length: {in: 10..11, message: 'deve conter de 10 à 11 números'}
+                      #numericality: {:greater_than_or_equal_to => 0, message: 'deve conter somente números positivos'},
+                      length: {in: 10..14, message: 'deve conter de 10 à 11 números'}
                       #numericality: {message: 'deve conter somente número'},
                       #length: {minimum: 10, message: 'deve conter no mínimo 10 números'}
     
@@ -59,9 +57,11 @@ class Pacient < ActiveRecord::Base
     validates :marital_status, numericality: {:greater_than => 0, message: 'deve ser selecionado'}
     
     validates :cpf, presence: {message: 'não pode ser deixado em branco'},
-                    numericality: {message: 'deve conter somente número!'},
-                    length: {is: 11, message: 'deve conter 11 números!'}    
+                    #numericality: {message: 'deve conter somente número!'},
+                    length: {is: 14, message: 'deve conter 14 números!'}    
                                 
-    validates_uniqueness_of :cpf, message: 'Este CPF já está cadastrado!'                    
+    validates_uniqueness_of :cpf, message: 'Este CPF já está cadastrado!'   
+
+    
     
 end

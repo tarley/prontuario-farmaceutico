@@ -16,10 +16,6 @@
               <th>Data dos resultados</th>
               <th>Outra conduta</th>
               <th>SFC</th>
-              <!--<th>Farmacoterapia</th>
-              <th>PRM</th>
-              <th>SFC</th>
-              <th>Causa PRM</th> -->
               <th colspan="3"></th>
             </tr>
           </thead>
@@ -31,13 +27,7 @@
                 <td><%= care_plan.conduct %></td>
                 <td><%= care_plan.results_date %></td>
                 <td><%= care_plan.anothers_conduct %></td>
-                <td><%= care_plan.sfc %></td>
-                
-                <td><%= care_plan.attendance.pacient.name%></td>  
-                <td><%= care_plan.attendance.attendance_date%></td>  
-                <!--<td><%= care_plan.pharmacotherapy %></td>
-                <td><%= care_plan.prm %></td>
-                <td><%= care_plan.prmCause %></td> -->
+                <td><%= care_plan.sfc.description %></td>
                 <td><%= link_to 'Visualizar', care_plan, :class => 'btn btn-primary' %></td>
                 <td><%= link_to 'Editar', edit_care_plan_path(care_plan), :class => 'btn btn-primary' %></td>
                 <td><%= link_to 'Excluir', care_plan, :class => 'btn btn-primary', method: :delete, data: { confirm: 'Confirma a exclusão?' } %></td>

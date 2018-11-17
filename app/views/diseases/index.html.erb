@@ -23,7 +23,8 @@
             <% @diseases.each do |disease| %>
               <tr>
                 <td><%= disease.attendance.pacient.name%></td>  
-                <td><%= disease.attendance.attendance_date%></td>  
+                <td><%= disease.attendance.attendance_date%></td>
+                
                 <td><%= disease.name %></td>
                 <td><%= disease.description %></td>
                 <td><%= link_to 'Nova Farmacoterapia', new_pharmacotherapy_path, :class => 'btn btn-primary' %></td>
