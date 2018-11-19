@@ -3,20 +3,20 @@
 
 <h1>Lista de Profissões</h1>
 
-
 <form class="form-horizontal">
   <div class="input-group col-md-4">
-  <%= form_tag(professions_path, :method => :get) do %>
-  <%= text_field_tag 'pesquisa', nil, placeholder: 'Buscar Profissão', :class => 'form-control' %>
-  <span class="input-group-btn">
-  <%= submit_tag "Pesquisar" , :class => 'btn btn-primary form-control' %>
-  </span>
-<% end %>
-</div>
-<div>
-  <%= link_to 'Nova Profissão', new_profession_path, :class => 'btn btn-primary' %>
-</div>
-  
+    <%= form_tag(professions_path, :method => :get) do %>
+      <%= text_field_tag 'pesquisa', nil, placeholder: 'Buscar Profissão', :class => 'form-control' %>
+      <span class="input-group-btn">
+      <%= submit_tag "Pesquisar" , :class => 'btn btn-primary form-control' %>
+      </span>
+    <% end %>
+  </div>
+  <div>
+    <%= link_to new_profession_path, :remote => true do %>
+      <i class="fa fa-plus-square fa-3x" aria-hidden="true"></i>
+    <% end %>
+  </div>
 </form>
 
 <div class="container-fluid">
@@ -49,4 +49,4 @@
 
 <br>
 
-
+<div id="new-profession" style="display:none;"></div>

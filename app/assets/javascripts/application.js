@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
+//= require bootstrap-sprockets
 //= require_tree .
 //= require gentelella
 //= require gentelella-custom
