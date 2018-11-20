@@ -12,28 +12,40 @@
   <% end %>
 
 <div class="container">
-  <div class="row">
-    <div class="col-md-12 col-sm-6 col-xs-12">
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <form class="form-horizontal row-border">
-            <div class="form-group">
+      <form id="demo-form" data-parsley-validate>
+        <div class="x_panel">
+          <div class="x_title">
+            <h2>Plano de Cuidados</h2>
+            
+            <ul class="nav navbar-right panel_toolbox">
+              <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+              </li>
+            </ul>
+            <div class="clearfix"></div>
+          </div>
+          
+          <div class="x_content">
+            <div class="row">
               
-              <label class="heard">Paciente:</label>
+              <div class="col-md-4 col-sm-12 col-xs-12 form-group">
+                <label class="heard">Paciente:</label>
                   <%= f.select :attendance,
                       Attendance.all.map { |u| ["#{u.pacient.name} - #{u.attendance_date}", u.id] },
                       { include_blank: "Buscar Atendimento" },
                       { class: 'select2_single form-control' }
                   %>
-                </div> 
+              </div>
               
-              <label class="col-md-2 control-label">Objetivo terapêutico:</label>
-                <div class="col-md-4">
+              
+              <div class="col-md-8 col-sm-12 col-xs-12 form-group">
+                <label class="heard">Objetivo terapêutico:</label>
                   <%= f.text_field :therapeutic_goal, :class => "form-control" %>
-                </div>
-              <label class="col-md-2 control-label">Conduta:</label>
-                <div class="col-md-4">
+              </div>
+              
+              <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                <label class="heard">Conduta:</label>
                   <%= f.text_field :conduct, :class => "form-control" %>
+<<<<<<< HEAD
                 </div>
               <label class="col-md-2 control-label">Data dos resultados:</label>
                
@@ -56,11 +68,27 @@
                 <div class="col-md-4">
                   <%= f.text_field :anothers_conduct, :class => "form-control" %>
                 </div>
+=======
+              </div>
+>>>>>>> d295395f3a2b9d6f4a4f09716a6efee53274c206
               
+              <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                <label for="heard">Data do Resultado:</label>
+                  <div id="calendario" class="input-group date" data-provide="datepicker">
+                    <%= f.text_field :results_date, {class: "form-control col-md-7 col-xs-12"}%>
+                    <div class="input-group-addon">
+                        <span class="glyphicon glyphicon-th"></span>
+                    </div>
+                  </div>
+              </div>
               
+              <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                <label class="heard">Outra conduta:</label>
+                  <%= f.text_field :anothers_conduct, :class => "form-control" %>
+              </div>
                 
-                <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-                  <label class="heard">SFC:</label>
+              <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                <label class="heard">SFC:</label>
                 <div class="input-group col-md-12 col-sm-12 col-xs-12 form-group">
                   <%= f.select :sfc_id,
                     Sfc.all.map { |u| [u.description, u.id] },
@@ -69,20 +97,14 @@
                   %>
                 </div>
               </div>
-                
-                
             </div>
-          </form>
-        </div>
-      </div>
-    </div>
+          </div>
+        </div> 
+    </form>
     
-      <div class="actions">
+  <div class="actions">
     <%= f.submit 'Salvar', :class => 'btn btn-success' %>
   </div>
-  </div>    
-  
-
-
+</div>    
 
 <% end %>

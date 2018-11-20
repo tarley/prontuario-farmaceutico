@@ -75,7 +75,7 @@ class PrmsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def prm_params
-      params.require(:prm).permit(:description, :prm_causes)
+      params.require(:prm).permit(:description, :prm_causes, :pharmacotherapy_id, :prm_id, :sfc_id, :prmCause_id, :pacient_id)
     end
     
 end

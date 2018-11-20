@@ -1,9 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 
+
+
 <p>
   <strong>Paciente:</strong>
+  
   <%= @disease.attendance.pacient.name %>
+  
 </p>
 <p>
   <strong>Data do Atendimento:</strong>
@@ -19,3 +23,5 @@
 </p>
 
 <%= link_to 'Adicionar Farmacoterapia', new_pharmacotherapy_path, :class => 'btn btn-primary' %> | <%= link_to 'Editar', edit_disease_path(@disease), :class => 'btn btn-primary' %> | <%= link_to 'Voltar', diseases_path, :class => 'btn btn-primary' %>
+
+

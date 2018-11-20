@@ -10,7 +10,6 @@
       </ul>
     </div>
   <% end %>
-
 <div class="container">
       <form id="demo-form" data-parsley-validate>
         <div class="x_panel">
@@ -38,6 +37,7 @@
                   <label for="heard">Data do Atendimento:</label>
                   <div id="calendario" class="input-group date" data-provide="datepicker">
                     <%= f.text_field :attendance_date, {class: "form-control col-md-7 col-xs-12"}%>
+                   
                     <div class="input-group-addon">
                         <span class="glyphicon glyphicon-th"></span>
                     </div>
@@ -57,7 +57,6 @@
      <div class="actions" style="float:right">
         <%= f.submit 'Salvar', :class => 'btn btn-primary' %>
       </div>
-
 </div>
 
 <% end %>
