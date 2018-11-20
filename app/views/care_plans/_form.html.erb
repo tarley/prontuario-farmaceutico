@@ -36,8 +36,21 @@
                   <%= f.text_field :conduct, :class => "form-control" %>
                 </div>
               <label class="col-md-2 control-label">Data dos resultados:</label>
+               
+                 
+               
+               
                 <div class="col-md-4">
-                  <%= f.datetime_select :results_date, :class => "form-control" %>
+                  
+                  
+                  <label class="col-md-6 control-label">Data dos Resultados:</label>
+                  <div id="calendario" class="input-group date" data-provide="datepicker">
+                    <%= f.text_field :results_date, {class: "form-control col-md-7 col-xs-12"}%>
+                    <div class="input-group-addon">
+                        <span class="glyphicon glyphicon-th"></span>
+                    </div>
+                  </div>
+                  
                 </div>
               <label class="col-md-2 control-label">Outra conduta:</label>
                 <div class="col-md-4">
