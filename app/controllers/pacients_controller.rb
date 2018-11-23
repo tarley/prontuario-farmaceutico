@@ -17,6 +17,7 @@ class PacientsController < ApplicationController
   # GET /pacients/1.json
   def show
     @attendances = Attendance.where(pacient_id: @pacient.id).order(attendance_date: :desc)
+    @professionAtualiza = Profession.all.map { |u| [u.description, u.id] }
   end
   
   # GET /pacients/new
@@ -28,6 +29,7 @@ class PacientsController < ApplicationController
 
   # GET /pacients/1/edit
   def edit
+    @professionAtualiza = Profession.all.map { |u| [u.description, u.id] }
   end
   
   def updateProfessionAtualiza

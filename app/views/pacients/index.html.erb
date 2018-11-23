@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Lista de pacientes</h1>
+<h1>Lista de Pacientes</h1>
 
-<%= link_to 'Novo paciente', new_pacient_path, :class => 'btn btn-primary' %>
+<%= link_to 'Novo Paciente', new_pacient_path, :class =>'glyphicon glyphicon-plus btn btn-primary' %>
 
 <%= form_tag(pacients_path, :method => :get) do %>
   <%= text_field_tag 'pesquisa', nil, placeholder: 'Buscar por CPF' %>
@@ -36,9 +36,9 @@
                   <td><%= pacient.services_professional %></td>
                   <td><%= pacient.reason_meeting %></td>
                   <td><a href="/attendances/new?idPaciente=<%=pacient.id%>" class="btn btn-primary">Novo Atendimento</a></td>
-                  <td><%= link_to 'Vizualizar', pacient, :class => 'btn btn-primary' %></td>
-                  <td><%= link_to 'Editar', edit_pacient_path(pacient), :class => 'btn btn-primary' %></td>
-                  <td><%= link_to 'Excluir', pacient, :class => 'btn btn-primary', method: :delete, data: { confirm: 'Confirma a exclusão?' } %></td>
+                  <td><%= link_to 'Vizualizar', pacient, :class => 'btn btn-info' %></td>
+                  <td><%= link_to 'Editar', edit_pacient_path(pacient), :class => 'btn btn-warning' %></td>
+                  <td><%= link_to 'Excluir', pacient, :class => 'btn btn btn-danger', method: :delete, data: { confirm: 'Confirma a exclusão?' } %></td>
                 </tr>
               <% end %>
             </tbody>

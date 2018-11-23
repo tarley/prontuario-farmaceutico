@@ -69,25 +69,6 @@
               <td><%= @pacient.cpf %> </td>
             </tr>
             
-<<<<<<< HEAD
-            <tr>
-              <td><strong>Profissão:</strong></td>
-              <td><%= @pacient.profession.description %></td>
-            </tr>
-
-            <tr>
-              <td><strong>UBS:</strong></td>
-              <td><%= @pacient.ub.description %></td>
-            </tr>
-
-            <tr>
-              <td><strong>Acesso ao Serviço:</strong></td>
-              <td><%= @pacient.service_access.description %></td>
-            </tr>
-
-            
-          </div>
-=======
             <p>
               <strong>Profissão:</strong>
               <%= @pacient.profession.description %>
@@ -149,18 +130,12 @@
               <strong>IMC:</strong>
               <%= @pacient.IMC %>
             </p>
-            <%= link_to 'Editar', edit_pacient_path(@pacient), :class => 'btn btn-primary' %> | <%= link_to 'Voltar', pacients_path, :class => 'btn btn-primary' %>
->>>>>>> d295395f3a2b9d6f4a4f09716a6efee53274c206
+            <%= link_to 'Editar', edit_pacient_path(@pacient), :class => 'btn btn-warning' %> | <%= link_to 'Voltar', pacients_path, :class => 'btn btn-primary' %>
           </div>
           </table>
-          <%= link_to 'Editar', edit_pacient_path(@pacient), :class => 'btn btn-primary' %> | <%= link_to 'Voltar', pacients_path, :class => 'btn btn-primary' %>
+          <%= link_to 'Editar', edit_pacient_path(@pacient), :class => 'btn btn-warning' %> | <%= link_to 'Voltar', pacients_path, :class => 'btn btn-primary' %>
           
-          
-          
-          
-          
-          
-          
+
            <div class="x_title">
             <h2>Atendimento(s) do Paciente</h2>
             <ul class="nav navbar-right panel_toolbox">

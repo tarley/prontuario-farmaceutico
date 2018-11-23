@@ -6,7 +6,11 @@ class UbsController < ApplicationController
   # GET /ubs
   # GET /ubs.json
   def index
-    @ubs = Ub.all
+    if params[:pesquisa]
+      @ubs = Ub.pesquisa(params[:pesquisa])
+    else
+      @ubs = Ub.all
+    end
   end
 
   # GET /ubs/1

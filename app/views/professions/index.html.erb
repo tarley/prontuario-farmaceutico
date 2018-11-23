@@ -35,9 +35,9 @@
             <% @professions.each do |profession| %>
               <tr>
                 <td><%= profession.description %></td>
-                <td><%= link_to 'Visualizar', profession, :class => 'btn btn-primary' %></td>
-                <td><%= link_to 'Editar', edit_profession_path(profession), :class => 'btn btn-primary' %></td>
-                <td><%= link_to 'Excluir', profession, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-primary' %></td>
+                <td><%= link_to 'Visualizar', profession, :class => 'btn btn-info' %></td>
+                <td><%= link_to 'Editar', edit_profession_path(profession), :class => 'btn btn-warning' %></td>
+                <td><%= link_to 'Excluir', profession, method: :delete, data: { confirm: 'Confirma a exclusão?' }, :class => 'btn btn btn-danger' %></td>
               </tr>
             <% end %>
           </tbody>

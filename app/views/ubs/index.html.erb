@@ -1,27 +1,46 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Ubs</h1>
+<h1>Lista de UBS</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @ubs.each do |ub| %>
-      <tr>
-        <td><%= ub.description %></td>
-        <td><%= link_to 'Show', ub %></td>
-        <td><%= link_to 'Edit', edit_ub_path(ub) %></td>
-        <td><%= link_to 'Destroy', ub, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<form class="form-horizontal">
+  <div class="input-group col-md-4">
+    <%= form_tag(ubs_path, :method => :get) do %>
+      <%= text_field_tag 'pesquisa', nil, placeholder: 'Buscar UBS', :class => 'form-control' %>
+      <span class="input-group-btn">
+        <%= submit_tag "Pesquisar" , :class => 'btn btn-primary form-control'%>
+      </span>
     <% end %>
-  </tbody>
-</table>
+  </div>
+</form>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Descrição</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
+        
+          <tbody>
+            <% @ubs.each do |ub| %>
+              <tr>
+                <td><%= ub.description %></td>
+                <td><%= link_to 'Visualizar', ub, :class => 'btn btn-info' %></td>
+                <td><%= link_to 'Editar', edit_ub_path(ub), :class => 'btn btn-warning' %></td>
+                <td><%= link_to 'Excluir', ub, method: :delete, data: { confirm: 'Confirma a exclusão?' }, :class => 'btn btn btn-danger' %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
 
 <br>
 
-<%= link_to 'New Ub', new_ub_path %>
+<%= link_to 'Nova UBS', new_ub_path %>
