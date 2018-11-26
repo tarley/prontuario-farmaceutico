@@ -2,7 +2,6 @@
   <% if @pacient.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@pacient.errors.count, "error") %> Não foi possivel salvar esse registro:</h2>
-
       <ul>
       <% @pacient.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -10,146 +9,325 @@
       </ul>
     </div>
   <% end %>
-
-<div class="container">
-      <form id="demo-form" data-parsley-validate>
-        <div class="x_panel">
-          <div class="x_title">
-            <h2>Dados do Paciente</h2>
-            <ul class="nav navbar-right panel_toolbox">
-              <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-              </li>
-            </ul>
-            <div class="clearfix"></div>
-          </div>
-        
-          <div class="x_content">
-            <div class="row">
   
+  <div class="container">
+    <form id="demo-form" data-parsley-validate>
+      <div class="x_panel">
+        
+        <div class="x_title">
+          <h2>Dados do Paciente</h2>
+          <ul class="nav navbar-right panel_toolbox">
+            <li>
+              <a class="collapse-link">
+                <i class="fa fa-chevron-up"></i>
+              </a>
+            </li>
+          </ul>
+          <div class="clearfix"></div>
+        </div>
+            
+        <div class="x_content">
+          <div class="row">
                 
-                <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-                  <label for="heard">Nome:</label>
-                    <%= f.text_field :name, :type => "text", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
-                </div>
-                
-                <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-                  <label for="heard">CPF:</label>
-                    <%= f.text_field :cpf, :type => "text", :class => "form-control", id: 'cpf'%> 
-                </div>
-                
-                <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-                  <label for="heard">Sexo:</label>
-                    <%= f.select(:genre, [['Selecione o Sexo', 0], ['Feminino', 1], ['Masculino', 2],['Outro',3]], {}, {class: "form-control col-md-7 col-xs-12"}) %>
-                </div>
-                <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-                  <label for="heard">Data de nascimento: </label>
-                    
-                    <%= f.text_field :birth_date, {name: "outra_data", id: "outra_data", maxlength: "10", onkeypress: "mascaraData(this)", class: "form-control col-md-7 col-xs-12", placeholder: "DD/MM/AAAA"}%>
-                </div>
-                        
-
-                
-                <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-                  <label for="heard">Estado civil:</label>
-                    <%= f.select(:marital_status, [['Selecione o Estado Civil', 0], ['Solteiro', 1], ['Casado', 2],['Separado',3], ['Divorciado', 4], ['Viúvo',5]], {}, {class: "form-control col-md-7 col-xs-12"}) %>
-                </div>
-                
-                <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-                  <label for="heard">Anos de estudo:</label>
+            <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+              <label for="heard">* Nome:</label>
+                <span data-toggle="tooltip" data-placement="top" title="Entre com o nome do paciente">
+                  <%= f.text_field :name, :type => "text", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
+                </span>
+            </div>
+                  
+            <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+              <label for="heard">* CPF:</label>
+                <span data-toggle="tooltip" data-placement="top" title="Entre com o cpf do paciente">
+                  <%= f.text_field :cpf, :class => "form-control", :data=> {:mask=> '999.999.999-99'}%>
+              </span>
+            </div>
+                  
+            <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+              <label for="heard">* Sexo:</label>
+                <span data-toggle="tooltip" data-placement="top" title="Clique para selecione o sexo do paciente">
+                  <%= f.select(:genre, [['Selecione o Sexo', 0], ['Feminino', 1], ['Masculino', 2],['Outro',3]], {}, {class: "form-control col-md-7 col-xs-12"}) %>
+                </span>
+            </div>
+                  
+            <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+              <label for="heard">* Data de nascimento: </label>
+                <span data-toggle="tooltip" data-placement="top" title="Escolha ou escreva a data de nascimento do paciente">
+                  <%= f.date_field :birth_date, :type => "date", :required => "required", :class => "form-control col-md-7 col-xs-12", min:"1900-01-01", max: Date.today %>
+                </span>
+            </div>
+            
+            <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+              <label for="heard">* Estado civil:</label>
+                <span data-toggle="tooltip" data-placement="top" title="Clique para selecionar o estado civil do paciente">
+                  <%= f.select(:marital_status, [['Selecione o Estado Civil', 0], ['Solteiro', 1], ['Casado', 2],['Separado',3], ['Divorciado', 4], ['Viúvo',5]], {}, {class: "form-control col-md-7 col-xs-12"}) %>
+                </span>
+            </div>
+                  
+            <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+              <label for="heard">* Anos de estudo:</label>
+                <span data-toggle="tooltip" data-placement="top" title="Entre com o total de anos estudados pelo paciente">
                   <%= f.number_field :years_study, :type => "text", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
-                </div>
-                
-                <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-                  <label for="heard">Telefone:</label>
-                    <%= f.text_field :phone, :type => "text", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
-                </div>                
-                
-                <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-                  <label class="heard">Profissão:</label>
-                  <div class="input-group col-md-12 col-sm-12 col-xs-12 form-group">
+                </span>
+            </div>
+                  
+            <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+              <label for="heard">* Telefone:</label>
+                <span data-toggle="tooltip" data-placement="top" title="Entre com telefone ou celular do paciente/familiar/vizinho">
+                  <%= f.text_field :phone, :required => "required", :class => "form-control col-md-7 col-xs-12", :maxlength => 16, required: true, 'data-mask'=>'(99) 9999-9999' %>
+                </span>
+            </div>
+                  
+            <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+              <label class="heard">* Profissão:</label>
+                <span data-toggle="tooltip" data-placement="top" title="Clique para selecionar a profissão do paciente">
+                  <div class="input-group col-md-9 col-sm-12 col-xs-12 form-group"> <!-- onfocus="myFunction(this) -->
                     <%= f.select :profession_id,
-                      Profession.all.map { |u| [u.description, u.id] },
+                      @professionAtualiza,
                       { include_blank: "Buscar Profissão" },
                       { class: 'chosen-select' }
                     %>
-                    <span class="input-grou-btn">
-                     <%= link_to '  Profissão', new_profession_path, {class: "btn fa fa-plus btn-primary"}%>  
-                    </span>
                   </div>
-                </div>  
- 
+                </span>
+                      
+                <div class="modal-profession">
+                  <span data-toggle="tooltip" data-placement="top" title="Clique para adicionar uma nova profissão">
+                  <!--<span class="input-grou-btn">-->
+                    <%= link_to new_profession_path, :remote => true do %>
+                      <i class="fa fa-plus-square fa-3x" aria-hidden="true"></i>
+                    <% end %>
+                  </span>
+                </div>
+              
             </div>
+                  
+            <!--script type="text/javascript"-->
+              <!-- function myFunction(x) {-->
+                <!--   x.onfocus = professionAtualiza_path;-->
+                <!--   //tenho que chamar o professionAtualiza_path no onfocus-->
+              <!--}-->
+            <!--/script-->
+                  
+            <!--<div>-->
+              <!--script-->
+                <!-- $('#myModal').modal('show');-->
+                <!-- $('#new-profession').slideDown(350);-->
+              <!--</script>-->
+            <!--</div>  -->
+              
           </div>
         </div>
-
-
-       <div class="x_panel">
-          <div class="x_title">
-            <h2>Dados Complementares</h2>
-            <ul class="nav navbar-right panel_toolbox">
-              <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-              </li>
-            </ul>
-            <div class="clearfix"></div>
-          </div>
-
-          <div class="x_content">
-            <div class="row">
-              
-                <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-                  <label for="fullname">Profissional do serviço:</label>
+      </div>
+  
+      <div class="x_panel">
+        
+        <div class="x_title">
+          <h2>Dados Complementares</h2>
+          <ul class="nav navbar-right panel_toolbox">
+            <li>
+              <a class="collapse-link">
+                <i class="fa fa-chevron-up"></i>
+              </a>
+            </li>
+          </ul>
+          <div class="clearfix"></div>
+        </div>
+  
+        <div class="x_content">
+          <div class="row">
+                
+            <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+              <label for="fullname">* Profissional do serviço:</label>
+                <span data-toggle="tooltip" data-placement="top" title="Entre com a profissão do atendente que irá prestar o serviço ao paciente">
                   <%= f.text_field :services_professional, :type => "text", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
-                </div>              
-              
-                  
-                <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-                  <label for="heard">Lugar de atendimento:</label>
-                    <%= f.text_field :place_attendence, :type => "text", :required => "required", :class => "form-control col-md-7 col-xs-12"%>               
-                </div>
-              
-                <div class="col-md-6 col-sm-12 col-xs-12 form-group">
-                  <label for="message">Endereço:</label>
-                  <%= f.text_field :address, :type => "text", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
-                </div> 
+                </span>
+            </div>              
                 
-                <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-                    <label class="heard">UBS:</label>
-                      <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-                        <%= f.select :ub_id,
-                          Ub.all.map { |u| [u.description, u.id] },
-                          { include_blank: "Buscar UBS" },
-                          { class: 'chosen-select' }
-                        %> 
-                      </div>
-                </div>
-                
-                
-                <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-                    <label class="heard">Acesso ao Serviço:</label>
-                      <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-                        <%= f.select :service_access_id,
-                          ServiceAccess.all.map { |u| [u.description, u.id] },
-                          { include_blank: "Buscar Acesso ao Serviço" },
-                          { class: 'chosen-select' }
-                        %>
-                      </div>
-                </div>   
-                
-                <div class="col-md-9 col-sm-12 col-xs-12 form-group">
-                  <label class="heard">Motivo da consulta:</label>
-                  <%= f.text_area :reason_meeting, :class => "form-control col-md-7 col-xs-12"%>
-                </div>
-
+                    
+            <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+              <label for="heard">* Lugar de atendimento:</label>
+                <span data-toggle="tooltip" data-placement="top" title="Entre com o lugar onde o paciente está sendo atendido">
+                  <%= f.text_field :place_attendence, :type => "text", :required => "required", :class => "form-control col-md-7 col-xs-12"%>               
+                </span>
             </div>
+                
+            <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+              <label for="message">* Endereço:</label>
+                <span data-toggle="tooltip" data-placement="top" title="Entre com o endereço do paciente">
+                  <%= f.text_field :address, :type => "text", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
+                </span>
+            </div>
+            
+            <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+              <label class="heard">* UBS:</label>
+                <div id="result-ub" class="col-md-12 col-sm-12 col-xs-12 form-group">
+                  <span data-toggle="tooltip" data-placement="top" title="Clique para selecionar a Unidade Básica de Saúde">  
+                    <%= f.select :ub_id,
+                      Ub.all.map { |u| [u.description, u.id] },
+                      { include_blank: "Buscar UBS" },
+                      { class: 'chosen-select' }
+                    %>
+                  </span>
+                </div>
+                
+                <div class="modal-ub">
+                  <span data-toggle="tooltip" data-placement="top" title="Clique para adicionar uma nova UBS">
+                    <%= link_to new_ub_path, :remote => true do %>
+                      <i class="fa fa-plus-square fa-3x" aria-hidden="true"></i>
+                    <% end %>
+                  </span>
+                </div>
+            </div>
+                  
+            <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+              <label class="heard">* Acesso ao Serviço:</label>
+                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                  <span data-toggle="tooltip" data-placement="top" title="Clique para selecionar o meio usado pelo paciente para conseguir o atendimento">
+                    <%= f.select :service_access_id,
+                      ServiceAccess.all.map { |u| [u.description, u.id] },
+                      { include_blank: "Buscar Acesso ao Serviço" },
+                      { class: 'chosen-select' }
+                    %>
+                  </span>
+                </div>
+                
+                <div class="modal-service_access">
+                  <span data-toggle="tooltip" data-placement="top" title="Clique para adicionar uma nova UBS">
+                    <%= link_to new_service_access_path, :remote => true do %>
+                      <i class="fa fa-plus-square fa-3x" aria-hidden="true"></i>
+                    <% end %>
+                  </span>
+                </div>
+            </div>   
+                  
+            <div class="col-md-9 col-sm-12 col-xs-12 form-group">
+              <label class="heard">Motivo da consulta:</label>
+                <span data-toggle="tooltip" data-placement="top" title="Entre com o motivo da consulta do paciente">
+                  <%= f.text_area :reason_meeting, :class => "form-control col-md-7 col-xs-12"%>
+                </span>
+            </div>
+  
           </div>
-        </div>  
-  </form>
-
-
-  <div class="actions">
-    <%= f.submit 'Salvar', :class => 'btn btn-success' %>
+        </div>
+        
+      </div>  
+          
+      <div class="x_panel">
+            
+        <div class="x_title">
+          <h2>Habitos de vida</h2>
+          <ul class="nav navbar-right panel_toolbox">
+            <li>
+              <a class="collapse-link">
+                <i class="fa fa-chevron-up"></i>
+              </a>
+            </li>
+          </ul>
+          <div class="clearfix"></div>
+        </div>
+  
+        <div class="x_content">
+          <div class="row">
+              
+            <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+              <label for="fullname">* Atividade Fisica:</label>
+                <span data-toggle="tooltip" data-placement="top" title="Entre com a descrição das atividades físicas praticadas pelo paciente se houver">
+                  <%= f.text_area :physical_activity, :type => "text", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
+                </span>
+            </div>
+                    
+            <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+              <label for="heard">* Cigarro:</label>
+                <span data-toggle="tooltip" data-placement="top" title="Entre com a descrição referente ao uso de cigarros pelo paciente se houver">
+                  <%= f.text_area :cigarette, :type => "text", :required => "required", :class => "form-control col-md-7 col-xs-12"%>               
+                </span>
+            </div>
+                    
+            <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+              <label for="message">* Bebidas Alcoólicas:</label>
+                <span data-toggle="tooltip" data-placement="top" title="Entre com a descrição referente ao uso de bebidas alcoólicas pelo paciente se houver">
+                  <%= f.text_area :alcoholic_beverages, :type => "text", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
+                </span>
+            </div>
+                    
+            <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+              <label for="message">* Rotina Diária:</label>
+                <span data-toggle="tooltip" data-placement="top" title="Entre com a descrição da rotina diária do paciente">
+                  <%= f.text_area :daily_routine, :type => "text", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
+                </span>
+            </div>
+                    
+            <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+              <label for="message">* Alertas:</label>
+                <span data-toggle="tooltip" data-placement="top" title="Entre com os alertas referente a esse paciente">
+                  <%= f.text_area :alerts, :type => "text", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
+                </span>
+            </div>
+                    
+            <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+              <label for="message">* Terapia Alternativa</label>
+                <span data-toggle="tooltip" data-placement="top" title="Entre com a descrição da terapia alternativa para o paciente se houver">
+                  <%= f.text_area :alternative_therapy, :type => "text", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
+                </span>
+            </div>
+                    
+            <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+              <label for="message">* Experiência subjetiva com o uso de medicamento:</label>
+                <span data-toggle="tooltip" data-placement="top" title="Entre com a descrição da esperiência subjetiva com o uso do medicamento">
+                  <%= f.text_area :subjective_medications, :type => "text", :required => "required", :class => "form-control col-md-7 col-xs-20"%>
+                </span>
+            </div>
+                  
+          </div>
+        </div>
+            
+      </div>
+          
+      <div class="x_panel">
+            
+        <div class="x_title">
+          <h2>Dados Antropométricos</h2>
+          <ul class="nav navbar-right panel_toolbox">
+            <li>
+              <a class="collapse-link">
+                <i class="fa fa-chevron-up"></i>
+              </a>
+            </li>
+          </ul>
+          <div class="clearfix"></div>
+        </div>
+            
+        <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+          <label for="fullname">* Peso:</label>
+            <span data-toggle="tooltip" data-placement="top" title="Entre com o peso do paciente">
+              <%= f.text_field :weight, :type => "numeric", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
+            </span>
+        </div>
+            
+        <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+          <label for="fullname">* Altura:</label>
+            <span data-toggle="tooltip" data-placement="top" title="Entre com a altura do paciente">
+              <%= f.text_field :height, :type => "decimal", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
+            </span>
+        </div>
+            
+        <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+          <label for="fullname">* IMC:</label>
+            <span data-toggle="tooltip" data-placement="top" title="Entre com o índice da massa corporal do paciente">
+              <%= f.text_field :IMC, :type => "decimal", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
+            </span>
+        </div>
+            
+      </div>
+          
+    </form>
+  
+    <div class="actions">
+      <span data-toggle="tooltip" data-placement="top" title="Ao clicar confira se todos os campos com * estão preenchidos">
+        <%= f.submit 'Salvar', :class => 'btn btn-success' %>
+      </span>
+    </div>
+  
   </div>
-
-</div>
 
 <% end %>

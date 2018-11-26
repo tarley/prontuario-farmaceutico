@@ -1,31 +1,27 @@
-<div class="col-md-12 col-sm-12 col-xs-12">
-  <div class="x_panel">
-    <div class="x_title">
-      <ul class="nav navbar-right panel_toolbox">
-        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-        </li>
-      </ul>
 <p id="notice"><%= notice %></p>
 
-<h1>Lista de pacientes</h1>
+<h1>Lista de Pacientes</h1>
 
-<%= link_to 'Novo paciente', new_pacient_path, :class => 'btn btn-primary' %>
+<%= link_to 'Novo Paciente', new_pacient_path, :class =>'glyphicon glyphicon-plus btn btn-primary' %>
 
 <%= form_tag(pacients_path, :method => :get) do %>
   <%= text_field_tag 'pesquisa', nil, placeholder: 'Buscar por CPF' %>
   <%= submit_tag "Pesquisar" , :class => 'btn btn-primary'%>
 <% end %>
-        <div class="x_content">
-          <table class="table table-striped">
-            <thead>
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-sm-12">
+       <div class="table-responsive">
+        <table class="table">
+          <thead>
               <tr>
                 <th>Nome</th>
-                <th>CPF</th>
-                <th>Lugar de atendimento</th>
+                <th>Cpf</th>
+                <th>Lugar de Atendimento</th>
                 <th>Telefone</th>
                 <th>Endereço</th>
-                <th>Profissional serviço</th>
-                <th>Motivo do encontro</th>
+                <th>Profissional Serviço</th>
+                <th>Motivo Consulta</th>
                 <th colspan="4"></th>
               </tr>
             </thead>
@@ -39,16 +35,15 @@
                   <td><%= pacient.address %></td>
                   <td><%= pacient.services_professional %></td>
                   <td><%= pacient.reason_meeting %></td>
-                  
-                  <td><%= link_to 'Novo Atendimento', new_attendance_path, :class => 'btn btn-primary' %></td>
-                  <td><%= link_to 'Vizualizar', pacient, :class => 'btn btn-primary' %></td>
-                  <td><%= link_to 'Editar', edit_pacient_path(pacient), :class => 'btn btn-primary' %></td>
-                  <td><%= link_to 'Excluir', pacient, :class => 'btn btn-primary', method: :delete, data: { confirm: 'Confirma a exclusão?' } %></td>
+                  <td><a href="/attendances/new?idPaciente=<%=pacient.id%>" class="btn btn-primary">Novo Atendimento</a></td>
+                  <td><%= link_to 'Vizualizar', pacient, :class => 'btn btn-info' %></td>
+                  <td><%= link_to 'Editar', edit_pacient_path(pacient), :class => 'btn btn-warning' %></td>
+                  <td><%= link_to 'Excluir', pacient, :class => 'btn btn btn-danger', method: :delete, data: { confirm: 'Confirma a exclusão?' } %></td>
                 </tr>
               <% end %>
             </tbody>
           </table>
-        </div>
+      </div>
     </div>
   </div>
 </div>

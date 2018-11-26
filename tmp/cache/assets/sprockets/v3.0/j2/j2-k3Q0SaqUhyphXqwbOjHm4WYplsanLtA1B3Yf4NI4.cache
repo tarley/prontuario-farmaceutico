@@ -1,0 +1,7 @@
+I"c(function() {
+  $(function() {
+    return new FastClick(document.body);
+  });
+
+}).call(this);
+:ET

@@ -1,14 +1,12 @@
 source 'https://rubygems.org'
 
-gem 'pg'
+ #gem 'pg'
+ gem 'sqlite3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Use sqlite3 as the database for Active Recor
 
-#
-
-gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '5.0.7'
 # Use Uglifier as compressor for JavaScript assets
@@ -19,7 +17,19 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 
 #Formatando data
-#gem 'maskedinput-rails'
+gem 'bootstrap-datepicker-rails', :require => 'bootstrap-datepicker-rails',
+                                  :git => 'git://github.com/Nerian/bootstrap-datepicker-rails.git'
+
+#Formatando CPF
+# gem 'maskedinput-rails'
+# gem 'jquery-inputmask-rails', github: 'knapo/jquery-inputmask-rails'
+# gem 'jquery_mask_rails'
+gem 'jquery_mask_rails', '~> 0.1.0'
+
+#tradução
+gem 'translation'
+
+
 
   #Gerando arquivos em PDF
 gem 'wkhtmltopdf-binary'
@@ -34,11 +44,10 @@ gem 'gentelella-rails'
 
 #Trabalhando com formatação de data
 gem 'jquery-ui-rails'
-# gem bcrypt
 
-#gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
-#gem 'bcrypt', '~> 3.1', '>= 3.1.11'
+
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -49,8 +58,7 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-# Use ActiveModel has_secure_password
-gem 'bcrypt', '~> 3.1.7'
+
 
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -63,13 +71,6 @@ group :development, :test do
   gem 'byebug'
 end
 
-group :development do
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
-
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
-end
 
 #fazer campo autocomplete com chosen
 source 'https://rails-assets.org' do
@@ -78,7 +79,25 @@ end
   # if using bootstrap
   gem 'bootstrap-chosen-rails'
   
-  
+
+  group :development do 
+  gem 'sqlite3'    #gem to use in development environment
+end
+
+group :production do 
+ gem 'pg'         #gem to use in production environment
+end
+
+#  group :development do 
+#   gem 'sqlite3'    #gem to use in development environment
+#end
+
+#group :production do 
+#  gem 'pg'         #gem to use in production environment
+#end
+
+
+
   
   
 

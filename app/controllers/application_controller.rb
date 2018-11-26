@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
   
   add_flash_types :danger, :info, :warning, :sucess
-  
+
   def authorize
     unless logged_in?
         redirect_to root_url
