@@ -1,22 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-
 <h1>Lista de Profissões</h1>
-
 
 <form class="form-horizontal">
   <div class="input-group col-md-4">
-  <%= form_tag(professions_path, :method => :get) do %>
-  <%= text_field_tag 'pesquisa', nil, placeholder: 'Buscar Profissão', :class => 'form-control' %>
-  <span class="input-group-btn">
-  <%= submit_tag "Pesquisar" , :class => 'btn btn-primary form-control' %>
-  </span>
-<% end %>
-</div>
-<div>
-  <%= link_to 'Nova Profissão', new_profession_path, :class => 'btn btn-primary' %>
-</div>
-  
+    <%= form_tag(professions_path, :method => :get) do %>
+      <%= text_field_tag 'pesquisa', nil, placeholder: 'Buscar Profissão', :class => 'form-control' %>
+      <span class="input-group-btn">
+      <%= submit_tag "Pesquisar" , :class => 'btn btn-primary form-control' %>
+      </span>
+    <% end %>
+  </div>
+  <div>
+    <%= link_to new_profession_path, :remote => true do %>
+      <i class="fa fa-plus-square fa-3x" aria-hidden="true"></i>
+    <% end %>
+  </div>
 </form>
 
 <div class="container-fluid">
@@ -35,9 +34,9 @@
             <% @professions.each do |profession| %>
               <tr>
                 <td><%= profession.description %></td>
-                <td><%= link_to 'Visualizar', profession, :class => 'btn btn-primary' %></td>
-                <td><%= link_to 'Editar', edit_profession_path(profession), :class => 'btn btn-primary' %></td>
-                <td><%= link_to 'Excluir', profession, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-primary' %></td>
+                <td><%= link_to 'Visualizar', profession, :class => 'btn btn-info' %></td>
+                <td><%= link_to 'Editar', edit_profession_path(profession), :class => 'btn btn-warning' %></td>
+                <td><%= link_to 'Excluir', profession, method: :delete, data: { confirm: 'Confirma a exclusão?' }, :class => 'btn btn btn-danger' %></td>
               </tr>
             <% end %>
           </tbody>
@@ -49,4 +48,4 @@
 
 <br>
 
-
+<div id="new-profession" style="display:none;"></div>

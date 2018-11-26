@@ -6,6 +6,8 @@ class CreateCarePlans < ActiveRecord::Migration
       t.datetime :results_date
       t.text :anothers_conduct
       
+      
+      
       t.references :pharmacotherapy, index: true, foreign_key: true
       t.references :prm, index: true, foreign_key: true
       t.references :sfc, index: true, foreign_key: true

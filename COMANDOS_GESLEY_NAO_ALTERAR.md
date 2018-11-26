@@ -25,7 +25,7 @@ rails generate scaffold Attendance general_screen:text attendance_date:datetime 
 
 ----------------------------------------
 
-População do BD (Tasks)
+Populando o BD (Tasks)
 
 * Rodar no terminal os comandos abaixo:
 
@@ -37,6 +37,15 @@ População do BD (Tasks)
 
 3. Criação de Acessos ao Serviço
 - rake db:create_service_access
+
+4. Criação PRM Causes
+- rake db:create_prm_causes
+
+5. Criação PRM
+- rake db:create_prms
+
+6. Criação SFCS
+- rake db:create_sfcs
 
 ----------------------------------------------
 
@@ -100,3 +109,14 @@ Usando chosen para campo Autocomplete
 - https://translate.google.com.br/translate?hl=pt-BR&sl=en&u=https://github.com/tsechingho/chosen-rails&prev=search
 - https://github.com/tsechingho/chosen-rails
 - https://github.com/tsechingho/chosen-rails
+
+-----------------------------------------------------
+
+* Criar modal para salvar ser atualizar a página
+- https://www.youtube.com/watch?v=PGzkcUkoICg
+- https://nandovieira.com.br/usando-responders-no-rails
+- 
+* Colocar dicas nos campos
+- https://getbootstrap.com/docs/4.1/components/tooltips/
+- 
+https://www.w3schools.com/jsref/event_onfocus.asp

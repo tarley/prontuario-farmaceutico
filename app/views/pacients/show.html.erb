@@ -8,64 +8,66 @@
             <div class="clearfix"></div>
           </div>
           
-         <div class="x_content">  
+         <div class="row">
+                        <div class="col-xs-8 table">
+                          <table class="table table-bordered">
           
             <p id="notice"><%= notice %></p>
 
-            <p>
-              <strong>Nome:</strong>
-              <%= @pacient.name %>
-            </p>
+            <tr>
+             <td> <strong>Nome:</strong> </td>
+              <td> <%= @pacient.name %> </td>
+            </tr>
 
-            <p>
-              <strong>Lugar de atendimento:</strong>
-              <%= @pacient.place_attendence %>
-            </p>
+            <tr>
+              <td><strong>Lugar de atendimento:</strong></td>
+             <td> <%= @pacient.place_attendence %> </td>
+            </tr>
 
-            <p>
-              <strong>Data de nascimento:</strong>
-              <%= @pacient.birth_date %>
-            </p>
+            <tr>
+              <td><strong>Data de nascimento:</strong></td>
+              <td><%= @pacient.birth_date %> </td>
+            </tr>
 
-            <p>
-              <strong>Anos de estudo:</strong>
-              <%= @pacient.years_study %>
-            </p>
+            <tr>
+              <td><strong>Anos de estudo:</strong></td>
+              <td><%= @pacient.years_study %></td>
+            </tr>
 
-            <p>
-              <strong>Sexo:</strong>
-              <%= @pacient.genre %>
-            </p>
+            <tr>
+              <td><strong>Sexo:</strong></td>
+              <td><%= @pacient.genre %> </td>
+            </tr>
 
-            <p>
-              <strong>Estado civil:</strong>
-              <%= @pacient.marital_status %>
-            </p>
+            <tr>
+              <td><strong>Estado civil:</strong></td>
+              <td><%= @pacient.marital_status %></td>
+            </tr>
 
-            <p>
-              <strong>Telefone:</strong>
-              <%= @pacient.phone %>
-            </p>
+            <tr>
+              <td><strong>Telefone:</strong></td>
+              <td><%= @pacient.phone %></td>
+            </tr>
 
-            <p>
-              <strong>Endereço:</strong>
-              <%= @pacient.address %>
-            </p>
+            <tr>
+              <td><strong>Endereço:</strong></td>
+              <td><%= @pacient.address %></td>
+            </tr>
             
-            <p>
-              <strong>Profissional serviço:</strong>
-              <%= @pacient.services_professional %>
-            </p>
+            <tr>
+              <td><strong>Profissional serviço:</strong></td>
+              <td><%= @pacient.services_professional %> </td>
+            </tr>
 
-            <p>
-              <strong>Motivo do encontro:</strong>
-              <%= @pacient.reason_meeting %>
-            </p>
+            <tr>
+              <td><strong>Motivo do encontro:</strong></td>
+              <td><%= @pacient.reason_meeting %> </td>
+            </tr>
 
-            <p>
-              <strong>CPF:</strong>
-              <%= @pacient.cpf %>
-            </p>
+            <tr>
+              <td><strong>CPF:</strong></td>
+              <td><%= @pacient.cpf %> </td>
+            </tr>
             
             <p>
               <strong>Profissão:</strong>
@@ -81,10 +83,59 @@
               <strong>Acesso ao Serviço:</strong>
               <%= @pacient.service_access.description %>
             </p>
+            
+            <p>
+              <strong>Atividade Fisica:</strong>
+              <%= @pacient.physical_activity %>
+            </p>
+            
+            <p>
+              <strong>Cigarro:</strong>
+              <%= @pacient.cigarette %>
+            </p>
 
-            <%= link_to 'Editar', edit_pacient_path(@pacient), :class => 'btn btn-primary' %> | <%= link_to 'Voltar', pacients_path, :class => 'btn btn-primary' %>
+            <p>
+              <strong>Bebidas Alcoólicas:</strong>
+              <%= @pacient.alcoholic_beverages %>
+            </p>
+
+            <p>
+              <strong>Rotina Diária:</strong>
+              <%= @pacient.daily_routine %>
+            </p>
+            
+            <p>
+              <strong>Alertas:</strong>
+              <%= @pacient.alerts %>
+            </p>
+
+            <p>
+              <strong>Terapia Alternativa:</strong>
+              <%= @pacient.alternative_therapy %>
+            </p>
+            
+            <p>
+              <strong>Experiência subjetiva com o uso de medicamento:</strong>
+              <%= @pacient.subjective_medications %>
+            </p>
+            <p>
+              <strong>Peso:</strong>
+              <%= @pacient.weight %>
+            </p>
+            <p>
+              <strong>Altura:</strong>
+              <%= @pacient.height %>
+            </p>
+            <p>
+              <strong>IMC:</strong>
+              <%= @pacient.IMC %>
+            </p>
+            <%= link_to 'Editar', edit_pacient_path(@pacient), :class => 'btn btn-warning' %> | <%= link_to 'Voltar', pacients_path, :class => 'btn btn-primary' %>
           </div>
+          </table>
+          <%= link_to 'Editar', edit_pacient_path(@pacient), :class => 'btn btn-warning' %> | <%= link_to 'Voltar', pacients_path, :class => 'btn btn-primary' %>
           
+
            <div class="x_title">
             <h2>Atendimento(s) do Paciente</h2>
             <ul class="nav navbar-right panel_toolbox">
@@ -127,3 +178,7 @@
          
         </div>
 </div>
+
+
+
+
