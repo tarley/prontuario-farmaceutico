@@ -69,7 +69,6 @@
               <td><%= @pacient.cpf %> </td>
             </tr>
             
-<<<<<<< HEAD
             <tr>
               <td><strong>Profissão:</strong></td>
               <td><%= @pacient.profession.description %></td>
@@ -84,83 +83,58 @@
               <td><strong>Acesso ao Serviço:</strong></td>
               <td><%= @pacient.service_access.description %></td>
             </tr>
-
             
-          </div>
-=======
-            <p>
-              <strong>Profissão:</strong>
-              <%= @pacient.profession.description %>
-            </p>
-
-            <p>
-              <strong>UBS:</strong>
-              <%= @pacient.ub.description %>
-            </p>
-
-            <p>
-              <strong>Acesso ao Serviço:</strong>
-              <%= @pacient.service_access.description %>
-            </p>
+            <tr>
+              <td><strong>Atividade Fisica:</strong></td>
+              <td><%= @pacient.physical_activity %></td>
+            </tr>
             
-            <p>
-              <strong>Atividade Fisica:</strong>
-              <%= @pacient.physical_activity %>
-            </p>
-            
-            <p>
-              <strong>Cigarro:</strong>
-              <%= @pacient.cigarette %>
-            </p>
+            <tr>
+              <td><strong>Cigarro:</strong></td>
+              <td><%= @pacient.cigarette %></td>
+            </tr>
 
-            <p>
-              <strong>Bebidas Alcoólicas:</strong>
-              <%= @pacient.alcoholic_beverages %>
-            </p>
+            <tr>
+              <td><strong>Bebidas Alcoólicas:</strong></td>
+              <td><%= @pacient.alcoholic_beverages %></td>
+            </tr>
 
-            <p>
-              <strong>Rotina Diária:</strong>
-              <%= @pacient.daily_routine %>
-            </p>
+            <tr>
+              <td><strong>Rotina Diária:</strong></td>
+              <td><%= @pacient.daily_routine %></td>
+            </tr>
             
-            <p>
-              <strong>Alertas:</strong>
-              <%= @pacient.alerts %>
-            </p>
+            <tr>
+              <td><strong>Alertas:</strong></td>
+              <td><%= @pacient.alerts %></td>
+            </tr>
 
-            <p>
-              <strong>Terapia Alternativa:</strong>
-              <%= @pacient.alternative_therapy %>
-            </p>
+            <tr>
+              <td><strong>Terapia Alternativa:</strong><td>
+              <td><%= @pacient.alternative_therapy %><td>
+            </tr>
             
-            <p>
-              <strong>Experiência subjetiva com o uso de medicamento:</strong>
-              <%= @pacient.subjective_medications %>
-            </p>
-            <p>
-              <strong>Peso:</strong>
-              <%= @pacient.weight %>
-            </p>
-            <p>
-              <strong>Altura:</strong>
-              <%= @pacient.height %>
-            </p>
-            <p>
-              <strong>IMC:</strong>
-              <%= @pacient.IMC %>
-            </p>
-            <%= link_to 'Editar', edit_pacient_path(@pacient), :class => 'btn btn-primary' %> | <%= link_to 'Voltar', pacients_path, :class => 'btn btn-primary' %>
->>>>>>> d295395f3a2b9d6f4a4f09716a6efee53274c206
+            <tr>
+             <td> <strong>Experiência subjetiva com o uso de medicamento:</strong></td>
+              <td><%= @pacient.subjective_medications %></td>
+            </tr>
+            <tr>
+              <td><strong>Peso:</strong></td>
+              <td><%= @pacient.weight %></td>
+            </tr>
+            <tr>
+              <td><strong>Altura:</strong></td>
+              <td><%= @pacient.height %></td>
+            </tr>
+            <tr>
+              <td><strong>IMC:</strong></td>
+              <td><%= @pacient.IMC %></td>
+            </tr>
           </div>
           </table>
-          <%= link_to 'Editar', edit_pacient_path(@pacient), :class => 'btn btn-primary' %> | <%= link_to 'Voltar', pacients_path, :class => 'btn btn-primary' %>
+          <%= link_to 'Editar', edit_pacient_path(@pacient), :class => 'btn btn-warning' %> | <%= link_to 'Voltar', pacients_path, :class => 'btn btn-primary' %>
           
-          
-          
-          
-          
-          
-          
+
            <div class="x_title">
             <h2>Atendimento(s) do Paciente</h2>
             <ul class="nav navbar-right panel_toolbox">
@@ -203,7 +177,5 @@
          
         </div>
 </div>
-
-
 
 
