@@ -21,6 +21,10 @@ class UbsController < ApplicationController
   # GET /ubs/new
   def new
     @ub = Ub.new
+    
+    respond_to do |f|
+      f.js
+    end
   end
 
   # GET /ubs/1/edit
@@ -34,7 +38,7 @@ class UbsController < ApplicationController
 
     respond_to do |format|
       if @ub.save
-        format.html { redirect_to @ub, notice: 'UB criada com sucesso.' }
+        format.html
         format.json { render :show, status: :created, location: @ub }
       else
         format.html { render :new }
@@ -48,7 +52,7 @@ class UbsController < ApplicationController
   def update
     respond_to do |format|
       if @ub.update(ub_params)
-        format.html { redirect_to @ub, notice: 'UB alterada com sucesso.' }
+        format.html { redirect_to @ub, notice: 'UBS alterada com sucesso.' }
         format.json { render :show, status: :ok, location: @ub }
       else
         format.html { render :edit }
@@ -62,7 +66,7 @@ class UbsController < ApplicationController
   def destroy
     @ub.destroy
     respond_to do |format|
-      format.html { redirect_to ubs_url, notice: 'UB deletada com sucesso.' }
+      format.html { redirect_to ubs_url, notice: 'UBS deletada com sucesso.' }
       format.json { head :no_content }
     end
   end

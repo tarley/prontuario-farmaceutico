@@ -81,7 +81,7 @@
             <div class="col-md-3 col-sm-12 col-xs-12 form-group">
               <label class="heard">* Profissão:</label>
                 <span data-toggle="tooltip" data-placement="top" title="Clique para selecionar a profissão do paciente">
-                  <div id="result" class="input-group col-md-9 col-sm-12 col-xs-12 form-group"> <!-- onfocus="myFunction(this) -->
+                  <div class="input-group col-md-9 col-sm-12 col-xs-12 form-group"> <!-- onfocus="myFunction(this) -->
                     <%= f.select :profession_id,
                       @professionAtualiza,
                       { include_blank: "Buscar Profissão" },
@@ -169,6 +169,14 @@
                     %>
                   </span>
                 </div>
+                
+                <div class="modal-ub">
+                  <span data-toggle="tooltip" data-placement="top" title="Clique para adicionar uma nova UBS">
+                    <%= link_to new_ub_path, :remote => true do %>
+                      <i class="fa fa-plus-square fa-3x" aria-hidden="true"></i>
+                    <% end %>
+                  </span>
+                </div>
             </div>
                   
             <div class="col-md-6 col-sm-12 col-xs-12 form-group">
@@ -180,6 +188,14 @@
                       { include_blank: "Buscar Acesso ao Serviço" },
                       { class: 'chosen-select' }
                     %>
+                  </span>
+                </div>
+                
+                <div class="modal-service_access">
+                  <span data-toggle="tooltip" data-placement="top" title="Clique para adicionar uma nova UBS">
+                    <%= link_to new_service_access_path, :remote => true do %>
+                      <i class="fa fa-plus-square fa-3x" aria-hidden="true"></i>
+                    <% end %>
                   </span>
                 </div>
             </div>   

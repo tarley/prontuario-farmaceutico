@@ -7,8 +7,13 @@
     <%= form_tag(ubs_path, :method => :get) do %>
       <%= text_field_tag 'pesquisa', nil, placeholder: 'Buscar UBS', :class => 'form-control' %>
       <span class="input-group-btn">
-        <%= submit_tag "Pesquisar" , :class => 'btn btn-primary form-control'%>
+      <%= submit_tag "Pesquisar" , :class => 'btn btn-primary form-control'%>
       </span>
+    <% end %>
+  </div>
+  <div>
+    <%= link_to new_ub_path, :remote => true do %>
+      <i class="fa fa-plus-square fa-3x" aria-hidden="true"></i>
     <% end %>
   </div>
 </form>
@@ -43,4 +48,4 @@
 
 <br>
 
-<%= link_to 'Nova UBS', new_ub_path %>
+<div id="new-ub" style="display:none;"></div>

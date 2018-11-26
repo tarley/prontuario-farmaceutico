@@ -1,6 +1,8 @@
 class PacientsController < ApplicationController
   before_action :authorize
   attr_accessor :profession
+  attr_accessor :ub
+  attr_accessor :service_access
   before_action :set_pacient, only: [:show, :edit, :update, :destroy]
 
   # GET /pacients
@@ -24,6 +26,9 @@ class PacientsController < ApplicationController
   def new
     @pacient = Pacient.new
     @profession = Profession.new
+    @ub = Ub.new
+    @service_access = ServiceAccess.new
+    
     @professionAtualiza = Profession.all.map { |u| [u.description, u.id] }
   end
 
@@ -41,6 +46,8 @@ class PacientsController < ApplicationController
   def create
     @pacient = Pacient.new(pacient_params)
     @profession = Profession.new
+    @ub = Ub.new
+    @service_access = ServiceAccess.new
 
     respond_to do |format|
       if @pacient.save

@@ -17,6 +17,10 @@ class ServiceAccessesController < ApplicationController
   # GET /service_accesses/new
   def new
     @service_access = ServiceAccess.new
+    
+    respond_to do |f|
+      f.js
+    end
   end
 
   # GET /service_accesses/1/edit
@@ -30,7 +34,7 @@ class ServiceAccessesController < ApplicationController
 
     respond_to do |format|
       if @service_access.save
-        format.html { redirect_to @service_access, notice: 'Service access was successfully created.' }
+        format.html {}
         format.json { render :show, status: :created, location: @service_access }
       else
         format.html { render :new }
@@ -58,7 +62,7 @@ class ServiceAccessesController < ApplicationController
   def destroy
     @service_access.destroy
     respond_to do |format|
-      format.html { redirect_to service_accesses_url, notice: 'Service access was successfully destroyed.' }
+      format.html { redirect_to service_accesses_url, notice: 'Acesso ao Serviço excluido com sucesso.' }
       format.json { head :no_content }
     end
   end
