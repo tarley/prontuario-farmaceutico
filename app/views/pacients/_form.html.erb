@@ -296,31 +296,38 @@
           </ul>
           <div class="clearfix"></div>
         </div>
-            
-        <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-          <label for="fullname">* Peso:</label>
-            <span data-toggle="tooltip" data-placement="top" title="Entre com o peso do paciente">
-              <%= f.text_field :weight, :type => "numeric", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
-            </span>
-        </div>
-            
-        <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-          <label for="fullname">* Altura:</label>
-            <span data-toggle="tooltip" data-placement="top" title="Entre com a altura do paciente">
-              <%= f.text_field :height, :type => "decimal", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
-            </span>
-        </div>
-            
-        <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-          <label for="fullname">* IMC:</label>
-            <span data-toggle="tooltip" data-placement="top" title="Entre com o índice da massa corporal do paciente">
-              <%= f.text_field :IMC, :type => "decimal", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
-            </span>
-        </div>
-            
+          <form name="form">
+             <script language=javascript type="text/javascript" >
+              function verificarTexto(){
+                var weight = pacient_weight.value;
+                var altura = pacient_height.value/100;
+                var imc;
+                
+                if (weight != "" && altura != "" && weight != 0 && altura != 0)
+                {
+                  imc = Math.round(weight / (altura*altura));
+                  pacient_IMC.value = imc;
+                }
+                else if(weight == 0 || altura == 0)
+                {
+                  pacient_IMC.value = "";
+                }
+              }
+            </script>
+            <div class="col-md-3 col-sm-12 col-xs-12 form-group" onChange="verificarTexto()">
+              <label for="fullname">Peso(Kg):</label>
+                <%= f.text_field :weight, :type => "decimal", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
+            </div> 
+            <div class="col-md-3 col-sm-12 col-xs-12 form-group" onChange="verificarTexto()">
+              <label for="fullname">Altura(cm):</label>
+                <%= f.text_field :height, :type => "decimal", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
+            </div> 
+            <div id="result" class="col-md-3 col-sm-12 col-xs-12 form-group" onClick="verificarTexto()">
+              <label for="fullname">IMC:</label>
+                <%= f.text_field :IMC, :class => "form-control col-md-7 col-xs-12 "%>
+            </div> 
+          </form>
       </div>
-          
-    </form>
   
     <div class="actions">
       <span data-toggle="tooltip" data-placement="top" title="Ao clicar confira se todos os campos com * estão preenchidos">
