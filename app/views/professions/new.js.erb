@@ -1,3 +1,22 @@
 $('#new-profession').html("<%= j (render 'new') %>");
+$('#myModal').on('hidden.bs.modal', function () {
+    // do something…
+    alert('Fechou');
+    
+    // Limpa as opções do select
+    var select = $('#pacient_profession_id'); 
+    select.empty();
+    
+    $.get( "/professions.json", function( data ) {
+        alert(JSON.stringify(data));
+        data.forEach(function(currentValue, index, arr){
+            select.append('<option value="' + currentValue.id + '">' + currentValue.description + '</option>');
+        });
+        
+        //$( ".result" ).html( data );
+        alert( "Load was performed." );
+    });
+    
+})
 $('#myModal').modal('show');
 $('#new-profession').slideDown(350);
