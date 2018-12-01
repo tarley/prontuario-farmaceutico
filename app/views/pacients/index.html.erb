@@ -21,7 +21,7 @@
                 <th>Endereço</th>
                 <th>Profissional Serviço</th>
                 <th>Motivo Consulta</th>
-                <th style="width: 30%"></th>
+                <th style="width: 30%">Ações</th>
               </tr>
             </thead>
             <tbody>
@@ -35,12 +35,12 @@
                   <td><%= pacient.services_professional %></td>
                   <td><%= pacient.reason_meeting %></td>
                   <td>
-                      <div class="btn-group">
+                    <div class="btn-group">
                       <a href="/attendances/new?idPaciente=<%=pacient.id%>" class="btn btn-primary">Novo Atendimento</a>
                       <%= link_to '<i class="fa fa-folder"></i>'.html_safe, pacient, :class => 'btn btn-info', "data-original-title" => "Visualizar", "data-placement" => "top", "data-toggle" => "tooltip" %>
                       <%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_pacient_path(pacient), :class => 'btn btn-warning', "data-original-title" => "Editar", "data-placement" => "top", "data-toggle" => "tooltip" %>
                       <%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, pacient, :class => 'btn btn-danger', method: :delete, data: { confirm: 'Confirma a exclusão?' }, "data-original-title" => "Delete", "data-placement" => "top", "data-toggle" => "tooltip" %>
-                      </div>  
+                    </div>  
                   </td>  
                 </tr>
               <% end %>
