@@ -34,14 +34,10 @@
               </div>
               
               <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-                  <label for="heard">Data do Atendimento:</label>
-                  <div id="calendario" class="input-group date" data-provide="datepicker">
-                    <%= f.text_field :attendance_date, {class: "form-control col-md-7 col-xs-12"}%>
-                   
-                    <div class="input-group-addon">
-                        <span class="glyphicon glyphicon-th"></span>
-                    </div>
-                  </div>
+                <label for="heard">Data do Atendimento:</label>
+                  <span data-toggle="tooltip" data-placement="top" title="Escolha ou escreva a data do atendimento">
+                    <%= f.date_field :attendance_date, :type => "date", :required => "required", :class => "form-control col-md-7 col-xs-12", min:"2000-01-01", max: Date.today %>
+                  </span>
               </div>
               
               <div class="col-md-12 col-sm-12 col-xs-12 form-group">  

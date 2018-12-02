@@ -81,7 +81,7 @@
             <div class="col-md-3 col-sm-12 col-xs-12 form-group">
               <label class="heard">* Profissão:</label>
                 <span data-toggle="tooltip" data-placement="top" title="Clique para selecionar a profissão do paciente">
-                  <div class="input-group col-md-9 col-sm-12 col-xs-12 form-group"> <!-- onfocus="myFunction(this) -->
+                  <div class="input-group col-md-9 col-sm-12 col-xs-12 form-group">
                     <%= f.select :profession_id,
                       @professionAtualiza,
                       { include_blank: "Buscar Profissão" },
@@ -92,29 +92,13 @@
                       
                 <div class="modal-profession">
                   <span data-toggle="tooltip" data-placement="top" title="Clique para adicionar uma nova profissão">
-                  <!--<span class="input-grou-btn">-->
                     <%= link_to new_profession_path, :remote => true do %>
                       <i class="fa fa-plus-square fa-3x" aria-hidden="true"></i>
                     <% end %>
                   </span>
                 </div>
-              
             </div>
                   
-            <!--script type="text/javascript"-->
-              <!-- function myFunction(x) {-->
-                <!--   x.onfocus = professionAtualiza_path;-->
-                <!--   //tenho que chamar o professionAtualiza_path no onfocus-->
-              <!--}-->
-            <!--/script-->
-                  
-            <!--<div>-->
-              <!--script-->
-                <!-- $('#myModal').modal('show');-->
-                <!-- $('#new-profession').slideDown(350);-->
-              <!--</script>-->
-            <!--</div>  -->
-              
           </div>
         </div>
       </div>
@@ -163,7 +147,7 @@
                 <div id="result-ub" class="col-md-12 col-sm-12 col-xs-12 form-group">
                   <span data-toggle="tooltip" data-placement="top" title="Clique para selecionar a Unidade Básica de Saúde">  
                     <%= f.select :ub_id,
-                      Ub.all.map { |u| [u.description, u.id] },
+                      @ubAtualiza,
                       { include_blank: "Buscar UBS" },
                       { class: 'chosen-select' }
                     %>
@@ -184,7 +168,7 @@
                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">
                   <span data-toggle="tooltip" data-placement="top" title="Clique para selecionar o meio usado pelo paciente para conseguir o atendimento">
                     <%= f.select :service_access_id,
-                      ServiceAccess.all.map { |u| [u.description, u.id] },
+                      @serviceAccessAtualiza,
                       { include_blank: "Buscar Acesso ao Serviço" },
                       { class: 'chosen-select' }
                     %>
@@ -192,13 +176,13 @@
                 </div>
                 
                 <div class="modal-service_access">
-                  <span data-toggle="tooltip" data-placement="top" title="Clique para adicionar uma nova UBS">
+                  <span data-toggle="tooltip" data-placement="top" title="Clique para adicionar um novo Acesso ao Serviço">
                     <%= link_to new_service_access_path, :remote => true do %>
                       <i class="fa fa-plus-square fa-3x" aria-hidden="true"></i>
                     <% end %>
                   </span>
                 </div>
-            </div>   
+            </div> 
                   
             <div class="col-md-9 col-sm-12 col-xs-12 form-group">
               <label class="heard">Motivo da consulta:</label>
@@ -229,62 +213,64 @@
         <div class="x_content">
           <div class="row">
               
-            <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-              <label for="fullname">* Atividade Fisica:</label>
-                <span data-toggle="tooltip" data-placement="top" title="Entre com a descrição das atividades físicas praticadas pelo paciente se houver">
-                  <%= f.text_area :physical_activity, :type => "text", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
+                <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+              <label for="heard">Atividade Fisica:</label>
+                <span data-toggle="tooltip" data-placement="top" title="Clique para selecionar">
+                  <%= f.select(:physical_activity, [['Selecione', 0], ['Sim', 1], ['Não', 2]], {}, {class: "form-control col-md-7 col-xs-12"}) %>
                 </span>
             </div>
-                    
-            <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-              <label for="heard">* Cigarro:</label>
-                <span data-toggle="tooltip" data-placement="top" title="Entre com a descrição referente ao uso de cigarros pelo paciente se houver">
-                  <%= f.text_area :cigarette, :type => "text", :required => "required", :class => "form-control col-md-7 col-xs-12"%>               
+
+  
+             <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+              <label for="heard">Cigarro:</label>
+                <span data-toggle="tooltip" data-placement="top" title="Clique para selecionar">
+                  <%= f.select(:cigarette, [['Selecione', 0], ['Nunca Usou', 1], ['Parou', 2], ['Mantem Uso', 3]], {}, {class: "form-control col-md-7 col-xs-12"}) %>
                 </span>
             </div>
-                    
-            <div class="col-md-6 col-sm-12 col-xs-12 form-group">
-              <label for="message">* Bebidas Alcoólicas:</label>
-                <span data-toggle="tooltip" data-placement="top" title="Entre com a descrição referente ao uso de bebidas alcoólicas pelo paciente se houver">
-                  <%= f.text_area :alcoholic_beverages, :type => "text", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
+           
+                <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+              <label for="heard">Bebidas Alcoólicas:</label>
+                <span data-toggle="tooltip" data-placement="top" title="Clique para selecionar">
+                  <%= f.select(:alcoholic_beverages, [['Selecione', 0], ['Nunca Usou', 1], ['Parou', 2], ['Mantem Uso', 3]], {}, {class: "form-control col-md-7 col-xs-12"}) %>
                 </span>
             </div>
-                    
-            <div class="col-md-6 col-sm-12 col-xs-12 form-group">
-              <label for="message">* Rotina Diária:</label>
-                <span data-toggle="tooltip" data-placement="top" title="Entre com a descrição da rotina diária do paciente">
-                  <%= f.text_area :daily_routine, :type => "text", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
-                </span>
-            </div>
-                    
-            <div class="col-md-6 col-sm-12 col-xs-12 form-group">
-              <label for="message">* Alertas:</label>
-                <span data-toggle="tooltip" data-placement="top" title="Entre com os alertas referente a esse paciente">
-                  <%= f.text_area :alerts, :type => "text", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
-                </span>
-            </div>
-                    
-            <div class="col-md-6 col-sm-12 col-xs-12 form-group">
-              <label for="message">* Terapia Alternativa</label>
-                <span data-toggle="tooltip" data-placement="top" title="Entre com a descrição da terapia alternativa para o paciente se houver">
-                  <%= f.text_area :alternative_therapy, :type => "text", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
-                </span>
-            </div>
-                    
-            <div class="col-md-6 col-sm-12 col-xs-12 form-group">
-              <label for="message">* Experiência subjetiva com o uso de medicamento:</label>
-                <span data-toggle="tooltip" data-placement="top" title="Entre com a descrição da esperiência subjetiva com o uso do medicamento">
-                  <%= f.text_area :subjective_medications, :type => "text", :required => "required", :class => "form-control col-md-7 col-xs-20"%>
-                </span>
-            </div>
-                  
-          </div>
-        </div>
             
-      </div>
-          
+                 <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+                  <label for="message">Observações Cigarro:</label>
+                   <span data-toggle="tooltip" data-placement="top" title="Entre com as observações sobre uso de cigarro pelo paciente se houver">
+                  <%= f.text_area :obsphysical, :type => "text",  :class => "form-control col-md-7 col-xs-12"%>
+                  </span>
+                </div> 
+                
+                <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+                  <label for="message">Observações Bebidas:</label>
+                  <span data-toggle="tooltip" data-placement="top" title="Entre com as observações sobre uso de bebidas alcoolícas pelo paciente se houver">
+                  <%= f.text_area :obsdrink, :type => "text",  :class => "form-control col-md-7 col-xs-12"%>
+                  </span>
+                </div> 
+                
+                
+                <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+                  <label for="message">Alertas:</label>
+                  <span data-toggle="tooltip" data-placement="top" title="Entre com os alertas referente a esse paciente">
+                  <%= f.text_area :alerts, :type => "text",  :class => "form-control col-md-7 col-xs-12"%>
+                  </span>
+                </div> 
+                <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+                  <label for="message">Terapia Alternativa e chás: </label>
+                  <%= f.text_area :alternative_therapy, :type => "text",  :class => "form-control col-md-7 col-xs-12"%>
+                </div> 
+                <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+                  <label for="message">Experiência subjetiva com o uso de medicamento:</label>
+                  <span data-toggle="tooltip" data-placement="top" title="Entre com a descrição da esperiência subjetiva com o uso do medicamento">
+                  <%= f.text_area :subjective_medications, :type => "text", :class => "form-control col-md-7 col-xs-20"%>
+                  </span>
+                </div> 
+
+        </div>  
+
       <div class="x_panel">
-            
+          
         <div class="x_title">
           <h2>Dados Antropométricos</h2>
           <ul class="nav navbar-right panel_toolbox">
@@ -328,7 +314,64 @@
             </div> 
           </form>
       </div>
-  
+       
+        <div class="x_panel">
+          <div class="x_title">
+            <h2>Rotina, hábitos alimentares, ingestão hídrica e café (Horário e observações importantes)</h2>
+            <ul class="nav navbar-right panel_toolbox">
+              <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+              </li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+         <div class="x_content">
+           
+            
+            
+              <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                  <label for="fullname">Acorda:</label>
+                  <%= f.time_field :wakeupat, :value => "%H:%M:%S", :type => "time",  :class => "form-control col-md-7 col-xs-12"%>
+                </div> 
+                <div class="col-md-3  col-sm-12 col-xs-12 form-group">
+                  <label for="fullname">Café da Manhã:</label>
+                  <%= f.time_field :breakfast, :type => "time",  :class => "form-control col-md-7 col-xs-12"%>
+                </div> 
+              
+              
+              <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                  <label for="fullname">Lanche manhã:</label>
+                  <%= f.time_field :snack, :type => "time", :class => "form-control col-md-7 col-xs-12"%>
+                </div> 
+              <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                  <label for="fullname">Almoço:</label>
+                  <%= f.time_field :lunch, :type => "time",  :class => "form-control col-md-7 col-xs-12"%>
+                </div> 
+              <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                  <label for="fullname">Lanche tarde:</label>
+                  <%= f.time_field :latesnack, :type => "time",  :class => "form-control col-md-7 col-xs-12"%>
+                </div> 
+              <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                  <label for="fullname">Jantar:</label>
+                  <%= f.time_field :dinner, :type => "time",  :class => "form-control col-md-7 col-xs-12"%>
+                </div> 
+              <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                  <label for="fullname">Dorme:</label>
+                  <%= f.time_field :sleepat, :type => "time",  :class => "form-control col-md-7 col-xs-12"%>
+                </div> 
+              <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+                  <label for="message">Observações:</label>
+                  <%= f.text_area :obs, :type => "text",  :class => "form-control col-md-7 col-xs-12"%>
+                </div> 
+                
+          
+         </div>  
+       </div> 
+        
+
+            
+      </div>
+          
+      
     <div class="actions">
       <span data-toggle="tooltip" data-placement="top" title="Ao clicar confira se todos os campos com * estão preenchidos">
         <%= f.submit 'Salvar', :class => 'btn btn-success' %>

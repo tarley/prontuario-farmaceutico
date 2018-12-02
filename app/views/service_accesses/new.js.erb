@@ -1,3 +1,23 @@
 $('#new-service_access').html("<%= j (render 'new') %>");
+$('#myModalServiceAcc').on('hidden.bs.modal', function () {
+    // do something…
+    //alert('Fechou');
+    
+    // Limpa as opções do select
+    var select = $('#pacient_service_access_id');
+    select.empty();
+    
+    $.get( "/service_accesses.json", function( data ) {
+        //alert(JSON.stringify(data));
+        data.forEach(function(currentValue, index, arr){
+        select.append(`<option value="${currentValue.id}">${currentValue.description}</option>`);
+        
+        select.trigger("chosen:updated");
+        
+        });
+
+    });
+    
+})
 $('#myModalServiceAcc').modal('show');
 $('#new-service_access').slideDown(350);
