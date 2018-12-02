@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181113235212) do
+ActiveRecord::Schema.define(version: 20181120220940) do
 
   create_table "attendances", force: :cascade do |t|
     t.text     "general_screen"
@@ -86,6 +86,14 @@ ActiveRecord::Schema.define(version: 20181113235212) do
     t.decimal  "height"
     t.decimal  "IMC"
     t.decimal  "weight"
+    t.time     "acorda"
+    t.time     "CF"
+    t.time     "lanche"
+    t.time     "almoco"
+    t.time     "lancheT"
+    t.time     "jantar"
+    t.time     "dorme"
+    t.string   "obs"
   end
 
   add_index "pacients", ["profession_id"], name: "index_pacients_on_profession_id"

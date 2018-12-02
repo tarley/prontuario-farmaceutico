@@ -69,7 +69,6 @@
               <td><%= @pacient.cpf %> </td>
             </tr>
             
-<<<<<<< HEAD
             <tr>
               <td><strong>Profissão:</strong></td>
               <td><%= @pacient.profession.description %></td>
@@ -84,73 +83,60 @@
               <td><strong>Acesso ao Serviço:</strong></td>
               <td><%= @pacient.service_access.description %></td>
             </tr>
+            
+            <tr>
+              <td><strong>Atividade Fisica:</strong></td>
+              <td><%= @pacient.physical_activity %></td>
+            </tr>
+            
+            <tr>
+              <td><strong>Cigarro:</strong></td>
+              <td><%= @pacient.cigarette %></td>
+            </tr>
 
+            <tr>
+              <td><strong>Bebidas Alcoólicas:</strong></td>
+              <td><%= @pacient.alcoholic_beverages %></td>
+            </tr>
+
+            <tr>
+              <td><strong>Rotina Diária:</strong></td>
+              <td><%= @pacient.daily_routine %></td>
+            </tr>
+            
+            <tr>
+              <td><strong>Alertas:</strong></td>
+              <td><%= @pacient.alerts %></td>
+            </tr>
+
+            <tr>
+              <td><strong>Terapia Alternativa:</strong></td>
+              <td><%= @pacient.alternative_therapy %></td>
+            </tr>
+            
+            <tr>
+              <td><strong>Experiência subjetiva com o uso de medicamento:</strong></td>
+              <td><%= @pacient.subjective_medications %></td>
+            </tr>
+            <tr>
+              <td><strong>Peso:</strong></td>
+              <td><%= @pacient.weight %></td>
+            </tr>
+            <tr>
+              <td><strong>Altura:</strong></td>
+              <td><%= @pacient.height %></td>
+            </tr>
+            <tr>
+              <td><strong>IMC:</strong></td>
+              <td><%= @pacient.IMC %></td>
+            </tr>
             
           </div>
-=======
-            <p>
-              <strong>Profissão:</strong>
-              <%= @pacient.profession.description %>
-            </p>
-
-            <p>
-              <strong>UBS:</strong>
-              <%= @pacient.ub.description %>
-            </p>
-
-            <p>
-              <strong>Acesso ao Serviço:</strong>
-              <%= @pacient.service_access.description %>
-            </p>
+           
             
-            <p>
-              <strong>Atividade Fisica:</strong>
-              <%= @pacient.physical_activity %>
-            </p>
             
-            <p>
-              <strong>Cigarro:</strong>
-              <%= @pacient.cigarette %>
-            </p>
-
-            <p>
-              <strong>Bebidas Alcoólicas:</strong>
-              <%= @pacient.alcoholic_beverages %>
-            </p>
-
-            <p>
-              <strong>Rotina Diária:</strong>
-              <%= @pacient.daily_routine %>
-            </p>
             
-            <p>
-              <strong>Alertas:</strong>
-              <%= @pacient.alerts %>
-            </p>
-
-            <p>
-              <strong>Terapia Alternativa:</strong>
-              <%= @pacient.alternative_therapy %>
-            </p>
-            
-            <p>
-              <strong>Experiência subjetiva com o uso de medicamento:</strong>
-              <%= @pacient.subjective_medications %>
-            </p>
-            <p>
-              <strong>Peso:</strong>
-              <%= @pacient.weight %>
-            </p>
-            <p>
-              <strong>Altura:</strong>
-              <%= @pacient.height %>
-            </p>
-            <p>
-              <strong>IMC:</strong>
-              <%= @pacient.IMC %>
-            </p>
-            <%= link_to 'Editar', edit_pacient_path(@pacient), :class => 'btn btn-primary' %> | <%= link_to 'Voltar', pacients_path, :class => 'btn btn-primary' %>
->>>>>>> d295395f3a2b9d6f4a4f09716a6efee53274c206
+           
           </div>
           </table>
           <%= link_to 'Editar', edit_pacient_path(@pacient), :class => 'btn btn-primary' %> | <%= link_to 'Voltar', pacients_path, :class => 'btn btn-primary' %>

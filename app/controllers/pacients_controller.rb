@@ -28,6 +28,7 @@ class PacientsController < ApplicationController
 
   # GET /pacients/1/edit
   def edit
+    @professionAtualiza = Profession.all.map { |u| [u.description, u.id] }
   end
   
   def updateProfessionAtualiza
@@ -89,6 +90,6 @@ class PacientsController < ApplicationController
                                       :reason_meeting, :cpf, :profession_id, :service_access_id, :ub_id, 
                                       :physical_activity, :alcoholic_beverages, :cigarette, :daily_routine,
                                       :alternative_therapy, :alerts, :subjective_medications, :weight, 
-                                      :height, :IMC)
+                                      :height, :IMC, :acorda, :CF, :lanche, :almoco, :lancheT, :jantar, :dorme, :obs)
     end
 end
