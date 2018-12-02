@@ -82,7 +82,6 @@
                     <!--</span>-->
                   </div>
                 </div>
-                
                 <!--script type="text/javascript"-->
                   <!-- function myFunction(x) {-->
                   <!--   x.onfocus = professionAtualiza_path;-->
@@ -177,34 +176,53 @@
             <div class="row">
               
                 <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-                  <label for="fullname">Atividade Fisica:</label>
-                  <%= f.text_area :physical_activity, :type => "text", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
-                </div>              
-                <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-                  <label for="heard">Cigarro:</label>
-                    <%= f.text_area :cigarette, :type => "text", :required => "required", :class => "form-control col-md-7 col-xs-12"%>               
-                </div>
-                <div class="col-md-6 col-sm-12 col-xs-12 form-group">
-                  <label for="message">Bebidas Alcoólicas:</label>
-                  <%= f.text_area :alcoholic_beverages, :type => "text", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
-                </div> 
+              <label for="heard">Atividade Fisica:</label>
+                <span data-toggle="tooltip" data-placement="top" title="Clique para selecionar">
+                  <%= f.select(:physical_activity, [['Selecione', 0], ['Sim', 1], ['Não', 2]], {}, {class: "form-control col-md-7 col-xs-12"}) %>
+                </span>
+            </div>
 
+  
+             <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+              <label for="heard">Cigarro:</label>
+                <span data-toggle="tooltip" data-placement="top" title="Clique para selecionar">
+                  <%= f.select(:cigarette, [['Selecione', 0], ['Nunca Usou', 1], ['Parou', 2], ['Mantem Uso', 3]], {}, {class: "form-control col-md-7 col-xs-12"}) %>
+                </span>
+            </div>
+           
+                <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+              <label for="heard">Bebidas Alcoólicas:</label>
+                <span data-toggle="tooltip" data-placement="top" title="Clique para selecionar">
+                  <%= f.select(:alcoholic_beverages, [['Selecione', 0], ['Nunca Usou', 1], ['Parou', 2], ['Mantem Uso', 3]], {}, {class: "form-control col-md-7 col-xs-12"}) %>
+                </span>
+            </div>
+            
+                 <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+                  <label for="message">Observações:</label>
+                  <%= f.text_area :obsphysical, :type => "text",  :class => "form-control col-md-7 col-xs-12"%>
+                </div> 
+                
+                <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+                  <label for="message">Observações:</label>
+                  <%= f.text_area :obsdrink, :type => "text",  :class => "form-control col-md-7 col-xs-12"%>
+                </div> 
+                
+                
                 <div class="col-md-6 col-sm-12 col-xs-12 form-group">
                   <label for="message">Alertas:</label>
-                  <%= f.text_area :alerts, :type => "text", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
+                  <%= f.text_area :alerts, :type => "text",  :class => "form-control col-md-7 col-xs-12"%>
                 </div> 
                 <div class="col-md-6 col-sm-12 col-xs-12 form-group">
                   <label for="message">Terapia Alternativa e chás: </label>
-                  <%= f.text_area :alternative_therapy, :type => "text", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
+                  <%= f.text_area :alternative_therapy, :type => "text",  :class => "form-control col-md-7 col-xs-12"%>
                 </div> 
                 <div class="col-md-6 col-sm-12 col-xs-12 form-group">
                   <label for="message">Experiência subjetiva com o uso de medicamento:</label>
-                  <%= f.text_area :subjective_medications, :type => "text", :required => "required", :class => "form-control col-md-7 col-xs-20"%>
+                  <%= f.text_area :subjective_medications, :type => "text", :class => "form-control col-md-7 col-xs-20"%>
                 </div> 
             </div>
           </div>
         </div>  
-  </form>
 
         <div class="x_panel">
           <div class="x_title">
@@ -214,69 +232,99 @@
               </li>
             </ul>
             <div class="clearfix"></div>
-        </div>
-      
-            
-              <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-                  <label for="fullname">Peso:</label>
-                  <%= f.text_field :weight, :type => "numeric", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
+          </div>
+           <div class="x_content">
+            <div class="row">
+
+          <form>
+          <script language=javascript type="text/javascript">
+            function verificarTexto(){
+              var peso = pacient_weight.value;
+              var altura = pacient_height.value/100;
+              var imc;
+              
+              if (peso != "" && altura != "" && peso != 0 && altura != 0)
+              {
+                imc = Math.round(peso / (altura*altura));
+                form.pacient_IMC.value = imc;
+              }
+              else if(peso == 0 || altura == 0)
+              {
+                form.pacient_IMC.value = "";
+              }
+            }
+          </script>
+          </form>
+          <form name="form">
+                <div class="col-md-3 col-sm-12 col-xs-12 form-group" onChange="verificarTexto()">
+                    <label for="fullname">* Peso(Kg):</label>
+                    <%= f.text_field :weight, :type => "numeric", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
+                 
                 </div> 
-              <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-                  <label for="fullname">Altura:</label>
-                  <%= f.text_field :height, :type => "decimal", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
+                <div class="col-md-3 col-sm-12 col-xs-12 form-group" onChange="verificarTexto()" >
+                    <label for="fullname">* Altura(cm):</label>
+                    <%= f.text_field :height, :type => "decimal", :required => "required", :class => "form-control col-md-7 col-xs-12" %>
+                    
                 </div> 
-              <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-                  <label for="fullname">IMC:</label>
-                  <%= f.text_field :IMC, :type => "decimal", :class => "form-control col-md-7 col-xs-12"%>
+                <div id="result" class="col-md-3 col-sm-12 col-xs-12 form-group" onClick="verificarTexto()">
+                    <label for="fullname">IMC:</label>
+                    <%= f.text_field :IMC, :class => "form-control col-md-7 col-xs-12 "%>
                 </div> 
-        </div>   
+          </form>
+        </div> 
+          </div> 
+       </div>         
         <div class="x_panel">
           <div class="x_title">
-            <h2>Rotina diaria</h2>
+            <h2>Rotina, hábitos alimentares, ingestão hídrica e café (Horário e observações importantes)</h2>
             <ul class="nav navbar-right panel_toolbox">
               <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
               </li>
             </ul>
             <div class="clearfix"></div>
         </div>
-      
+         <div class="x_content">
+           
+            
             
               <div class="col-md-3 col-sm-12 col-xs-12 form-group">
                   <label for="fullname">Acorda:</label>
-                  <%= f.text_field :acorda, :type => "time", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
+                  <%= f.time_field :wakeupat,  :type => "time",  :class => "form-control col-md-7 col-xs-12"%>
                 </div> 
-                
-              <div class="col-md-3  col-sm-12 col-xs-12 form-group">
+                <div class="col-md-3  col-sm-12 col-xs-12 form-group">
                   <label for="fullname">Café da Manhã:</label>
-                  <%= f.text_field :CF, :type => "time", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
+                  <%= f.time_field :breakfast, :type => "time",  :class => "form-control col-md-7 col-xs-12"%>
                 </div> 
+              
+              
               <div class="col-md-3 col-sm-12 col-xs-12 form-group">
                   <label for="fullname">Lanche manhã:</label>
-                  <%= f.text_field :lanche, :type => "time", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
+                  <%= f.time_field :snack, :type => "time", :class => "form-control col-md-7 col-xs-12"%>
                 </div> 
               <div class="col-md-3 col-sm-12 col-xs-12 form-group">
                   <label for="fullname">Almoço:</label>
-                  <%= f.text_field :almoco, :type => "time", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
+                  <%= f.time_field :lunch, :type => "time",  :class => "form-control col-md-7 col-xs-12"%>
                 </div> 
               <div class="col-md-3 col-sm-12 col-xs-12 form-group">
                   <label for="fullname">Lanche tarde:</label>
-                  <%= f.text_field :lancheT, :type => "time", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
+                  <%= f.time_field :latesnack, :type => "time",  :class => "form-control col-md-7 col-xs-12"%>
                 </div> 
               <div class="col-md-3 col-sm-12 col-xs-12 form-group">
                   <label for="fullname">Jantar:</label>
-                  <%= f.text_field :jantar, :type => "time", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
+                  <%= f.time_field :dinner, :type => "time",  :class => "form-control col-md-7 col-xs-12"%>
                 </div> 
               <div class="col-md-3 col-sm-12 col-xs-12 form-group">
                   <label for="fullname">Dorme:</label>
-                  <%= f.text_field :dorme, :type => "time", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
+                  <%= f.time_field :sleepat, :type => "time",  :class => "form-control col-md-7 col-xs-12"%>
                 </div> 
               <div class="col-md-6 col-sm-12 col-xs-12 form-group">
                   <label for="message">Observações:</label>
-                  <%= f.text_area :daily_routine, :type => "text", :required => "required", :class => "form-control col-md-7 col-xs-12"%>
+                  <%= f.text_area :obs, :type => "text",  :class => "form-control col-md-7 col-xs-12"%>
                 </div> 
                 
-        </div>    
-
+          
+         </div>  
+       </div> 
         
   <div class="actions">
     <%= f.submit 'Salvar', :class => 'btn btn-success' %>

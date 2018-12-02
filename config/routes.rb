@@ -1,15 +1,9 @@
 Rails.application.routes.draw do
-  root 'pacients#index' #rota pradrão
-  
-  get :search, controller: :pacients
-  #root to: "pacients#new"
-  get :professionAtualiza, controller: :pacients
+  resources :diseases
+  resources :names
+  root 'sessions#new'
 
-  #get 'sessions/new'
-  
-  #Gerando rotas para PDF
-  get "/articles", to: "articles#index", as: :articles
-  
+  get 'sessions/new'
 
   resources :users
   
@@ -22,17 +16,18 @@ Rails.application.routes.draw do
   resources :professions
   resources :ubs
   resources :pacients
+
+
   
     ###Rotas Atendimento
   resources :attendances
   resources :prm_causes
   resources :pharmacotherapies
   resources :prms
-  resources :diseases
+  resources :type_sexes
   resources :treatments
   resources :sfcs
   resources :care_plans
-  resources :home 
-  resources :type_sexes 
+  
   
 end

@@ -83,6 +83,12 @@ class PacientsController < ApplicationController
       @pacient = Pacient.find(params[:id])
     end
 
+    def calculate_imc
+        @weight = params[:weight].to_f
+        @height = params[:height].to_f
+        @IMC = (@weight/(@height*@height))
+    end
+    
     # Never trust parameters from the scary internet, only allow the white list through.
     def pacient_params
       params.require(:pacient).permit(:name, :place_attendence, :birth_date, :years_study, :genre, 
@@ -90,6 +96,7 @@ class PacientsController < ApplicationController
                                       :reason_meeting, :cpf, :profession_id, :service_access_id, :ub_id, 
                                       :physical_activity, :alcoholic_beverages, :cigarette, :daily_routine,
                                       :alternative_therapy, :alerts, :subjective_medications, :weight, 
-                                      :height, :IMC, :acorda, :CF, :lanche, :almoco, :lancheT, :jantar, :dorme, :obs)
+                                      :height, :IMC, :wakeupat, :breakfast, :snack, :lunch, :latesnack,
+                                      :dinner, :sleepat , :obs, :obsdrink, :obsphysical)
     end
 end
