@@ -47,43 +47,41 @@
             <div class="row">
               
               <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-                  <label class="heard">Remedio:</label>
+                  <label class="heard">Medicamento:</label>
                   <!--<%= form_tag(professions_path, :method => :get) do %>
                   <%= text_field_tag 'pesquisa', nil, placeholder: 'Buscar Profissão' %>
                   <%= submit_tag "Pesquisar"%>
                   <% end %> -->
                   <%= f.text_field :medicine, :class => "form-control" %>
               </div>
+              
+              <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+                <label class="heard">Apresentação:</label>
+                  <%= f.text_area :carePlan, :class => "form-control" %>
+              </div> 
                 
               <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-                  <label for="heard">Dosagem:</label>
+                  <label for="heard">Posologia:</label>
                     <%= f.text_field :dosageSchedule, :required => "required", :class => "form-control col-md-7 col-xs-12"%>
               </div>
                             
-              
-              <div class="col-md-6 col-sm-12 col-xs-12 form-group">
-                <label class="heard">Plano de tratamento:</label>
-                  <%= f.text_area :carePlan, :class => "form-control" %>
-              </div>              
-                  
+              <div class="col-md-2 col-sm-12 col-xs-12 form-group">
+                <label for="heard">Tempo de uso:</label>
+                  <%= f.number_field :timeUse, :required => "required", :class => "form-control col-md-7 col-xs-12"%>
+              </div>
+                           
+              <div class="col-md-2 col-sm-12 col-xs-12 form-group">
+                <label for="heard">Efetividade:</label>
+                  <%= f.text_field :effectiveness, :required => "required", :class => "form-control col-md-7 col-xs-12"%>
+              </div>    
                 
               <div class="col-md-3 col-sm-12 col-xs-12 form-group">
                 <label for="heard">Segurança:</label>
                   <%= f.text_field :safety, :required => "required", :class => "form-control col-md-7 col-xs-12"%>
               </div>
-                
-              <div class="col-md-2 col-sm-12 col-xs-12 form-group">
-                <label for="heard">Eficácia:</label>
-                  <%= f.text_field :effectiveness, :required => "required", :class => "form-control col-md-7 col-xs-12"%>
-              </div>
-                
-              <div class="col-md-2 col-sm-12 col-xs-12 form-group">
-                <label for="heard">Tempo de uso:</label>
-                  <%= f.number_field :timeUse, :required => "required", :class => "form-control col-md-7 col-xs-12"%>
-              </div>        
 
               <div class="col-md-5 col-sm-12 col-xs-12 form-group">
-                <label class="heard">Dificuldade no uso:</label>
+                <label class="heard">Dificuldade no uso/Adesão:</label>
                   <%= f.text_area :useDificulty, :class => "form-control col-md-7 col-xs-12"%>
               </div>
               

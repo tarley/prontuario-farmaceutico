@@ -12,23 +12,13 @@
 </p>
 
 <p>
-  <strong>Dosagem:</strong>
+  <strong>Apresentação:</strong>
+  <%= @pharmacotherapy.carePlan %>
+</p>
+
+<p>
+  <strong>Posologia:</strong>
   <%= @pharmacotherapy.dosageSchedule %>
-</p>
-
-<p>
-  <strong>Segurança:</strong>
-  <%= @pharmacotherapy.safety %>
-</p>
-
-<p>
-  <strong>Eficácia:</strong>
-  <%= @pharmacotherapy.effectiveness %>
-</p>
-
-<p>
-  <strong>Dificuldade no uso:</strong>
-  <%= @pharmacotherapy.useDificulty %>
 </p>
 
 <p>
@@ -37,19 +27,29 @@
 </p>
 
 <p>
-  <strong>Plano de cuidado:</strong>
-  <%= @pharmacotherapy.carePlan %>
+  <strong>Efetividade:</strong>
+  <%= @pharmacotherapy.effectiveness %>
+</p>
+
+<p>
+  <strong>Segurança:</strong>
+  <%= @pharmacotherapy.safety %>
 </p>
 
 
 <p>
+  <strong>Dificuldade no uso/Adesão:</strong>
+  <%= @pharmacotherapy.useDificulty %>
+</p>
+
+<p>
   <strong>PRM:</strong>
-  <%= @pharmacotherapy.prms %>
+  <%= @pharmacotherapy.prm.description %>
 </p>
 
 <p>
   <strong>Causas do PRM:</strong>
-  <%= @pharmacotherapy.prmCauses %>
+  <%= @pharmacotherapy.prmCause.description %>
 </p>
 
 <%= link_to 'Adicionar Plano de Cuidados', new_care_plan_path, :class => 'btn btn-primary' %> |
