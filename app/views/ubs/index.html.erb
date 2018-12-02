@@ -1,27 +1,55 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Ubs</h1>
+<h1>Lista de UBS</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @ubs.each do |ub| %>
-      <tr>
-        <td><%= ub.description %></td>
-        <td><%= link_to 'Show', ub %></td>
-        <td><%= link_to 'Edit', edit_ub_path(ub) %></td>
-        <td><%= link_to 'Destroy', ub, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<form class="form-horizontal">
+  <div class="input-group col-md-4">
+    <%= form_tag(ubs_path, :method => :get) do %>
+      <%= text_field_tag 'pesquisa', nil, placeholder: 'Buscar UBS', :class => 'form-control' %>
+      <span class="input-group-btn">
+      <%= submit_tag "Pesquisar" , :class => 'btn btn-primary form-control'%>
+      </span>
     <% end %>
-  </tbody>
-</table>
+  </div>
+  <div>
+    <%= link_to new_ub_path, :remote => true do %>
+      <i class="fa fa-plus-square fa-3x" aria-hidden="true"></i>
+    <% end %>
+  </div>
+</form>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Descrição</th>
+              <th colspan="3">Ações</th>
+            </tr>
+          </thead>
+        
+          <tbody>
+            <% @ubs.each do |ub| %>
+              <tr>
+                <td><%= ub.description %></td>
+                  <td>
+                    <div class="btn-group">
+                      <%= link_to '<i class="fa fa-folder"></i>'.html_safe, ub, :class => 'btn btn-info', "data-original-title" => "Visualizar", "data-placement" => "top", "data-toggle" => "tooltip" %>
+                      <%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_ub_path(ub), :class => 'btn btn-warning', "data-original-title" => "Editar", "data-placement" => "top", "data-toggle" => "tooltip" %>
+                      <%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, ub, :class => 'btn btn-danger', method: :delete, data: { confirm: 'Confirma a exclusão?' }, "data-original-title" => "Delete", "data-placement" => "top", "data-toggle" => "tooltip" %>
+                    </div>  
+                  </td> 
+               </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
 
 <br>
 
-<%= link_to 'New Ub', new_ub_path %>
+<div id="new-ub" style="display:none;"></div>
