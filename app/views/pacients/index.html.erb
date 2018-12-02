@@ -1,8 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Lista de Pacientes</h1>
-
-<%= link_to 'Novo Paciente', new_pacient_path, :class =>'glyphicon glyphicon-plus btn btn-primary' %>
+<%= link_to '<i class="glyphicon glyphicon-plus"></i>Novo Paciente'.html_safe, new_pacient_path, :class =>'btn btn-primary' %>
 
 <%= form_tag(pacients_path, :method => :get) do %>
   <%= text_field_tag 'pesquisa', nil, placeholder: 'Buscar por CPF' %>
@@ -22,7 +21,7 @@
                 <th>Endereço</th>
                 <th>Profissional Serviço</th>
                 <th>Motivo Consulta</th>
-                <th colspan="4"></th>
+                <th style="width: 30%">Ações</th>
               </tr>
             </thead>
             <tbody>
@@ -35,10 +34,14 @@
                   <td><%= pacient.address %></td>
                   <td><%= pacient.services_professional %></td>
                   <td><%= pacient.reason_meeting %></td>
-                  <td><a href="/attendances/new?idPaciente=<%=pacient.id%>" class="btn btn-primary">Novo Atendimento</a></td>
-                  <td><%= link_to 'Vizualizar', pacient, :class => 'btn btn-info' %></td>
-                  <td><%= link_to 'Editar', edit_pacient_path(pacient), :class => 'btn btn-warning' %></td>
-                  <td><%= link_to 'Excluir', pacient, :class => 'btn btn btn-danger', method: :delete, data: { confirm: 'Confirma a exclusão?' } %></td>
+                  <td>
+                    <div class="btn-group">
+                      <a href="/attendances/new?idPaciente=<%=pacient.id%>" class="btn btn-primary">Novo Atendimento</a>
+                      <%= link_to '<i class="fa fa-folder"></i>'.html_safe, pacient, :class => 'btn btn-info', "data-original-title" => "Visualizar", "data-placement" => "top", "data-toggle" => "tooltip" %>
+                      <%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_pacient_path(pacient), :class => 'btn btn-warning', "data-original-title" => "Editar", "data-placement" => "top", "data-toggle" => "tooltip" %>
+                      <!--<%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, pacient, :class => 'btn btn-danger', method: :delete, data: { confirm: 'Confirma a exclusão?' }, "data-original-title" => "Delete", "data-placement" => "top", "data-toggle" => "tooltip" %>-->
+                    </div>  
+                  </td>  
                 </tr>
               <% end %>
             </tbody>

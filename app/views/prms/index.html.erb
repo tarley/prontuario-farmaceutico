@@ -28,7 +28,7 @@
           <thead>
             <tr>
               <th>Descrição:</th>
-              <th colspan="3"></th>
+              <th colspan="3">Ações</th>
             </tr>
           </thead>
         
@@ -36,10 +36,14 @@
             <% @prms.each do |prm| %>
               <tr>
                 <td><%= prm.description %></td>
-                <td><%= link_to 'Visualizar', prm, :class => 'btn btn-primary' %></td>
-                <td><%= link_to 'Editar', edit_prm_path(prm), :class => 'btn btn-primary' %></td>
-                <td><%= link_to 'Excluir', prm, :class => 'btn btn-primary', method: :delete, data: { confirm: 'Deseja realmente excluir?' } %></td>
-              </tr>
+                <td>
+                    <div class="btn-group">    
+                      <%= link_to '<i class="fa fa-folder"></i>'.html_safe, prm, :class => 'btn btn-info', "data-original-title" => "Visualizar", "data-placement" => "top", "data-toggle" => "tooltip" %>
+                      <%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_prm_path(prm), :class => 'btn btn-warning', "data-original-title" => "Editar", "data-placement" => "top", "data-toggle" => "tooltip" %>
+                      <%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, prm, :class => 'btn btn-danger', method: :delete, data: { confirm: 'Confirma a exclusão?' }, "data-original-title" => "Delete", "data-placement" => "top", "data-toggle" => "tooltip" %>
+                    </div>  
+                </td> 
+             </tr>
             <% end %>
           </tbody>
         </table>

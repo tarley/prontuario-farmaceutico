@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
  #gem 'pg'
- gem 'sqlite3'
+ 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
@@ -66,10 +66,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-group :development, :test do
+#group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
-end
+#  gem 'byebug'
+#end
 
 
 #fazer campo autocomplete com chosen
@@ -79,13 +79,13 @@ end
   # if using bootstrap
   gem 'bootstrap-chosen-rails'
   
-
   group :development do 
-  gem 'sqlite3'    #gem to use in development environment
+  gem 'sqlite3', '1.3.13'
+  gem 'byebug',  '9.0.0', platform: :mri    #gem to use in development environment
 end
 
 group :production do 
- gem 'pg'         #gem to use in production environment
+ gem 'pg', '0.20.0'         #gem to use in production environment
 end
 
 #  group :development do 

@@ -26,7 +26,7 @@
           <thead>
             <tr>
               <th>Descrição</th>
-              <th colspan="3"></th>
+              <th colspan="3">Ações</th>
             </tr>
           </thead>
         
@@ -34,10 +34,14 @@
             <% @ubs.each do |ub| %>
               <tr>
                 <td><%= ub.description %></td>
-                <td><%= link_to 'Visualizar', ub, :class => 'btn btn-info' %></td>
-                <td><%= link_to 'Editar', edit_ub_path(ub), :class => 'btn btn-warning' %></td>
-                <td><%= link_to 'Excluir', ub, method: :delete, data: { confirm: 'Confirma a exclusão?' }, :class => 'btn btn btn-danger' %></td>
-              </tr>
+                  <td>
+                    <div class="btn-group">
+                      <%= link_to '<i class="fa fa-folder"></i>'.html_safe, ub, :class => 'btn btn-info', "data-original-title" => "Visualizar", "data-placement" => "top", "data-toggle" => "tooltip" %>
+                      <%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_ub_path(ub), :class => 'btn btn-warning', "data-original-title" => "Editar", "data-placement" => "top", "data-toggle" => "tooltip" %>
+                      <%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, ub, :class => 'btn btn-danger', method: :delete, data: { confirm: 'Confirma a exclusão?' }, "data-original-title" => "Delete", "data-placement" => "top", "data-toggle" => "tooltip" %>
+                    </div>  
+                  </td> 
+               </tr>
             <% end %>
           </tbody>
         </table>
