@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
- #gem 'pg'
- gem 'sqlite3'
+ gem 'pg'
  
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -83,7 +82,7 @@ end
 
   group :development do 
   gem 'sqlite3', '1.3.13'
-  #gem 'byebug',  '9.0.0', platform: :mri    #gem to use in development environment
+  gem 'byebug',  '9.0.0', platform: :mri    #gem to use in development environment
 end
 
 group :production do 
