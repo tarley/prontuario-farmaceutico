@@ -1,0 +1,65 @@
+<%= form_for(@attendance) do |f| %>
+  <% if @attendance.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@attendance.errors.count, "error") %> Não foi possivel salvar esse registro:</h2>
+      <ul>
+      <% @attendance.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="container">
+    <div class="x_panel">
+      <div class="x_title">
+        <h2>Dados do Atendimento</h2>
+        <ul class="nav navbar-right panel_toolbox">
+          <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+          </li>
+        </ul>
+        <div class="clearfix"></div>
+      </div>
+    
+      <div class="x_content">
+        <div class="row">  
+          <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+              <label class="heard">Paciente:</label>
+              <%= f.select :pacient_id,
+                  Pacient.all.map { |u| [u.name, u.id] },
+                  { include_blank: "Buscar Paciente" },
+                  { class: 'select2_single form-control' }
+              %>
+          </div>
+          
+          <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+            <label for="heard">Data do Atendimento:</label>
+              <span data-toggle="tooltip" data-placement="top" title="Escolha ou escreva a data do atendimento">
+                <%= f.date_field :attendance_date, :type => "date", :required => "required", :class => "form-control col-md-7 col-xs-12", min:"2000-01-01", max: Date.today %>
+              </span>
+          </div>
+          
+          <div class="col-md-12 col-sm-12 col-xs-12 form-group">  
+            <label for="heard">Quadro geral:</label>
+            <%= f.text_area :general_screen, :class => "form-control" %>
+          </div>
+        </div>    
+      </div>
+    </div>
+    
+    <!-- Detalhes -->
+    <div id="div-detalhes">
+      
+    </div>
+    
+    <div class="actions" style="float:right">
+      <%= f.submit 'Salvar', :class => 'btn btn-primary' %>
+    </div>
+  
+  </div>
+
+<% end %>
+
+<script>
+  $("#div-detalhes").append(createDiseasesHeader());
+</script>

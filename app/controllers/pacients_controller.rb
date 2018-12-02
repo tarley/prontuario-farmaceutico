@@ -1,6 +1,8 @@
 class PacientsController < ApplicationController
   before_action :authorize
   attr_accessor :profession
+  attr_accessor :ub
+  attr_accessor :service_access
   before_action :set_pacient, only: [:show, :edit, :update, :destroy]
 
   # GET /pacients
@@ -17,22 +19,34 @@ class PacientsController < ApplicationController
   # GET /pacients/1.json
   def show
     @attendances = Attendance.where(pacient_id: @pacient.id).order(attendance_date: :desc)
+    @professionAtualiza = Profession.all.map { |u| [u.description, u.id] }
+    @ubAtualiza = Ub.all.map { |u| [u.description, u.id] }
+    @serviceAccessAtualiza = ServiceAccess.all.map { |u| [u.description, u.id] }
   end
   
   # GET /pacients/new
   def new
     @pacient = Pacient.new
     @profession = Profession.new
+    @ub = Ub.new
+    @service_access = ServiceAccess.new
+    
     @professionAtualiza = Profession.all.map { |u| [u.description, u.id] }
+    @ubAtualiza = Ub.all.map { |u| [u.description, u.id] }
+    @serviceAccessAtualiza = ServiceAccess.all.map { |u| [u.description, u.id] }
   end
 
   # GET /pacients/1/edit
   def edit
     @professionAtualiza = Profession.all.map { |u| [u.description, u.id] }
+    @ubAtualiza = Ub.all.map { |u| [u.description, u.id] }
+    @serviceAccessAtualiza = ServiceAccess.all.map { |u| [u.description, u.id] }
   end
   
   def updateProfessionAtualiza
     @professionAtualiza = Profession.all.map { |u| [u.description, u.id] }
+    @ubAtualiza = Ub.all.map { |u| [u.description, u.id] }
+    @serviceAccessAtualiza = ServiceAccess.all.map { |u| [u.description, u.id] }
   end
 
   # POST /pacients
@@ -40,6 +54,8 @@ class PacientsController < ApplicationController
   def create
     @pacient = Pacient.new(pacient_params)
     @profession = Profession.new
+    @ub = Ub.new
+    @service_access = ServiceAccess.new
 
     respond_to do |format|
       if @pacient.save

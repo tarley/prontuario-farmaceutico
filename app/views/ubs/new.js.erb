@@ -1,0 +1,23 @@
+$('#new-ub').html("<%= j (render 'new') %>");
+$('#myModalUb').on('hidden.bs.modal', function () {
+    // do something…
+    //alert('Fechou');
+    
+    // Limpa as opções do select
+    var select = $('#pacient_ub_id');
+    select.empty();
+    
+    $.get( "/ubs.json", function( data ) {
+        //alert(JSON.stringify(data));
+        data.forEach(function(currentValue, index, arr){
+        select.append(`<option value="${currentValue.id}">${currentValue.description}</option>`);
+        
+        select.trigger("chosen:updated");
+        
+        });
+
+    });
+    
+})
+$('#myModalUb').modal('show');
+$('#new-ub').slideDown(350);

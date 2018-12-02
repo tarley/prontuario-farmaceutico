@@ -25,7 +25,7 @@ rails generate scaffold Attendance general_screen:text attendance_date:datetime 
 
 ----------------------------------------
 
-População do BD (Tasks)
+Populando o BD (Tasks)
 
 * Rodar no terminal os comandos abaixo:
 
@@ -37,6 +37,15 @@ População do BD (Tasks)
 
 3. Criação de Acessos ao Serviço
 - rake db:create_service_access
+
+4. Criação PRM Causes
+- rake db:create_prm_causes
+
+5. Criação PRM
+- rake db:create_prms
+
+6. Criação SFCS
+- rake db:create_sfcs
 
 ----------------------------------------------
 

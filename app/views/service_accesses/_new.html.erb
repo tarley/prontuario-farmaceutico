@@ -1,0 +1,39 @@
+<!-- Modal -->
+<div id="myModalServiceAcc" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+        
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Criar Acesso ao Serviço</h4>
+            </div>
+            <div class="modal-body">
+                <%= form_for @service_access, :remote => true do |f| %>
+                  <% if @service_access.errors.any? %>
+                    <div id="error_explanation">
+                      <h2><%= pluralize(@service_access.errors.count, "error") %> prohibited this service_access from being saved:</h2>
+                
+                      <ul>
+                      <% @service_access.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                      <% end %>
+                      </ul>
+                    </div>
+                  <% end %>
+                
+                  <div class="field">
+                    <%= f.label :Descrição %><br>
+                    <%= f.text_field :description %>
+                  </div>
+                  <div class="actions">
+                    <input type="submit" name="commit" value="Salvar" data-confirm="Acesso ao Serviço criada com sucesso" remote="true" class="btn btn-success">
+                  </div>
+                <% end %>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>

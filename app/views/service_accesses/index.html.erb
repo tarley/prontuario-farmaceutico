@@ -1,27 +1,47 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Service Accesses</h1>
+<h1>Lista de Acesso ao Serviço</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @service_accesses.each do |service_access| %>
-      <tr>
-        <td><%= service_access.description %></td>
-        <td><%= link_to 'Show', service_access %></td>
-        <td><%= link_to 'Edit', edit_service_access_path(service_access) %></td>
-        <td><%= link_to 'Destroy', service_access, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<form class="form-horizontal">
+  <div>
+    <%= link_to new_service_access_path, :remote => true do %>
+      <i class="fa fa-plus-square fa-3x" aria-hidden="true"></i>
     <% end %>
-  </tbody>
-</table>
+  </div>
+</form>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Descrição</th>
+              <th colspan="3">Ações</th>
+            </tr>
+          </thead>
+        
+          <tbody>
+            <% @service_accesses.each do |service_access| %>
+              <tr>
+                <td><%= service_access.description %></td>
+                <td>
+                    <div class="btn-group">
+                      <%= link_to '<i class="fa fa-folder"></i>'.html_safe, service_access, :class => 'btn btn-info', "data-original-title" => "Visualizar", "data-placement" => "top", "data-toggle" => "tooltip" %>
+                      <%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_service_access_path(service_access), :class => 'btn btn-warning', "data-original-title" => "Editar", "data-placement" => "top", "data-toggle" => "tooltip" %>
+                      <%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, service_access, :class => 'btn btn-danger', method: :delete, data: { confirm: 'Confirma a exclusão?' }, "data-original-title" => "Delete", "data-placement" => "top", "data-toggle" => "tooltip" %>
+                    </div>  
+                </td> 
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
 
 <br>
 
-<%= link_to 'New Service access', new_service_access_path %>
+<div id="new-service_access" style="display:none;"></div>

@@ -1,6 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-
 <h1>Lista de Profissões</h1>
 
 <form class="form-horizontal">
@@ -27,7 +26,7 @@
           <thead>
             <tr>
               <th>Descrição</th>
-              <th colspan="3"></th>
+              <th colspan="3">Ações</th>
             </tr>
           </thead>
         
@@ -35,9 +34,13 @@
             <% @professions.each do |profession| %>
               <tr>
                 <td><%= profession.description %></td>
-                <td><%= link_to 'Visualizar', profession, :class => 'btn btn-primary' %></td>
-                <td><%= link_to 'Editar', edit_profession_path(profession), :class => 'btn btn-primary' %></td>
-                <td><%= link_to 'Excluir', profession, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-primary' %></td>
+                <td>
+                    <div class="btn-group">
+                      <%= link_to '<i class="fa fa-folder"></i>'.html_safe, profession, :class => 'btn btn-info', "data-original-title" => "Visualizar", "data-placement" => "top", "data-toggle" => "tooltip" %>
+                      <%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_profession_path(profession), :class => 'btn btn-warning', "data-original-title" => "Editar", "data-placement" => "top", "data-toggle" => "tooltip" %>
+                      <%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, profession, :class => 'btn btn-danger', method: :delete, data: { confirm: 'Confirma a exclusão?' }, "data-original-title" => "Delete", "data-placement" => "top", "data-toggle" => "tooltip" %>
+                    </div>  
+                </td> 
               </tr>
             <% end %>
           </tbody>

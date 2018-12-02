@@ -1,9 +1,7 @@
 class Profession < ActiveRecord::Base
     
     #Pesquisa
-    scope :pesquisa, ->(query) {where("profession like ?", "%#{query}%")}
-    
-
+    scope :pesquisa, ->(query) {where("description like ?", "%#{query}%")}
     
     belongs_to :pacients
     

@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20181127002735) do
     t.datetime "updated_at",         null: false
   end
 
+  add_index "attendances", ["attendance_date"], name: "index_attendances_on_attendance_date"
   add_index "attendances", ["pacient_id"], name: "index_attendances_on_pacient_id"
   add_index "attendances", ["pharmacotherapy_id"], name: "index_attendances_on_pharmacotherapy_id"
 

@@ -33,6 +33,21 @@ class AttendancesController < ApplicationController
   def create
     @attendance = Attendance.new(attendance_params)
 
+    diseases_params.map do |p|
+      logger.debug p
+      @attendance.diseases << Disease.new(p)
+    end
+    
+    logger.debug 'teste 2'
+    logger.debug @attendance.diseases
+    
+    
+    #for item in @attendance.diseases
+    #  logger.debug "Teste"
+    #  logger.debug item.name
+    #  logger.debug item.description
+    #end
+
     respond_to do |format|
       if @attendance.save
         format.html { redirect_to @attendance, notice: 'Atendimento criado com sucesso.' }
@@ -67,6 +82,15 @@ class AttendancesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  # POST /add
+  # POST /add.json
+  def add
+      @attendance = Attendance.new
+      @attendance.general_screen = 'Add funcionou'
+      format.html { render :new }
+  end
+    
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -74,19 +98,22 @@ class AttendancesController < ApplicationController
       @attendance = Attendance.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+     # Never trust parameters from the scary internet, only allow the white list through.
     def attendance_params
       
-      params.require(:attendance).permit(:general_screen, :attendance_date, :pacient_id)
-                                          
+      logger.debug params
       
+      params.require(:attendance).permit(:general_screen, :attendance_date, :pacient_id)
+      
+      #logger.debug params.diseases
       
       #params.permit(:general_screen, :attendance_date, :pacient_id, :prm_id, :prm_cause_id, :disease_id, 
       #               :pharmacotherapy_id, :sfc_id, :care_plan_id)
-            
-
-                                          
     end
     
-    
+    def diseases_params
+      params.require(:diseases).map do |d|
+        ActionController::Parameters.new(d).permit(:name, :description)
+      end
+    end
 end
