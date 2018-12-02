@@ -33,8 +33,10 @@
           </div>
           
           <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-              <label for="heard">Data do Atendimento:</label>
-              <%= f.text_field :attendance_date, {class: "form-control col-md-7 col-xs-12"}%>
+            <label for="heard">Data do Atendimento:</label>
+              <span data-toggle="tooltip" data-placement="top" title="Escolha ou escreva a data do atendimento">
+                <%= f.date_field :attendance_date, :type => "date", :required => "required", :class => "form-control col-md-7 col-xs-12", min:"2000-01-01", max: Date.today %>
+              </span>
           </div>
           
           <div class="col-md-12 col-sm-12 col-xs-12 form-group">  
