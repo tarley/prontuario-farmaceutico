@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
- #gem 'pg'
- 
+#gem 'pg'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
@@ -29,9 +28,7 @@ gem 'jquery_mask_rails', '~> 0.1.0'
 #tradução
 gem 'translation'
 
-
-
-  #Gerando arquivos em PDF
+#Gerando arquivos em PDF
 gem 'wkhtmltopdf-binary'
 gem 'wicked_pdf'
 
@@ -56,8 +53,6 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-
-
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -69,7 +64,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 #  gem 'byebug'
 #end
 
-
 #fazer campo autocomplete com chosen
 source 'https://rails-assets.org' do
   gem 'rails-assets-chosen'
@@ -77,25 +71,7 @@ end
   # if using bootstrap
   gem 'bootstrap-chosen-rails'
   
-  group :development do 
-  gem 'sqlite3', '1.3.13'
+group :development do 
+ gem 'sqlite3'
  gem 'byebug',  '9.0.0', platform: :mri    #gem to use in development environment
 end
-
-group :production do 
- gem 'pg', '0.20.0'         #gem to use in production environment
-end
-
- group :development do 
-   gem 'sqlite3'    #gem to use in development environment
-end
-
-#group :production do 
-#gem 'pg'         #gem to use in production environment
-#end
-
-
-
-  
-  
-
