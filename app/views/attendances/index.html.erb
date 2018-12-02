@@ -15,7 +15,7 @@
               <th>CPF</th>
               <th>Data do atendimento</th>
               <th>Quadro geral</th>
-              <th colspan="4"></th>
+              <th colspan="4">Ações</th>
             </tr>
           </thead>
         
@@ -26,10 +26,14 @@
                 <td> </td>
                 <td><%= attendance.attendance_date %></td>
                 <td><%= attendance.general_screen %></td>
-                <td><%= link_to 'Nova Doença', new_disease_path, :class => 'btn btn-primary' %></td>
-                <td><%= link_to 'Visualizar', attendance, :class => 'btn btn-primary' %></td>
-                <td><%= link_to 'Editar', edit_attendance_path(attendance), :class => 'btn btn-primary' %></td>
-                <td><%= link_to 'Excluir', attendance, :class => 'btn btn-primary', method: :delete, data: { confirm: 'Confirma a exclusão?' } %></td>
+                  <td>
+                    <div class="btn-group">
+                      <%= link_to 'Nova Doença', new_disease_path, :class => 'btn btn-primary' %>
+                      <%= link_to '<i class="fa fa-folder"></i>'.html_safe, attendance, :class => 'btn btn-info', "data-original-title" => "Visualizar", "data-placement" => "top", "data-toggle" => "tooltip" %>
+                      <%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_attendance_path(attendance), :class => 'btn btn-warning', "data-original-title" => "Editar", "data-placement" => "top", "data-toggle" => "tooltip" %>
+                      <%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, attendance, :class => 'btn btn-danger', method: :delete, data: { confirm: 'Confirma a exclusão?' }, "data-original-title" => "Delete", "data-placement" => "top", "data-toggle" => "tooltip" %>
+                    </div>
+                  </td>             
               </tr>
             <% end %>
           </tbody>
