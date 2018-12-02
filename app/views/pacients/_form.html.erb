@@ -85,7 +85,7 @@
                     <%= f.select :profession_id,
                       @professionAtualiza,
                       { include_blank: "Buscar Profissão" },
-                      { class: 'chosen-select' }
+                      {class: "form-control col-md-7 col-xs-12"} 
                     %>
                   </div>
                 </span>
@@ -165,7 +165,7 @@
                     <%= f.select :ub_id,
                       Ub.all.map { |u| [u.description, u.id] },
                       { include_blank: "Buscar UBS" },
-                      { class: 'chosen-select' }
+                   {class: "form-control col-md-7 col-xs-12"} 
                     %>
                   </span>
                 </div>
@@ -186,7 +186,7 @@
                     <%= f.select :service_access_id,
                       ServiceAccess.all.map { |u| [u.description, u.id] },
                       { include_blank: "Buscar Acesso ao Serviço" },
-                      { class: 'chosen-select' }
+                      {class: "form-control col-md-7 col-xs-12"} 
                     %>
                   </span>
                 </div>
