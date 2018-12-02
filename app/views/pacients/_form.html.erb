@@ -81,7 +81,7 @@
             <div class="col-md-3 col-sm-12 col-xs-12 form-group">
               <label class="heard">* Profissão:</label>
                 <span data-toggle="tooltip" data-placement="top" title="Clique para selecionar a profissão do paciente">
-                  <div class="input-group col-md-9 col-sm-12 col-xs-12 form-group"> <!-- onfocus="myFunction(this) -->
+                  <div class="input-group col-md-9 col-sm-12 col-xs-12 form-group">
                     <%= f.select :profession_id,
                       @professionAtualiza,
                       { include_blank: "Buscar Profissão" },
@@ -92,29 +92,13 @@
                       
                 <div class="modal-profession">
                   <span data-toggle="tooltip" data-placement="top" title="Clique para adicionar uma nova profissão">
-                  <!--<span class="input-grou-btn">-->
                     <%= link_to new_profession_path, :remote => true do %>
                       <i class="fa fa-plus-square fa-3x" aria-hidden="true"></i>
                     <% end %>
                   </span>
                 </div>
-              
             </div>
                   
-            <!--script type="text/javascript"-->
-              <!-- function myFunction(x) {-->
-                <!--   x.onfocus = professionAtualiza_path;-->
-                <!--   //tenho que chamar o professionAtualiza_path no onfocus-->
-              <!--}-->
-            <!--/script-->
-                  
-            <!--<div>-->
-              <!--script-->
-                <!-- $('#myModal').modal('show');-->
-                <!-- $('#new-profession').slideDown(350);-->
-              <!--</script>-->
-            <!--</div>  -->
-              
           </div>
         </div>
       </div>
@@ -163,7 +147,7 @@
                 <div id="result-ub" class="col-md-12 col-sm-12 col-xs-12 form-group">
                   <span data-toggle="tooltip" data-placement="top" title="Clique para selecionar a Unidade Básica de Saúde">  
                     <%= f.select :ub_id,
-                      Ub.all.map { |u| [u.description, u.id] },
+                      @ubAtualiza,
                       { include_blank: "Buscar UBS" },
                       { class: 'chosen-select' }
                     %>
@@ -184,7 +168,7 @@
                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">
                   <span data-toggle="tooltip" data-placement="top" title="Clique para selecionar o meio usado pelo paciente para conseguir o atendimento">
                     <%= f.select :service_access_id,
-                      ServiceAccess.all.map { |u| [u.description, u.id] },
+                      @serviceAccessAtualiza,
                       { include_blank: "Buscar Acesso ao Serviço" },
                       { class: 'chosen-select' }
                     %>

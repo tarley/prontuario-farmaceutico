@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
   root 'sessions#new' #rota pradrão
   
+  #Rotas Paciente
   get :search, controller: :pacients
   #root to: "pacients#new"
   get :professionAtualiza, controller: :pacients
+  get :serviceAccessAtualiza, controller: :pacients
+  get :ubAtualiza, controller: :pacients
+
 
   get 'sessions/new'
   
@@ -23,7 +27,7 @@ Rails.application.routes.draw do
   resources :ubs
   resources :pacients
   
-    ###Rotas Atendimento
+  ###Rotas Atendimento
   resources :attendances
   resources :prm_causes
   resources :pharmacotherapies

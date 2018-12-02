@@ -38,7 +38,7 @@ class ProfessionsController < ApplicationController
 
     respond_to do |format|
       if @profession.save
-        format.html
+        format.html {}
         format.json { render :show, status: :created, location: @profession }
       else
         format.html { render :new }
