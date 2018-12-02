@@ -45,7 +45,13 @@ class PacientsController < ApplicationController
   
   def updateProfessionAtualiza
     @professionAtualiza = Profession.all.map { |u| [u.description, u.id] }
+  end
+  
+  def updateUbAtualiza
     @ubAtualiza = Ub.all.map { |u| [u.description, u.id] }
+  end
+  
+  def updateServiceAccessAtualiza
     @serviceAccessAtualiza = ServiceAccess.all.map { |u| [u.description, u.id] }
   end
 
