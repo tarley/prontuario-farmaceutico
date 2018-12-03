@@ -74,6 +74,9 @@ ou
 5. Voltar o fonte local para um commit antigo especifico!
 - git reset --hard "nome da tag ou Hash do Commit !"
 
+6. Apagar cache git
+- git rm -r --cached .
+
 ----------------------------------------------------------------------------------
 
 Como relacionar tabelas

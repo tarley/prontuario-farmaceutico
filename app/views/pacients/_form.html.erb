@@ -147,7 +147,7 @@
                 <div id="result-ub" class="col-md-12 col-sm-12 col-xs-12 form-group">
                   <span data-toggle="tooltip" data-placement="top" title="Clique para selecionar a Unidade Básica de Saúde">  
                     <%= f.select :ub_id,
-                      @ubAtualiza,
+                      @ubAtualiza = Ub.all.map { |u| [u.description, u.id] },
                       { include_blank: "Buscar UBS" },
                       { class: 'chosen-select' }
                     %>
@@ -168,7 +168,7 @@
                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">
                   <span data-toggle="tooltip" data-placement="top" title="Clique para selecionar o meio usado pelo paciente para conseguir o atendimento">
                     <%= f.select :service_access_id,
-                      @serviceAccessAtualiza,
+                      @serviceAccessAtualiza = ServiceAccess.all.map { |u| [u.description, u.id] },
                       { include_blank: "Buscar Acesso ao Serviço" },
                       { class: 'chosen-select' }
                     %>
