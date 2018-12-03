@@ -70,6 +70,10 @@
                         <img src="/" alt=""><%= @current_user.name %>
                         <span class=" fa fa-angle-down"></span>
                     </a>
+                    <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        <img src="/" alt=""><%= link_to "Log Out", sign_out_path, method: "delete", data: { confirm: 'Deseja sair do sistema ?' } %>
+                        <span class=" fa fa-angle-down"></span>
+                    </a>
                     <ul class="dropdown-menu dropdown-usermenu pull-right">
                       <li><a href="javascript:;"> Profile</a></li>
                       <li><a href="javascript:;">Help</a></li>
