@@ -19,9 +19,9 @@ class PacientsController < ApplicationController
   # GET /pacients/1.json
   def show
     @attendances = Attendance.where(pacient_id: @pacient.id).order(attendance_date: :desc)
-    @professionAtualiza = Profession.all.map { |u| [u.description, u.id] }
-    @ubAtualiza = Ub.all.map { |u| [u.description, u.id] }
-    @serviceAccessAtualiza = ServiceAccess.all.map { |u| [u.description, u.id] }
+    # @professionAtualiza = Profession.all.map { |u| [u.description, u.id] }
+    # @ubAtualiza = Ub.all.map { |u| [u.description, u.id] }
+    # @serviceAccessAtualiza = ServiceAccess.all.map { |u| [u.description, u.id] }
   end
   
   # GET /pacients/new
@@ -31,29 +31,29 @@ class PacientsController < ApplicationController
     @ub = Ub.new
     @service_access = ServiceAccess.new
     
-    @professionAtualiza = Profession.all.map { |u| [u.description, u.id] }
-    @ubAtualiza = Ub.all.map { |u| [u.description, u.id] }
-    @serviceAccessAtualiza = ServiceAccess.all.map { |u| [u.description, u.id] }
+    # @professionAtualiza = Profession.all.map { |u| [u.description, u.id] }
+    # @ubAtualiza = Ub.all.map { |u| [u.description, u.id] }
+    # @serviceAccessAtualiza = ServiceAccess.all.map { |u| [u.description, u.id] }
   end
 
   # GET /pacients/1/edit
   def edit
-    @professionAtualiza = Profession.all.map { |u| [u.description, u.id] }
-    @ubAtualiza = Ub.all.map { |u| [u.description, u.id] }
-    @serviceAccessAtualiza = ServiceAccess.all.map { |u| [u.description, u.id] }
+    # @professionAtualiza = Profession.all.map { |u| [u.description, u.id] }
+    # @ubAtualiza = Ub.all.map { |u| [u.description, u.id] }
+    # @serviceAccessAtualiza = ServiceAccess.all.map { |u| [u.description, u.id] }
   end
   
-  def updateProfessionAtualiza
-    @professionAtualiza = Profession.all.map { |u| [u.description, u.id] }
-  end
+  # def updateProfessionAtualiza
+  #   @professionAtualiza = Profession.all.map { |u| [u.description, u.id] }
+  # end
   
-  def updateUbAtualiza
-    @ubAtualiza = Ub.all.map { |u| [u.description, u.id] }
-  end
+  # def updateUbAtualiza
+  #   @ubAtualiza = Ub.all.map { |u| [u.description, u.id] }
+  # end
   
-  def updateServiceAccessAtualiza
-    @serviceAccessAtualiza = ServiceAccess.all.map { |u| [u.description, u.id] }
-  end
+  # def updateServiceAccessAtualiza
+  #   @serviceAccessAtualiza = ServiceAccess.all.map { |u| [u.description, u.id] }
+  # end
 
   # POST /pacients
   # POST /pacients.json
