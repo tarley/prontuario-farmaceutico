@@ -255,11 +255,11 @@ function createPharmacotherapiesFields(diseasesId) {
   var div = $('<div class="row x_content"></div>');
   div.append(fieldId);
   div.append(fieldDiseasesId);
-  div.append(createField('Remedio:', 'pharmacotherapies[][remedio]'));
-  div.append(createField('Dosagem:', 'pharmacotherapies[][dosagem]'));
-  div.append(createField('Segurança:', 'pharmacotherapies[][seguranca]'));
+  div.append(createField('Medicamento:', 'pharmacotherapies[][remedio]'));
+  div.append(createField('Posologia:', 'pharmacotherapies[][dosagem]'));
   div.append(createField('Eficácia:', 'pharmacotherapies[][eficacia]'));
   div.append(createField('Tempo de uso:', 'pharmacotherapies[][tempoUso]'));
+  div.append(createField('Segurança:', 'pharmacotherapies[][seguranca]'));
   div.append(createField('Dificuldade no uso:', 'pharmacotherapies[][dificuldadeUso]'));
   div.append(createField('Selecione o PRM:', 'pharmacotherapies[][prm]', 'select'));
   div.append(createField('Causa do PRM:', 'pharmacotherapies[][causaPRM]', 'select'));
