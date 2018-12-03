@@ -83,7 +83,7 @@
                 <span data-toggle="tooltip" data-placement="top" title="Clique para selecionar a profissão do paciente">
                   <div class="input-group col-md-9 col-sm-12 col-xs-12">
                     <%= f.select :profession_id,
-                      @professionAtualiza,
+                      Profession.all.map { |u| [u.description, u.id] },
                       { include_blank: "Buscar Profissão" },
                       { class: 'chosen-select' }
                     %>
