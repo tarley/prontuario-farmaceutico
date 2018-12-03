@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
- #gem 'pg'
- gem 'sqlite3'
+#gem 'pg'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
@@ -29,9 +28,7 @@ gem 'jquery_mask_rails', '~> 0.1.0'
 #tradução
 gem 'translation'
 
-
-
-  #Gerando arquivos em PDF
+#Gerando arquivos em PDF
 gem 'wkhtmltopdf-binary'
 gem 'wicked_pdf'
 
@@ -47,8 +44,6 @@ gem 'jquery-ui-rails'
 
 gem 'bcrypt', '~> 3.1.7'
 
-
-
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -58,19 +53,16 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-
-
 # Use Unicorn as the app server
 # gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-group :development, :test do
+#group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
-end
-
+#  gem 'byebug'
+#end
 
 #fazer campo autocomplete com chosen
 source 'https://rails-assets.org' do
@@ -79,25 +71,7 @@ end
   # if using bootstrap
   gem 'bootstrap-chosen-rails'
   
-
-  group :development do 
-  gem 'sqlite3'    #gem to use in development environment
+group :development do 
+ gem 'sqlite3'
+ gem 'byebug',  '9.0.0', platform: :mri    #gem to use in development environment
 end
-
-group :production do 
- gem 'pg'         #gem to use in production environment
-end
-
-#  group :development do 
-#   gem 'sqlite3'    #gem to use in development environment
-#end
-
-#group :production do 
-#  gem 'pg'         #gem to use in production environment
-#end
-
-
-
-  
-  
-

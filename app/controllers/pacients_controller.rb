@@ -1,6 +1,8 @@
 class PacientsController < ApplicationController
   before_action :authorize
   attr_accessor :profession
+  attr_accessor :ub
+  attr_accessor :service_access
   before_action :set_pacient, only: [:show, :edit, :update, :destroy]
 
   # GET /pacients
@@ -17,21 +19,34 @@ class PacientsController < ApplicationController
   # GET /pacients/1.json
   def show
     @attendances = Attendance.where(pacient_id: @pacient.id).order(attendance_date: :desc)
+    @professionAtualiza = Profession.all.map { |u| [u.description, u.id] }
+    @ubAtualiza = Ub.all.map { |u| [u.description, u.id] }
+    @serviceAccessAtualiza = ServiceAccess.all.map { |u| [u.description, u.id] }
   end
   
   # GET /pacients/new
   def new
     @pacient = Pacient.new
     @profession = Profession.new
+    @ub = Ub.new
+    @service_access = ServiceAccess.new
+    
     @professionAtualiza = Profession.all.map { |u| [u.description, u.id] }
+    @ubAtualiza = Ub.all.map { |u| [u.description, u.id] }
+    @serviceAccessAtualiza = ServiceAccess.all.map { |u| [u.description, u.id] }
   end
 
   # GET /pacients/1/edit
   def edit
+    @professionAtualiza = Profession.all.map { |u| [u.description, u.id] }
+    @ubAtualiza = Ub.all.map { |u| [u.description, u.id] }
+    @serviceAccessAtualiza = ServiceAccess.all.map { |u| [u.description, u.id] }
   end
   
   def updateProfessionAtualiza
     @professionAtualiza = Profession.all.map { |u| [u.description, u.id] }
+    @ubAtualiza = Ub.all.map { |u| [u.description, u.id] }
+    @serviceAccessAtualiza = ServiceAccess.all.map { |u| [u.description, u.id] }
   end
 
   # POST /pacients
@@ -39,6 +54,8 @@ class PacientsController < ApplicationController
   def create
     @pacient = Pacient.new(pacient_params)
     @profession = Profession.new
+    @ub = Ub.new
+    @service_access = ServiceAccess.new
 
     respond_to do |format|
       if @pacient.save
@@ -82,6 +99,12 @@ class PacientsController < ApplicationController
       @pacient = Pacient.find(params[:id])
     end
 
+    def calculate_imc
+        @weight = params[:weight].to_f
+        @height = params[:height].to_f
+        @IMC = (@weight/(@height*@height))
+    end
+    
     # Never trust parameters from the scary internet, only allow the white list through.
     def pacient_params
       params.require(:pacient).permit(:name, :place_attendence, :birth_date, :years_study, :genre, 
@@ -89,6 +112,7 @@ class PacientsController < ApplicationController
                                       :reason_meeting, :cpf, :profession_id, :service_access_id, :ub_id, 
                                       :physical_activity, :alcoholic_beverages, :cigarette, :daily_routine,
                                       :alternative_therapy, :alerts, :subjective_medications, :weight, 
-                                      :height, :IMC)
+                                      :height, :IMC, :wakeupat, :breakfast, :snack, :lunch, :latesnack,
+                                      :dinner, :sleepat , :obs, :obsdrink, :obsphysical)
     end
 end

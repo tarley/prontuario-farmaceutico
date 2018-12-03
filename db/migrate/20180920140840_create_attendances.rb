@@ -24,5 +24,6 @@ class CreateAttendances < ActiveRecord::Migration
       
       t.timestamps null: false
     end
+    add_index :attendances, :attendance_date
   end
 end

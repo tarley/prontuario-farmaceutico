@@ -1,33 +1,42 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Sfcs</h1>
+<h1>Lista SFC</h1>
 
 <%= form_tag(sfcs_path, :method => :get) do %>
   <%= text_field_tag 'pesquisa', nil, placeholder: 'Buscar por SFC' %>
   <%= submit_tag "Pesquisar" , :class => 'btn btn-primary'%>
 <% end %>
-
-
-<table>
-  <thead>
-    <tr>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @sfcs.each do |sfc| %>
-      <tr>
-        <td><%= sfc.description %></td>
-        <td><%= link_to 'Show', sfc %></td>
-        <td><%= link_to 'Edit', edit_sfc_path(sfc) %></td>
-        <td><%= link_to 'Destroy', sfc, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="table-responsive">
+        
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Description</th>
+              <th colspan="3">Ações</th>
+            </tr>
+          </thead>
+        
+          <tbody>
+            <% @sfcs.each do |sfc| %>
+              <tr>
+                <td><%= sfc.description %></td>
+                <td>
+                    <div class="btn-group">
+                      <%= link_to '<i class="fa fa-folder"></i>'.html_safe, sfc, :class => 'btn btn-info', "data-original-title" => "Visualizar", "data-placement" => "top", "data-toggle" => "tooltip" %>
+                      <%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_sfc_path(sfc), :class => 'btn btn-warning', "data-original-title" => "Editar", "data-placement" => "top", "data-toggle" => "tooltip" %>
+                      <%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, sfc, :class => 'btn btn-danger', method: :delete, data: { confirm: 'Confirma a exclusão?' }, "data-original-title" => "Delete", "data-placement" => "top", "data-toggle" => "tooltip" %>
+                    </div>  
+                </td> 
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>  
+  </div>
 <br>
 
 <%= link_to 'New Sfc', new_sfc_path %>
