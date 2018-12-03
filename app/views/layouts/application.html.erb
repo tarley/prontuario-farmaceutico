@@ -63,30 +63,21 @@
                 <div class="nav toggle">
                   <a id="menu_toggle"><i class="fa fa-bars"></i></a>
                 </div>
-                
-                <ul class="nav navbar-nav navbar-right">
-                  <li class="">
-                    <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                        <img src="/" alt=""><%= @current_user.name %>
-                        <span class=" fa fa-angle-down"></span>
-                    </a>
-                    <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                        <img src="/" alt=""><%= link_to "Log Out", sign_out_path, method: "delete", data: { confirm: 'Deseja sair do sistema ?' } %>
-                        <span class=" fa fa-angle-down"></span>
-                    </a>
-                    <ul class="dropdown-menu dropdown-usermenu pull-right">
-                      <li><a href="javascript:;"> Profile</a></li>
-                      <li><a href="javascript:;">Help</a></li>
-                        <li>
-                          <%= link_to "Log Out", sign_out_path, method: "delete", data: { confirm: 'Deseja sair do sistema ?' } %>
-                        </li>
-                    </ul>
-                  </li>
-                </ul>
-                
+                  <ul class="nav navbar-nav navbar-right">
+                    <li class="">
+                      <a data-confirm="Deseja sair do sistema ?" rel="nofollow" data-method="delete" href="/sign_out">Log Out</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="javascript:;" id="camp_usuario" class="user-profile">
+                          <%= @current_user.name %>
+                      </a>
+                    </li>
+                  </ul>
               </nav>
             </div>
           </div>
+          
+          
           <!-- /top navigation -->
           
           <% end %>
