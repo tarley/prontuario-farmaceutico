@@ -1,6 +1,11 @@
 source 'https://rubygems.org'
 
+#<<<<<<< HEAD
+ gem 'sqlite3'
+ 
+#=======
 #gem 'pg'
+#>>>>>>> 922f3dbf3f2e3c7998347f5f5c42f7b5958de17f
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
@@ -71,7 +76,33 @@ end
   # if using bootstrap
   gem 'bootstrap-chosen-rails'
   
+#<<<<<<< HEAD
+
+  group :development do 
+  gem 'sqlite3'
+  
+end
+
+group :production do 
+ gem 'pg'         
+end
+
+#  group :development do 
+#   gem 'sqlite3'    #gem to use in development environment
+#end
+
+#group :production do 
+#  gem 'pg'         #gem to use in production environment
+#end
+
+
+
+  
+  
+
+#=======
 group :development do 
  gem 'sqlite3'
  gem 'byebug',  '9.0.0', platform: :mri    #gem to use in development environment
 end
+#>>>>>>> 922f3dbf3f2e3c7998347f5f5c42f7b5958de17f
